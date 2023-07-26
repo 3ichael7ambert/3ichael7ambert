@@ -8,7 +8,7 @@ I'm an emerging full-stack software developer with a unique background in design
 </div>
 
 <div id="header" align="center">
-  <a href="https://www.linkedin.com/in/chance-coursey-08819b279/">
+  <a href="https://www.linkedin.com/in/3ichael7ambert/">
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
   </a>
 </div>
