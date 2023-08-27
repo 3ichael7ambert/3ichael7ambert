@@ -13,9 +13,9 @@ I'm an emerging full-stack software developer with a unique background in design
   </a>
 </div>
 
-<button>Javascript</button>
-<button>Python</button>
-<button>GML</button>
+    <button onclick="getData('data1.xml')">Data 1</button>
+    <button onclick="getData('data2.xml')">Data 2</button>
+    <button onclick="getData('data3.xml')">Data 3</button>
 ---
 ### :hammer_and_wrench: Languages and Tools :
 <div>
