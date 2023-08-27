@@ -13,6 +13,9 @@ I'm an emerging full-stack software developer with a unique background in design
   </a>
 </div>
 
+<button>Javascript</button>
+<button>Python</button>
+<button>GML</button>
 ---
 ### :hammer_and_wrench: Languages and Tools :
 <div>
