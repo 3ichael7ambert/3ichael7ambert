@@ -13,6 +13,8 @@ I'm an emerging full-stack software developer with a unique background in design
   </a>
 </div><br>
 
+<!-- StackOverflow -->
+<a href="https://stackoverflow.com/users/23144952/3ichael-7ambert"><img src="https://stackoverflow.com/users/flair/23144952.png" width="208" height="58" alt="profile for 3ichael 7ambert at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for 3ichael 7ambert at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
 <a href="https://stackexchange.com/users/30200640"><img src="https://stackexchange.com/users/flair/30200640.png" width="208" height="58" alt="profile for 3ichael 7ambert on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for 3ichael 7ambert on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
 <br>
 
