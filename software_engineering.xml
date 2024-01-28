@@ -1,0 +1,39 @@
+<software_engineering>
+  <introduction>
+    <![CDATA[
+      <p>Introduction about my software engineering experience and skills.</p>
+    ]]>
+  </introduction>
+  <focus>
+    <languages>
+      <language>PHP</language>
+      <language>ActionScript</language>
+      <language>HTML</language>
+      <language>CSS</language>
+      <!-- Add more languages as needed -->
+    </languages>
+    <recent_focus>
+      <technology>JavaScript</technology>
+      <technology>Python</technology>
+      <technology>React</technology>
+      <technology>Node</technology>
+      <technology>Express</technology>
+      <technology>Flask</technology>
+      <technology>Testing in Jest and Jasmine</technology>
+    </recent_focus>
+  </focus>
+  <projects>
+    <project>
+      <name>WebCrawl</name>
+      <description>A project description.</description>
+    </project>
+    <project>
+      <name>Sketchbook</name>
+      <description>Another project description.</description>
+    </project>
+    <!-- Add more projects as needed -->
+  </projects>
+  <links>
+    <github>http://www.github.com/3ichael7ambert</github>
+  </links>
+</software_engineering>
