@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -20,43 +20,13 @@
     <button onclick="getData('graphic_illustrator.xml')">Graphic Illustrator</button>
     <button onclick="getData('music_composer.xml')">Music Composer</button>
     <button onclick="getData('author.xml')">Author</button>
-    <!-- Add more buttons for other relevant sections -->
     <button onclick="getData('credentials.xml')">Credentials</button>
   </div>
 
-  <!-- Software Engineering Section -->
-  <section id="software_engineering" class="hide">
-    <h2>Software Engineering</h2>
-    <p>
-      Introduction about your software engineering experience and skills.
-    </p>
-    <p>
-      Recent focus on JavaScript, Python, React, Node, Express, Flask, testing in Jest and Jasmine.
-    </p>
-    <p>
-      Projects:
-      <ul>
-        <li><a href="#">WebCrawl</a></li>
-        <li><a href="#">Sketchbook</a></li>
-      </ul>
-    </p>
-    <p>GitHub: <a href="http://www.github.com/3ichael7ambert">3ichael7ambert</a></p>
-  </section>
-
-  <!-- Graphic Illustrator Section -->
-  <section id="graphic_illustrator" class="hide">
-    <!-- Placeholder for Graphic Illustrator content -->
-  </section>
-
-  <!-- Music Composer Section -->
-  <section id="music_composer" class="hide">
-    <!-- Placeholder for Music Composer content -->
-  </section>
-
-  <!-- Author Section -->
-  <section id="author" class="hide">
-    <!-- Placeholder for Author content -->
-  </section>
+  <!-- Main Content Section -->
+  <div id="main-content">
+    <!-- Content will be dynamically loaded here -->
+  </div>
 
   <!-- Social Media Links -->
   <div id="socialmedia">
@@ -67,6 +37,18 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    function getData(xmlFile) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("main-content").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", xmlFile, true);
+      xhttp.send();
+    }
+  </script>
 </body>
 
 </html>
