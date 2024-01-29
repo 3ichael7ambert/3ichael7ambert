@@ -1,14 +1,71 @@
 <author>
   <book_series>
+    <img src="imgs/miac.png">
     <![CDATA[
-      <p>Introduction about my "Memorandum in a Cruet" book series.</p>
-      <p>An anthology of poetry.</p>
-      <!-- Add links and placeholders for where to buy the book -->
-      <buy_links>
-        <google_play>Link to Google Play</google_play>
-        <amazon>Link to Amazon</amazon>
-        <!-- Add more buy links as needed -->
-      </buy_links>
+      <p>Embark on an extraordinary literary journey as you immerse yourself in the pages of "Memorandum in a Cruet." This remarkable memoir takes you on a profound exploration of resilience, self-discovery, and the transformative power of storytelling. Through captivating prose and heartfelt reflections, the author unveils the fragments of their life, intricately woven with tales of triumph and tribulation.</p>
+
+      <p>From the evocative portrayal of a challenging childhood, shaped by the struggles of addiction and family dynamics, to the transformative moments of personal growth and the pursuit of dreams, this memoir invites you to witness the author's courageous path of resilience and redemption.</p>
+
+      <p>With each page turned, you'll be drawn deeper into the intricate tapestry of their life, as they navigate the complexities of relationships, seek solace in art and creativity, and grapple with the profound impact of their experiences. The author's unwavering determination and unyielding hope shine through the darkest moments, illuminating the indomitable spirit within.</p>
+
+      <p>"Memorandum in a Cruet" is not merely a memoir but a testament to the power of storytelling as a cathartic and transformative force. Through the author's captivating narrative, you'll be reminded of the inherent strength and resilience that resides within us all, inspiring you to embrace your own journey of self-discovery and embrace the healing power of sharing our stories.</p>
+
+      <p>With its poetic prose and profound insights, "Memorandum in a Cruet" is a memoir that will captivate your heart, resonate with your own experiences, and leave an indelible mark on your soul. It is a testament to the human spirit's capacity to endure, heal, and find redemption, ultimately reminding us of the power of embracing our own unique narratives.</p>
     ]]>
+    <buy_links>
+      <google_play>https://g.co/kgs/LGVuEe1</google_play>
+      <barnes_and_noble>https://www.barnesandnoble.com/w/memorandum-in-a-cruet-3ichael-7ambert/1115861110?ean=9780692758854</barnes_and_noble>
+      <amazon>https://a.co/d/01nsyIF</amazon>
+      <facebook>https://www.facebook.com/MemorandumInACruet/</facebook>
+      <walmart>https://www.walmart.com/ip/Memorandum-in-a-Cruet-Paperback-9780692758854/537401173</walmart>
+      <target>https://www.target.com/p/memorandum-in-a-cruet-by-michael-andrew-lambert-paperback/-/A-88739023#lnk=sametab</target>
+    </buy_links>
+    <amazon_embed>
+      <iframe type="text/html" sandbox="allow-scripts allow-same-origin allow-popups" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B00E3088BG&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_7Z8SVRKS8HRK8K2KN6T2&tag=michaellamber-20" ></iframe>
+    </amazon_embed>
   </book_series>
+
+  <!-- Additional Books in the Anthology -->
+  <additional_books>
+    <book>
+      <img src="imgs/miac-deluxe.jpg">
+      <title>Memorandum in a Cruet: Deluxe</title>
+      <description>A colorful deluxe version in the series</description>
+    </book>
+    <book>
+      <img src="imgs/miac-forbidden.jpg">
+      <title>Memorandum in a Cruet: Forbidden Chronicles</title>
+    </book>
+    <book>
+      <img src="imgs/miac-tears.jpg">
+      <title>Memorandum in a Cruet: Tears of Resilience</title>
+    </book>
+  </additional_books>
+
+  <!-- Reviews -->
+  <reviews>
+    <review>
+      <rating>5.0 out of 5 stars</rating>
+      <date>January 8, 2024</date>
+      <content>
+        <![CDATA[
+          <p>Quick and thought-provoking read!</p>
+          <p>Thought-provoking poems from different perspectives. I enjoy the creativity in each page and the art that accompanies the poems. Excited to read other works by this Author. At under 200 pages I finished it in just a couple of days and was ready for more!</p>
+        ]]>
+      </content>
+      <author>Corey Shamblin</author>
+    </review>
+    <review>
+      <rating>5.0 out of 5 stars</rating>
+      <date>January 8, 2024</date>
+      <content>
+        <![CDATA[
+          <p>BUY IT NOW! YOU'RE MISSING OUT!</p>
+          <p>Inspiring talented poet that shows passion in their books. Would highly recommend.</p>
+        ]]>
+      </content>
+      <author>Deanna</author>
+    </review>
+    <!-- Add more reviews as needed -->
+  </reviews>
 </author>

@@ -4,6 +4,8 @@
       <p>Introduction about my software engineering experience and skills.</p>
     ]]>
   </introduction>
+  <a href="https://docs.google.com/document/d/1vQtC0EbHee_K2bB_h8WwFTEPI-QaqxBSeTKAbBAlc1E/edit?usp=sharing">Software Engineer Resume</a>
+  
   <focus>
     <languages>
       <language>PHP</language>
@@ -33,6 +35,30 @@
     </project>
     <!-- Add more projects as needed -->
   </projects>
+  <gamedev>
+    <start_year>2002</start_year>
+    <tools>
+      <tool>Game Maker</tool>
+      <tool>Basic</tool>
+      <tool>Java</tool>
+    </tools>
+    <education>
+      <course>Web Design I and II</course>
+      <course>Java I and II</course>
+    </education>
+    <certificate>Web Development Certificate</certificate>
+    <development_focus>
+      <technology>JavaScript</technology>
+      <technology>React</technology>
+      <technology>Python</technology>
+      <technology>Node</technology>
+      <technology>Express</technology>
+    </development_focus>
+    <game_links>
+      <steam>https://store.steampowered.com/publisher/3ichael7ambert</steam>
+      <itchio>https://3ichael7ambert.itch.io</itchio>
+    </game_links>
+  </gamedev>
   <links>
     <github>http://www.github.com/3ichael7ambert</github>
   </links>

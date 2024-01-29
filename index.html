@@ -11,7 +11,7 @@
   <header>
     <h1>Michael Lambert Jr</h1>
     <h2>Software Engineer | Graphic Illustrator | Music Composer | Author</h2>
-    <p>I am a software engineer, graphic illustrator, music composer, and author with years of experience in retail, management, and logistics. "Design with a Technical Mind."</p>
+    <p>I am a software engineer, graphic illustrator, music composer, and author with years of experience in retail, management, and logistics. <br><h3>"Design with a Technical Mind."</h3></p>
   </header>
 
   <!-- Buttons for Interchanging Data Block -->
@@ -21,6 +21,7 @@
     <button onclick="getData('music_composer.xml')">Music Composer</button>
     <button onclick="getData('author.xml')">Author</button>
     <button onclick="getData('credentials.xml')">Credentials</button>
+    <button onclick="getData('stores.xml')">Merch</button>
   </div>
 
   <!-- Main Content Section -->
@@ -30,25 +31,13 @@
 
   <!-- Social Media Links -->
   <div id="socialmedia">
-    <a href="http://facebook.com/3ichael7ambertOfficial">Facebook</a>|
-    <a href="http://www.twitter.com/3ichael7ambert">Twitter</a>|
-    <a href="http://www.instagram.com/3ichael7ambert">Instagram</a>|
-    <a href="http://www.youtube.com/3ichael7ambert">YouTube</a>
+    <a href="http://facebook.com/3ichael7ambertOfficial" target="_blank">Facebook</a>|
+    <a href="http://www.twitter.com/3ichael7ambert" target="_blank">Twitter</a>|
+    <a href="http://www.instagram.com/3ichael7ambert" target="_blank">Instagram</a>|
+    <a href="http://www.youtube.com/3ichael7ambert" target="_blank">YouTube</a>
   </div>
 
   <script src="script.js"></script>
-  <script>
-    function getData(xmlFile) {
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("main-content").innerHTML = this.responseText;
-        }
-      };
-      xhttp.open("GET", xmlFile, true);
-      xhttp.send();
-    }
-  </script>
 </body>
 
 </html>

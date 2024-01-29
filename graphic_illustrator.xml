@@ -1,0 +1,45 @@
+<graphic_illustrator>
+  <portraitography>
+    <![CDATA[
+      <p>Introduction about my portraitography work.</p>
+      <p>Placeholder for specific content related to portraitography.</p>
+      <p>Links:</p>
+      <ul>
+        <li><a href="https://www.deviantart.com/3ichael7ambert">DeviantArt</a></li>
+        <li><a href="https://www.behance.net/mikeylambert">Behance</a></li>
+        <li><a href="https://www.artstation.com/odonisorphane">ArtStation</a></li>
+        <li><a href="https://www.youtube.com/channel/UCNK96I3kJJTPuPom1DzXJww">YouTube Channel</a></li>
+      </ul>
+    ]]>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/k9ClZYGLuKk?si=J6qzJnysgSVeGf1y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </portraitography>
+  <fine_arts>
+    <![CDATA[
+      <p>Introduction about my various fine arts.</p>
+      <p>Placeholder for specific content related to various fine arts.</p>
+      <p>Links:</p>
+      <ul>
+        <li><a href="https://www.deviantart.com/3ichael7ambert">DeviantArt</a></li>
+        <li><a href="https://www.behance.net/mikeylambert">Behance</a></li>
+        <li><a href="https://www.artstation.com/odonisorphane">ArtStation</a></li>
+        <li><a href="https://www.youtube.com/channel/UCNK96I3kJJTPuPom1DzXJww">YouTube Channel</a></li>
+      </ul>
+    ]]>
+  </fine_arts>
+  <animations>
+    <![CDATA[
+      <p>Introduction about my animations.</p>
+      <p>Placeholder for specific content related to animations.</p>
+      <p>Links:</p>
+      <ul>
+        <li><a href="https://www.deviantart.com/3ichael7ambert">DeviantArt</a></li>
+        <li><a href="https://www.behance.net/mikeylambert">Behance</a></li>
+        <li><a href="https://www.artstation.com/odonisorphane">ArtStation</a></li>
+        <li><a href="https://www.youtube.com/channel/UCNK96I3kJJTPuPom1DzXJww">YouTube Channel</a></li>
+        <li>360 Animations Playlist: <a href="https://www.youtube.com/watch?v=WWFhvThEQEU&list=PLlOnbBlE5oPHXuhqEjF_8jNxYi1lieI6Y">Link to Playlist</a></li>
+      </ul>
+      <p>Embedded YouTube Video:</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/GgOpfQE2cyM?si=AX6CuAKR8DX1biBB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    ]]>
+  </animations>
+</graphic_illustrator>

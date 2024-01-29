@@ -1,0 +1,28 @@
+<stores>
+  <store>
+    <name>Gumroad</name>
+    <url>https://3ichael7ambert.gumroad.com/</url>
+    <description>Sell custom Procreate and Photoshop brushes, as well as soundfonts and green screen videos.</description>
+  </store>
+  <store>
+    <name>Redbubble</name>
+    <url>https://www.redbubble.com/people/OdonisOrphane/</url>
+    <description>Sell various merchandise.</description>
+  </store>
+   <store>
+    <name>Society6</name>
+    <url>https://society6.com/3ichael7ambert/</url>
+    <description>Sell various merchandise.</description>
+  </store>
+   <store>
+    <name>eBay</name>
+    <url>https://www.ebay.com/usr/3ichael7ambert</url>
+    <description>Sell various merchandise.</description>
+  </store>
+</stores>
+
+<img src="imgs/shirt-tropical.jpg">
+<img src="imgs/muskrats-prints.jpg">
+<img src="imgs/shirt-sketchbook.png">
+<img src="imgs/shirt-spray.jpg">
+<img src="imgs/shirt-cherry.jpg">

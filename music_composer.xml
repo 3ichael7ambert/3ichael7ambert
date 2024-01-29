@@ -2,15 +2,37 @@
   <journey>
     <![CDATA[
       <p>Introduction about my music journey.</p>
-      <p>Started on guitar and expanded to bass, piano, ukulele, banjo, mandolin, and more.</p>
-      <p>Recorded using FL Studio 4 in 2004 and played bass in my church youth group.</p>
-      <p>First band received over 1 million plays during the MySpace era.</p>
-      <p>Since 2009, mainly releasing music under the name 'A Rocket’s Intensity'.</p>
+      <p>Started playing guitar and making digital music in 2004 in FL Studio.</p>
+      <p>Picked up bass guitar and played live weekly in my church youth group band.</p>
+      <p>In 2008, formed a band "Think About It Later" (<a href="http://www.myspace.com/thinkaboutitlatermusic">Myspace</a>) and received two million plays on Myspace.</p>
     ]]>
   </journey>
   <sections>
     <![CDATA[
-      <!-- Add specific sections with links, embeds, etc. -->
+      <p>"Treasure" by Think About It Later</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/7XCrJ3qEP-c?si=PZBxuXALUZ_C1-xj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+      <p>Solo project "A Rocket's Intensity" with first singles "Moonlit Divide" and "Globaltonic Blast"</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/t9SS_fcG8ac?si=4rCC0DZF91lzkHkl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+      <p>Series of albums called "Spread Love Like Wildfire"</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/O8DT6mpUThA?si=k4C2Ogg-wTJx4fs2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+      <p>Recorded on piano, ukulele, banjo, Harmonia, mandolin, dulcimer in folk, rock, dance, electronic, acoustic genres.</p>
+      
+      <p>"Guardians of the Waterfall"</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/34ivQ6z85yQ?si=_7qRAkWY404ATKPG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      
+      <p>A Rocket's Intensity Links:</p>
+      <ul>
+        <li><a href="https://www.youtube.com/arocketsintensity">YouTube</a></li>
+        <li><a href="https://open.spotify.com/artist/0rWENRqbBZZK4RxUu8Q7CP?autoplay=true&source_application=google_assistant">Spotify</a></li>
+        <li><a href="https://music.apple.com/us/artist/a-rockets-intensity/576515896">Apple Music</a></li>
+        <li><a href="https://www.deezer.com/us/artist/4803126?autoplay=true">Deezer</a></li>
+        <li><a href="https://soundcloud.com/odonisorphane">SoundCloud</a></li>
+        <li><a href="https://www.iheart.com/artist/a-rockets-intensity-32111989/?autoplay=true">iHeartRadio</a></li>
+        <li><a href="http://www.pandora.com/?sc=miR6603447">Pandora</a></li>
+      </ul>
     ]]>
   </sections>
 </music_composer>
