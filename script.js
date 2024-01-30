@@ -78,17 +78,21 @@ function displayAuthor(root) {
   output += "</div>";
   document.getElementById("main-content").innerHTML = output;
 }
+
+
+
+
 // Function to display graphic illustrator content
 function displayGraphicIllustrator(root) {
-  var portraitography = root.querySelector("portraitography");
-  var fineArts = root.querySelector("fine_arts");
-  var animations = root.querySelector("animations");
+  var portraitography = root.getElementsByTagName("portraitography")[0];
+  var fineArts = root.getElementsByTagName("fine_arts")[0];
+  var animations = root.getElementsByTagName("animations")[0];
 
   var output = "<h2>Graphic Illustrator</h2>";
 
   // Display Portraitography
   output += "<div id='portraitography'>";
-  output += portraitography.querySelector("p").textContent; // Display the introduction
+  output += portraitography.getElementsByTagName("p")[0].textContent; // Display the introduction
   output += "<div>" + portraitography.querySelector("iframe").outerHTML + "</div>"; // Display the YouTube video
   output += "<p>Links:</p>";
   output += "<ul>";
@@ -101,7 +105,7 @@ function displayGraphicIllustrator(root) {
 
   // Display Fine Arts
   output += "<div id='fine-arts'>";
-  output += fineArts.querySelector("p").textContent; // Display the introduction
+  output += fineArts.getElementsByTagName("p")[0].textContent; // Display the introduction
   output += "<p>Links:</p>";
   output += "<ul>";
   var fineArtsLinks = fineArts.querySelectorAll("ul li");
@@ -113,7 +117,7 @@ function displayGraphicIllustrator(root) {
 
   // Display Animations
   output += "<div id='animations'>";
-  output += animations.querySelector("p").textContent; // Display the introduction
+  output += animations.getElementsByTagName("p")[0].textContent; // Display the introduction
   output += "<p>Links:</p>";
   output += "<ul>";
   var animationLinks = animations.querySelectorAll("ul li");
@@ -127,6 +131,8 @@ function displayGraphicIllustrator(root) {
 
   document.getElementById("main-content").innerHTML = output;
 }
+
+
 
 // Function to display music composer content
 function displayMusicComposer(root) {
@@ -272,7 +278,7 @@ function displayStores(root) {
 
 // Extract the category from the URL
 var urlParams = new URLSearchParams(window.location.search);
-var category = urlParams.get('category');
+var category = urlParams.get('category'); 
 
 // Call the getData function with the appropriate XML file path based on the category
 if (category) {
