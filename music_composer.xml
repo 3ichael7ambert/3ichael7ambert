@@ -1,4 +1,4 @@
-<music_composer>
+<music_composer type="music_composer">
   <journey>
     <![CDATA[
       <p>Introduction about my music journey.</p>
@@ -19,10 +19,10 @@
       <iframe width="560" height="315" src="https://www.youtube.com/embed/O8DT6mpUThA?si=k4C2Ogg-wTJx4fs2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
       <p>Recorded on piano, ukulele, banjo, Harmonia, mandolin, dulcimer in folk, rock, dance, electronic, acoustic genres.</p>
-      
+
       <p>"Guardians of the Waterfall"</p>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/34ivQ6z85yQ?si=_7qRAkWY404ATKPG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      
+
       <p>A Rocket's Intensity Links:</p>
       <ul>
         <li><a href="https://www.youtube.com/arocketsintensity">YouTube</a></li>

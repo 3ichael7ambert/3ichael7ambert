@@ -1,11 +1,10 @@
-<software_engineering>
+<software_engineering type="software_engineering">
   <introduction>
     <![CDATA[
       <p>Introduction about my software engineering experience and skills.</p>
+      <a href="https://docs.google.com/document/d/1vQtC0EbHee_K2bB_h8WwFTEPI-QaqxBSeTKAbBAlc1E/edit?usp=sharing">Software Engineer Resume</a>
     ]]>
   </introduction>
-  <a href="https://docs.google.com/document/d/1vQtC0EbHee_K2bB_h8WwFTEPI-QaqxBSeTKAbBAlc1E/edit?usp=sharing">Software Engineer Resume</a>
-  
   <focus>
     <languages>
       <language>PHP</language>

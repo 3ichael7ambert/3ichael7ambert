@@ -1,4 +1,4 @@
-<graphic_illustrator>
+<graphic_illustrator type="graphic_illustrator">
   <portraitography>
     <![CDATA[
       <p>Introduction about my portraitography work.</p>
@@ -10,8 +10,8 @@
         <li><a href="https://www.artstation.com/odonisorphane">ArtStation</a></li>
         <li><a href="https://www.youtube.com/channel/UCNK96I3kJJTPuPom1DzXJww">YouTube Channel</a></li>
       </ul>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/k9ClZYGLuKk?si=J6qzJnysgSVeGf1y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     ]]>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/k9ClZYGLuKk?si=J6qzJnysgSVeGf1y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   </portraitography>
   <fine_arts>
     <![CDATA[

@@ -48,10 +48,10 @@
       <rating>5.0 out of 5 stars</rating>
       <date>January 8, 2024</date>
       <content>
-        <![CDATA[
+
           <p>Quick and thought-provoking read!</p>
           <p>Thought-provoking poems from different perspectives. I enjoy the creativity in each page and the art that accompanies the poems. Excited to read other works by this Author. At under 200 pages I finished it in just a couple of days and was ready for more!</p>
-        ]]>
+
       </content>
       <author>Corey Shamblin</author>
     </review>
@@ -59,13 +59,12 @@
       <rating>5.0 out of 5 stars</rating>
       <date>January 8, 2024</date>
       <content>
-        <![CDATA[
+
           <p>BUY IT NOW! YOU'RE MISSING OUT!</p>
           <p>Inspiring talented poet that shows passion in their books. Would highly recommend.</p>
-        ]]>
+
       </content>
       <author>Deanna</author>
     </review>
-    <!-- Add more reviews as needed -->
   </reviews>
 </author>

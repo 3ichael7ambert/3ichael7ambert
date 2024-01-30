@@ -2,9 +2,17 @@
 function getData(xmlFile) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      var xmlDoc = this.responseXML;
-      processData(xmlDoc);
+    if (this.readyState == 4) {
+      if (this.status == 200) {
+        var xmlDoc = this.responseXML;
+        if (xmlDoc) {
+          processData(xmlDoc);
+        } else {
+          console.error("Failed to parse XML. Response text:", this.responseText);
+        }
+      } else {
+        console.error("Failed to load XML file. Status: " + this.status);
+      }
     }
   };
   xhttp.open("GET", xmlFile, true);
@@ -40,18 +48,17 @@ function processData(xmlDoc) {
   }
 }
 
-
 // Function to display author content
 function displayAuthor(root) {
-  var bookSeries = root.getElementsByTagName("book_series")[0];
-  var buyLinks = bookSeries.getElementsByTagName("buy_links")[0];
-  var amazonEmbed = bookSeries.getElementsByTagName("amazon_embed")[0];
+  var bookSeries = root.querySelector("book_series");
+  var buyLinks = bookSeries.querySelector("buy_links");
+  var amazonEmbed = bookSeries.querySelector("amazon_embed");
 
   var output = "<h2>Book Series: Memorandum in a Cruet</h2>";
 
   // Display book series information
   output += "<div id='book-series'>";
-  output += "<img src='" + bookSeries.getAttribute("img") + "'>";
+  output += "<img src='" + bookSeries.querySelector("img").getAttribute("src") + "'>";
   output += bookSeries.textContent;
   output += "<div>";
 
@@ -71,29 +78,51 @@ function displayAuthor(root) {
   output += "</div>";
   document.getElementById("main-content").innerHTML = output;
 }
-
 // Function to display graphic illustrator content
 function displayGraphicIllustrator(root) {
-  var portraitography = root.getElementsByTagName("portraitography")[0];
-  var fineArts = root.getElementsByTagName("fine_arts")[0];
-  var animations = root.getElementsByTagName("animations")[0];
+  var portraitography = root.querySelector("portraitography");
+  var fineArts = root.querySelector("fine_arts");
+  var animations = root.querySelector("animations");
 
   var output = "<h2>Graphic Illustrator</h2>";
 
   // Display Portraitography
   output += "<div id='portraitography'>";
-  output += portraitography.textContent;
-  output += "<div>" + portraitography.getElementsByTagName("iframe")[0].outerHTML + "</div>";
+  output += portraitography.querySelector("p").textContent; // Display the introduction
+  output += "<div>" + portraitography.querySelector("iframe").outerHTML + "</div>"; // Display the YouTube video
+  output += "<p>Links:</p>";
+  output += "<ul>";
+  var portraitLinks = portraitography.querySelectorAll("ul li");
+  portraitLinks.forEach(function (link) {
+    output += "<li>" + link.innerHTML + "</li>";
+  });
+  output += "</ul>";
   output += "</div>";
 
   // Display Fine Arts
   output += "<div id='fine-arts'>";
-  output += fineArts.textContent;
+  output += fineArts.querySelector("p").textContent; // Display the introduction
+  output += "<p>Links:</p>";
+  output += "<ul>";
+  var fineArtsLinks = fineArts.querySelectorAll("ul li");
+  fineArtsLinks.forEach(function (link) {
+    output += "<li>" + link.innerHTML + "</li>";
+  });
+  output += "</ul>";
   output += "</div>";
 
   // Display Animations
   output += "<div id='animations'>";
-  output += animations.textContent;
+  output += animations.querySelector("p").textContent; // Display the introduction
+  output += "<p>Links:</p>";
+  output += "<ul>";
+  var animationLinks = animations.querySelectorAll("ul li");
+  animationLinks.forEach(function (link) {
+    output += "<li>" + link.innerHTML + "</li>";
+  });
+  output += "</ul>";
+  output += "<p>Embedded YouTube Video:</p>";
+  output += animations.querySelector("iframe").outerHTML; // Display the YouTube video
   output += "</div>";
 
   document.getElementById("main-content").innerHTML = output;
@@ -101,23 +130,26 @@ function displayGraphicIllustrator(root) {
 
 // Function to display music composer content
 function displayMusicComposer(root) {
-  var journey = root.getElementsByTagName("journey")[0];
-  var sections = root.getElementsByTagName("sections")[0];
+  var journey = root.querySelector("journey");
+  var sections = root.querySelector("sections");
 
   var output = "<h2>Music Composer</h2>";
 
   // Display Music Journey
   output += "<div id='music-journey'>";
-  output += journey.textContent;
+  output += journey.innerHTML; // Display the music journey content
   output += "</div>";
 
   // Display Music Sections
   output += "<div id='music-sections'>";
-  output += sections.textContent;
+  output += sections.innerHTML; // Display the music sections content
   output += "</div>";
 
   document.getElementById("main-content").innerHTML = output;
 }
+
+
+
 
 // Function to display software engineering content
 function displaySoftwareEngineering(root) {
@@ -145,47 +177,73 @@ function displaySoftwareEngineering(root) {
   output += "</ul>";
 
   output += "<h3>Recent Focus</h3>";
-  output += "<ul>";
-  var recentFocus = focus.getElementsByTagName("recent_focus")[0].getElementsByTagName("technology");
-  for (var i = 0; i < recentFocus.length; i++) {
-    output += "<li>" + recentFocus[i].textContent + "</li>";
-  }
-  output += "</ul>";
+  output += focus.querySelector("recent_focus").textContent;
   output += "</div>";
 
   // Display Projects
   output += "<div id='projects'>";
-  output += "<h3>Projects</h3>";
   var projectList = projects.getElementsByTagName("project");
   for (var i = 0; i < projectList.length; i++) {
-    output += "<h4>" + projectList[i].getElementsByTagName("name")[0].textContent + "</h4>";
+    output += "<div class='project'>";
+    output += "<h3>" + projectList[i].getElementsByTagName("name")[0].textContent + "</h3>";
     output += "<p>" + projectList[i].getElementsByTagName("description")[0].textContent + "</p>";
+    output += "</div>";
   }
   output += "</div>";
 
   // Display Game Development
   output += "<div id='gamedev'>";
-  output += "<h3>Game Development</h3>";
-  output += "<p>Started in " + gamedev.getElementsByTagName("start_year")[0].textContent + "</p>";
-  output += "<p>Tools used: " + gamedev.getElementsByTagName("tools")[0].textContent + "</p>";
-  output += "<p>Education: " + gamedev.getElementsByTagName("education")[0].textContent + "</p>";
-  output += "<p>Certificate: " + gamedev.getElementsByTagName("certificate")[0].textContent + "</p>";
-  output += "<p>Development Focus: " + gamedev.getElementsByTagName("development_focus")[0].textContent + "</p>";
-  output += "<h4>Game Links</h4>";
-  output += "<ul>";
-  var gameLinks = gamedev.getElementsByTagName("game_links")[0].children;
-  for (var i = 0; i < gameLinks.length; i++) {
-    output += "<li>" + gameLinks[i].tagName + ": <a href='" + gameLinks[i].textContent + "' target='_blank'>" + gameLinks[i].textContent + "</a></li>";
-  }
-  output += "</ul>";
+  output += gamedev.textContent;
   output += "</div>";
 
   // Display Useful Links
   output += "<div id='useful-links'>";
   output += "<h3>Useful Links</h3>";
-  var usefulLinks = links.children;
-  for (var i = 0; i < usefulLinks.length; i++) {
-    output += "<a href='" + usefulLinks[i].textContent + "' target='_blank'>" + usefulLinks[i].tagName + "</a>";
+  var linkList = links.getElementsByTagName("link");
+  output += "<ul>";
+  for (var i = 0; i < linkList.length; i++) {
+    output += "<li><a href='" + linkList[i].textContent + "' target='_blank'>" + linkList[i].getAttribute("type") + "</a></li>";
+  }
+  output += "</ul>";
+  output += "</div>";
+
+  document.getElementById("main-content").innerHTML = output;
+}
+
+// Function to display credentials content
+function displayCredentials(root) {
+  var education = root.getElementsByTagName("education")[0];
+  var experience = root.getElementsByTagName("experience")[0];
+
+  var output = "<h2>Credentials</h2>";
+
+  // Display Education
+  output += "<div id='education'>";
+  output += "<h3>Education</h3>";
+  var degrees = education.getElementsByTagName("degree");
+  for (var i = 0; i < degrees.length; i++) {
+    output += "<div class='degree'>";
+    output += "<h4>" + degrees[i].getElementsByTagName("title")[0].textContent + "</h4>";
+    output += "<p>" + degrees[i].getElementsByTagName("institution")[0].textContent + ", " + degrees[i].getElementsByTagName("year")[0].textContent + "</p>";
+    output += "</div>";
+  }
+  output += "</div>";
+
+  // Display Experience
+  output += "<div id='experience'>";
+  output += "<h3>Experience</h3>";
+  var positions = experience.getElementsByTagName("position");
+  for (var i = 0; i < positions.length; i++) {
+    output += "<div class='position'>";
+    output += "<h4>" + positions[i].getElementsByTagName("title")[0].textContent + "</h4>";
+    output += "<p>" + positions[i].getElementsByTagName("company")[0].textContent + ", " + positions[i].getElementsByTagName("years")[0].textContent + "</p>";
+    output += "<ul>";
+    var tasks = positions[i].getElementsByTagName("task");
+    for (var j = 0; j < tasks.length; j++) {
+      output += "<li>" + tasks[j].textContent + "</li>";
+    }
+    output += "</ul>";
+    output += "</div>";
   }
   output += "</div>";
 
@@ -198,12 +256,13 @@ function displayStores(root) {
 
   var output = "<h2>Stores</h2>";
 
-  output += "<div id='stores-list'>";
+  // Display Stores
+  output += "<div id='stores'>";
   for (var i = 0; i < stores.length; i++) {
-    output += "<div class='store-item'>";
+    output += "<div class='store'>";
     output += "<h3>" + stores[i].getElementsByTagName("name")[0].textContent + "</h3>";
     output += "<p>" + stores[i].getElementsByTagName("description")[0].textContent + "</p>";
-    output += "<a href='" + stores[i].getElementsByTagName("link")[0].textContent + "' target='_blank'>" + stores[i].getElementsByTagName("link")[0].tagName + "</a>";
+    output += "<a href='" + stores[i].getElementsByTagName("link")[0].textContent + "' target='_blank'>Visit Store</a>";
     output += "</div>";
   }
   output += "</div>";
@@ -211,39 +270,13 @@ function displayStores(root) {
   document.getElementById("main-content").innerHTML = output;
 }
 
-// Function to display credentials content
-function displayCredentials(root) {
-  var education = root.getElementsByTagName("education")[0];
-  var certificates = root.getElementsByTagName("certificates")[0];
-  var skills = root.getElementsByTagName("skills")[0];
+// Extract the category from the URL
+var urlParams = new URLSearchParams(window.location.search);
+var category = urlParams.get('category');
 
-  var output = "<h2>Credentials</h2>";
-
-  // Display Education
-  output += "<div id='education'>";
-  output += "<h3>Education</h3>";
-  output += "<p>" + education.getElementsByTagName("degree")[0].textContent + " in " + education.getElementsByTagName("major")[0].textContent + "</p>";
-  output += "<p>" + education.getElementsByTagName("university")[0].textContent + ", " + education.getElementsByTagName("graduation_year")[0].textContent + "</p>";
-  output += "</div>";
-
-  // Display Certificates
-  output += "<div id='certificates'>";
-  output += "<h3>Certificates</h3>";
-  var certificateList = certificates.getElementsByTagName("certificate");
-  for (var i = 0; i < certificateList.length; i++) {
-    output += "<h4>" + certificateList[i].getElementsByTagName("name")[0].textContent + "</h4>";
-    output += "<p>" + certificateList[i].getElementsByTagName("organization")[0].textContent + ", " + certificateList[i].getElementsByTagName("completion_year")[0].textContent + "</p>";
-  }
-  output += "</div>";
-
-  // Display Skills
-  output += "<div id='skills'>";
-  output += "<h3>Skills</h3>";
-  var skillsList = skills.children;
-  for (var i = 0; i < skillsList.length; i++) {
-    output += "<p>" + skillsList[i].tagName + ": " + skillsList[i].textContent + "</p>";
-  }
-  output += "</div>";
-
-  document.getElementById("main-content").innerHTML = output;
+// Call the getData function with the appropriate XML file path based on the category
+if (category) {
+  getData(category + ".xml");
+} else {
+  console.error("Category not specified in the URL.");
 }
