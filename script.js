@@ -19,10 +19,27 @@ function getData(xmlFile) {
   xhttp.send();
 }
 
+// Extract the category from the URL
+var urlParams = new URLSearchParams(window.location.search);
+var category = urlParams.get('category');
+
+// Check if category is specified and not null or empty
+if (category && category.trim() !== "") {
+  getData(category + ".xml");
+} else {
+  console.error("Category not specified in the URL or is empty.");
+}
+
+
 // Function to process the XML data and call the appropriate display function
 function processData(xmlDoc) {
+  console.log("XML Document:", xmlDoc);
+
   var root = xmlDoc.documentElement;
+  console.log("Root Element:", root);
+
   var dataType = root.getAttribute("type");
+  console.log("Data Type:", dataType);
 
   switch (dataType) {
     case "software_engineering":
@@ -48,89 +65,193 @@ function processData(xmlDoc) {
   }
 }
 
-// Function to display author content
 function displayAuthor(root) {
-  var bookSeries = root.querySelector("book_series");
-  var buyLinks = bookSeries.querySelector("buy_links");
-  var amazonEmbed = bookSeries.querySelector("amazon_embed");
+  try {
+    var bookSeries = root.querySelector("book_series");
+    var buyLinks = bookSeries.querySelector("buy_links");
+    var amazonEmbed = bookSeries.querySelector("amazon_embed");
 
-  var output = "<h2>Book Series: Memorandum in a Cruet</h2>";
+    var output = "<h2>Book Series: Memorandum in a Cruet</h2>";
 
-  // Display book series information
-  output += "<div id='book-series'>";
-  output += "<img src='" + bookSeries.querySelector("img").getAttribute("src") + "'>";
-  output += bookSeries.textContent;
-  output += "<div>";
+    // Helper function to parse CDATA content
+    function parseCDATAContent(cdata) {
+      try {
+        var parser = new DOMParser();
+        var cdataDoc = parser.parseFromString(cdata, "application/xml");
 
-  // Display buy links
-  output += "<div id='buy-links'>";
-  var links = buyLinks.children;
-  for (var i = 0; i < links.length; i++) {
-    output += "<a href='" + links[i].textContent + "' target='_blank'>" + links[i].tagName + "</a>";
+        // Extract the text content
+        var textContent = cdataDoc.documentElement.textContent || "";
+
+        return {
+          textContent: textContent,
+        };
+      } catch (error) {
+        console.error("Error in parseCDATAContent function:", error);
+        return {
+          textContent: "",
+        };
+      }
+    }
+
+    // Display book series information
+    output += "<div id='book-series'>";
+    output += "<img src='" + bookSeries.querySelector("img").getAttribute("src") + "'>";
+    output += parseCDATAContent(bookSeries.innerHTML).textContent;
+    output += "</div>";
+
+    // Display buy links
+    output += "<div id='buy-links'>";
+    var links = buyLinks.children;
+    for (var i = 0; i < links.length; i++) {
+      // Access the text content of the child element, which is the URL
+      output += "<a href='" + links[i].textContent + "' target='_blank'>" + links[i].tagName + "</a>";
+    }
+    output += "</div>";
+
+    // Display Amazon embed
+    output += "<div id='amazon-embed'>";
+    // Access the text content of the <amazon_embed> element
+    output += parseCDATAContent(amazonEmbed.outerHTML).textContent;
+    output += "</div>";
+
+    output += "</div>";
+    document.getElementById("main-content").innerHTML = output;
+  } catch (error) {
+    console.error("Error in displayAuthor function:", error);
   }
-  output += "</div>";
-
-  // Display Amazon embed
-  output += "<div id='amazon-embed'>";
-  output += amazonEmbed.innerHTML;
-  output += "</div>";
-
-  output += "</div>";
-  document.getElementById("main-content").innerHTML = output;
 }
 
 
 
 
-// Function to display graphic illustrator content
+
+
+
+
+
+
+
 function displayGraphicIllustrator(root) {
-  var portraitography = root.getElementsByTagName("portraitography")[0];
-  var fineArts = root.getElementsByTagName("fine_arts")[0];
-  var animations = root.getElementsByTagName("animations")[0];
+  var portraitography = root.querySelector("portraitography");
+  var fineArts = root.querySelector("fine_arts");
+  var animations = root.querySelector("animations");
 
   var output = "<h2>Graphic Illustrator</h2>";
 
+  function parseCDATAContent(cdata) {
+    var tempDiv = document.createElement("div");
+    tempDiv.innerHTML = cdata;
+
+    // Extract the text content
+    var textContent = tempDiv.innerText || tempDiv.textContent || "";
+
+    // Extract the HTML content
+    var htmlContent = tempDiv.innerHTML || "";
+
+    return {
+      textContent: textContent,
+      htmlContent: htmlContent,
+    };
+  }
+
   // Display Portraitography
-  output += "<div id='portraitography'>";
-  output += portraitography.getElementsByTagName("p")[0].textContent; // Display the introduction
-  output += "<div>" + portraitography.querySelector("iframe").outerHTML + "</div>"; // Display the YouTube video
-  output += "<p>Links:</p>";
-  output += "<ul>";
-  var portraitLinks = portraitography.querySelectorAll("ul li");
-  portraitLinks.forEach(function (link) {
-    output += "<li>" + link.innerHTML + "</li>";
-  });
-  output += "</ul>";
-  output += "</div>";
+  if (portraitography) {
+    output += "<div id='portraitography'>";
+
+    // Parse CDATA content
+    var portraitographyContent = parseCDATAContent(portraitography.textContent);
+
+    // Display the extracted HTML content
+    output += portraitographyContent.htmlContent;
+
+    // Continue with the rest of your function for links and YouTube video
+
+    // Display Links
+    var linksUl = portraitography.querySelector("ul");
+    if (linksUl) {
+      output += "<p>Links:</p><ul>";
+
+      var links = linksUl.getElementsByTagName("li");
+      for (var i = 0; i < links.length; i++) {
+        output += "<li>" + (links[i].innerHTML || "") + "</li>";
+      }
+
+      output += "</ul>";
+    }
+
+    // Display YouTube Video
+    var videoIframe = portraitography.querySelector("iframe");
+    if (videoIframe) {
+      output += "<div>" + (videoIframe.outerHTML || "") + "</div>";
+    }
+
+    output += "</div>";
+  }
+
 
   // Display Fine Arts
-  output += "<div id='fine-arts'>";
-  output += fineArts.getElementsByTagName("p")[0].textContent; // Display the introduction
-  output += "<p>Links:</p>";
-  output += "<ul>";
-  var fineArtsLinks = fineArts.querySelectorAll("ul li");
-  fineArtsLinks.forEach(function (link) {
-    output += "<li>" + link.innerHTML + "</li>";
-  });
-  output += "</ul>";
-  output += "</div>";
+  if (fineArts) {
+    output += "<div id='fine-arts'>";
+
+    // Parse CDATA content
+    var fineArtsContent = parseCDATAContent(fineArts.textContent);
+
+    // Display the extracted HTML content
+    output += fineArtsContent.htmlContent;
+
+    // Continue with the rest of your function for links and YouTube video
+
+    // Display Links (Assuming a similar structure as Portraitography)
+    var linksUl = fineArts.querySelector("ul");
+    if (linksUl) {
+      output += "<p>Links:</p><ul>";
+
+      var links = linksUl.getElementsByTagName("li");
+      for (var i = 0; i < links.length; i++) {
+        output += "<li>" + (links[i].innerHTML || "") + "</li>";
+      }
+
+      output += "</ul>";
+    }
+
+    // You can add more specific content display here if needed
+
+    output += "</div>";
+  }
 
   // Display Animations
-  output += "<div id='animations'>";
-  output += animations.getElementsByTagName("p")[0].textContent; // Display the introduction
-  output += "<p>Links:</p>";
-  output += "<ul>";
-  var animationLinks = animations.querySelectorAll("ul li");
-  animationLinks.forEach(function (link) {
-    output += "<li>" + link.innerHTML + "</li>";
-  });
-  output += "</ul>";
-  output += "<p>Embedded YouTube Video:</p>";
-  output += animations.querySelector("iframe").outerHTML; // Display the YouTube video
-  output += "</div>";
+  if (animations) {
+    output += "<div id='animations'>";
+
+    // Parse CDATA content
+    var animationsContent = parseCDATAContent(animations.textContent);
+
+    // Display the extracted HTML content
+    output += animationsContent.htmlContent;
+
+    // Continue with the rest of your function for links and YouTube video
+
+    // Display Links (Assuming a similar structure as Portraitography)
+    var linksUl = animations.querySelector("ul");
+    if (linksUl) {
+      output += "<p>Links:</p><ul>";
+
+      var links = linksUl.getElementsByTagName("li");
+      for (var i = 0; i < links.length; i++) {
+        output += "<li>" + (links[i].innerHTML || "") + "</li>";
+      }
+
+      output += "</ul>";
+    }
+
+    // You can add more specific content display here if needed
+
+    output += "</div>";
+  }
 
   document.getElementById("main-content").innerHTML = output;
 }
+
 
 
 
@@ -150,7 +271,6 @@ function displayMusicComposer(root) {
   output += "<div id='music-sections'>";
   output += sections.innerHTML; // Display the music sections content
   output += "</div>";
-
   document.getElementById("main-content").innerHTML = output;
 }
 
@@ -216,45 +336,123 @@ function displaySoftwareEngineering(root) {
   document.getElementById("main-content").innerHTML = output;
 }
 
+
 // Function to display credentials content
 function displayCredentials(root) {
-  var education = root.getElementsByTagName("education")[0];
-  var experience = root.getElementsByTagName("experience")[0];
-
   var output = "<h2>Credentials</h2>";
 
-  // Display Education
-  output += "<div id='education'>";
-  output += "<h3>Education</h3>";
-  var degrees = education.getElementsByTagName("degree");
-  for (var i = 0; i < degrees.length; i++) {
-    output += "<div class='degree'>";
-    output += "<h4>" + degrees[i].getElementsByTagName("title")[0].textContent + "</h4>";
-    output += "<p>" + degrees[i].getElementsByTagName("institution")[0].textContent + ", " + degrees[i].getElementsByTagName("year")[0].textContent + "</p>";
-    output += "</div>";
-  }
-  output += "</div>";
+  function displayEducation() {
+    var education = root.querySelector("education");
+    if (education) {
+      output += "<div id='education'>";
+      output += "<h3>Education</h3>";
 
-  // Display Experience
-  output += "<div id='experience'>";
-  output += "<h3>Experience</h3>";
-  var positions = experience.getElementsByTagName("position");
-  for (var i = 0; i < positions.length; i++) {
-    output += "<div class='position'>";
-    output += "<h4>" + positions[i].getElementsByTagName("title")[0].textContent + "</h4>";
-    output += "<p>" + positions[i].getElementsByTagName("company")[0].textContent + ", " + positions[i].getElementsByTagName("years")[0].textContent + "</p>";
-    output += "<ul>";
-    var tasks = positions[i].getElementsByTagName("task");
-    for (var j = 0; j < tasks.length; j++) {
-      output += "<li>" + tasks[j].textContent + "</li>";
+      var degrees = education.querySelectorAll("degree");
+      degrees.forEach((degree) => {
+        output += "<div class='degree'>";
+        output += `<h4>${degree.querySelector("title").textContent}</h4>`;
+        output += `<p>${degree.querySelector("institution").textContent}, ${degree.querySelector("year").textContent}</p>`;
+        output += "</div>";
+      });
+
+      output += "</div>";
     }
-    output += "</ul>";
-    output += "</div>";
   }
-  output += "</div>";
 
-  document.getElementById("main-content").innerHTML = output;
+  function displayCertificates() {
+    var certificates = root.querySelector("educational_certificates");
+    if (certificates) {
+      output += "<div id='certificates'>";
+      output += "<h3>Educational Certificates</h3>";
+
+      var certificateList = certificates.querySelectorAll("certificate");
+      certificateList.forEach((certificate) => {
+        output += "<div class='certificate'>";
+        output += `<h4>${certificate.querySelector("title").textContent}</h4>`;
+
+        // Display institutions
+        var institutions = certificate.querySelectorAll("institution");
+        if (institutions.length > 0) {
+          output += "<p>Institutions: ";
+          institutions.forEach((institution, index) => {
+            output += institution.textContent;
+            if (index < institutions.length - 1) {
+              output += ", ";
+            }
+          });
+          output += "</p>";
+        }
+
+        // Display badge
+        var badgeScript = certificate.querySelector("badge");
+        if (badgeScript) {
+          var badgeCDATA = badgeScript.firstChild;
+          if (badgeCDATA && badgeCDATA.nodeType === Node.CDATA_SECTION_NODE) {
+            output += "<div class='badge'>";
+            output += badgeCDATA.nodeValue;
+            output += "</div>";
+          }
+        }
+
+        output += "</div>";
+      });
+
+      output += "</div>";
+    }
+  }
+
+  function displayExperience() {
+    var experience = root.querySelector("experience");
+    if (experience) {
+      output += "<div id='experience'>";
+      output += "<h3>Experience</h3>";
+
+      var positions = experience.querySelectorAll("position");
+      positions.forEach((position) => {
+        output += "<div class='position'>";
+        output += `<h4>${position.querySelector("title").textContent}</h4>`;
+        output += `<p>${position.querySelector("company").textContent}, ${position.querySelector("years").textContent}</p>`;
+
+        var tasks = position.querySelectorAll("task");
+        if (tasks.length > 0) {
+          output += "<ul>";
+          tasks.forEach((task) => {
+            output += `<li>${task.textContent}</li>`;
+          });
+          output += "</ul>";
+        }
+
+        output += "</div>";
+      });
+
+      output += "</div>";
+    }
+  }
+
+  displayEducation();
+  displayCertificates();
+  displayExperience();
+
+  var mainContent = document.getElementById("main-content");
+  if (mainContent) {
+    mainContent.innerHTML = output;
+  } else {
+    console.error("Main content element not found.");
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Function to display stores content
 function displayStores(root) {
