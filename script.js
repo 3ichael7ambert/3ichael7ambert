@@ -65,61 +65,58 @@ function processData(xmlDoc) {
   }
 }
 
+
+
+
 function displayAuthor(root) {
-  try {
-    var bookSeries = root.querySelector("book_series");
-    var buyLinks = bookSeries.querySelector("buy_links");
-    var amazonEmbed = bookSeries.querySelector("amazon_embed");
+  var bookSeries = root.querySelector("book_series");
+  var buyLinks = bookSeries.querySelector("buy_links");
+  var amazonEmbed = bookSeries.querySelector("amazon_embed");
 
-    var output = "<h2>Book Series: Memorandum in a Cruet</h2>";
+  var output = "<h2>Book Series: Memorandum in a Cruet</h2>";
 
-    // Helper function to parse CDATA content
-    function parseCDATAContent(cdata) {
-      try {
-        var parser = new DOMParser();
-        var cdataDoc = parser.parseFromString(cdata, "application/xml");
+  function parseCDATAContent(cdata) {
+    var tempDiv = document.createElement("div");
+    tempDiv.innerHTML = cdata.replace(/&gt;/g, '>').replace(/&lt;/g, '<');
 
-        // Extract the text content
-        var textContent = cdataDoc.documentElement.textContent || "";
+    // Extract the text content
+    var textContent = tempDiv.innerText || tempDiv.textContent || "";
 
-        return {
-          textContent: textContent,
-        };
-      } catch (error) {
-        console.error("Error in parseCDATAContent function:", error);
-        return {
-          textContent: "",
-        };
-      }
-    }
+    // Extract the HTML content
+    var htmlContent = tempDiv.innerHTML || "";
 
-    // Display book series information
-    output += "<div id='book-series'>";
-    output += "<img src='" + bookSeries.querySelector("img").getAttribute("src") + "'>";
-    output += parseCDATAContent(bookSeries.innerHTML).textContent;
-    output += "</div>";
-
-    // Display buy links
-    output += "<div id='buy-links'>";
-    var links = buyLinks.children;
-    for (var i = 0; i < links.length; i++) {
-      // Access the text content of the child element, which is the URL
-      output += "<a href='" + links[i].textContent + "' target='_blank'>" + links[i].tagName + "</a>";
-    }
-    output += "</div>";
-
-    // Display Amazon embed
-    output += "<div id='amazon-embed'>";
-    // Access the text content of the <amazon_embed> element
-    output += parseCDATAContent(amazonEmbed.outerHTML).textContent;
-    output += "</div>";
-
-    output += "</div>";
-    document.getElementById("main-content").innerHTML = output;
-  } catch (error) {
-    console.error("Error in displayAuthor function:", error);
+    return {
+      textContent: textContent,
+      htmlContent: htmlContent,
+    };
   }
+
+  // Display book series information
+  output += "<div id='book-series'>";
+  output += parseCDATAContent(bookSeries.innerHTML).htmlContent;
+
+  // Display buy links
+  output += "<div id='buy-links'>";
+  var links = buyLinks.children;
+  for (var i = 0; i < links.length; i++) {
+    // Access the text content of the child element, which is the URL
+    output += "<a href='" + links[i].textContent + "' target='_blank'>" + links[i].tagName + "</a>";
+  }
+  output += "</div>";
+
+  // Display Amazon embed
+  output += "<div id='amazon-embed'>";
+  // Access the text content of the <amazon_embed> element
+  output += parseCDATAContent(amazonEmbed.innerHTML).htmlContent;
+  output += "</div>";
+
+  output += "</div>";
+  document.getElementById("main-content").innerHTML = output;
 }
+
+
+
+
 
 
 
