@@ -23,6 +23,19 @@ I'm an emerging full-stack software developer with a unique background in design
 <a href="https://stackoverflow.com/users/23144952/3ichael-7ambert"><img src="https://stackoverflow.com/users/flair/23144952.png" width="208" height="58" alt="profile for 3ichael 7ambert at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for 3ichael 7ambert at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
 <a href="https://stackexchange.com/users/30200640"><img src="https://stackexchange.com/users/flair/30200640.png" width="208" height="58" alt="profile for 3ichael 7ambert on Stack Exchange, a network of free, community-driven Q&amp;A sites" title="profile for 3ichael 7ambert on Stack Exchange, a network of free, community-driven Q&amp;A sites"></a>
 <br>
+---
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="82c34d63-7850-46de-8b3f-7ef934728e93" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="02315c43-d9b0-4e23-8116-7efd7d16357f" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="abddb907-82ea-47d8-b799-0b596ba6ccd4" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="4f486306-2933-4267-8a3f-a0e34a18b9bf" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5c52c1c6-3704-4835-af16-4b2240a1beb1" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="6fbc8556-3379-4a80-a2e8-6681780cd9d9" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="c9a69e29-c030-4bae-b505-b9c24619781f" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="b6a55ff5-3b11-4cb0-b608-3ec1485361e7" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="7ec284ac-097a-4370-aa3b-c37f313f7854" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+
 
 ---
 ### :hammer_and_wrench: Languages and Tools :
