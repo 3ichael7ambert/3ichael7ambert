@@ -32,8 +32,8 @@ body {
 }
 
 .section {
-  height: 100vh; /* Adjust height as needed */
-  display: flex;
+  /* height: 100vh;  */
+  display: block;
   justify-content: center;
   align-items: center;
   font-size: 24px;
@@ -41,7 +41,6 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
-/* Customize styles for each section as needed */
 
 #experience {
   background-color: #ccc;
@@ -92,7 +91,7 @@ body {
 }
 
 .active-nav {
-  color: #ff0000; /* Change color as needed */
+  color: #ff0000; 
 }
 
 /* styles.css */
@@ -102,7 +101,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensure full viewport height */
+  min-height: 100vh; 
 }
 
 /* Center horizontally */
@@ -112,7 +111,7 @@ header {
 }
 
 .header-content {
-  margin: 0 20px; /* Adjust spacing between elements */
+  margin: 0 20px; 
 }
 
 .header-content h1 {
@@ -120,28 +119,24 @@ header {
   margin-bottom: 10px;
 }
 
-.header-content {
-  margin: 0 20px; /* Adjust spacing between elements */
-}
-
 .header-content p {
-  text-align: left; /* Keep the text aligned to the left */
+  text-align: left; /
 }
 
 .header-content a {
-  display: inline; /* Make the social media icons behave as blocks */
-  margin: 0 auto; /* Center-align the social media icons */
-  max-width: 150px; /* Set a max-width to prevent them from stretching */
+  display: inline; 
+  margin: 0 auto; 
+  max-width: 150px; 
   text-align: center;
 }
 
 .social-media-icons {
-  text-align: center; /* Center-align the social media icons */
+  text-align: center; 
 }
 
 .social-media-icons a {
-  display: inline; /* Make the social media icons behave as blocks */
-  margin: 0 5px; /* Adjust margin between icons */
+  display: inline; 
+  margin: 0 5px; 
   text-decoration: none;
 }
 
@@ -172,8 +167,8 @@ nav ul li a:hover {
 }
 
 .img-link {
-  width: 30px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 30px; 
+  height: auto; /
 }
 
 /* #introduction img:first-child,
@@ -196,7 +191,6 @@ nav ul li a:hover {
   border-radius: 50%;
   height: 150px; /* Maintain aspect ratio */
   margin-bottom: 10px;
-  /* Adjust other styles for the logo image if necessary */
 }
 
 #education {
@@ -205,11 +199,6 @@ nav ul li a:hover {
 
 .education-container {
   padding: 20px;
-}
-
-.education-details {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .column {
@@ -245,13 +234,10 @@ nav ul li a:hover {
 
 .education-details {
   display: flex;
-  flex-wrap: wrap;
-}
+  flex-direction: column; 
 
 .education-item {
-  flex: 0 0 calc(33.333% - 20px); /* Adjust width based on the number of items */
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /
 }
 
 .education-item h3 {
@@ -291,5 +277,84 @@ nav ul li a:hover {
 }
 
 .skill-container p {
+  margin-bottom: 20px;
+}
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+#interchange-buttons {
+  text-align: center;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+section {
+  margin: 20px 0;
+}
+
+#socialmedia {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#socialmedia a {
+  color: #3498db;
+  margin: 0 5px;
+}
+
+#socialmedia a:hover {
+  text-decoration: underline;
+}
+
+/* Specific styling for sections */
+#experience,
+#software_engineering {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+#experience > div,
+#software_engineering > div {
   margin-bottom: 20px;
 }
