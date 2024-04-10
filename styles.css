@@ -1,68 +1,295 @@
-/* Reset some default styles */
-body,
-h1,
-h2,
-p,
-ul,
-li {
+body {
   margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.fixed-nav {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.fixed-nav ul {
+  list-style: none;
   padding: 0;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
+.fixed-nav li {
+  margin-bottom: 10px;
 }
 
-header {
-  background-color: #333;
-  color: #fff;
+.fixed-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.fixed-nav a:hover {
+  color: #666;
+}
+
+.section {
+  height: 100vh; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Customize styles for each section as needed */
+
+#experience {
+  background-color: #ccc;
+}
+
+#music {
+  background-color: #ddd;
+}
+
+#book {
+  background-color: #eee;
+}
+
+#clothing {
+  background-color: #f5f5f5;
+}
+
+#design,
+#graphic_illustrator {
+  background-color: #f5f5f5;
   padding: 20px;
-  text-align: center;
 }
 
-h1 {
-  font-size: 2em;
-}
-
-h2 {
-  font-size: 1.5em;
-}
-
-#interchange-buttons {
-  text-align: center;
-  margin: 20px 0;
-}
-
-button {
-  padding: 10px;
-  margin: 5px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #2980b9;
-}
-
-section {
-  display: none;
-  margin: 20px 0;
-}
-
-#socialmedia {
-  text-align: center;
+#graphic_illustrator iframe {
   margin-top: 20px;
 }
 
-#socialmedia a {
-  color: #3498db;
-  margin: 0 5px;
+#book,
+#additional_books,
+#reviews {
+  background-color: #eee;
+  padding: 20px;
 }
 
-#socialmedia a:hover {
-  text-decoration: underline;
+#additional_books div {
+  margin-bottom: 20px;
 }
 
-/* Add more specific styling as needed for different sections */
+#clothing,
+#stores,
+#images {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+#stores div {
+  margin-bottom: 20px;
+}
+
+.active-nav {
+  color: #ff0000; /* Change color as needed */
+}
+
+/* styles.css */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+/* Center horizontally */
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  margin: 0 20px; /* Adjust spacing between elements */
+}
+
+.header-content h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.header-content {
+  margin: 0 20px; /* Adjust spacing between elements */
+}
+
+.header-content p {
+  text-align: left; /* Keep the text aligned to the left */
+}
+
+.header-content a {
+  display: inline; /* Make the social media icons behave as blocks */
+  margin: 0 auto; /* Center-align the social media icons */
+  max-width: 150px; /* Set a max-width to prevent them from stretching */
+  text-align: center;
+}
+
+.social-media-icons {
+  text-align: center; /* Center-align the social media icons */
+}
+
+.social-media-icons a {
+  display: inline; /* Make the social media icons behave as blocks */
+  margin: 0 5px; /* Adjust margin between icons */
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #666;
+}
+
+.img-link {
+  width: 30px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* #introduction img:first-child,
+#introduction img:last-child {
+  width: 100px;
+  border-radius: 50%;
+  height: auto; 
+  margin-bottom: 10px;
+} */
+
+#introduction .portrait-image {
+  width: 150px;
+  border-radius: 50%;
+  height: 150px; /* Maintain aspect ratio */
+  margin-bottom: 10px;
+}
+
+#introduction .logo-image {
+  width: 150px;
+  border-radius: 50%;
+  height: 150px; /* Maintain aspect ratio */
+  margin-bottom: 10px;
+  /* Adjust other styles for the logo image if necessary */
+}
+
+#education {
+  background-color: #ccc;
+}
+
+.education-container {
+  padding: 20px;
+}
+
+.education-details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1;
+  padding: 10px;
+}
+
+.column h3 {
+  margin-bottom: 5px;
+}
+
+.column p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .column {
+    flex: 0 0 100%;
+  }
+}
+
+.section {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.education-container,
+.resume-container,
+.certificate-container {
+  margin-bottom: 30px;
+}
+
+.education-details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.education-item {
+  flex: 0 0 calc(33.333% - 20px); /* Adjust width based on the number of items */
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.education-item h3 {
+  margin-bottom: 5px;
+}
+
+.resume-list,
+.certificate-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resume-list li,
+.certificate-list li {
+  margin-bottom: 10px;
+}
+
+.resume-list a,
+.certificate-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.resume-list a:hover,
+.certificate-list a:hover {
+  color: #666;
+}
+
+.skill-container {
+  margin-bottom: 30px;
+}
+
+.skill-container h2 {
+  margin-bottom: 10px;
+}
+
+.skill-container p {
+  margin-bottom: 20px;
+}
