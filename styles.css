@@ -39,6 +39,8 @@ body {
   font-size: 24px;
   background-color: #f0f0f0;
   border-bottom: 1px solid #ccc;
+  min-height: 100vh; 
+  height: auto;
 }
 
 
@@ -236,6 +238,8 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column; 
 
+}
+
 .education-item {
   margin-bottom: 20px; /
 }
@@ -296,7 +300,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: #111;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -358,3 +362,411 @@ section {
 #software_engineering > div {
   margin-bottom: 20px;
 }
+
+
+/* Resume Section Styles */
+
+#resume {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 20px; /* Add some padding */
+}
+
+
+
+.resume-container h2 {
+  font-size: 24px; /* Larger font size for the heading */
+  margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the container takes the full height of the section */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.resume-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; /* Center the list items horizontally */
+}
+
+
+.resume-list li {
+  margin-bottom: 10px;
+}
+
+.resume-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+  display: inline-block; /* Ensure the link takes the width of its content */
+}
+
+.resume-list a:hover {
+  color: #666;
+}
+
+
+/* Certificates Section Styles */
+
+#certificates {
+  background-color: #f5f5f5; /* Light gray background */
+  padding: 20px; /* Add some padding */
+}
+
+.certificate-container {
+  /* max-width: 800px;  */
+  margin: 0 auto; 
+}
+
+.certificate-container h3 {
+  font-size: 20px; /* Larger font size for the certificate titles */
+  margin-bottom: 10px; /* Add some space below the certificate titles */
+}
+
+.certificate-container p {
+  margin-bottom: 5px; /* Add some space below each paragraph */
+}
+
+.certificate-container a {
+  text-decoration: none; /* Remove default underline */
+  color: #333; /* Dark gray text color */
+  font-weight: bold; /* Bold font weight */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.certificate-container a:hover {
+  color: #666; /* Darken text color on hover */
+}
+
+.skill-container,
+.documents-container {
+  margin-top: 30px; /* Add some space between sections */
+}
+
+.skill-container h2,
+.documents-container h2 {
+  font-size: 20px; /* Larger font size for section headings */
+  margin-bottom: 10px; /* Add some space below section headings */
+}
+
+.skill-container p {
+  margin-bottom: 20px; /* Add some space below the skills paragraph */
+}
+
+.documents-container ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
+
+.documents-container li {
+  margin-bottom: 20px; /* Add some space between each document */
+}
+
+.documents-container h3 {
+  margin-bottom: 5px; /* Add some space below each document title */
+}
+
+.documents-container a {
+  text-decoration: none; /* Remove default underline */
+  color: #333; /* Dark gray text color */
+  font-weight: bold; /* Bold font weight */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.documents-container a:hover {
+  color: #666; /* Darken text color on hover */
+}
+
+
+.game-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.game-links li {
+  margin-right: 10px;
+}
+
+.game-links li:last-child {
+  margin-right: 0;
+}
+
+.game-links img {
+  width: auto; /* Adjust the width as needed */
+  height: 100px;
+  border-radius: 5px; /* Add rounded corners */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.game-links img:hover {
+  transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+
+.section {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.education-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.education-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.education-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-item {
+  margin-bottom: 20px;
+}
+
+.education-item h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.education-item p {
+  margin: 0;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.certificate-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.certificate-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.certificate-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.certificate-item {
+  /* flex-basis: calc(50% - 10px); */
+  margin-bottom: 20px;
+}
+
+.certificate-item h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.certificate-item p {
+  margin: 0;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Adjust badge styling as needed */
+.badges div {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none; /* Remove default underline */
+  color: #333; /* Set the color to a dark shade */
+  font-weight: bold; /* Optionally set a bold font weight */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+a:hover {
+  color: #666; /* Darken the color on hover */
+}
+
+
+
+
+.notable-projects {
+  list-style: none;
+  padding: 0;
+}
+
+.notable-projects li {
+  margin-bottom: 10px;
+}
+
+.notable-projects li:before {
+  content: ""; /* Use a bullet character */
+  margin-right: 5px;
+  color: #666; /* Adjust the bullet color */
+  padding-left: 50px;
+}
+
+.notable-projects a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.notable-projects a:hover {
+  color: #666;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+
+/* Add your custom styles here */
+
+/* Section styles */
+#software {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.software-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.introduction,
+.focus,
+.projects,
+.links {
+  margin-bottom: 30px;
+}
+
+/* Subsection styles */
+.introduction h2,
+.focus h2,
+.projects h2,
+.links h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.introduction p,
+.languages ul,
+.recent-focus ul,
+.projects li p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.languages h3,
+.recent-focus h3,
+.projects h3,
+.links h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.languages ul,
+.recent-focus ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.languages ul li,
+.recent-focus ul li {
+  margin-bottom: 5px;
+}
+
+.projects ul li {
+  margin-bottom: 20px;
+}
+
+.links ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.links ul li {
+  margin-bottom: 5px;
+}
+
+.resume-link,
+.external-link {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.resume-link:hover,
+.external-link:hover {
+  text-decoration: underline;
+}
+
+
+form {
+  width: 50%;
+  margin: auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+
+
+.certificate-item small {
+  font-size: 65%; /* Adjust the percentage as needed */
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+
+
