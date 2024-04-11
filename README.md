@@ -14,7 +14,7 @@ I'm an emerging full-stack software developer with a unique background in design
 </div><br>
 
 <!-- Leetcode -->
-[![3ichael7ambert's LeetCode stats](https://leetcode-stats-six.vercel.app/?username=3ichael7ambert)](https://github.com/3ichael7ambert/leetcode-stats)
+[![3ichael7ambert's LeetCode stats](https://leetcode-stats-six.vercel.app/?username=3ichael7ambert)](https://github.com/3ichael7ambert/)
 
 <!-- Codewars -->
 [![Codewars Badge](https://www.codewars.com/users/3ichael7ambert/badges/large)](https://www.codewars.com/users/3ichael7ambert)
