@@ -82,7 +82,7 @@ I'm an emerging full-stack software developer with a unique background in design
 
 
 
-      <h3>JavaScript Projects</h3>
+   <h3>JavaScript Projects</h3>
           <p>
             Memory Game (<a href="https://3ichael7ambert.github.io/9.5-JS-Memory-Game/">Live</a> | <a href="https://github.com/3ichael7ambert/9.5-JS-Memory-Game">Github</a>), 
             Jeopardy (<a href="https://github.com/3ichael7ambert/20-jeopardy-assessment">Github</a>), 
