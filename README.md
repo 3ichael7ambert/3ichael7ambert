@@ -71,53 +71,48 @@ I'm an emerging full-stack software developer with a unique background in design
 </div><br>
 --- <br>
    <h3>JavaScript Projects</h3>
-          <p>
-            Memory Game (<a href="https://3ichael7ambert.github.io/9.5-JS-Memory-Game/">Live</a> | <a href="https://github.com/3ichael7ambert/9.5-JS-Memory-Game">Github</a>), 
-            Jeopardy (<a href="https://github.com/3ichael7ambert/20-jeopardy-assessment">Github</a>), 
-            To-Do List (<a href="https://3ichael7ambert.github.io/9.4-localStorage/">Live</a> | <a href="https://github.com/3ichael7ambert/9.4-localStorage">Github</a>), 
-            Fruit Search (<a href="https://3ichael7ambert.github.io/16-fruit-search-project/">Live</a> | <a href="https://github.com/3ichael7ambert/16-fruit-search-project">Github</a>), 
-            Connect Four (<a href="https://3ichael7ambert.github.io/17-2-this-connect-four-oo/">Live</a> | <a href="https://github.com/3ichael7ambert/17-2-this-connect-four-oo">Github</a>), 
-            Movie Titles (<a href="https://3ichael7ambert.github.io/18-jQuery-exercise/">Live</a> | <a href="https://github.com/3ichael7ambert/18-jQuery-exercise">Github</a>), 
-            Hack’n’Snooze (<a href="https://3ichael7ambert.github.io/21-hack-or-snooze/">Live</a> | <a href="https://github.com/3ichael7ambert/21-hack-or-snooze">Github</a>), 
-            Jedi Name (<a href="https://3ichael7ambert.github.io/Jedi-jQuery/">Live</a> | <a href="https://github.com/3ichael7ambert/Jedi-jQuery">Github</a>), 
-            Piano (<a href="https://3ichael7ambert.github.io/Piano-JS-v2/">Live</a> | <a href="https://github.com/3ichael7ambert/Piano-JS-v2">Github</a>), 
-            Giphly (<a href="https://github.com/3ichael7ambert/10-Assesment---Meme-Machine">Github</a>), 
-            Pong 4 (<a href="https://3ichael7ambert.github.io/pong-4p-v2/">Live</a> | <a href="https://github.com/3ichael7ambert/pong-4p-v2">Github</a>), 
-            STATIC: The Book of Life (<a href="https://3ichael7ambert.github.io/bookoflife/">Live</a> | <a href="https://github.com/3ichael7ambert/bookoflife">Github</a>), 
-            Blue and Yellow (<a href="https://3ichael7ambert.github.io/lambert-blue-n-yellow-portfolio/">Live</a> | <a href="https://github.com/3ichael7ambert/lambert-blue-n-yellow-portfolio">Github</a>), 
-            Divinity JS (<a href="https://3ichael7ambert.github.io/divinity-js/">Live</a> | <a href="https://github.com/3ichael7ambert/divinity-js">Github</a>), 
-            Myspace Coding (<a href="https://3ichael7ambert.github.io/DeadSexyMikey-MySpace/">Live</a> | <a href="https://github.com/3ichael7ambert/DeadSexyMikey-MySpace">Github</a>), 
-            Mobile 2011 (<a href="https://3ichael7ambert.itch.io/mobile-template">itch.io</a>), 
-            Orpheus Records (<a href="https://3ichael7ambert.itch.io/our-records-website">Live</a>), 
-            Think About Me Later (<a href="https://3ichael7ambert.github.io/ThinkAboutItLater-Myspace/">Live</a> | <a href="https://github.com/3ichael7ambert/ThinkAboutItLater-Myspace">Github</a>)
-          </p>
-        </li>
-        <li>
-          <h3>Node.js Projects</h3>
-          <p>
-            Markov (<a href="#">Live</a> | <a href="#">Github</a>)
-          </p>
-        </li>
-        <li>
-          <h3>Python Projects</h3>
-          <p>
-            Boggle (<a href="#">Live</a> | <a href="https://github.com/3ichael7ambert/flask-boggle">Github</a>), 
-            Forex (<a href="#">Live</a> | <a href="https://github.com/3ichael7ambert/25assesment-forex">Github</a> | <a href="https://github.com/3ichael7ambert/25assesment-forex-flask-js">Github 2</a>), 
-            Cupcakes (<a href="#">Live</a> | <a href="https://github.com/3ichael7ambert/29-3-cupcakes-REST-JSON-API">Github</a>), 
-            Warbler (<a href="#">Live</a> | <a href="https://github.com/3ichael7ambert/31-warbler">Github</a>), 
-            Database DJ (<a href="#">Live</a> | <a href="https://github.com/3ichael7ambert/30-assesment-Database-dj">Github</a>), 
-            Lucky Number (<a href="https://dashboard.render.com/web/srv-cilj1rmnqqlfm4c87680/deploys/dep-cj1hapk07spneut3ftb0">Live</a> | <a href="https://github.com/3ichael7ambert/33-assesment-lucky-number">Github</a>)
-          </p>
-        </li>
-      </ul>
-    </div>
+<p>
+    Memory Game (<a href="https://3ichael7ambert.github.io/9.5-JS-Memory-Game/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/9.5-JS-Memory-Game" target="_blank">Github</a>), 
+    Jeopardy (<a href="https://github.com/3ichael7ambert/20-jeopardy-assessment" target="_blank">Github</a>), 
+    To-Do List (<a href="https://3ichael7ambert.github.io/9.4-localStorage/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/9.4-localStorage" target="_blank">Github</a>), 
+    Fruit Search (<a href="https://3ichael7ambert.github.io/16-fruit-search-project/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/16-fruit-search-project" target="_blank">Github</a>), 
+    Connect Four (<a href="https://3ichael7ambert.github.io/17-2-this-connect-four-oo/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/17-2-this-connect-four-oo" target="_blank">Github</a>), 
+    Movie Titles (<a href="https://3ichael7ambert.github.io/18-jQuery-exercise/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/18-jQuery-exercise" target="_blank">Github</a>), 
+    Hack’n’Snooze (<a href="https://3ichael7ambert.github.io/21-hack-or-snooze/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/21-hack-or-snooze" target="_blank">Github</a>), 
+    Jedi Name (<a href="https://3ichael7ambert.github.io/Jedi-jQuery/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/Jedi-jQuery" target="_blank">Github</a>), 
+    Piano (<a href="https://3ichael7ambert.github.io/Piano-JS-v2/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/Piano-JS-v2" target="_blank">Github</a>), 
+    Giphly (<a href="https://github.com/3ichael7ambert/10-Assesment---Meme-Machine" target="_blank">Github</a>), 
+    Pong 4 (<a href="https://3ichael7ambert.github.io/pong-4p-v2/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/pong-4p-v2" target="_blank">Github</a>), 
+    STATIC: The Book of Life (<a href="https://3ichael7ambert.github.io/bookoflife/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/bookoflife" target="_blank">Github</a>), 
+    Blue and Yellow (<a href="https://3ichael7ambert.github.io/lambert-blue-n-yellow-portfolio/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/lambert-blue-n-yellow-portfolio" target="_blank">Github</a>), 
+    Divinity JS (<a href="https://3ichael7ambert.github.io/divinity-js/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/divinity-js" target="_blank">Github</a>), 
+    Myspace Coding (<a href="https://3ichael7ambert.github.io/DeadSexyMikey-MySpace/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/DeadSexyMikey-MySpace" target="_blank">Github</a>), 
+    Mobile 2011 (<a href="https://3ichael7ambert.itch.io/mobile-template" target="_blank">itch.io</a>), 
+    Orpheus Records (<a href="https://3ichael7ambert.itch.io/our-records-website" target="_blank">Live</a>), 
+    Think About Me Later (<a href="https://3ichael7ambert.github.io/ThinkAboutItLater-Myspace/" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/ThinkAboutItLater-Myspace" target="_blank">Github</a>)
+</p>
+
+<h3>Node.js Projects</h3>
+<p>
+    Markov (<a href="#" target="_blank">Live</a> | <a href="#" target="_blank">Github</a>)
+</p>
+
+<h3>Python Projects</h3>
+<p>
+    Boggle (<a href="#" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/flask-boggle" target="_blank">Github</a>), 
+    Forex (<a href="#" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/25assesment-forex" target="_blank">Github</a> | <a href="https://github.com/3ichael7ambert/25assesment-forex-flask-js" target="_blank">Github 2</a>), 
+    Cupcakes (<a href="#" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/29-3-cupcakes-REST-JSON-API" target="_blank">Github</a>), 
+    Warbler (<a href="#" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/31-warbler" target="_blank">Github</a>), 
+    Database DJ (<a href="#" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/30-assesment-Database-dj" target="_blank">Github</a>), 
+    Lucky Number (<a href="https://dashboard.render.com/web/srv-cilj1rmnqqlfm4c87680/deploys/dep-cj1hapk07spneut3ftb0" target="_blank">Live</a> | <a href="https://github.com/3ichael7ambert/33-assesment-lucky-number" target="_blank">Github</a>)
+</p>
+
 
 
 
   
 <b>Game Maker (GML)</b>
-<p class="c27"><span>Anime Slots</span><span>&nbsp;(</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/anime-slots&amp;sa=D&amp;source=editors&amp;ust=1693097776610439&amp;usg=AOvVaw2HtVIPdpCmc0tzvVe5dyjY">itch.io</a></span><span>), Kingdom Kitty Match 3 RPG (</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/kingdom-kitty-rpg-match-3&amp;sa=D&amp;source=editors&amp;ust=1693097776610565&amp;usg=AOvVaw0MmRPmMY1zuzQeQeOLS0rs">itch.io</a></span><span>), MANA (itch.io), Belfry Bastion (</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/divinity-belfry-bastion&amp;sa=D&amp;source=editors&amp;ust=1693097776610686&amp;usg=AOvVaw1qkVKsw-6QDnKMagwUyvvc">itch.io</a></span><span>), &nbsp;Electro Darts (</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/electro-darts&amp;sa=D&amp;source=editors&amp;ust=1693097776610799&amp;usg=AOvVaw0U45LH4ihjAQL38NBdYbQl">itch.io</a></span><span>), Glow Worm (</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/glow-worms&amp;sa=D&amp;source=editors&amp;ust=1693097776610908&amp;usg=AOvVaw3XukIIczOvJKeDDXyxhMSc">itch.io</a></span><span>), Game of Life (</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/game-of-life&amp;sa=D&amp;source=editors&amp;ust=1693097776611019&amp;usg=AOvVaw1p2LE71TLtH11AV0AYFOU6">itch.io</a></span><span>), Micro Golf (</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/mini-golf&amp;sa=D&amp;source=editors&amp;ust=1693097776611130&amp;usg=AOvVaw3H1DF6xNjPwxE8wZtaLATM">itch.io</a></span><span>), Mythos (</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/mythos&amp;sa=D&amp;source=editors&amp;ust=1693097776611244&amp;usg=AOvVaw2NImuHG1O5wmAibJSvcAKi">itch.io</a></span><span>), Paper Bird (</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/paper-bird&amp;sa=D&amp;source=editors&amp;ust=1693097776611356&amp;usg=AOvVaw2Oym89VZO0dt0SehW4DQ9N">itch.io</a></span><span>), Shining Syndicate (</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/shining-syndicate&amp;sa=D&amp;source=editors&amp;ust=1693097776611484&amp;usg=AOvVaw2V4c3Ae-MGC7JJIE2HYqpX">itch.io</a></span><span>), Torrenting Teddy (</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/torrenting-teddy&amp;sa=D&amp;source=editors&amp;ust=1693097776611600&amp;usg=AOvVaw0hzn2-u8Mk4GWxKdjUep96">itch.io</a></span><span>), Mario Land 3D (</span><span class="c7"><a class="c4" href="https://www.google.com/url?q=https://3ichael7ambert.itch.io/super-mario-land-3d&amp;sa=D&amp;source=editors&amp;ust=1693097776611716&amp;usg=AOvVaw0O0ToPOWddwntnzNVd0kQa">itch.io</a></span><span class="c8">), Singing Sparrow</span></p>
-
+<p class="c27"><span>Anime Slots</span><span>&nbsp;(</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/anime-slots" target="_blank">itch.io</a></span><span>), Kingdom Kitty Match 3 RPG (</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/kingdom-kitty-rpg-match-3" target="_blank">itch.io</a></span><span>), MANA (itch.io), Belfry Bastion (</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/divinity-belfry-bastion" target="_blank">itch.io</a></span><span>), &nbsp;Electro Darts (</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/electro-darts" target="_blank">itch.io</a></span><span>), Glow Worm (</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/glow-worms" target="_blank">itch.io</a></span><span>), Game of Life (</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/game-of-life" target="_blank">itch.io</a></span><span>), Micro Golf (</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/mini-golf" target="_blank">itch.io</a></span><span>), Mythos (</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/mythos" target="_blank">itch.io</a></span><span>), Paper Bird (</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/paper-bird" target="_blank">itch.io</a></span><span>), Shining Syndicate (</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/shining-syndicate" target="_blank">itch.io</a></span><span>), Torrenting Teddy (</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/torrenting-teddy" target="_blank">itch.io</a></span><span>), Mario Land 3D (</span><span class="c7"><a class="c4" href="https://3ichael7ambert.itch.io/super-mario-land-3d" target="_blank">itch.io</a></span><span class="c8">), Singing Sparrow</span></p>
 
 
 
