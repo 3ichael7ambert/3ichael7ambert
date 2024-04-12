@@ -1,0 +1,158 @@
+/* Certificates Section Styles */
+
+#certificates {
+  background-color: #f5f5f5; /* Light gray background */
+  padding: 20px; /* Add some padding */
+}
+
+.certificate-container {
+  /* max-width: 800px;  */
+  margin: 0 auto;
+}
+
+.certificate-container h3 {
+  font-size: 20px; /* Larger font size for the certificate titles */
+  margin-bottom: 10px; /* Add some space below the certificate titles */
+}
+
+.certificate-container p {
+  margin-bottom: 5px; /* Add some space below each paragraph */
+}
+
+.certificate-container a {
+  text-decoration: none; /* Remove default underline */
+  color: #333; /* Dark gray text color */
+  font-weight: bold; /* Bold font weight */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.certificate-container a:hover {
+  color: #666; /* Darken text color on hover */
+}
+
+.skill-container,
+.documents-container {
+  margin-top: 30px; /* Add some space between sections */
+}
+
+.skill-container h2,
+.documents-container h2 {
+  font-size: 20px; /* Larger font size for section headings */
+  margin-bottom: 10px; /* Add some space below section headings */
+}
+
+.skill-container p {
+  margin-bottom: 20px; /* Add some space below the skills paragraph */
+}
+
+.documents-container ul {
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove default padding */
+}
+
+.documents-container li {
+  margin-bottom: 20px; /* Add some space between each document */
+}
+
+.documents-container h3 {
+  margin-bottom: 5px; /* Add some space below each document title */
+}
+
+.documents-container a {
+  text-decoration: none; /* Remove default underline */
+  color: #333; /* Dark gray text color */
+  font-weight: bold; /* Bold font weight */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.documents-container a:hover {
+  color: #666; /* Darken text color on hover */
+}
+
+.certificate-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.certificate-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.certificate-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.certificate-item {
+  /* flex-basis: calc(50% - 10px); */
+  margin-bottom: 20px;
+}
+
+.certificate-item h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.certificate-item p {
+  margin: 0;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Adjust badge styling as needed */
+.badges div {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none; /* Remove default underline */
+  color: #333; /* Set the color to a dark shade */
+  font-weight: bold; /* Optionally set a bold font weight */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+a:hover {
+  color: #666; /* Darken the color on hover */
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+.certificate-item small {
+  font-size: 65%; /* Adjust the percentage as needed */
+}
+
+.notable-projects {
+  list-style: none;
+  padding: 0;
+}
+
+.notable-projects li {
+  margin-bottom: 10px;
+}
+
+.notable-projects li:before {
+  content: ""; /* Use a bullet character */
+  margin-right: 5px;
+  color: #666; /* Adjust the bullet color */
+  padding-left: 50px;
+}
+
+.notable-projects a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.notable-projects a:hover {
+  color: #666;
+}

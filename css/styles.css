@@ -1,0 +1,446 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.fixed-nav {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.fixed-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.fixed-nav li {
+  margin-bottom: 10px;
+}
+
+.fixed-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.fixed-nav a:hover {
+  color: #666;
+}
+
+.section {
+  /* height: 100vh;  */
+  display: block;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  min-height: 100vh; 
+  height: auto;
+}
+
+
+#experience {
+  background-color: #ccc;
+}
+
+#music {
+  background-color: #ddd;
+}
+
+#book {
+  background-color: #eee;
+}
+
+#clothing {
+  background-color: #f5f5f5;
+}
+
+#design,
+#graphic_illustrator {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+#graphic_illustrator iframe {
+  margin-top: 20px;
+}
+
+#book,
+#additional_books,
+#reviews {
+  background-color: #eee;
+  padding: 20px;
+}
+
+#additional_books div {
+  margin-bottom: 20px;
+}
+
+#clothing,
+#stores,
+#images {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+#stores div {
+  margin-bottom: 20px;
+}
+
+.active-nav {
+  color: #ff0000; 
+}
+
+/* styles.css */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+}
+
+/* Center horizontally */
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  margin: 0 20px; 
+}
+
+.header-content h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.header-content p {
+  text-align: left; /
+}
+
+.header-content a {
+  display: inline; 
+  margin: 0 auto; 
+  max-width: 150px; 
+  text-align: center;
+}
+
+.social-media-icons {
+  text-align: center; 
+}
+
+.social-media-icons a {
+  display: inline; 
+  margin: 0 5px; 
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #666;
+}
+
+.img-link {
+  width: 30px; 
+  height: auto; /
+}
+
+/* #introduction img:first-child,
+#introduction img:last-child {
+  width: 100px;
+  border-radius: 50%;
+  height: auto; 
+  margin-bottom: 10px;
+} */
+
+#introduction .portrait-image {
+  width: 150px;
+  border-radius: 50%;
+  height: 150px; /* Maintain aspect ratio */
+  margin-bottom: 10px;
+}
+
+#introduction .logo-image {
+  width: 150px;
+  border-radius: 50%;
+  height: 150px; /* Maintain aspect ratio */
+  margin-bottom: 10px;
+}
+
+
+.column {
+  flex: 1;
+  padding: 10px;
+}
+
+.column h3 {
+  margin-bottom: 5px;
+}
+
+.column p {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .column {
+    flex: 0 0 100%;
+  }
+}
+
+.section {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+}
+
+header {
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+#interchange-buttons {
+  text-align: center;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px;
+  margin: 5px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+section {
+  margin: 20px 0;
+}
+
+#socialmedia {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#socialmedia a {
+  color: #3498db;
+  margin: 0 5px;
+}
+
+#socialmedia a:hover {
+  text-decoration: underline;
+}
+
+/* Specific styling for sections */
+#experience,
+#software_engineering {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+#experience > div,
+#software_engineering > div {
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+.section {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+
+.italic {
+  font-style: italic;
+}
+
+
+/* Add your custom styles here */
+
+
+
+.links ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.links ul li {
+  margin-bottom: 5px;
+}
+
+
+
+form {
+  width: 50%;
+  margin: auto;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#images {
+  margin-bottom: 30px;
+}
+
+#images h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#images img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+
+
+#images {
+  margin-bottom: 30px;
+}
+
+#images h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#images img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}

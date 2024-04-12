@@ -1,0 +1,76 @@
+#software {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.software-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Section styles */
+#software {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.software-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.introduction,
+.focus,
+.projects,
+.links {
+  margin-bottom: 30px;
+}
+
+/* Subsection styles */
+.introduction h2,
+.focus h2,
+.projects h2,
+.links h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.introduction p,
+.languages ul,
+.recent-focus ul,
+.projects li p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.languages h3,
+.recent-focus h3,
+.projects h3,
+.links h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.languages ul,
+.recent-focus ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.languages ul li,
+.recent-focus ul li {
+  margin-bottom: 5px;
+}
+
+.projects ul li {
+  margin-bottom: 20px;
+}
+
+.tools {
+  content: "";
+}

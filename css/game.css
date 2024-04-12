@@ -1,0 +1,88 @@
+/* Game Development Section */
+#games {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.games-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gamedev {
+  margin-bottom: 30px;
+}
+
+.gamedev h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.gamedev ul {
+  margin-bottom: 20px;
+}
+
+.gamedev ul li {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.gamedev p {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.game-links {
+  margin-bottom: 30px;
+}
+
+.game-links h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.game-links ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.game-links li {
+  margin-bottom: 10px;
+}
+
+.game-links li a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.game-links li a:hover {
+  text-decoration: underline;
+}
+
+.game-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.game-links li {
+  margin-right: 10px;
+}
+
+.game-links li:last-child {
+  margin-right: 0;
+}
+
+.game-links img {
+  width: auto; /* Adjust the width as needed */
+  height: 100px;
+  border-radius: 5px; /* Add rounded corners */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+.game-links img:hover {
+  transform: scale(1.1); /* Enlarge the image on hover */
+}

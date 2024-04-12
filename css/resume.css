@@ -1,0 +1,54 @@
+/* Resume Section Styles */
+
+#resume {
+  background-color: #f0f0f0; /* Light gray background */
+  padding: 20px; /* Add some padding */
+}
+
+.resume-container h2 {
+  font-size: 24px; /* Larger font size for the heading */
+  margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ensure the container takes the full height of the section */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.resume-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; /* Center the list items horizontally */
+}
+
+.resume-list li {
+  margin-bottom: 10px;
+}
+
+.resume-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+  display: inline-block; /* Ensure the link takes the width of its content */
+}
+
+.resume-list a:hover {
+  color: #666;
+}
+
+.resume-link,
+.external-link {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.resume-link:hover,
+.external-link:hover {
+  text-decoration: underline;
+}

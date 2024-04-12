@@ -1,0 +1,94 @@
+
+#education {
+    background-color: #ccc;
+  }
+  
+  .education-container {
+    padding: 20px;
+  }
+  
+  
+  .education-container,
+.resume-container,
+.certificate-container {
+  margin-bottom: 30px;
+}
+
+.education-details {
+  display: flex;
+  flex-direction: column; 
+
+}
+
+.education-item {
+  margin-bottom: 20px; /
+}
+
+.education-item h3 {
+  margin-bottom: 5px;
+}
+
+.resume-list,
+.certificate-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resume-list li,
+.certificate-list li {
+  margin-bottom: 10px;
+}
+
+.resume-list a,
+.certificate-list a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.resume-list a:hover,
+.certificate-list a:hover {
+  color: #666;
+}
+
+.skill-container {
+  margin-bottom: 30px;
+}
+
+.skill-container h2 {
+  margin-bottom: 10px;
+}
+
+.skill-container p {
+  margin-bottom: 20px;
+}
+
+
+.education-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.education-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.education-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-item {
+  margin-bottom: 20px;
+}
+
+.education-item h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.education-item p {
+  margin: 0;
+}
