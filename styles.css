@@ -769,4 +769,430 @@ input[type="submit"]:hover {
 }
 
 
+/* Game Development Section */
+#games {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
 
+.games-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gamedev {
+  margin-bottom: 30px;
+}
+
+.gamedev h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.gamedev ul {
+  margin-bottom: 20px;
+}
+
+.gamedev ul li {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.gamedev p {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.game-links {
+  margin-bottom: 30px;
+}
+
+.game-links h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#software {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.software-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.game-links ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.game-links li {
+  margin-bottom: 10px;
+}
+
+.game-links li a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.game-links li a:hover {
+  text-decoration: underline;
+}
+
+
+.tools {
+  content: "";
+}
+
+
+
+
+
+
+/* Music Section */
+
+#music {
+  background-color: #ccc;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.music_section {
+  margin-bottom: 30px;
+
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.music_section p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.music_section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.music_section iframe {
+  margin-top: 20px;
+}
+
+.music_section ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.music_section ul li {
+  margin-bottom: 10px;
+}
+
+.music_section ul li a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.music_section ul li a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* Design Section */
+#design {
+  background-color: #ddd;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+#graphic_illustrator {
+  margin-bottom: 30px;
+
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#portraitography,
+#fine_arts,
+#animations {
+  margin-bottom: 20px;
+}
+
+#graphic_illustrator h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#graphic_illustrator p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#graphic_illustrator ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+#graphic_illustrator ul li {
+  margin-bottom: 10px;
+}
+
+#graphic_illustrator ul li a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#graphic_illustrator ul li a:hover {
+  text-decoration: underline;
+}
+
+#graphic_illustrator iframe {
+  margin-top: 20px;
+}
+
+
+/* Book Section */
+#book {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#book_series {
+  margin-bottom: 30px;
+}
+
+#book_series h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#book_series p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#book_series ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+#book_series ul li {
+  margin-bottom: 10px;
+}
+
+#book_series ul li a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#book_series ul li a:hover {
+  text-decoration: underline;
+}
+
+#book_series iframe {
+  margin-top: 20px;
+}
+
+#additional_books {
+  margin-bottom: 30px;
+}
+
+#additional_books h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#additional_books div {
+  margin-bottom: 20px;
+}
+
+#additional_books img {
+  width: 100%;
+  height: auto;
+}
+
+#additional_books h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+#additional_books p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#reviews {
+  margin-bottom: 30px;
+}
+
+#reviews h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#reviews div {
+  margin-bottom: 20px;
+}
+
+#reviews h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#reviews p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+
+/* Clothing Section */
+#clothing {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+#stores {
+  margin-bottom: 30px;
+}
+
+#stores h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#stores div {
+  margin-bottom: 20px;
+}
+
+#stores h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#stores p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#stores a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+#stores a:hover {
+  text-decoration: underline;
+}
+
+#images {
+  margin-bottom: 30px;
+}
+
+#images h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#images img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+
+
+/* Clothing Section */
+#clothing {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+#stores {
+  margin-bottom: 30px;
+}
+
+#stores h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#stores div {
+  margin-bottom: 20px;
+}
+
+#stores h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#stores p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#stores a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+#stores a:hover {
+  text-decoration: underline;
+}
+
+#images {
+  margin-bottom: 30px;
+}
+
+#images h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#images img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
