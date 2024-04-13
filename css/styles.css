@@ -501,8 +501,7 @@ input[type="submit"]:hover {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-    transition: all 0.3s ease;
+    
   }
 
   .menu-toggle.active {
@@ -583,3 +582,25 @@ input[type="submit"]:hover {
 }
 
 
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .nav-text {
+    display: none;
+  }
+}
+
+/* 
+@media only screen and (max-width: 768px) {
+  .fixed-nav ul li a {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .fixed-nav ul li a {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+} */
