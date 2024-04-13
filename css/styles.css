@@ -479,7 +479,7 @@ input[type="submit"]:hover {
     cursor: pointer;
     z-index: 9999; 
   }
-  
+
   .fixed-nav ul {
     display: none;
     position: fixed;
@@ -524,5 +524,4 @@ input[type="submit"]:hover {
   .fixed-nav ul li {
     width: 100%;
   }
-}
 }

@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetId = this.getAttribute("href").substring(1);
       const targetSection = document.getElementById(targetId);
       scrollToSection(targetSection);
+      deactivateNav(); // Deactivate navigation menu after clicking on a link
     });
   });
 
@@ -38,7 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Add s
+  // Add scroll event listener to update navigation
   window.addEventListener("scroll", updateNav);
-  updateNav();
+  updateNav(); // Update initially
+
+  // Function to deactivate navigation menu
+  function deactivateNav() {
+    navList.classList.remove("active");
+  }
 });
