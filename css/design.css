@@ -5,7 +5,7 @@
   border-bottom: 1px solid #ccc;
 }
 
-#graphic_illustrator {
+#design-container {
   margin-bottom: 30px;
 
   margin: 0 auto;
@@ -18,38 +18,38 @@
   margin-bottom: 20px;
 }
 
-#graphic_illustrator h2 {
+#design-container h2 {
   font-size: 24px;
   margin-bottom: 10px;
   color: #333;
 }
 
-#graphic_illustrator p {
+#design-container p {
   color: #666;
   font-size: 16px;
   line-height: 1.6;
 }
 
-#graphic_illustrator ul {
+#design-container ul {
   list-style-type: none;
   padding-left: 0;
   margin-top: 20px;
 }
 
-#graphic_illustrator ul li {
+#design-container ul li {
   margin-bottom: 10px;
 }
 
-#graphic_illustrator ul li a {
+#design-container ul li a {
   color: #3498db;
   text-decoration: none;
   font-weight: bold;
 }
 
-#graphic_illustrator ul li a:hover {
+#design-container ul li a:hover {
   text-decoration: underline;
 }
 
-#graphic_illustrator iframe {
+#design-container iframe {
   margin-top: 20px;
 }
