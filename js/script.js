@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".section");
   const navLinks = document.querySelectorAll(".fixed-nav a");
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navList = document.querySelector(".fixed-nav ul");
 
   // Function to scroll to a section
   function scrollToSection(section) {
@@ -20,6 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Toggle active class on menu toggle click
+  menuToggle.addEventListener("click", function () {
+    navList.classList.toggle("active");
+  });
+
   // Function to update navigation based on scroll position
   function updateNav() {
     sections.forEach((section, index) => {
@@ -31,20 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Add scroll event listener to update navigation
+  // Add s
   window.addEventListener("scroll", updateNav);
-  updateNav(); // Update initially
+  updateNav();
 });
-
-// function validateForm() {
-//   var name = document.getElementById("name").value;
-//   var email = document.getElementById("email").value;
-//   var subject = document.getElementById("subject").value;
-//   var message = document.getElementById("message").value;
-
-//   if (name == "" || email == "" || subject == "" || message == "") {
-//     alert("Please fill out all fields");
-//     return false;
-//   }
-//   return true;
-// }

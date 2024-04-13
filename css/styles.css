@@ -184,14 +184,14 @@ nav ul li a:hover {
 #introduction .portrait-image {
   width: 150px;
   border-radius: 50%;
-  height: 150px; /* Maintain aspect ratio */
+  height: 150px; 
   margin-bottom: 10px;
 }
 
 #introduction .logo-image {
   width: 150px;
   border-radius: 50%;
-  height: 150px; /* Maintain aspect ratio */
+  height: 150px; 
   margin-bottom: 10px;
 }
 
@@ -222,7 +222,7 @@ nav ul li a:hover {
 }
 
 
-/* Reset some default styles */
+
 body,
 h1,
 h2,
@@ -288,7 +288,7 @@ section {
   text-decoration: underline;
 }
 
-/* Specific styling for sections */
+
 #experience,
 #software_engineering {
   display: block;
@@ -316,9 +316,6 @@ section {
 .italic {
   font-style: italic;
 }
-
-
-/* Add your custom styles here */
 
 
 
@@ -443,4 +440,89 @@ input[type="submit"]:hover {
   max-width: 300px;
   height: auto;
   margin-bottom: 20px;
+}
+
+
+
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 9999; 
+  }
+  
+  .fixed-nav ul {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    max-width: 300px; 
+    height: 100%;
+    background-color: rgba(240, 240, 240, .7);
+
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; 
+    transform: translateX(-100%);
+    z-index: 999; 
+  }
+  
+  .fixed-nav ul.active {
+    display: flex;
+    transform: translateX(0);
+  }
+  
+  .fixed-nav ul li {
+    margin-bottom: 10px;
+  }
+  
+  .menu-toggle span {
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease;
+  }
+
+  .fixed-nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .fixed-nav ul li {
+    width: 100%;
+  }
+}
 }
