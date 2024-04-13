@@ -4,20 +4,37 @@ body {
   font-family: Arial, sans-serif;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .fixed-nav {
   position: fixed;
-  left: 20px;
-  bottom: 20px;
+  left: 0px;
+  bottom: 0px;
   z-index: 1000;
+  width:100%;
 }
 
 .fixed-nav ul {
   list-style: none;
-  padding: 0;
+  padding: 10;
+
+  background-color: rgba(240, 240, 240, .7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  box-shadow: 10px 2px 5px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: flex-start;
+
 }
 
 .fixed-nav li {
   margin-bottom: 10px;
+  padding:10px;
 }
 
 .fixed-nav a {
@@ -469,15 +486,32 @@ input[type="submit"]:hover {
 @media (max-width: 768px) {
   .menu-toggle {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 0px;
+    left: 0px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 20px;
     cursor: pointer;
+    padding:20px;
     z-index: 9999; 
+
+    background-color: rgba(240, 240, 240, .7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle.active {
+
+    background-color: rgba(240, 240, 240, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+
   }
 
   .fixed-nav ul {
@@ -489,6 +523,8 @@ input[type="submit"]:hover {
     max-width: 300px; 
     height: 100%;
     background-color: rgba(240, 240, 240, .7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 
     padding: 20px;
     text-align: center;
@@ -524,4 +560,24 @@ input[type="submit"]:hover {
   .fixed-nav ul li {
     width: 100%;
   }
+}
+
+
+
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: -60px; /* Initially position it below the viewport */
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: bottom 0.3s ease; /* Add transition for smooth sliding */
+}
+
+#backToTopBtn:hover {
+  background-color: #555;
 }

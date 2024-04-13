@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Toggle active class on menu toggle click
   menuToggle.addEventListener("click", function () {
     navList.classList.toggle("active");
+    menuToggle.classList.toggle("active");
   });
 
   // Function to update navigation based on scroll position
@@ -46,5 +47,33 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to deactivate navigation menu
   function deactivateNav() {
     navList.classList.remove("active");
+    menuToggle.classList.remove("active");
   }
 });
+
+// Function to scroll to the top of the page smoothly
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+// Function to toggle back-to-top button visibility and slide-in/out effect
+function toggleBackToTopButton() {
+  const header = document.querySelector("header");
+  const backToTopBtn = document.getElementById("backToTopBtn");
+
+  // Calculate the distance between the top of the viewport and the bottom of the header
+  const headerBottom = header.offsetHeight;
+
+  // Show the button if scroll position is below the header
+  if (window.scrollY > headerBottom) {
+    backToTopBtn.style.bottom = "20px"; // Slide in from bottom
+  } else {
+    backToTopBtn.style.bottom = "-60px"; // Slide out to bottom
+  }
+}
+
+// Add scroll event listener to toggle button visibility and slide-in/out effect
+window.addEventListener("scroll", toggleBackToTopButton);
