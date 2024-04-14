@@ -110,3 +110,7 @@ function toggleProjects(category) {
     projectListHeader.classList.remove("active");
   }
 }
+
+
+
+

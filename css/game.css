@@ -86,3 +86,18 @@
 .game-links img:hover {
   transform: scale(1.1); /* Enlarge the image on hover */
 }
+
+.tools-list,
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tools-list li,
+.skills-list li {
+  margin-bottom: 10px;
+}
