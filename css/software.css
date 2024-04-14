@@ -107,11 +107,28 @@
 }
 
 .projects-list {
-  max-height: 0;
+  /* display: none; */
   overflow: hidden;
-  transition: max-height 0.3s ease; /* Add transition for smooth expansion */
+  transition: max-height 0.3s ease;
+  max-height: 0;
+}
+
+.project-category {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .project-category .icon {
+  margin-left: 5px;
   transition: transform 0.3s ease;
+}
+
+.project-category.active .icon {
+  transform: rotate(90deg);
+}
+
+.icon {
+  display: inline-block;
 }

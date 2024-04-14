@@ -97,18 +97,16 @@ window.addEventListener("beforeunload", function () {
 function toggleProjects(category) {
   const projectList = document.getElementById(category);
   const projectListHeader = document.getElementById(`${category}Header`);
-  const downIcon = document.getElementById(`${category}Down`);
-  const closedIcon = document.getElementById(`${category}Closed`);
+  const arrow = document.getElementById(`${category}Arrow`);
 
-  if (projectList.style.maxHeight === "0px") {
+  if (
+    projectList.style.maxHeight === "0px" ||
+    projectList.style.maxHeight === ""
+  ) {
     projectList.style.maxHeight = projectList.scrollHeight + "px"; // Expand
     projectListHeader.classList.add("active");
-    downIcon.style.transform = "rotate(90deg)"; // Rotate the down arrow span
-    closedIcon.style.transform = "rotate(0deg)"; // Reset the closed arrow span
   } else {
     projectList.style.maxHeight = "0px"; // Collapse
     projectListHeader.classList.remove("active");
-    downIcon.style.transform = "rotate(0deg)"; // Reset the down arrow span
-    closedIcon.style.transform = "rotate(90deg)"; // Rotate the closed arrow span
   }
 }
