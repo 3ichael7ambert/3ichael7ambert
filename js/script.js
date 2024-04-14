@@ -68,7 +68,7 @@ function toggleBackToTopButton() {
   const headerBottom = header.offsetHeight;
 
   // Calculate the right offset for the button
-  const rightOffset = window.innerWidth - header.offsetWidth + 20;
+  const rightOffset = window.innerWidth - header.offsetWidth + 5;
 
   // Show the button if scroll position is below the header
   if (window.scrollY > headerBottom) {
@@ -82,3 +82,33 @@ function toggleBackToTopButton() {
 
 // Add scroll event listener to toggle button visibility and slide-in/out effect
 window.addEventListener("scroll", toggleBackToTopButton);
+
+document.onload;
+// TOGGLE SOFTWARE PROJECTS
+
+window.addEventListener("beforeunload", function () {
+  // Hide all project lists
+  const projectLists = document.querySelectorAll(".projects-list");
+  projectLists.forEach(function (projectList) {
+    // projectList.style.display = "none";
+  });
+});
+
+function toggleProjects(category) {
+  const projectList = document.getElementById(category);
+  const projectListHeader = document.getElementById(`${category}Header`);
+  const downIcon = document.getElementById(`${category}Down`);
+  const closedIcon = document.getElementById(`${category}Closed`);
+
+  if (projectList.style.maxHeight === "0px") {
+    projectList.style.maxHeight = projectList.scrollHeight + "px"; // Expand
+    projectListHeader.classList.add("active");
+    downIcon.style.transform = "rotate(90deg)"; // Rotate the down arrow span
+    closedIcon.style.transform = "rotate(0deg)"; // Reset the closed arrow span
+  } else {
+    projectList.style.maxHeight = "0px"; // Collapse
+    projectListHeader.classList.remove("active");
+    downIcon.style.transform = "rotate(0deg)"; // Reset the down arrow span
+    closedIcon.style.transform = "rotate(90deg)"; // Rotate the closed arrow span
+  }
+}

@@ -566,7 +566,7 @@ input[type="submit"]:hover {
 #backToTopBtn {
   display: none; /* Initially hide the button */
   position: fixed;
-  bottom: 80px;
+  bottom: 70px;
   right: -60px; /* Initially position it outside the viewport */
   padding: 10px 20px;
   background-color: #333;
@@ -605,3 +605,5 @@ input[type="submit"]:hover {
     text-overflow: ellipsis;
   }
 } */
+
+

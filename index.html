@@ -398,8 +398,15 @@
         </li>
         </ul>
 
-          <h3>JavaScript Projects</h3>
-          <ul>
+        <section id="projects" >
+          <div class="projects-container">
+            <!-- JavaScript Projects -->
+            <h3 id="jsProjectsHeader" class="project-category" onclick="toggleProjects('jsProjects')">
+              <i class="fa-brands fa-js"></i> JavaScript Projects
+              <span id="jsDown" class="icon down">&#x25BC;</span>
+              <span id="jsClosed" class="icon closed" style="display:none">&#x25B6;</span>
+            </h3>
+            <ul id="jsProjects" class="projects-list">
             <li>
               Memory Game (<a href="https://3ichael7ambert.github.io/9.5-JS-Memory-Game/">Live</a> | <a href="https://github.com/3ichael7ambert/9.5-JS-Memory-Game">Github</a>)
             </li>
@@ -456,20 +463,30 @@
             </li>
           </ul>
         </li>
-
-      
-          <h3>Node.js Projects</h3>
-          <ul>
-            <li>
+ 
+        <!-- Node.js Projects -->
+<h3 id="nodeProjectsHeader" class="project-category" onclick="toggleProjects('nodeProjects')">
+  <i class="fa-brands fa-node-js"></i> Node.js Projects
+  <span id="nodeDown" class="icon down">&#x25BC;</span>
+  <span id="nodeClosed" class="icon closed" style="display:none">&#x25B6;</span>
+</h3>
+        <ul id="nodeProjects" class="projects-list">
+          <li>
               Markov (<a href="#">Live</a> | <a href="#">Github</a>)
             </li>
           </ul>
      
 
  
-          <h3>Python Projects</h3>
-          <ul>
-            <li>
+          <!-- Python Projects -->
+    <!-- Python Projects -->
+<h3 id="pythonProjectsHeader" class="project-category" onclick="toggleProjects('pythonProjects')">
+  <i class="fa-brands fa-python"></i>Python Projects
+  <span id="pythonDown" class="icon down">&#x25BC;</span>
+  <span id="pythonClosed" class="icon closed" style="display:none">&#x25B6;</span>
+</h3>
+    <ul id="pythonProjects" class="projects-list">
+      <li>
               Boggle (<a href="#">Live</a> | <a href="https://github.com/3ichael7ambert/flask-boggle">Github</a>)
             </li>
             <li>
@@ -489,12 +506,14 @@
             </li>
           </ul>
 
+
     </div>
+    </section>
 		
     <div class="links">
       <h2>Links</h2>
       <ul class="links-list">
-        <li><a href="http://www.github.com/3ichael7ambert"> <i class="fa-brands fa-github"></i> GitHub</a></li>
+        <li><a href="http://www.github.com/3ichael7ambert" target="_blank"> <i class="fa-brands fa-github"></i> GitHub</a></li>
       </ul>
     </div>
 
