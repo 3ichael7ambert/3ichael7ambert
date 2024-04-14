@@ -22,10 +22,9 @@
   margin-bottom: 10px;
 }
 
-/* Adjust link styles */
 .links a {
-  color: blue;
-  text-decoration: underline;
+  /* color: blue; */
+  /* text-decoration: underline; */
 }
 
 .introduction,
@@ -131,4 +130,10 @@
 
 .icon {
   display: inline-block;
+}
+
+.links-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
 }
