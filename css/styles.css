@@ -564,22 +564,23 @@ input[type="submit"]:hover {
 
 
 #backToTopBtn {
-  display: none;
+  display: none; /* Initially hide the button */
   position: fixed;
-  bottom: -60px; /* Initially position it below the viewport */
-  right: 20px;
+  bottom: 80px;
+  right: -60px; /* Initially position it outside the viewport */
   padding: 10px 20px;
   background-color: #333;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: bottom 0.3s ease; /* Add transition for smooth sliding */
+  transition: right 0.3s ease; /* Add transition for smooth sliding */
 }
 
 #backToTopBtn:hover {
   background-color: #555;
 }
+
 
 
 @media only screen and (min-width: 769px) and (max-width: 992px) {

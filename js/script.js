@@ -67,11 +67,16 @@ function toggleBackToTopButton() {
   // Calculate the distance between the top of the viewport and the bottom of the header
   const headerBottom = header.offsetHeight;
 
+  // Calculate the right offset for the button
+  const rightOffset = window.innerWidth - header.offsetWidth + 20;
+
   // Show the button if scroll position is below the header
   if (window.scrollY > headerBottom) {
-    backToTopBtn.style.bottom = "20px"; // Slide in from bottom
+    backToTopBtn.style.right = rightOffset + "px"; // Slide in from right
+    backToTopBtn.style.display = "block"; // Show the button
   } else {
-    backToTopBtn.style.bottom = "-60px"; // Slide out to bottom
+    backToTopBtn.style.right = "-20px"; // Slide out to right
+    backToTopBtn.style.display = "none"; // Hide the button
   }
 }
 
