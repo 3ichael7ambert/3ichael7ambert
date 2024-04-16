@@ -94,6 +94,7 @@ window.addEventListener("beforeunload", function () {
   });
 });
 
+// Drop Down Menus
 function toggleProjects(category) {
   const projectList = document.getElementById(category);
   const projectListHeader = document.getElementById(`${category}Header`);
@@ -105,12 +106,36 @@ function toggleProjects(category) {
   ) {
     projectList.style.maxHeight = projectList.scrollHeight + "px"; // Expand
     projectListHeader.classList.add("active");
+    arrow.classList.add("rotate"); // Add rotate class
   } else {
     projectList.style.maxHeight = "0px"; // Collapse
     projectListHeader.classList.remove("active");
+    arrow.classList.remove("rotate"); // Remove rotate class
   }
 }
 
+// Music Video Carousel Menu
 
+const carousel = document.querySelector(".carousel");
+const slides = document.querySelectorAll(".slide");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
 
+let counter = 0;
+const slideWidth = slides[0].offsetWidth;
 
+nextBtn.addEventListener("click", () => {
+  counter++;
+  if (counter === slides.length) {
+    counter = 0;
+  }
+  carousel.style.transform = `translateX(${-slideWidth * counter}px)`;
+});
+
+prevBtn.addEventListener("click", () => {
+  counter--;
+  if (counter < 0) {
+    counter = slides.length - 1;
+  }
+  carousel.style.transform = `translateX(${-slideWidth * counter}px)`;
+});

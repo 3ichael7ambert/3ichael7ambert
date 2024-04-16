@@ -57,3 +57,123 @@
   padding: 0;
   margin: 0;
 }
+
+.expandable-section {
+  margin-bottom: 20px;
+}
+
+.expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.expandable-content ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.expandable-content li {
+  margin-bottom: 5px;
+}
+
+.active {
+  color: blue;
+}
+
+.fas.fa-chevron-down {
+  margin-left: 5px;
+}
+
+.rotate {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+.fas {
+  transition: transform 0.3s ease;
+}
+
+.music-platforms {
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+  /* grid-gap: 10px; */
+}
+
+.music-platforms p {
+  grid-column: span 2; /* Spanning two columns */
+}
+
+.music-platforms ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.music-platforms ul li {
+  margin-bottom: 10px;
+}
+
+.music-platforms ul li a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.music-platforms ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Podcast */
+.podcast_section ul li a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+.pod-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Carousel Music Videos */
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.music_section iframe {
+  margin-bottom: 20px;
+}
+
+.music_section button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
