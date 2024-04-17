@@ -25,34 +25,47 @@
 
 // document.addEventListener("DOMContentLoaded", loadImages);
 
-function loadImageSequence(containerId, basePath, name, startNum) {
+async function loadImageSequence(containerId, basePath, name, startNum) {
   const container = document.getElementById(containerId);
+  console.log("CONTAINER");
+  console.log(container);
 
   for (let num = startNum; ; num++) {
     const imgElement = document.createElement("img");
-    imgElement.src = `${basePath}/${name}${num}.jpg`;
+    const imgSrc = `${basePath}/${name}${num}.jpg`;
 
-    // Check if the image exists
-    imgElement.onload = function () {
-      container.appendChild(imgElement);
-    };
-
-    // If the image doesn't exist, stop the loop
-    imgElement.onerror = function () {
-      if (num === startNum) {
+    try {
+      const response = await fetch(imgSrc);
+      if (!response.ok) {
         console.log(`No images found for ${name}.`);
-        return;
+        break; // Exit the loop if the image is not found
       }
-      return;
-    };
+      console.log(`Image found: ${imgSrc}`); // Log the image URL
+      imgElement.src = imgSrc;
+      container.appendChild(imgElement);
+    } catch (error) {
+      console.error(error);
+    }
+
+    // Terminate the loop if the image element couldn't be loaded
+    if (num >= startNum + 10) {
+      console.log(`Stopped loading images for ${name}: limit reached.`);
+      break;
+    }
   }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  //   loadImageSequence(
-  //     ".portrait-gallery",
-  //     "/imgs/design/portraits",
-  //     "portrait",
-  //     1
-  //   );
+  loadImageSequence(
+    "portrait-gallery",
+    "/imgs/design/portraits",
+    "portrait",
+    1
+  );
+  loadImageSequence(
+    "gallery-portraits",
+    "imgs/design/portraits",
+    "portrait",
+    1
+  );
 });
