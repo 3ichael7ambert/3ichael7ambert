@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Balloons";
+  src: url("/fonts/Balloons.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Furry";
+  src: url("/fonts/Furry-ME4e.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Hardstyle";
+  src: url("/fonts/Hardstyle.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Ring";
+  src: url("/fonts/Ring-8yYZ.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Spaz";
+  src: url("/fonts/Spazattack-rWOO.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Balloons";
+  src: url("/fonts/Balloons.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Squibbles";
+  src: url("/fonts/Squibbles.ttf") format("truetype");
+}
+@font-face {
+  font-family: "StickFigure";
+  src: url("/fonts/StickFigures.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Stripe";
+  src: url("/fonts/Stripe-YK1j.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Tryptic";
+  src: url("/fonts/Tryptic.ttf") format("truetype");
+}
+
+.font-balloons {
+  font-family: "Balloons", sans-serif;
+}
+
+.font-furry {
+  font-family: "Furry", sans-serif;
+}
+
+.font-hardstyle {
+  font-family: "Hardstyle", sans-serif;
+}
+
+.font-ring {
+  font-family: "Ring", sans-serif;
+}
+
+.font-spaz {
+  font-family: "Spaz", sans-serif;
+}
+
+.font-squibbles {
+  font-family: "Squibbles", sans-serif;
+}
+
+.font-stickfigure {
+  font-family: "StickFigure", sans-serif;
+}
+
+.font-stripe {
+  font-family: "Stripe", sans-serif;
+}
+
+.font-tryptic {
+  font-family: "Tryptic", sans-serif;
+}
