@@ -125,8 +125,18 @@
   </nav>
   
 
-    
+    <!-- TOP OF PAGE - BACK TO TOP -->
     <button id="backToTopBtn" onclick="scrollToTop()">Back to Top</button>
+    <!-- LIGHTBOX -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+          <img id="modal-img" src="" alt="Full-size Image">
+      </div>
+      <div id="prev-arrow" class="nav-arrow left">&lt;</div>
+      <div id="next-arrow" class="nav-arrow right">&gt;</div>
+  </div>
+  
+
 
 
 <p></p>
@@ -1048,15 +1058,17 @@
           <div class="design-category">
 
             <h2 class="design-category-title">Portraitography</h2>
-            <p class="design-category-description">Explore my portrait photography work.</p>
-            <div id="portrait-gallery" class="design-category-placeholder portrait-gallery">
-              <!-- Placeholder for specific content related to portraitography. -->
-            </div>
+            <p class="design-category-description">Explore my portrait portrait work.</p>
+            <!-- <div id="portrait-gallery" class="design-category-placeholder portrait-gallery">
+     
+            </div> -->
   
             <div id="design-container" class="design-container">
               <!-- Video Header -->
               <div class="video-header">
-                <h2>Video Header</h2>
+                <h2>
+                  <!-- Teaser Video -->
+                </h2>
                 <div class="video-header">
                   <iframe
                     class="responsive-video"
@@ -1090,18 +1102,27 @@
           <h2 class="design-category-title">Fine Arts ~ Painting</h2>
           <p class="design-category-description">Discover my various fine arts.</p>
           <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p>
+          <div id="gallery-painting" class="gallery">
+            <!-- Thumbnails will be added here dynamically -->
+          </div>
         </div>
     
         <div class="design-category">
           <h2 class="design-category-title">Fine Arts ~ Sculpture</h2>
           <p class="design-category-description">Discover my various fine arts.</p>
           <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p>
+          <div id="gallery-sculpture" class="gallery">
+            <!-- Thumbnails will be added here dynamically -->
+          </div>
         </div>
 
         <div class="design-category">
           <h2 class="design-category-title">Fine Arts ~ Photography</h2>
           <p class="design-category-description">Discover my various fine arts.</p>
           <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p>
+          <div id="gallery-photography-macro" class="gallery">
+            <!-- Thumbnails will be added here dynamically -->
+          </div>
 
           <p>360 Photography</p>
         </div>
@@ -1110,6 +1131,9 @@
           <h2 class="design-category-title">Fine Arts ~ Drawing</h2>
           <p class="design-category-description">Discover my various fine arts.</p>
           <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p>
+          <div id="gallery-drawings" class="gallery">
+            <!-- Thumbnails will be added here dynamically -->
+          </div>
         </div>
         
         <div class="design-category">
@@ -1117,18 +1141,42 @@
           <p class="design-category-description">Explore my animations.</p>
           <p class="design-category-placeholder">Placeholder for specific content related to animations.</p>
           <p class="design-category-playlist">360 Animations Playlist: <a href="https://www.youtube.com/watch?v=WWFhvThEQEU&list=PLlOnbBlE5oPHXuhqEjF_8jNxYi1lieI6Y">Link to Playlist</a></p>
-          <div class="design-category-video">
-            <p>Embedded YouTube Video:</p>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/GgOpfQE2cyM?si=AX6CuAKR8DX1biBB"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-          </div>
+         
+         <!-- Carousel 360 Animations -->
+<div class="design-category-video carousel-container">
+  <div class="carousel">
+    <div class="slide">
+      <p></p>
+      <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/GgOpfQE2cyM?si=AX6CuAKR8DX1biBB"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+    </div>
+    <div class="slide">
+      <p></p>
+      <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/GgOpfQE2cyM?si=AX6CuAKR8DX1biBB"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+      </iframe>
+    </div>
+    
+  </div>
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+</div>
 
+
+        
           <h2 class="design-category-title">360 Virtual Reality</h2>
 
           <h2 class="design-category-title">Cinematography</h2>
@@ -1141,9 +1189,48 @@
         </div>
 
         <div class="design-category">
-          <h2 class="design-category-title">Digital Assets - Brushes & Fonts</h2>
+          <h2 class="design-category-title">Digital Assets - Brushes</h2>
           <p class="design-category-description">Discover my various fine arts.</p>
-          <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p>
+          <div class="design-category-placeholder">Placeholder for specific content related to various fine arts.</div>
+          <h2 class="design-category-title">Digital Assets - Fonts</h2>
+          <p class="design-category-description">Discover my various fine arts.</p>
+
+          <div class="design-category-placeholder">
+
+          </div>
+
+          <div>
+            <ul>
+              <li>
+                <a href="https://www.1001freefonts.com/designer-3ichael-7ambert-fontlisting.php" target="_blank">
+                  <i class="fa-solid fa-text-height"> 1001 Free Fonts</i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.dafont.com/3ichael-7ambert.d5488" target="_blank">
+                  <i class="fa-solid fa-text-width"> Da Font</i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.fontriver.com/foundry/3ichael_7ambert/" target="_blank">
+                  <i class="fa-solid fa-subscript"> Font River</i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.dafont.com/3ichael-7ambert.d5488" target="_blank">
+                  <i class="fa-solid fa-superscript"> Da Font</i>
+                </a>
+              </li>
+              <li>
+                <a href="https://fontmeme.com/fonts/3ichael-7ambert-listing/" target="_blank">
+                  <i class="fa-solid fa-italic"> Font Meme</i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <p>
+            You may use these for personal use but if you're going to use these for commercial use I distribute these as donationware.
+          </p>
         </div>
 
 
@@ -1409,6 +1496,7 @@ Inktober 2023        </div>
 <script src="js/web3forms.js"></script>
 <script src="js/gallery-portraits.js"></script>
 <script src="js/gallery-loop.js"></script>
+<script src="js/carousel.js"></script>
 
     <script src="https://kit.fontawesome.com/70fd1b28eb.js" crossorigin="anonymous"></script>
     <script src="https://web3forms.com/client/script.js" async defer></script>
