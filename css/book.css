@@ -177,3 +177,14 @@
   margin-bottom: 10px;
   color: #333;
 }
+
+.book-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.book-content,
+.buy-links {
+  flex: 0 0 48%; /* Adjust width as needed */
+}

@@ -7,9 +7,15 @@
 
 #design-container {
   margin-bottom: 30px;
-
-  margin: 0 auto;
   max-width: 800px;
+}
+
+#design-container .design-container {
+  margin: 0 auto; /* Remove this line */
+}
+
+#design-container {
+  text-align: center; /* Add this line */
 }
 
 #portraitography,
@@ -225,4 +231,51 @@
 
 .nav-arrow.right {
   right: 10px;
+}
+/* Style for the container div */
+.font-links {
+  display: flex;
+  flex-direction: row-reverse; /* Right to left */
+  justify-content: space-between; /* Spread out items horizontally */
+  align-items: center; /* Align items vertically */
+}
+
+/* Style for the font links ul */
+.font-links ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+.font-links ul li {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.font-links ul li:hover {
+  transform: scale(1.1);
+}
+/* Style for the links */
+.font-links ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Style for the icons */
+.font-links ul li a i {
+  /* margin-right: 5px;  */
+}
+
+/* Style for each paragraph */
+/* Style for each paragraph */
+.font-links p {
+  transition: transform 0.3s ease; /* Add transition for smooth scaling */
+  display: flex;
+  flex-direction: row;
+}
+
+/* Hover effect */
+.font-links p:hover {
+  transform: scale(1.1); /* Scale up by 10% on hover */
 }
