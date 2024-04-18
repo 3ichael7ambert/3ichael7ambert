@@ -15,10 +15,45 @@ function clearAndHideSections() {
       "art_resume",
       "nav_des",
       "nav_mus",
-      "nav_sto"
+      "nav_sto",
+      "nav_boo"
     );
   } else if (queryValue === "art") {
-    clearAndHide("music", "software", "management_resume", "se_resume");
+    clearAndHide(
+      "music",
+      "software",
+      "management_resume",
+      "se_resume",
+      "nav_sof",
+      "nav_gam",
+      "nav_boo",
+      "nav_mus"
+    );
+  } else if (queryValue === "music") {
+    clearAndHide(
+      "art",
+      "software",
+      "management_resume",
+      "art_resume",
+      "se_resume",
+      "nav_sof",
+      "nav_gam",
+      "nav_boo",
+      "nav_des"
+    );
+  } else if (queryValue === "author") {
+    clearAndHide(
+      "music",
+      "software",
+      "management_resume",
+      "art_resume",
+      "se_resume",
+      "se_resume",
+      "nav_sof",
+      "nav_gam",
+      "nav_des",
+      "nav_mus"
+    );
   }
 }
 
