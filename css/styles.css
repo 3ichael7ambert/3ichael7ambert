@@ -607,3 +607,8 @@ input[type="submit"]:hover {
 } */
 
 
+
+
+.hide {
+  display: none;
+}

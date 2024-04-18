@@ -111,17 +111,17 @@
     </div>
     <ul>
       <li></li>
-      <li><a href="#education" onclick="deactivateNav()"><i class="fa-solid fa-user-graduate"></i> <span class="nav-text">Education</span></a></li>
-      <li><a href="#resume" onclick="deactivateNav()"><i class="fa-regular fa-file"></i> <span class="nav-text">Resume</span></a></li>
-      <li><a href="#certificates" onclick="deactivateNav()"><i class="fa-solid fa-award"></i> <span class="nav-text">Certificates</span></a></li>
+      <li id="nav_edu"><a href="#education" onclick="deactivateNav()"><i class="fa-solid fa-user-graduate"></i> <span class="nav-text">Education</span></a></li>
+      <li id="nav_res"><a href="#resume" onclick="deactivateNav()"><i class="fa-regular fa-file"></i> <span class="nav-text">Resume</span></a></li>
+      <li id="nav_cer"><a href="#certificates" onclick="deactivateNav()"><i class="fa-solid fa-award"></i> <span class="nav-text">Certificates</span></a></li>
       <!-- <li><a href="#about" onclick="deactivateNav()"><i class="fa-solid fa-user"></i> <span class="nav-text">About</span></a></li> -->
-      <li><a href="#software" onclick="deactivateNav()"><i class="fa-solid fa-computer"></i> <span class="nav-text">Software</span></a></li>
-      <li><a href="#games" onclick="deactivateNav()"><i class="fa-solid fa-gamepad"></i> <span class="nav-text">Games</span></a></li>
-      <li><a href="#music" onclick="deactivateNav()"><i class="fa-solid fa-music"></i> <span class="nav-text">Music</span></a></li>
-      <li><a href="#design" onclick="deactivateNav()"><i class="fa-solid fa-palette"></i> <span class="nav-text">Design</span></a></li>
-      <li><a href="#book" onclick="deactivateNav()"><i class="fa-solid fa-book-open"></i> <span class="nav-text">Book</span></a></li>
-      <li><a href="#clothing" onclick="deactivateNav()"><i class="fa-solid fa-shirt"></i> <span class="nav-text">Store</span></a></li>
-      <li><a href="#contact" onclick="deactivateNav()"><i class="fa-solid fa-file-signature"></i> <span class="nav-text">Contact</span></a></li>
+      <li id="nav_sof"><a href="#software" onclick="deactivateNav()"><i class="fa-solid fa-computer"></i> <span class="nav-text">Software</span></a></li>
+      <li id="nav_gam"><a href="#games" onclick="deactivateNav()"><i class="fa-solid fa-gamepad"></i> <span class="nav-text">Games</span></a></li>
+      <li id="nav_mus"><a href="#music" onclick="deactivateNav()"><i class="fa-solid fa-music"></i> <span class="nav-text">Music</span></a></li>
+      <li id="nav_des"><a href="#design" onclick="deactivateNav()"><i class="fa-solid fa-palette"></i> <span class="nav-text">Design</span></a></li>
+      <li id="nav_boo"><a href="#book" onclick="deactivateNav()"><i class="fa-solid fa-book-open"></i> <span class="nav-text">Book</span></a></li>
+      <li id="nav_sto"><a href="#clothing" onclick="deactivateNav()"><i class="fa-solid fa-shirt"></i> <span class="nav-text">Store</span></a></li>
+      <li id="nav_con"><a href="#contact" onclick="deactivateNav()"><i class="fa-solid fa-file-signature"></i> <span class="nav-text">Contact</span></a></li>
       <li></li>
     </ul>
   </nav>
@@ -169,9 +169,9 @@
   <div class="resume-container">
     <h2>Resumes</h2>
     <ul class="resume-list">
-      <li><a href="https://docs.google.com/document/d/1ySPv3M-m1GrZiijw1hPpA8uzpLlGbqUvjAQd0JSTh_8/" target="_blank"><i class="fa-regular fa-file"></i> Software Engineer Resume</a></li>
-      <li><a href="https://docs.google.com/document/d/1xcpOlNBwHi9M0ezx4L-Q6NslJ0IAPDbBaiqD-QBTrZQ/" target="_blank"><i class="fa-solid fa-file"></i> Management Resume</a></li>
-      <li><a href="https://docs.google.com/document/d/1no-BdhORTq8Z4IUiVF8hhIerqDxA7ozZHN8Ri-QeY84/" target="_blank"><i class="fa-regular fa-file"></i> Art & Design Resume</a></li>
+      <li id="se_resume"><a href="https://docs.google.com/document/d/1ySPv3M-m1GrZiijw1hPpA8uzpLlGbqUvjAQd0JSTh_8/" target="_blank"><i class="fa-regular fa-file"></i> Software Engineer Resume</a></li>
+      <li id="management_resume"><a href="https://docs.google.com/document/d/1xcpOlNBwHi9M0ezx4L-Q6NslJ0IAPDbBaiqD-QBTrZQ/" target="_blank"><i class="fa-solid fa-file"></i> Management Resume</a></li>
+      <li id="art_resume"><a href="https://docs.google.com/document/d/1no-BdhORTq8Z4IUiVF8hhIerqDxA7ozZHN8Ri-QeY84/" target="_blank"><i class="fa-regular fa-file"></i> Art & Design Resume</a></li>
     </ul>
   </div>
 </section>
@@ -2195,6 +2195,7 @@ Inktober 2023        </div>
 
 
 <script src="js/script.js"></script>
+<script src="js/sections.js"></script>
 <script src="js/web3forms.js"></script>
 <script src="js/gallery-portraits.js"></script>
 <script src="js/gallery-loop.js"></script>
