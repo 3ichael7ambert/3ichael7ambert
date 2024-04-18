@@ -167,8 +167,23 @@ function navigateGallery(direction) {
 document.addEventListener("DOMContentLoaded", function () {
   loadImageSequence(
     "gallery-portraits",
-    "imgs/design/portraits",
+    "imgs/design/portraits/portraits",
     "portrait",
+    1
+  );
+ 
+
+  loadImageSequence(
+    "gallery-portraits-ink",
+    "imgs/design/portraits/ink",
+    "ink",
+    1
+  );
+
+  loadImageSequence(
+    "gallery-portraits-graphite",
+    "imgs/design/portraits/graphite",
+    "graphite",
     1
   );
 
