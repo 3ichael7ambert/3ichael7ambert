@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function clearAndHideSections() {
   const urlParams = new URLSearchParams(window.location.search);
-  const queryValue = urlParams.get("");
-  if (queryValue === "developer") {
+  const queryValue = urlParams.toString(); // Get all parameters as a single string
+  if (queryValue.includes("developer")) {
     clearAndHide(
       "music",
       "design",
@@ -18,7 +18,7 @@ function clearAndHideSections() {
       "nav_sto",
       "nav_boo"
     );
-  } else if (queryValue === "art") {
+  } else if (queryValue.includes("art")) {
     clearAndHide(
       "music",
       "software",
@@ -29,7 +29,7 @@ function clearAndHideSections() {
       "nav_boo",
       "nav_mus"
     );
-  } else if (queryValue === "music") {
+  } else if (queryValue.includes("music")) {
     clearAndHide(
       "art",
       "software",
@@ -41,7 +41,7 @@ function clearAndHideSections() {
       "nav_boo",
       "nav_des"
     );
-  } else if (queryValue === "author") {
+  } else if (queryValue.includes("author")) {
     clearAndHide(
       "music",
       "software",
@@ -55,10 +55,11 @@ function clearAndHideSections() {
       "nav_mus"
     );
   }
-  if (queryValue === "dark") {
+  if (queryValue.includes("dark")) {
+    // Add code for dark mode
   }
 
-  if (queryValue === "snow") {
+  if (queryValue.includes("snow")) {
     createSnow();
   }
 }
