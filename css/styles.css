@@ -54,7 +54,7 @@ body::-webkit-scrollbar {
   justify-content: center;
   align-items: center;
   font-size: 24px;
-  background-color: #f0f0f0;
+  background-color: rgba(240, 240, 240, .7);
   border-bottom: 1px solid #ccc;
   min-height: 100vh; 
   height: auto;
@@ -62,24 +62,24 @@ body::-webkit-scrollbar {
 
 
 #experience {
-  background-color: #ccc;
+  background-color: rgba(210, 210, 210, .7);
 }
 
 #music {
-  background-color: #ddd;
+  background-color: rgba(210, 210, 210, .7);
 }
 
 #book {
-  background-color: #eee;
+  background-color: rgba(210, 210, 210, .7);
 }
 
 #clothing {
-  background-color: #f5f5f5;
+  background-color: rgba(210, 210, 210, .7);
 }
 
 #design,
 #graphic_illustrator {
-  background-color: #f5f5f5;
+  background-color:rgba(230, 230, 230, .7);
   padding: 20px;
 }
 
@@ -90,7 +90,7 @@ body::-webkit-scrollbar {
 #book,
 #additional_books,
 #reviews {
-  background-color: #eee;
+  background-color:rgba(210, 210, 210, .7);
   padding: 20px;
 }
 
@@ -101,7 +101,7 @@ body::-webkit-scrollbar {
 #clothing,
 #stores,
 #images {
-  background-color: #f5f5f5;
+  background-color: rgba(210, 210, 210, .7);
   padding: 20px;
 }
 
@@ -233,7 +233,7 @@ nav ul li a:hover {
 }
 
 .section {
-  background-color: #f0f0f0;
+  background-color:  rgba(240, 240, 240, .7);
   padding: 20px;
   border-bottom: 1px solid #ccc;
 }
@@ -255,7 +255,7 @@ body {
 }
 
 header {
-  background-color: #eee;
+  background-color: rgba(210, 210, 210, .7);
   color: #111;
   padding: 20px;
   text-align: center;
@@ -277,14 +277,14 @@ h2 {
 button {
   padding: 10px;
   margin: 5px;
-  background-color: #3498db;
+  background-color: rgba(63, 138, 229, 0.7);
   color: #fff;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color:  rgba(63, 138, 229, 0.7);
 }
 
 section {
@@ -324,7 +324,7 @@ section {
 
 
 .section {
-  background-color: #f0f0f0;
+  background-color: rgba(240, 240, 240, .7);
   padding: 20px;
   border-bottom: 1px solid #ccc;
 }
@@ -361,7 +361,7 @@ textarea {
 }
 
 input[type="submit"] {
-  background-color: #4CAF50;
+  background-color:  rgba(69, 229, 63, 0.7);
   color: white;
   padding: 10px 20px;
   border: none;
@@ -370,7 +370,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color:  rgba(69, 229, 63, 0.7);
 }
 
 
@@ -474,7 +474,7 @@ input[type="submit"]:hover {
 .menu-toggle span {
   width: 100%;
   height: 2px;
-  background-color: #333;
+  background-color:  rgba(61, 61, 61, 0.7);
   transition: all 0.3s ease;
 }
 
@@ -545,7 +545,7 @@ input[type="submit"]:hover {
   .menu-toggle span {
     width: 100%;
     height: 2px;
-    background-color: #333;
+    background-color:  rgba(74, 74, 74, 0.7);
     transition: all 0.3s ease;
   }
 
@@ -569,7 +569,7 @@ input[type="submit"]:hover {
   bottom: 70px;
   right: -60px; /* Initially position it outside the viewport */
   padding: 10px 20px;
-  background-color: #333;
+  background-color:  rgba(76, 76, 76, 0.7);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -578,7 +578,7 @@ input[type="submit"]:hover {
 }
 
 #backToTopBtn:hover {
-  background-color: #555;
+  background-color:  rgba(87, 87, 87, 0.7);
 }
 
 
