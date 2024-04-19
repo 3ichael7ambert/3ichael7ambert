@@ -3,24 +3,56 @@ function randomInRange(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-// Function to create a snowflake// Function to create a snowflake
-function createSnowflake() {
-  const snowflake = document.createElement("div");
-  snowflake.id = "snowflakes-container";
-  snowflake.className = "snowflake";
-  snowflake.style.zIndex = 10000;
-  snowflake.style.left = randomInRange(0, window.innerWidth) + "px";
-  snowflake.style.animationDuration = randomInRange(5, 20) + "s";
-  snowflake.style.backgroundColor = "red"; // Set background color to red for debugging
-  document.getElementById("snowflakes-container").appendChild(snowflake);
+// Function to create snow elements
+function createSnow() {
+  const totalSnowflakes = 200; // Total number of snowflakes
+  const container = document.getElementById("snowflakes-container"); // Corrected id
 
-  // Remove the snowflake after animation completes
-  snowflake.addEventListener("animationend", () => {
-    snowflake.remove();
-  });
+  for (let i = 0; i < totalSnowflakes; i++) {
+    const snowflake = document.createElement("div");
+    snowflake.classList.add("snow");
+    snowflake.style.width = "10px";
+    snowflake.style.height = "10px";
+    snowflake.style.position = "absolute";
+    snowflake.style.background = "white";
+    snowflake.style.borderRadius = "50%";
+    snowflake.style.zIndex = "11000";
+
+    // Calculate random positions and animation properties
+    const randomX = randomInRange(0, window.innerWidth);
+    const randomOffset = randomInRange(-100, 100);
+    const randomXEnd = randomX + randomOffset;
+    const randomYoyoTime = randomInRange(0.3, 0.8) * 100;
+    const randomScale = randomInRange(0.1, 1);
+    const fallDuration = randomInRange(10, 30);
+    const fallDelay = randomInRange(-10, 0);
+
+    // Set initial position and animation
+    snowflake.style.left = randomX + "px";
+    snowflake.style.transform = `translateY(-10px) scale(${randomScale})`;
+    snowflake.style.animation = `fall-${i} ${fallDuration}s ${fallDelay}s linear infinite`;
+
+    // Create keyframes for animation
+    const keyframes = `
+            @keyframes fall-${i} {
+              ${randomYoyoTime}% {
+                transform: translate(${randomXEnd}px, 100vh) scale(${randomScale});
+              }
+              to {
+                transform: translate(${randomXEnd}px, 100vh) scale(${randomScale});
+              }
+            }
+          `;
+
+    // Add keyframes to style tag
+    const style = document.createElement("style");
+    style.innerHTML = keyframes;
+    document.head.appendChild(style);
+
+    // Append snowflake to container
+    container.appendChild(snowflake);
+  }
 }
 
-// Function to create multiple snowflakes
-function createSnowfall() {
-  setInterval(createSnowflake, 500); // Adjust the interval to control snowflake generation rate
-}
+// Call function to create snowflakes
+// createSnow();

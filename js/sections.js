@@ -55,6 +55,12 @@ function clearAndHideSections() {
       "nav_mus"
     );
   }
+  if (queryValue === "dark") {
+  }
+
+  if (queryValue === "snow") {
+    createSnow();
+  }
 }
 
 // Function to clear the contents and hide sections

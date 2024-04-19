@@ -9,7 +9,7 @@ function isDarkModePreferred() {
 // Function to apply dark mode styles
 function applyDarkModeStyles() {
   // Check if dark mode is preferred
-  if (isDarkModePreferred()) {
+  if (isDarkModePreferred() || queryValue === "dark") {
     //   if (true) {
     // Apply dark mode styles to body
     document.body.style.backgroundColor = "#333";
@@ -18,7 +18,7 @@ function applyDarkModeStyles() {
     // Apply dark mode styles to specific sections
     const sections = document.querySelectorAll(".section");
     sections.forEach((section) => {
-      section.style.backgroundColor = "#222"; // Dark background color
+      section.style.backgroundColor = "rgba(40, 40, 20, .5)"; // Dark background color
       section.style.color = "#fff"; // Light text color
     });
 
@@ -26,7 +26,7 @@ function applyDarkModeStyles() {
     const fixedNav = document.querySelector(".fixed-nav");
     if (fixedNav) {
       fixedNav.style.backgroundColor = "rgba(20, 20, 20, 0.7)";
-      fixedNav.style.color = "#fff";
+      fixedNav.style.color = "rgba(60, 60, 60, .7)";
       fixedNav.style.boxShadow = "10px 2px 5px rgba(0, 0, 0, 0.5)";
     }
 
