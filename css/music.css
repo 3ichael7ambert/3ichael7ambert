@@ -178,3 +178,121 @@
 .next {
   right: 0;
 }
+
+/* ANIMATIONS */
+
+#mmusic-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -10;
+}
+
+#myCanvas {
+  background-color: black;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  position: fixed;
+}
+
+#piano {
+  background-color: #000;
+  height: 100px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  /* -ms-transform: translateY(-50%); */
+  /* transform: translateY(-50%); */
+  z-index: 100;
+  width: 80%;
+  /* display: block; */
+  /* margin-left: 50%; */
+  margin-right: 50%;
+
+  display: inline;
+}
+
+.pianoKeyWhite {
+  background-color: #ddd;
+  border-radius: 10px;
+  transition: all 500ms;
+  width: 50px;
+  height: 150px;
+}
+.pianoKeyWhite:hover {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.pianoKeyBlack {
+  background-color: black;
+  border-radius: 10px;
+  transition: all 500ms;
+  width: 40px;
+  height: 100px;
+}
+.pianoKeyBlack:hover {
+  background-color: #222;
+  border-radius: 10px;
+}
+
+/* PIANO */
+.piano {
+  display: flex;
+  justify-content: center;
+
+  /* background-color: #000; */
+  height: 100px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  /* -ms-transform: translateY(-50%); */
+  /* transform: translateY(-50%); */
+  z-index: 100;
+  width: 100%;
+  /* display: block; */
+  /* margin-left: 50%; */
+  /* margin-right: 50%; */
+
+  /* display: inline; */
+}
+
+.white-key {
+  width: 50px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.black-key {
+  width: 30px;
+  height: 120px;
+  background-color: black;
+  position: relative;
+  margin-left: -15px;
+  z-index: 1;
+}
+
+.black-key:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 15px 20px 15px;
+  border-color: transparent transparent black transparent;
+}
+
+.white-key:active,
+.black-key:active {
+  background-color: gray;
+}

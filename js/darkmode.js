@@ -46,14 +46,14 @@ function applyDarkModeStyles() {
     // Fix the header
     const header = document.querySelector("header");
     if (header) {
-      header.style.backgroundColor = "#222"; // Dark background color for header
+      header.style.backgroundColor = "rgba(60  , 60, 60, 0.5)"; // Dark background color for header
       header.style.color = "#fff"; // Light text color for header
     }
 
     // Adjust dropdown menus
     const dropdownMenus = document.querySelectorAll(".project-category");
     dropdownMenus.forEach((menu) => {
-      menu.style.backgroundColor = "#444"; // Darker background color for dropdown menus
+      menu.style.backgroundColor = "rgba(30, 30, 30, 0.5)"; // Darker background color for dropdown menus
       menu.style.color = "#fff"; // Light text color for dropdown menus
     });
   }

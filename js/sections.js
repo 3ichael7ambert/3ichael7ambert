@@ -44,6 +44,7 @@ function clearAndHideSections() {
       "nav_mus"
     );
   } else if (queryValue.includes("music")) {
+    const header = document.getElementById("header-about");
     clearAndHide(
       "art",
       "software",
@@ -52,9 +53,27 @@ function clearAndHideSections() {
       "se_resume",
       "nav_sof",
       "nav_gam",
-      "nav_boo",
-      "nav_des"
+      // "nav_boo",
+      "nav_des",
+      "icon-deviant",
+      "icon-be",
+      "icon-artstation",
+      "icon-git",
+      "icon-in",
+      "resume",
+      "nav_res",
+      "nav_edu",
+      "nav_cer",
+      "education",
+      "certificates",
+      "games",
+      "design"
     );
+    if (header) {
+      header.innerHTML =
+        "<p>With over two decades of musical exploration, my journey began with the strings of a guitar and flourished into a digital odyssey with FL Studio. From live bass performances to mastering the ukulele, banjo, mandolin, and piano, I've immersed myself in diverse instruments. Composing across genres from rock to electronica, folk to easy listening, my music tells stories and evokes emotions, reflecting my passion for creativity and the universal language of music.</p><br/>";
+    }
+    makeMusicBG();
   } else if (queryValue.includes("author")) {
     clearAndHide(
       "music",
