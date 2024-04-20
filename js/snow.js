@@ -6,7 +6,7 @@ function randomInRange(min, max) {
 // Function to create snow elements
 function createSnow() {
   const totalSnowflakes = 200; // Total number of snowflakes
-  const container = document.getElementById("snowflakes-container"); // Corrected id
+  const container = document.getElementById("weather-container"); // Corrected id
 
   for (let i = 0; i < totalSnowflakes; i++) {
     const snowflake = document.createElement("div");
@@ -17,6 +17,7 @@ function createSnow() {
     snowflake.style.background = "white";
     snowflake.style.borderRadius = "50%";
     snowflake.style.zIndex = "11000";
+    container.style.background = "rgba(50, 50, 50, .3)";
 
     // Calculate random positions and animation properties
     const randomX = randomInRange(0, window.innerWidth);

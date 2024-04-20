@@ -62,6 +62,10 @@ function clearAndHideSections() {
   if (queryValue.includes("snow")) {
     createSnow();
   }
+
+  if (queryValue.includes("rain")) {
+    createRain();
+  }
 }
 
 // Function to clear the contents and hide sections

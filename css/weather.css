@@ -1,0 +1,19 @@
+#weather-container {
+  position: fixed;
+  z-index: -1;
+  /* z-index: -1000; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  /* background-color: blue; */
+
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  /* color:rgba(50, 50, 50, .3); */
+  /*background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
+  /* overflow: hidden; */
+  filter: drop-shadow(0 0 10px white);
+}
