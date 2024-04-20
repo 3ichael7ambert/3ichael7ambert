@@ -1,9 +1,9 @@
 /* Music Section */
 
 #music {
-  background-color: #ccc;
+  background-color: rgba(230, 230, 230, 0.7);
   padding: 20px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid rgba(230, 230, 230, 0.7);
 }
 
 .music_section {
@@ -192,7 +192,7 @@
 }
 
 #myCanvas {
-  background-color: black;
+  /* background-color: black; */
   left: 0;
   top: 0;
   width: 100%;

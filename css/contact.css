@@ -1,6 +1,6 @@
 /* Contact Section */
 #contact {
-  background-color: #f6f6f6; /* Soft gray background */
+  background-color: rgba(250, 250, 250, 0.7); /* Soft gray background */
   padding: 30px; /* Increased padding for better spacing */
   border-radius: 15px; /* Rounded corners for a friendlier look */
 }

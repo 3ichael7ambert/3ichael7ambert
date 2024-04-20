@@ -2,7 +2,7 @@
   width: 2px;
   height: 10px;
   position: absolute;
-  background: blue;
+  background: rgba(150, 200, 255, .9)
   animation: fall linear infinite;
 }
 

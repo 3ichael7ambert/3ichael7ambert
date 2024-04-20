@@ -1,0 +1,45 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Give+You+Glory);
+/* 
+body {
+
+  &:hover {
+    span {
+      display: none;
+    }
+  }
+} */
+
+/* span {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  color: #000;
+  margin-top: -40px;
+  margin-left: -227px;
+} */
+
+#paint-container,
+#art-canvas-education {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -10;
+  /* pointer-events: none; */
+}
+
+div {
+  /* pointer-events: all; */
+}
+header {
+  /* pointer-events: all; */
+}
+#introduction {
+  /* pointer-events: all; */
+}
+.header-content {
+  /* pointer-events: all; */
+}

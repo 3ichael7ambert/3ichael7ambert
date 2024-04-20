@@ -32,7 +32,37 @@ function clearAndHideSections() {
       header.innerHTML =
         "<p>Dynamic Software Engineer adept at planning, problem-solving, and coding across diverse platforms and areas. </p><p>Experienced in crafting projects from static web pages to modern web apps. </p><p> Seeking new opportunities to apply expertise in software engineering.</p><br/>";
     }
+  } else if (queryValue.includes("games")) {
+    const header = document.getElementById("header-about");
+
+    clearAndHide(
+      "music",
+      "design",
+      "book",
+      "clothing",
+      "management_resume",
+      "art_resume",
+      "nav_des",
+      "nav_mus",
+      "nav_sto",
+      "nav_boo",
+      "icon-db",
+      "icon-insta",
+      "icon-deviant",
+      "icon-be",
+      "icon-artstation",
+      "icon-yt",
+      "icon-fb",
+      "icon-tik"
+    );
+    if (header) {
+      header.innerHTML =
+        "<p>Dynamic Software Engineer adept at planning, problem-solving, and coding across diverse platforms and areas. </p><p>Experienced in crafting projects from static web pages to modern web apps. </p><p> Seeking new opportunities to apply expertise in software engineering.</p><br/>";
+    }
   } else if (queryValue.includes("art")) {
+    const header = document.getElementById("header-about");
+    const certificate = document.getElementById("certificate-container");
+
     clearAndHide(
       "music",
       "software",
@@ -41,8 +71,22 @@ function clearAndHideSections() {
       "nav_sof",
       "nav_gam",
       "nav_boo",
-      "nav_mus"
+      "nav_mus",
+      "icon-git"
     );
+
+    initialize();
+    noActivityCheck();
+    draw();
+    if (header) {
+      header.innerHTML =
+        "<p>I've embraced art as my way of life. I blend digital and traditional mediums to express my boundless creativity. From brushstrokes to pixels, I traverse diverse landscapes with tools like Photoshop, Procreate, and Dreamweaver. I craft pixel art, vector illustrations, and custom brushes. My projects span game design, music visualization, graphic design, and more. Come along on this artistic journey where imagination has no limits.</p><br/>";
+      header.style.backgroundColor = "rgba(120,120,120,0.2)";
+    }
+    if (certificate) {
+      certificate.innerHTML =
+        '<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="7ec284ac-097a-4370-aa3b-c37f313f7854" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>';
+    }
   } else if (queryValue.includes("music")) {
     const header = document.getElementById("header-about");
     const bookDesc = document.getElementById("book-desc");
@@ -80,6 +124,7 @@ function clearAndHideSections() {
     }
     makeMusicBG();
   } else if (queryValue.includes("author")) {
+    const header = document.getElementById("header-about");
     clearAndHide(
       "music",
       "software",
@@ -103,6 +148,10 @@ function clearAndHideSections() {
 
   if (queryValue.includes("rain")) {
     createRain();
+  }
+
+  if (queryValue.includes("musicBG")) {
+    makeMusicBG();
   }
 }
 

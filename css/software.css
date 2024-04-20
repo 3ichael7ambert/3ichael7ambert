@@ -1,7 +1,7 @@
 #software {
-  background-color: #f0f0f0;
+  background-color: rgba(240, 240, 240, 0.7);
   padding: 20px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.7);
 }
 
 .software-container {

@@ -1,7 +1,7 @@
 /* Resume Section Styles */
 
 #resume {
-  background-color: #f0f0f0; 
+  background-color: rgba(240,240,240,.7);
   padding: 20px;
   display: flex;
   align-items: center; 
@@ -37,7 +37,7 @@
   font-weight: bold;
   transition: color 0.3s;
   display: inline-block;
-
+}
 .resume-list a:hover {
   color: #666;
 }
