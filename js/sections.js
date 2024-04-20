@@ -6,6 +6,8 @@ function clearAndHideSections() {
   const urlParams = new URLSearchParams(window.location.search);
   const queryValue = urlParams.toString(); // Get all parameters as a single string
   if (queryValue.includes("developer")) {
+    const header = document.getElementById("header-about");
+
     clearAndHide(
       "music",
       "design",
@@ -16,8 +18,20 @@ function clearAndHideSections() {
       "nav_des",
       "nav_mus",
       "nav_sto",
-      "nav_boo"
+      "nav_boo",
+      "icon-db",
+      "icon-insta",
+      "icon-deviant",
+      "icon-be",
+      "icon-artstation",
+      "icon-yt",
+      "icon-fb",
+      "icon-tik"
     );
+    if (header) {
+      header.innerHTML =
+        "<p>Dynamic Software Engineer adept at planning, problem-solving, and coding across diverse platforms and areas. </p><p>Experienced in crafting projects from static web pages to modern web apps. </p><p> Seeking new opportunities to apply expertise in software engineering.</p><br/>";
+    }
   } else if (queryValue.includes("art")) {
     clearAndHide(
       "music",

@@ -6,7 +6,7 @@ function randomInRange(min, max) {
 // Function to create snow elements
 function createSnow() {
   const totalSnowflakes = 200; // Total number of snowflakes
-  const container = document.getElementById("weather-container"); // Corrected id
+  const container = document.getElementById("weather-container"); 
 
   for (let i = 0; i < totalSnowflakes; i++) {
     const snowflake = document.createElement("div");
