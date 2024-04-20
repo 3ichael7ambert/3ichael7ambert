@@ -1,0 +1,18 @@
+.cursor {
+  position: absolute;
+  width: 330px; /* Adjust the width of your cursor image */
+  height: 418px; /* Adjust the height of your cursor image */
+  pointer-events: none;
+  transform-origin: top left;
+  animation: rotateAnimation 5s linear infinite;
+  z-index: 10000
+}
+
+@keyframes rotateAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

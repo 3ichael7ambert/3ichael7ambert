@@ -74,10 +74,12 @@ function clearAndHideSections() {
       "nav_mus",
       "icon-git"
     );
-
+    // GRID ART
     initialize();
     noActivityCheck();
     draw();
+    // MOUSE PENCIL
+    mousePencil();
     if (header) {
       header.innerHTML =
         "<p>I've embraced art as my way of life. I blend digital and traditional mediums to express my boundless creativity. From brushstrokes to pixels, I traverse diverse landscapes with tools like Photoshop, Procreate, and Dreamweaver. I craft pixel art, vector illustrations, and custom brushes. My projects span game design, music visualization, graphic design, and more. Come along on this artistic journey where imagination has no limits.</p><br/>";
@@ -152,6 +154,10 @@ function clearAndHideSections() {
 
   if (queryValue.includes("musicBG")) {
     makeMusicBG();
+  }
+
+  if (queryValue.includes("pencil")) {
+    mousePencil();
   }
 }
 
