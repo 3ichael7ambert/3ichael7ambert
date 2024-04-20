@@ -45,15 +45,20 @@ function clearAndHideSections() {
     );
   } else if (queryValue.includes("music")) {
     const header = document.getElementById("header-about");
+    const bookDesc = document.getElementById("book-desc");
     clearAndHide(
       "art",
       "software",
+      "resume",
+      "education",
+      "certificates",
+      "games",
+      "design",
       "management_resume",
       "art_resume",
       "se_resume",
       "nav_sof",
       "nav_gam",
-      // "nav_boo",
       "nav_des",
       "icon-deviant",
       "icon-be",
@@ -63,15 +68,15 @@ function clearAndHideSections() {
       "resume",
       "nav_res",
       "nav_edu",
-      "nav_cer",
-      "education",
-      "certificates",
-      "games",
-      "design"
+      "nav_cer"
     );
     if (header) {
       header.innerHTML =
         "<p>With over two decades of musical exploration, my journey began with the strings of a guitar and flourished into a digital odyssey with FL Studio. From live bass performances to mastering the ukulele, banjo, mandolin, and piano, I've immersed myself in diverse instruments. Composing across genres from rock to electronica, folk to easy listening, my music tells stories and evokes emotions, reflecting my passion for creativity and the universal language of music.</p><br/>";
+    }
+    if (bookDesc) {
+      bookDesc.innerHTML =
+        "'Memorandum in a Cruet' began as lyrical verses destined for music but found its true resonance as standalone poetry. Evoking vivid imagery and heartfelt emotion, its verses captivated readers with their depth and symbolism. Yet, in a surprising twist, the poetry was later reintegrated into music, creating a harmonious fusion of words and melodies that continues to speak to the soul.";
     }
     makeMusicBG();
   } else if (queryValue.includes("author")) {
@@ -107,7 +112,9 @@ function clearAndHide(...sectionIds) {
     const section = document.getElementById(sectionId);
     if (section) {
       section.innerHTML = ""; // Clear the contents
-      section.classList.add("hide"); // Hide the section
+      section.classList.add("hide");
+      section.style.display = "none";
+      section.classList.remove("section"); // Hide the section
     }
   });
 }
