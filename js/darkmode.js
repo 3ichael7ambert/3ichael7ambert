@@ -7,9 +7,9 @@ function isDarkModePreferred() {
 }
 
 // Function to apply dark mode styles
-function applyDarkModeStyles() {
+function applyDarkModeStyles(s) {
   // Check if dark mode is preferred
-  if (isDarkModePreferred() || queryValue === "dark") {
+  if (isDarkModePreferred() || s === true) {
     //   if (true) {
     // Apply dark mode styles to body
     document.body.style.backgroundColor = "#333";

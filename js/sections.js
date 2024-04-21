@@ -141,7 +141,7 @@ function clearAndHideSections() {
     );
   }
   if (queryValue.includes("dark")) {
-    // Add code for dark mode
+    applyDarkModeStyles(true);
   }
 
   if (queryValue.includes("snow")) {
