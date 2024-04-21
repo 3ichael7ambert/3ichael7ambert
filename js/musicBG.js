@@ -1,9 +1,10 @@
-function makeMusicBG() {
+function makeMusicBG(s) {
+  var darkMode = s;
   // Get the canvas element and create a 2D drawing context
   var canvas = document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
 
-  // Set the canvas dimensions∑
+  // Set the canvas dimensions
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
@@ -23,13 +24,14 @@ function makeMusicBG() {
 
   // Draw the music animation
   function drawmusic() {
-    // Set the canvas background color to black
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    // Set the canvas background color
+    ctx.fillStyle = darkMode ? "rgba(0,0,0,0.05)" : "rgba(255,255,255,0.05)"; // Adjust according to dark mode
+
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Set the font and color for the music characters
     ctx.font = "15px monospace";
-    ctx.fillStyle = "#FFF";
+    ctx.fillStyle = darkMode ? "#fff" : "#000"; // Adjust according to dark mode
 
     // Loop through the music columns
     for (var i = 0; i < columns; i++) {

@@ -5,6 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
 function clearAndHideSections() {
   const urlParams = new URLSearchParams(window.location.search);
   const queryValue = urlParams.toString(); // Get all parameters as a single string
+
+  let darkModePreferred = false;
+  if (queryValue.includes("dark")) {
+    applyDarkModeStyles(true);
+    darkModePreferred = true;
+  }
+
   if (queryValue.includes("developer")) {
     const header = document.getElementById("header-about");
 
@@ -124,7 +131,7 @@ function clearAndHideSections() {
       bookDesc.innerHTML =
         "'Memorandum in a Cruet' began as lyrical verses destined for music but found its true resonance as standalone poetry. Evoking vivid imagery and heartfelt emotion, its verses captivated readers with their depth and symbolism. Yet, in a surprising twist, the poetry was later reintegrated into music, creating a harmonious fusion of words and melodies that continues to speak to the soul.";
     }
-    makeMusicBG();
+    makeMusicBG(darkModePreferred);
   } else if (queryValue.includes("author")) {
     const header = document.getElementById("header-about");
     clearAndHide(
@@ -139,9 +146,10 @@ function clearAndHideSections() {
       "nav_des",
       "nav_mus"
     );
-  }
-  if (queryValue.includes("dark")) {
-    applyDarkModeStyles(true);
+    if (header) {
+      header.innerHTML =
+        "<p>Renowned Author and Creative Visionary, showcasing the beauty of life through diverse mediums. Internationally acclaimed for the captivating poetic narratives of the 'Memorandum in a Cruet' spiritual series. Pioneering new horizons in photography with the groundbreaking 'Plastic Photography' collection, and capturing the essence of humanity with the evocative 'Portraitography' series. Explore the profound depths of creativity and spirituality through my captivating works.</p><br/>";
+    }
   }
 
   if (queryValue.includes("snow")) {
@@ -153,7 +161,7 @@ function clearAndHideSections() {
   }
 
   if (queryValue.includes("musicBG")) {
-    makeMusicBG();
+    makeMusicBG(darkModePreferred);
   }
 
   if (queryValue.includes("pencil")) {
