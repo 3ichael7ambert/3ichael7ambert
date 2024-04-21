@@ -1,11 +1,13 @@
 .cursor {
   position: absolute;
-  width: 330px; /* Adjust the width of your cursor image */
-  height: 418px; /* Adjust the height of your cursor image */
+  /* width: 330px;  */
+  /* height: 418px; */
+  width: 330px;
+  height: 418px;
   pointer-events: none;
   transform-origin: top left;
-  animation: rotateAnimation 5s linear infinite;
-  z-index: 10000
+  animation: rotateAnimation 15s linear infinite;
+  z-index: 10000;
 }
 
 @keyframes rotateAnimation {
