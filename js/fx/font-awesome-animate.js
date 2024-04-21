@@ -15,13 +15,13 @@ function removeAnimation(elementId, animationClass) {
 }
 
 // Trigger animation on scroll
-window.addEventListener("scroll", function () {
-  // Example: Add 'fa-spin' animation to the social media icons when scrolled
-  const socialMediaIcons = document.querySelectorAll(".social-media-icons i");
-  socialMediaIcons.forEach((icon) => {
-    icon.classList.add("fa-spin");
-  });
-});
+// window.addEventListener("scroll", function () {
+//   // Example: Add 'fa-spin' animation to the social media icons when scrolled
+//   const socialMediaIcons = document.querySelectorAll(".social-media-icons i");
+//   socialMediaIcons.forEach((icon) => {
+//     icon.classList.add("fa-spin");
+//   });
+// });
 
 // Trigger animation on click
 document.getElementById("some-button").addEventListener("click", function () {
