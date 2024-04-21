@@ -1,12 +1,10 @@
 .cursor {
   position: absolute;
-  /* width: 330px;  */
-  /* height: 418px; */
   width: 330px;
   height: 418px;
   pointer-events: none;
   transform-origin: top left;
-  animation: rotateAnimation 15s linear infinite;
+  /* animation: rotateAnimation 150s linear infinite; */
   z-index: 10000;
 }
 
