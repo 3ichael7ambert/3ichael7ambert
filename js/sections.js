@@ -167,6 +167,14 @@ function clearAndHideSections() {
   if (queryValue.includes("pencil")) {
     mousePencil();
   }
+
+  if (queryValue.includes("trucker")) {
+    truckerResume();
+  }
+
+  if (queryValue.includes("management")) {
+    managementResume();
+  }
 }
 
 // Function to clear the contents and hide sections
