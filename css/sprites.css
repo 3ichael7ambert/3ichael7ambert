@@ -1,27 +1,20 @@
-#game-container {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: -19;
-  /* overflow: hidden;  */
-}
-
 #spaceship {
   position: absolute;
-  width: 73px;
-  height: 51px;
-  background-image: url("imgs/sprites/sprPixel_Ship_strip8_73_51.png");
-  animation: animate 1s steps(8) infinite;
-  transform-origin: center center; /* Set the origin of rotation to the center of the spaceship */
+  top:10px;
+  left:10px
+  width: 73px; /* Width of each frame in the sprite sheet */
+  height: 51px; /* Height of each frame in the sprite sheet */
+  background-image: url("imgs/sprites/sprPixel_Ship_strip8_73_51.png"); /* Path to your sprite sheet */
+  background-repeat: no-repeat;
+  position: relative;
+  animation: playFrames 1s steps(8) infinite; /* Animation to cycle through frames */
 }
 
-@keyframes animate {
-  from {
+@keyframes playFrames {
+  0% {
     background-position: 0 0;
   } /* Starting frame */
-  to {
+  100% {
     background-position: -584px 0;
   } /* Ending frame (8 frames, each 73px wide) */
 }

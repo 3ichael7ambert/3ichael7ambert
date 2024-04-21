@@ -9,14 +9,12 @@ function updateSpaceship() {
   var scrollPosition = window.scrollY; // Get current scroll position
   var spaceship = document.getElementById("spaceship");
 
-  // Calculate rotation angle and position based on scroll
-  var rotationAngle = (scrollPosition / (window.innerHeight * 0.2)) * 25; // Calculate rotation angle based on scroll position
-  var posX = (scrollPosition / (window.innerHeight * 0.2)) * 100 + 100; // Calculate X position based on scroll position
-  var posY = (scrollPosition / (window.innerHeight * 0.2)) * 150 + 150; // Calculate Y position based on scroll position
-
-  // Set rotation, X, and Y position
-  spaceship.style.transform = "rotate(" + rotationAngle + "deg)";
+  // Calculate X position based on scroll position
+  var posX = (scrollPosition / (window.innerHeight * 0.2)) * 100; // Adjust X position based on scroll position
   spaceship.style.left = posX + "px";
+
+  // Calculate Y position based on scroll position
+  var posY = scrollPosition; // Adjust as needed based on your layout
   spaceship.style.top = posY + "px";
 
   // Calculate frame index based on scroll position
@@ -35,3 +33,6 @@ function updateSpaceship() {
   // Request next animation frame
   requestAnimationFrame(updateSpaceship);
 }
+
+// Initial call to start the spaceship at the top of the page
+updateSpaceship();

@@ -23,17 +23,63 @@ function applyDarkModeStyles(s) {
     });
 
     // Apply dark mode styles to navigation
+    const nav = document.querySelector("nav");
+    if (nav) {
+      nav.style.backgroundColor = "rgba(20, 20, 20, 0.1)";
+      nav.style.color = "rgba(60, 60, 60, .1)";
+      nav.style.boxShadow = "10px 2px 5px rgba(0, 0, 0, 0.1)";
+    }
+
+    // Apply dark mode styles to navigation
     const fixedNav = document.querySelector(".fixed-nav");
     if (fixedNav) {
-      fixedNav.style.backgroundColor = "rgba(20, 20, 20, 0.7)";
-      fixedNav.style.color = "rgba(60, 60, 60, .7)";
-      fixedNav.style.boxShadow = "10px 2px 5px rgba(0, 0, 0, 0.5)";
+      fixedNav.style.backgroundColor = "rgba(20, 20, 20, 0.1)";
+      fixedNav.style.color = "rgba(60, 60, 60, .1)";
+      fixedNav.style.boxShadow = "10px 2px 5px rgba(0, 0, 0, 0.1)";
+
+      // Apply styles to <ul> inside .fixed-nav
+      const ulInsideFixedNav = fixedNav.querySelector("ul");
+      if (ulInsideFixedNav) {
+        ulInsideFixedNav.style.backgroundColor = "rgba(20, 20, 20, 0.1)";
+        ulInsideFixedNav.style.color = "rgba(60, 60, 60, .1)";
+        ulInsideFixedNav.style.boxShadow = "10px 2px 5px rgba(0, 0, 0, 0.1)";
+      }
+    }
+
+    // Apply dark mode styles to navigation
+    const menuToggle = document.querySelector(".menu-toggle");
+    if (menuToggle) {
+      menuToggle.style.backgroundColor = "rgba(20, 20, 20, 0.5)";
+      menuToggle.style.color = "rgba(60, 60, 60, .5)";
+      menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0.5)";
+
+      // Apply styles to each <span> inside .menu-toggle
+      const spansInsideMenuToggle = menuToggle.querySelectorAll("span");
+      spansInsideMenuToggle.forEach((span) => {
+        span.style.backgroundColor = "rgba(240, 240, 240, .7)";
+        // Add other styles if needed for each span
+      });
+    }
+
+    const active = document.querySelector(".active");
+    if (active) {
+      active.style.backgroundColor = "rgba(20, 20, 20, 0.5)";
+      active.style.color = "rgba(60, 60, 60, .5)";
+      active.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0.5)";
     }
 
     // Adjust links color
+    // Adjust links color and hover effect
     const links = document.querySelectorAll("a");
     links.forEach((link) => {
       link.style.color = "#fff"; // Light text color for links
+      link.style.transition = "color 0.3s"; // Smooth transition for color change
+      link.addEventListener("mouseenter", () => {
+        link.style.color = "#ccc"; // Darker color on hover
+      });
+      link.addEventListener("mouseleave", () => {
+        link.style.color = "#fff"; // Restore original color on hover out
+      });
     });
 
     // Change background color on inputs
