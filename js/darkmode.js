@@ -43,6 +43,12 @@ function applyDarkModeStyles(s) {
       input.style.color = "#fff"; // Light text color for inputs
     });
 
+    const textarea = document.querySelectorAll("textarea");
+    textarea.forEach((textarea) => {
+      textarea.style.backgroundColor = "#444"; // Darker background color for inputs
+      textarea.style.color = "#fff"; // Light text color for inputs
+    });
+
     // Fix the header
     const header = document.querySelector("header");
     if (header) {
