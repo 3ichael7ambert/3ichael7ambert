@@ -164,6 +164,10 @@ function clearAndHideSections() {
     makeMusicBG(darkModePreferred);
   }
 
+  if (queryValue.includes("sketchbook")) {
+    themeSketchbook();
+  }
+
   if (queryValue.includes("pencil")) {
     mousePencil();
   }

@@ -46,20 +46,7 @@ function applyDarkModeStyles(s) {
       }
     }
 
-    // Apply dark mode styles to navigation
-    const menuToggle = document.querySelector(".menu-toggle");
-    if (menuToggle) {
-      menuToggle.style.backgroundColor = "rgba(20, 20, 20, 0.5)";
-      menuToggle.style.color = "rgba(60, 60, 60, .5)";
-      menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0.5)";
 
-      // Apply styles to each <span> inside .menu-toggle
-      const spansInsideMenuToggle = menuToggle.querySelectorAll("span");
-      spansInsideMenuToggle.forEach((span) => {
-        span.style.backgroundColor = "rgba(240, 240, 240, .7)";
-        // Add other styles if needed for each span
-      });
-    }
 
     const active = document.querySelector(".active");
     if (active) {
