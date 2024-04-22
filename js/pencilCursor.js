@@ -5,6 +5,8 @@ function mousePencil() {
   });
 
   var cursor = document.querySelector(".cursor");
+  cursor.classList.remove("hide");
+
   var docWidth = Math.max(
     document.body.scrollWidth,
     document.documentElement.scrollWidth,

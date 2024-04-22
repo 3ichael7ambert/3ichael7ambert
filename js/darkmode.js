@@ -46,8 +46,6 @@ function applyDarkModeStyles(s) {
       }
     }
 
-
-
     const active = document.querySelector(".active");
     if (active) {
       active.style.backgroundColor = "rgba(20, 20, 20, 0.5)";
@@ -94,6 +92,38 @@ function applyDarkModeStyles(s) {
     dropdownMenus.forEach((menu) => {
       menu.style.backgroundColor = "rgba(30, 30, 30, 0.5)"; // Darker background color for dropdown menus
       menu.style.color = "#fff"; // Light text color for dropdown menus
+    });
+  }
+
+  const menuToggle = document.querySelector(".menu-toggle");
+  if (menuToggle) {
+    const toggleBackgroundAlpha = "rgba(20, 20, 20, ";
+    const activeBackgroundAlpha = "0)";
+    const inactiveBackgroundAlpha = ".5)";
+
+    menuToggle.style.backgroundColor =
+      toggleBackgroundAlpha + activeBackgroundAlpha;
+    menuToggle.style.color = "rgba(0, 0, 0, 1)";
+    menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0.5)";
+    menuToggle.classList.add("active");
+
+    const spansInsideMenuToggle = menuToggle.querySelectorAll("span");
+    spansInsideMenuToggle.forEach((span) => {
+      span.style.backgroundColor = "rgba(0, 0, 0, 1)";
+    });
+
+    menuToggle.addEventListener("click", function () {
+      if (menuToggle.classList.contains("active")) {
+        menuToggle.style.backgroundColor =
+          toggleBackgroundAlpha + inactiveBackgroundAlpha;
+        menuToggle.classList.remove("active");
+        menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0.5)"; // Add this line
+      } else {
+        menuToggle.style.backgroundColor =
+          toggleBackgroundAlpha + activeBackgroundAlpha;
+        menuToggle.classList.add("active");
+        menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0)"; // Change this line
+      }
     });
   }
 }
