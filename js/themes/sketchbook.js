@@ -87,6 +87,7 @@ function themeSketchbook() {
       secondImage.style.top = "-10px";
       secondImage.style.left = "50%";
       secondImage.style.width = "100%";
+      secondImage.style.height = "30px";
       secondImage.style.transform = "translate(-50%, -50%) rotate(180deg)";
 
       // Append the second image to the ulInsideFixedNav
@@ -97,7 +98,7 @@ function themeSketchbook() {
         if (window.innerWidth >= 320 && window.innerWidth <= 767) {
           // Apply styles for mobile view (viewport width between 320px and 767px)
           secondImage.style.transform =
-            "translate(-0, 0) rotate(270deg) translateX(-500px) translateY(-330px)";
+            "translate(-0, 0) rotate(270deg) translateX(-480px) translateY(-320px)";
           secondImage.style.width = window.innerHeight + "px";
         } else {
           // Apply default styles for other viewports
