@@ -159,6 +159,13 @@ function themeSketchbook() {
             // Firefox on Android specific transformation
             secondImage.style.transform =
               "translate(-50%, -50%) rotate(270deg) translateX(-440px) translateY(-370px)";
+          } else if (
+            navigator.userAgent.includes("iPhone") ||
+            navigator.userAgent.includes("iPad")
+          ) {
+            // iOS specific transformation
+            secondImage.style.transform =
+              "translate(-0, 0) rotate(270deg) translateX(-500px) translateY(-30px)";
           } else {
             // Default transformation for other browsers
             secondImage.style.transform =
@@ -166,17 +173,29 @@ function themeSketchbook() {
           }
 
           secondImage.style.width = window.innerHeight + 20 + "px";
-        } else if (
-          navigator.userAgent.includes("iPhone") ||
-          navigator.userAgent.includes("iPad")
-        ) {
-          // iOS specific transformation
-          secondImage.style.transform =
-            "translate(-0, 0) rotate(270deg) translateX(-500px) translateY(-30px)";
         } else {
+          secondImage.style.position = "absolute";
           // Apply default styles for other viewports
-          secondImage.style.transform =
-            "translate(-50%, -50%) rotate(180deg) translateX(-500px) translateY(-300px)";
+          if (
+            navigator.userAgent.includes("Safari") &&
+            !navigator.userAgent.includes("iPhone")
+          ) {
+            secondImage.style.transform =
+              "translate(-50%, -50%) rotate(180deg) translateX(0px) translateY(-5px)";
+            // "translate(-50%, -50%) rotate(180deg) translateX(-500px) translateY(-300px)";
+          } else if (
+            navigator.userAgent.includes("Firefox") &&
+            !navigator.userAgent.includes("iPhone")
+          ) {
+            secondImage.style.transform =
+              "translate(-50%, -50%) rotate(180deg) translateX(0px) translateY(-5px)";
+          } else if (navigator.userAgent.includes("Chrome")) {
+            secondImage.style.transform =
+              "translate(-50%, -50%) rotate(180deg) translateX(0px) translateY(-5px)";
+          } else {
+            secondImage.style.transform =
+              "translate(-50%, -50%) rotate(180deg) translateX(0px) translateY(-5px)";
+          }
         }
       }
 
@@ -184,7 +203,7 @@ function themeSketchbook() {
       adjustSecondImageStyle();
 
       // Add event listener for window resize to adjust styles dynamically
-      // window.addEventListener("resize", adjustSecondImageStyle);
+      window.addEventListener("resize", adjustSecondImageStyle);
     }
   }
 
