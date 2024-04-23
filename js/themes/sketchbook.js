@@ -97,12 +97,86 @@ function themeSketchbook() {
       function adjustSecondImageStyle() {
         if (window.innerWidth >= 320 && window.innerWidth <= 767) {
           // Apply styles for mobile view (viewport width between 320px and 767px)
+          secondImage.style.position = "absolute";
+          // Check for different browsers
+          if (navigator.userAgent.includes("Firefox")) {
+            // Firefox specific transformation
+            secondImage.style.transform =
+              "translate(-0, 0) rotate(270deg) translateX(-380px) translateY(-220px)";
+          } else if (
+            navigator.userAgent.includes("Chrome") &&
+            !navigator.userAgent.includes("Android")
+          ) {
+            // Chrome specific transformation
+            secondImage.style.transform =
+              "translate(-0, 0) rotate(270deg) translateX(-460px) translateY(-310px)";
+          } else if (
+            navigator.userAgent.includes("Chrome") &&
+            navigator.userAgent.includes("Android")
+          ) {
+            // Chrome specific transformation
+            secondImage.style.transform =
+              "translate(-0, 0) rotate(270deg) translateX(-440px) translateY(-285px)";
+          } else if (navigator.userAgent.includes("Edge")) {
+            // Edge specific transformation
+            secondImage.style.transform =
+              "translate(-0, 0) rotate(270deg) translateX(-400px) translateY(-200px)";
+          } else if (
+            navigator.userAgent.includes("Safari") &&
+            !navigator.userAgent.includes("iPhone")
+          ) {
+            // Safari specific transformation
+            secondImage.style.transform =
+              "translate(-0, 0) rotate(270deg) translateX(-490px) translateY(-330px)";
+          } else if (
+            navigator.userAgent.includes("Safari") &&
+            (navigator.userAgent.includes("iPhone") ||
+              navigator.userAgent.includes("iPad"))
+          ) {
+            // Safari specific transformation
+            secondImage.style.transform =
+              "translate(-0, 0) rotate(270deg) translateX(-360px) translateY(-195px)";
+          } else if (navigator.userAgent.includes("Opera")) {
+            // Opera specific transformation
+            secondImage.style.transform =
+              "translate(-0, 0) rotate(270deg) translateX(-470px) translateY(-320px)";
+          } else if (navigator.userAgent.includes("OPR")) {
+            // Opera on Android specific transformation
+            secondImage.style.transform =
+              "translate(-0, 0) rotate(270deg) translateX(-430px) translateY(-250px)";
+          } else if (navigator.userAgent.includes("SamsungBrowser")) {
+            // Samsung Internet specific transformation
+            secondImage.style.transform =
+              "translate(-0, 0) rotate(270deg) translateX(-460px) translateY(-290px)";
+          } else if (
+            navigator.userAgent.includes("Firefox") &&
+            navigator.userAgent.includes("Android")
+          ) {
+            // Firefox on Android specific transformation
+            secondImage.style.transform =
+              "translate(-0, 0) rotate(270deg) translateX(-440px) translateY(-270px)";
+          } else if (navigator.userAgent.includes("Android")) {
+            // Firefox on Android specific transformation
+            secondImage.style.transform =
+              "translate(-50%, -50%) rotate(270deg) translateX(-440px) translateY(-370px)";
+          } else {
+            // Default transformation for other browsers
+            secondImage.style.transform =
+              "translate(-50%, -50%) rotate(180deg)";
+          }
+
+          secondImage.style.width = window.innerHeight + 20 + "px";
+        } else if (
+          navigator.userAgent.includes("iPhone") ||
+          navigator.userAgent.includes("iPad")
+        ) {
+          // iOS specific transformation
           secondImage.style.transform =
-            "translate(-0, 0) rotate(270deg) translateX(-480px) translateY(-320px)";
-          secondImage.style.width = window.innerHeight + "px";
+            "translate(-0, 0) rotate(270deg) translateX(-500px) translateY(-30px)";
         } else {
           // Apply default styles for other viewports
-          secondImage.style.transform = "translate(-50%, -50%) rotate(180deg)";
+          secondImage.style.transform =
+            "translate(-50%, -50%) rotate(180deg) translateX(-500px) translateY(-300px)";
         }
       }
 
@@ -110,19 +184,20 @@ function themeSketchbook() {
       adjustSecondImageStyle();
 
       // Add event listener for window resize to adjust styles dynamically
-      window.addEventListener("resize", adjustSecondImageStyle);
+      // window.addEventListener("resize", adjustSecondImageStyle);
     }
   }
 
   // Apply sketch mode styles to navigation
   const menuToggle = document.querySelector(".menu-toggle");
+  menuToggle.classList.add("active");
   if (menuToggle) {
     // menuToggle.style.backgroundImage = "url(imgs/sketchbook/lined-paper.png)";
     menuToggle.style.backgroundColor = "rgba(20, 20, 20, 0)";
     menuToggle.style.color = "#000"; // Change text color to black
     menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0)";
 
-    menuToggle.style.webkitBackdropFilter = "blur(0px)"; // Override
+    menuToggle.style.webkitBackdropFilter = "blur(0px)";
 
     // Apply styles to each <span> inside .menu-toggle
     const spansInsideMenuToggle = menuToggle.querySelectorAll("span");
@@ -132,15 +207,15 @@ function themeSketchbook() {
 
     menuToggle.addEventListener("click", function () {
       if (menuToggle.classList.contains("active")) {
-        menuToggle.style.backgroundColor =
-          toggleBackgroundAlpha + inactiveBackgroundAlpha;
-        menuToggle.classList.remove("active");
-        menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0)"; // Add this line
+        menuToggle.style.backgroundColor = "rgba(20, 20, 20, 0)"; // Set background alpha to 0
+        // menuToggle.classList.remove("active");
+        // menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0)"; // Remove shadow
+        menuToggle.style.webkitBackdropFilter = "blur(0px)"; // Remove blur
       } else {
-        menuToggle.style.backgroundColor =
-          toggleBackgroundAlpha + activeBackgroundAlpha;
+        // menuToggle.style.backgroundColor = "rgba(20, 20, 20, 0.5)";
         menuToggle.classList.add("active");
-        menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0)"; // Change this line
+        // menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0.5)"; // Add shadow
+        menuToggle.style.webkitBackdropFilter = "blur(0px)"; // Add blur
       }
     });
   }
