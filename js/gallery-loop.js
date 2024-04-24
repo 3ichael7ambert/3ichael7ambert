@@ -133,13 +133,153 @@ function lightSliderInit(containerId) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const galleries = [
+    // Portraits
     {
       containerId: "gallery-portraits-ink-light",
       basePath: "imgs/design/portraits/ink",
       name: "ink",
       startNum: 1,
     },
-    // Add more gallery objects as needed
+    {
+      containerId: "gallery-portraits-graphite-light",
+      basePath: "imgs/design/portraits/graphite",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-portraits-paint-light",
+      basePath: "imgs/design/portraits/paint",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-portraits-pencil-light",
+      basePath: "imgs/design/portraits/pencil",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-portraits-urban-light",
+      basePath: "imgs/design/portraits/urban",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-portraits-portraits-light",
+      basePath: "imgs/design/portraits/portraits",
+      name: "ink",
+      startNum: 1,
+    },
+    // finearts
+
+    {
+      containerId: "gallery-finearts-paint-light",
+      basePath: "imgs/design/finearts/paint",
+      name: "ink",
+      startNum: 1,
+    },
+
+    {
+      containerId: "gallery-finearts-sculpture-light",
+      basePath: "imgs/design/finearts/sculpture",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-finearts-draw-light",
+      basePath: "imgs/design/finearts/draw",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-finearts-graphics-light",
+      basePath: "imgs/design/finearts/graphics",
+      name: "ink",
+      startNum: 1,
+    },
+    // photography
+
+    {
+      containerId: "gallery-photography-macro-light",
+      basePath: "imgs/design/photography/macri",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-photography-flowers-light",
+      basePath: "imgs/design/photography/flowers",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-photography-landscape-light",
+      basePath: "imgs/design/photography/macri",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-photography-planets-light",
+      basePath: "imgs/design/photography/planets",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-photography-abstract-light",
+      basePath: "imgs/design/photography/abstract",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-photography-manip-light",
+      basePath: "imgs/design/photography/manip",
+      name: "ink",
+      startNum: 1,
+    },
+    // OTHER
+
+    {
+      containerId: "gallery-character-light",
+      basePath: "imgs/design/character",
+      name: "ink",
+      startNum: 1,
+    },
+
+    {
+      containerId: "gallery-pixel-light",
+      basePath: "imgs/design/game/pixel",
+      name: "ink",
+      startNum: 1,
+    },
+
+    {
+      containerId: "gallery-sprites-light",
+      basePath: "imgs/design/game/sprites",
+      name: "ink",
+      startNum: 1,
+    },
+    // MODEL
+
+    {
+      containerId: "gallery-model-art-light",
+      basePath: "imgs/design/model/art",
+      name: "ink",
+      startNum: 1,
+    },
+    {
+      containerId: "gallery-model-self-light",
+      basePath: "imgs/design/model/self",
+      name: "ink",
+      startNum: 1,
+    },
+    // SHOP
+
+    {
+      containerId: "gallery-shop-light",
+      basePath: "imgs/shop",
+      name: "ink",
+      startNum: 1,
+    },
+    // ADD MORE
   ];
 
   loadLightSliderGalleries(galleries);
