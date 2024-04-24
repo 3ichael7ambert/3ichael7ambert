@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="css/book.css" />
     <link rel="stylesheet" href="css/store.css" />
 
+
+    <link rel="stylesheet" href="css/gallery.css" />
+
     <link rel="stylesheet" hr="css/fonts.css" />
 <!-- Weather -->
     <link rel="stylesheet" href="css/weather.css" />
@@ -31,6 +34,10 @@
 
 <!-- Themes -->
 <link rel="stylesheet" href="css/sketchbook.css" />
+
+<!-- LightSLider Gallery -->
+<!-- <link rel="stylesheet" href="https://sachinchoolur.github.io/lightslider/dist/css/lightslider.min.css"> -->
+<link type="text/css" rel="stylesheet" href="css/lightslider.css" />   
 
   </head>
 
@@ -972,17 +979,17 @@
 
         <!-- Carousel Music Videos -->
         <div id="carousel1" class="carousel-container">
-          <div class="carousel">
+          <div class="carousel carousel-transition">
             <div class="slide">
               <p>"Treasure" by Think About It Later</p>
               <iframe width="560" height="315" src="https://www.youtube.com/embed/7XCrJ3qEP-c?si=PZBxuXALUZ_C1-xj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="slide">
-              <p>Embark on my solo project, "A Rocket's Intensity," featuring the debut singles "Moonlit Divide" and "Globaltonic Blast"</p>
+              <p>"Moonlit Divide" and "Globaltonic Blast"</p>
               <iframe width="560" height="315" src="https://www.youtube.com/embed/t9SS_fcG8ac?si=4rCC0DZF91lzkHkl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="slide">
-              <p>Experience the enchantment of my series of albums, "Spread Love Like Wildfire"</p>
+              <p>"Spread Love Like Wildfire" Extended</p>
               <iframe width="560" height="315" src="https://www.youtube.com/embed/O8DT6mpUThA?si=k4C2Ogg-wTJx4fs2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="slide">
@@ -1257,6 +1264,9 @@
                   Ink'd Portraits
                 </h2>
                 <div id="gallery-portraits-ink" class="gallery">
+                  <!-- Thumbnails will be added here dynamically -->
+                </div>
+                <div id="gallery-portraits-ink-light">
                   <!-- Thumbnails will be added here dynamically -->
                 </div>
             </div>
@@ -2497,11 +2507,13 @@ Portraitography: Ink&#x27;d Artistry of the Female Figu ....        </div>
 
 
 <!-- Main JS -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
 
 <script src="js/script.js"></script>
 <!-- Dark Mode Controller -->
-<!-- <script src="js/darkmode.js"></script> -->
+<script src="js/darkmode.js"></script>
 <!-- Manipulate Query sections -->
 <script src="js/sections.js"></script>
 <!-- Contact Form -->
@@ -2510,6 +2522,8 @@ Portraitography: Ink&#x27;d Artistry of the Female Figu ....        </div>
 <script src="js/gallery-portraits.js"></script>
 <script src="js/gallery-loop.js"></script>
 <script src="js/carousel.js"></script>
+<!-- lightslider -->
+<script src="js/lightslider.js"></script>
 <!-- Weather -->
 <script src="js/snow.js"></script>
 <script src="js/rain.js"></script>
@@ -2544,9 +2558,11 @@ Portraitography: Ink&#x27;d Artistry of the Female Figu ....        </div>
     <script src="js/fx/gsap.js"></script>
     <!--  -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script> -->
+
 <!--  -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Observer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
@@ -2554,10 +2570,10 @@ Portraitography: Ink&#x27;d Artistry of the Female Figu ....        </div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EaselPlugin.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/PixiPlugin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script> -->
 <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script> -->
 <!--  -->
 <!--  -->
 <!--  -->

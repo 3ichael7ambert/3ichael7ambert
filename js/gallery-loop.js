@@ -1,83 +1,3 @@
-// function loadImages() {
-//   const imageContainer = document.getElementById("imageContainer");
-//   let num = 1; // Start with img1.jpg
-
-//   while (true) {
-//     const imgElement = document.createElement("img");
-//     imgElement.src = `/imgs/img${num}.jpg`;
-
-//     // Check if the image exists
-//     imgElement.onload = function () {
-//       imageContainer.appendChild(imgElement);
-//     };
-
-//     // If the image doesn't exist, stop the loop
-//     imgElement.onerror = function () {
-//       if (num === 1) {
-//         console.log("No images found.");
-//       }
-//       return;
-//     };
-
-//     num++;
-//   }
-// }
-
-// document.addEventListener("DOMContentLoaded", loadImages);
-/////////!
-/////////////////////
-///
-// async function loadImageSequence(containerId, basePath, name, startNum) {
-//   const container = document.getElementById(containerId);
-//   console.log("CONTAINER");
-//   console.log(container);
-
-//   for (let num = startNum; ; num++) {
-//     const imgElement = document.createElement("img");
-//     const imgSrc = `${basePath}/${name}${num}.jpg`;
-
-//     try {
-//       const response = await fetch(imgSrc);
-//       if (!response.ok) {
-//         console.log(`No images found for ${name}.`);
-//         break; // Exit the loop if the image is not found
-//       }
-//       console.log(`Image found: ${imgSrc}`); // Log the image URL
-//       imgElement.src = imgSrc;
-//       container.appendChild(imgElement);
-//     } catch (error) {
-//       console.error(error);
-//     }
-
-//     // Terminate the loop if the image element couldn't be loaded
-//     if (num >= startNum + 10) {
-//       console.log(`Stopped loading images for ${name}: limit reached.`);
-//       break;
-//     }
-//   }
-// }
-
-// document.addEventListener("DOMContentLoaded", function () {
-
-//     //   loadImageSequence(
-//   //     "portrait-gallery",
-//   //     "/imgs/design/portraits",
-//   //     "portrait",
-//   //     1
-//   //   );
-
-//   loadImageSequence(
-//     "gallery-portraits",
-//     "imgs/design/portraits",
-//     "portrait",
-//     1
-//   );
-
-// });
-///
-///
-///
-///
 let currentImageIndex = 0; // Track the index of the currently displayed image
 
 async function loadImageSequence(containerId, basePath, name, startNum) {
@@ -117,6 +37,113 @@ async function loadImageSequence(containerId, basePath, name, startNum) {
     }
   }
 }
+
+async function loadLightSliderGalleries(galleries) {
+  galleries.forEach(async (gallery) => {
+    const { containerId, basePath, name, startNum } = gallery;
+    const container = document.getElementById(containerId);
+    const ulElement = document.createElement("ul");
+    ulElement.id = "lightSlider";
+
+    for (let num = startNum; ; num++) {
+      const liElement = document.createElement("li");
+      const imgSrc = `${basePath}/${name}${num}.jpg`;
+
+      try {
+        const response = await fetch(imgSrc);
+        if (!response.ok) {
+          console.log(`No images found for ${name}.`);
+          break; // Exit the loop if the image is not found
+        }
+        console.log(`Image found: ${imgSrc}`); // Log the image URL
+
+        // Create the elements for the slide
+        const h3Element = document.createElement("h3");
+        h3Element.textContent = `Slide ${num - startNum + 1}`; // Adjust the slide title as needed
+
+        const pElement = document.createElement("p");
+        pElement.textContent = ""; // Add description for the slide as needed
+
+        const imgElement = document.createElement("img");
+        imgElement.src = imgSrc;
+
+        // Append elements to the li element
+        liElement.appendChild(h3Element);
+        liElement.appendChild(pElement);
+        liElement.appendChild(imgElement);
+
+        // Append the li element to the ul element
+        ulElement.appendChild(liElement);
+      } catch (error) {
+        console.error(error);
+      }
+
+      // Terminate the loop if the image element couldn't be loaded
+      if (num >= startNum + 10) {
+        console.log(`Stopped loading images for ${name}: limit reached.`);
+        break;
+      }
+    }
+
+    // Append the ul element to the container
+    container.appendChild(ulElement);
+
+    // Initialize LightSlider after all images are loaded
+    lightSliderInit(containerId);
+  });
+}
+
+function lightSliderInit(containerId) {
+  const lightSliderOptions = {
+    item: 3,
+    autoWidth: true,
+    slideMove: 1,
+    slideMargin: 10,
+    mode: "slide",
+    useCSS: true,
+    cssEasing: "ease",
+    easing: "linear",
+    speed: 400,
+    auto: true,
+    loop: true,
+    slideEndAnimation: true,
+    pause: 2000,
+    keyPress: true,
+    controls: true,
+    rtl: false,
+    adaptiveHeight: false,
+    vertical: false,
+    verticalHeight: 500,
+    vThumbWidth: 100,
+    thumbItem: 10,
+    pager: true,
+    gallery: false,
+    galleryMargin: 5,
+    thumbMargin: 5,
+    currentPagerPosition: "middle",
+    enableTouch: true,
+    enableDrag: true,
+    freeMove: true,
+    swipeThreshold: 40,
+  };
+
+  const lightSlider = document.getElementById(containerId).querySelector("ul");
+  $(lightSlider).lightSlider(lightSliderOptions);
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const galleries = [
+    {
+      containerId: "gallery-portraits-ink-light",
+      basePath: "imgs/design/portraits/ink",
+      name: "ink",
+      startNum: 1,
+    },
+    // Add more gallery objects as needed
+  ];
+
+  loadLightSliderGalleries(galleries);
+});
 
 function openModal(imgSrc, index) {
   const modal = document.getElementById("modal");
@@ -165,27 +192,26 @@ function navigateGallery(direction) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  loadImageSequence(
-    "gallery-portraits",
-    "imgs/design/portraits/portraits",
-    "portrait",
-    1
-  );
- 
-
-  loadImageSequence(
+  loadLightSliderGallery(
     "gallery-portraits-ink",
     "imgs/design/portraits/ink",
     "ink",
     1
   );
 
-  loadImageSequence(
-    "gallery-portraits-graphite",
-    "imgs/design/portraits/graphite",
-    "graphite",
-    1
-  );
+  // loadImageSequence(
+  //   "gallery-portraits-ink",
+  //   "imgs/design/portraits/ink",
+  //   "ink",
+  //   1
+  // );
+
+  // loadImageSequence(
+  //   "gallery-portraits-graphite",
+  //   "imgs/design/portraits/graphite",
+  //   "graphite",
+  //   1
+  // );
 
   // Event listeners for navigation arrows
   document

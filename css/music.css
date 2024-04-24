@@ -9,8 +9,8 @@
 .music_section {
   margin-bottom: 30px;
 
-  margin: 0 auto;
-  max-width: 800px;
+  /* margin: 0 auto; */
+  /* max-width: 800px; */
 }
 
 .music_section p {
@@ -139,23 +139,7 @@
   margin: 0;
 }
 
-/* Carousel Music Videos */
 
-.carousel-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  touch-action: pan-y;
-}
-
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.slide {
-  min-width: 100%;
-}
 
 .music_section iframe {
   margin-bottom: 20px;
@@ -181,7 +165,7 @@
 
 /* ANIMATIONS */
 
-#mmusic-animation {
+#music-animation {
   position: fixed;
   top: 0;
   left: 0;
