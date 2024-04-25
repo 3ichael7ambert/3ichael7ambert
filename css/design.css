@@ -138,8 +138,6 @@
   margin: 0 auto;
 } */
 
-
-
 .video-header {
   text-align: center;
   margin-bottom: 30px;
@@ -220,3 +218,21 @@
   justify-content: center;
   align-items: center;
 } */
+
+/* CSS for the arrow icon */
+.gallery-header::after {
+  content: ">";
+  margin-left: 5px; /* Adjust the spacing */
+  transition: transform 0.3s; /* Add smooth transition for rotation */
+  display: inline-block;
+}
+
+/* CSS to rotate the arrow icon when gallery is loaded */
+.gallery-loaded::after {
+  transform: rotate(90deg); /* Rotate the arrow 90 degrees */
+}
+
+/* CSS to change cursor to pointer */
+.gallery-header {
+  cursor: pointer;
+}

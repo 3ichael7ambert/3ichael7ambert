@@ -298,11 +298,18 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   // loadLightSliderGalleries(galleries);
-
-  function loadGallery(gallery) {
-    loadLightSliderGalleries([gallery]);
-  }
 });
+
+function loadGallery(containerId) {
+  const header = document.querySelector(".gallery-header");
+  const container = document.getElementById(containerId);
+
+  // Add a class to indicate the gallery is loaded
+  container.classList.add("gallery-loaded");
+
+  // Remove the onclick attribute to prevent further clicks
+  header.removeAttribute("onclick");
+}
 
 function openModal(imgSrc, index) {
   const modal = document.getElementById("modal");
