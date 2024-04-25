@@ -135,7 +135,7 @@ function themeSketchbook() {
           ) {
             // Safari specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-360px) translateY(-175px)";
+              "translate(-0, 0) rotate(270deg) translateX(-360px) translateY(-215px)";
             // -195px Y
           } else if (navigator.userAgent.includes("Opera")) {
             // Opera specific transformation
@@ -166,7 +166,7 @@ function themeSketchbook() {
           ) {
             // iOS specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-500px) translateY(-60px)";
+              "translate(-0, 0) rotate(270deg) translateX(-500px) translateY(0px)";
             // -30px y
           } else {
             // Default transformation for other browsers
@@ -215,7 +215,7 @@ function themeSketchbook() {
   if (menuToggle) {
     // menuToggle.style.backgroundImage = "url(imgs/sketchbook/lined-paper.png)";
     menuToggle.style.backgroundColor = "rgba(20, 20, 20, 0)";
-    menuToggle.style.color = "#000"; // Change text color to black
+    menuToggle.style.color = "#000";
     menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0)";
 
     menuToggle.style.webkitBackdropFilter = "blur(0px)";
