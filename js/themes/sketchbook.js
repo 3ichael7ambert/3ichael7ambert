@@ -135,7 +135,8 @@ function themeSketchbook() {
           ) {
             // Safari specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-360px) translateY(-195px)";
+              "translate(-0, 0) rotate(270deg) translateX(-360px) translateY(-175px)";
+            // -195px Y
           } else if (navigator.userAgent.includes("Opera")) {
             // Opera specific transformation
             secondImage.style.transform =
@@ -165,7 +166,8 @@ function themeSketchbook() {
           ) {
             // iOS specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-500px) translateY(-30px)";
+              "translate(-0, 0) rotate(270deg) translateX(-500px) translateY(-60px)";
+            // -30px y
           } else {
             // Default transformation for other browsers
             secondImage.style.transform =
@@ -231,9 +233,9 @@ function themeSketchbook() {
         // menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0)"; // Remove shadow
         menuToggle.style.webkitBackdropFilter = "blur(0px)"; // Remove blur
       } else {
-        // menuToggle.style.backgroundColor = "rgba(20, 20, 20, 0.5)";
+        menuToggle.style.backgroundColor = "rgba(20, 20, 20, 0)";
         menuToggle.classList.add("active");
-        // menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0.5)"; // Add shadow
+        menuToggle.style.boxShadow = "1px 2px 5px rgba(0, 0, 0, 0)"; // Add shadow
         menuToggle.style.webkitBackdropFilter = "blur(0px)"; // Add blur
       }
     });
