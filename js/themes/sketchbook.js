@@ -135,7 +135,7 @@ function themeSketchbook() {
           ) {
             // Safari specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-360px) translateY(-215px)";
+              "translate(-0, 0) rotate(270deg) translateX(-360px) translateY(-205px)";
             // -195px Y
           } else if (navigator.userAgent.includes("Opera")) {
             // Opera specific transformation

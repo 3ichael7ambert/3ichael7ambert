@@ -297,7 +297,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // ADD MORE
   ];
 
-  loadLightSliderGalleries(galleries);
+  // loadLightSliderGalleries(galleries);
+
+  function loadGallery(gallery) {
+    loadLightSliderGalleries([gallery]);
+  }
 });
 
 function openModal(imgSrc, index) {
