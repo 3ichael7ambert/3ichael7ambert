@@ -1261,19 +1261,19 @@
               <!-- Gallery Placeholder -->
               <div class="gallery-placeholder-ink">
                 <h2 class="gallery-header" onclick="loadGallery('gallery-portraits-ink-light')">
-                  Ink'd Portraits
+                  Ink'd Portraits <i id="otherBandsArrowInk" class="fas fa-chevron-right"></i>
                 </h2>
                 <div id="gallery-portraits-ink" class="gallery">
                   <!-- Thumbnails will be added here dynamically -->
                 </div>
-                <div id="gallery-portraits-ink-light">
+                <div id="gallery-portraits-ink-light" >
                   <!-- Thumbnails will be added here dynamically -->
                 </div>
-            </div>
+              </div>
 
             <div class="gallery-placeholder-graphite">
-              <h2>
-                Graphite Portraits
+              <h2 class="gallery-header" onclick="loadGallery('gallery-portraits-graphite-light')">
+                Graphite Portraits <i id="otherBandsArrowGraphite" class="fas fa-chevron-right"></i>
               </h2>
               <div id="gallery-portraits-graphite" class="gallery">
                 <!-- Thumbnails will be added here dynamically -->
@@ -1284,8 +1284,8 @@
           </div>
 
           <div class="gallery-placeholder-paint">
-            <h2>
-              Paint'd Portraits
+            <h2 class="gallery-header" class="gallery-header" onclick="loadGallery('gallery-portraits-paint-light')">
+              Paint'd Portraits <i id="otherBandsArrowPaint" class="fas fa-chevron-right"></i>
             </h2>
             <div id="gallery-portraits-paint" class="gallery">
               <!-- Thumbnails will be added here dynamically -->
@@ -1296,8 +1296,8 @@
         </div>
 
         <div class="gallery-placeholder-pencil">
-          <h2>
-            Color'd Pencil Portraits
+          <h2 class="gallery-header" onclick="loadGallery('gallery-portraits-pencil-light')">
+            Color'd Pencil Portraits <i id="otherBandsArrowPencil" class="fas fa-chevron-right"></i>
           </h2>
           <div id="gallery-portraits-pencil" class="gallery">
             <!-- Thumbnails will be added here dynamically -->
@@ -1308,8 +1308,8 @@
       </div>
           
       <div class="gallery-placeholder-urban">
-        <h2>
-          Grafitti Portraits
+        <h2 class="gallery-header" onclick="loadGallery('gallery-portraits-urban-light')">
+          Grafitti Portraits <i id="otherBandsArrowUrban" class="fas fa-chevron-right"></i>
         </h2>
         <div id="gallery-portraits-urban" class="gallery">
           <!-- Thumbnails will be added here dynamically -->
@@ -1320,8 +1320,8 @@
     </div>
 
     <div class="gallery-placeholder-portraits">
-      <h2>
-        Mixed'd Portraits
+      <h2 class="gallery-header" onclick="loadGallery('gallery-portraits-portraits-light')">
+        Mixed'd Portraits <i id="otherBandsArrowMixed" class="fas fa-chevron-right"></i>
       </h2>
       <div id="gallery-portraits-portraits" class="gallery">
         <!-- Thumbnails will be added here dynamically -->
@@ -1338,7 +1338,10 @@
 
         <div class="design-category">
           <div id="design-container" class="design-container"></div>
-          <h2 class="design-category-title">Fine Arts ~ Painting</h2>
+          <h2 class="design-category-title">Fine Arts</h2>
+          
+          <h3 class="gallery-header"  onclick="loadGallery('gallery-finearts-paint-light')">
+            Painting</h3> <i id="otherBandsArrowFApaint" class="fas fa-chevron-right"></i></h2>
           <p class="design-category-description">Discover my various fine arts.</p>
           <!-- <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p> -->
           <div id="gallery-painting" class="gallery">
@@ -1349,11 +1352,8 @@
             <!-- Thumbnails will be added here dynamically -->
           </div>
 
-          </div>
-    
-    
-        <div class="design-category">
-          <h2 class="design-category-title">Fine Arts ~ Sculpture</h2>
+          
+          <h3  onclick="loadGallery('gallery-finearts-sculpture-light')">Sculpture <i id="otherBandsArrowSculpture" class="fas fa-chevron-right"></i></h3>
           <p class="design-category-description">Discover my various fine arts.</p>
           <!-- <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p> -->
           <div id="gallery-sculpture" class="gallery">
@@ -1364,10 +1364,8 @@
             <!-- Thumbnails will be added here dynamically -->
           </div>
 
-        </div>
-
-        <div class="design-category">
-          <h2 class="design-category-title">Fine Arts ~ Design</h2>
+      
+          <h3  onclick="loadGallery('gallery-finearts-graphics-light')">Design <i id="otherBandsArrowFAdesign" class="fas fa-chevron-right"></i></h3>
           <p class="design-category-description">Discover my various fine arts.</p>
           <!-- <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p> -->
           <div id="gallery-draw" class="gallery">
@@ -1378,10 +1376,9 @@
             <!-- Thumbnails will be added here dynamically -->
           </div>
 
-        </div>
-
-        <div class="design-category">
-          <h2 class="design-category-title">Fine Arts ~ Illustrations</h2>
+ 
+          <h3 class="gallery-header" onclick="loadGallery('gallery-finearts-draw-light')">
+            Illustrations <i id="otherBandsArrowIllustrations" class="fas fa-chevron-right"></i></h3>
           <p class="design-category-description">Discover my various fine arts.</p>
           <!-- <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p> -->
           <div id="gallery-draw" class="gallery">
@@ -1392,10 +1389,10 @@
             <!-- Thumbnails will be added here dynamically -->
           </div>
 
-        </div>
-
-        <div class="design-category">
-          <h2 class="design-category-title">Fine Arts ~ 3D Illustrations</h2>
+     
+          <h3 class="gallery-header" class="design-category-title">3D Illustrations 
+            <!-- <i id="otherBandsArrow3D" class="fas fa-chevron-right"></i> -->
+          </h3>
           <p class="design-category-description"></p>
           <p class="design-category-placeholder"></p>
 
@@ -1516,17 +1513,17 @@
           <p class="design-category-description">Discover my various fine arts.</p>
           <!-- <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p> -->
 
-            <h3>
-             Macro
-            </h3>
+            <h3 class="gallery-header" onclick="loadGallery('gallery-photography-macro-light')">
+             Macro <i id="otherBandsArrowMacro" class="fas fa-chevron-right"></i>
+            </h3 class="gallery-header">
             <div id="gallery-photography-macro" class="gallery">
               <!-- Thumbnails will be added here dynamically -->
             </div>
             <div id="gallery-photography-macro-light">
               <!-- Thumbnails will be added here dynamically -->
             </div>
-            <h3>
-              Flowers
+            <h3  class="gallery-header" onclick="loadGallery('gallery-photography-flowers-light')">
+              Flowers <i id="otherBandsArrowFlowers" class="fas fa-chevron-right"></i>
              </h3>
              <div id="gallery-photography-flowers" class="gallery">
                <!-- Thumbnails will be added here dynamically -->
@@ -1534,8 +1531,8 @@
              <div id="gallery-photography-flowers-light">
               <!-- Thumbnails will be added here dynamically -->
             </div>
-             <h3>
-              Landscape
+             <h3  class="gallery-header" onclick="loadGallery('gallery-photography-landscape-light')">
+              Landscape <i id="otherBandsArrowLandscape" class="fas fa-chevron-right"></i>
              </h3>
              <div id="gallery-photography-landscape" class="gallery">
                <!-- Thumbnails will be added here dynamically -->
@@ -1543,17 +1540,17 @@
              <div id="gallery-photography-landscape-light">
               <!-- Thumbnails will be added here dynamically -->
             </div>
-            <h3>
-             Animals
-            </h3>
+            <h3  class="gallery-header" onclick="loadGallery('gallery-photography-animals-light')">
+             Animals <i id="otherBandsArrowAnimals" class="fas fa-chevron-right"></i>
+            </h3 class="gallery-header">
             <div id="gallery-photography-animals" class="gallery">
               <!-- Thumbnails will be added here dynamically -->
             </div>
             <div id="gallery-photography-animals-light">
              <!-- Thumbnails will be added here dynamically -->
            </div>
-            <h3>
-             Photo Manipulation
+            <h3  class="gallery-header" onclick="loadGallery('gallery-photography-manip-light')">
+             Photo Manipulation <i id="otherBandsArrowManip" class="fas fa-chevron-right"></i>
             </h3>
             <div id="gallery-photography-manipulation" class="gallery">
               <!-- Thumbnails will be added here dynamically -->
@@ -1561,8 +1558,9 @@
             <div id="gallery-photography-manip-light">
              <!-- Thumbnails will be added here dynamically -->
            </div>
-           <h3>
-            Little Planets
+
+           <h3  class="gallery-header" onclick="loadGallery('gallery-photography-planets-light')">
+            Little Planets <i id="otherBandsArrowPlanets" class="fas fa-chevron-right"></i>
            </h3>
            <div id="gallery-photography-planets" class="gallery">
              <!-- Thumbnails will be added here dynamically -->
@@ -1571,7 +1569,16 @@
             <!-- Thumbnails will be added here dynamically -->
           </div>
 
-          <p>360 Photography</p>
+          <h3  class="gallery-header" onclick="loadGallery('gallery-photography-abstract-light')">
+            Abstract <i id="otherBandsArrowPhotoAbstrat" class="fas fa-chevron-right"></i>
+           </h3>
+           <div id="gallery-photography-abstract" class="gallery">
+             <!-- Thumbnails will be added here dynamically -->
+           </div>
+           <div id="gallery-photography-abstract-light">
+            <!-- Thumbnails will be added here dynamically -->
+          </div>
+          <p>360 Photography</p> <i id="otherBandsArrow360photo" class="fas fa-chevron-right"></i>
 
           <div id="gallery-360-photography class="gallery">
             <!-- Thumbnails will be added here dynamically --> 
@@ -2262,11 +2269,12 @@
           <h2 class="design-category-title">Game Art</h2>
           <p class="design-category-description">Discover my various fine arts.</p>
           <!-- <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p> -->
-          <h3>Pixel</h3>
+          <h3 class="gallery-header" onclick="loadGallery('gallery-pixel-light')">
+            Pixel</h3>
           <div id="gallery-pixel-light">
             <!-- Thumbnails will be added here dynamically -->
           </div>
-          <h3>Sprites</h3>
+          <h3 class="gallery-header" onclick="loadGallery('gallery-sprites-light')">Sprites</h3>
           <div id="gallery-sprites-light">
             <!-- Thumbnails will be added here dynamically -->
           </div>
@@ -2276,11 +2284,11 @@
           <h2 class="design-category-title">Model</h2>
           <p class="design-category-description">Discover my various fine arts.</p>
           <!-- <p class="design-category-placeholder">Placeholder for specific content related to various fine arts.</p> -->
-          <h3>Art</h3>
+          <h3 class="gallery-header" onclick="loadGallery('gallery-model-art-light')">Art</h3>
           <div id="gallery-model-art-light">
             <!-- Thumbnails will be added here dynamically -->
           </div>
-          <h3>Real</h3>
+          <h3 class="gallery-header" onclick="loadGallery('gallery-model-self-light')">Real</h3>
           <div id="gallery-model-self-light">
             <!-- Thumbnails will be added here dynamically -->
           </div>
@@ -2504,6 +2512,11 @@ Portraitography: Ink&#x27;d Artistry of the Female Figu ....        </div>
 			<img src="imgs/shirt-spray.jpg" alt="Spray Shirt">
 			<img src="imgs/shirt-cherry.jpg" alt="Cherry Shirt">
 		  </section> -->
+
+    
+        <h2 class="gallery-header" onclick="loadGallery('gallery-shop-light')">
+          Shop Gallery <i id="otherBandsArrowShop" class="fas fa-chevron-right"></i>
+        </h2>
       <div id="gallery-shop-light">
         <!-- Thumbnails will be added here dynamically -->
       </div>

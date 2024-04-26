@@ -135,7 +135,7 @@ function themeSketchbook() {
           ) {
             // Safari specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-360px) translateY(-225px)";
+              "translate(-0, 0) rotate(270deg) translateX(-360px) translateY(-195px)";
             // -195px Y
           } else if (navigator.userAgent.includes("Opera")) {
             // Opera specific transformation
@@ -166,7 +166,7 @@ function themeSketchbook() {
           ) {
             // iOS specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-500px) translateY(0px)";
+              "translate(-0, 0) rotate(270deg) translateX(-500px) translateY(-30px)";
             // -30px y
           } else {
             // Default transformation for other browsers
@@ -183,7 +183,7 @@ function themeSketchbook() {
             !navigator.userAgent.includes("iPhone")
           ) {
             secondImage.style.transform =
-              "translate(-50%, -50%) rotate(180deg) translateX(0px) translateY(-5px)";
+              "translate(-50%, -50%) rotate(180deg) translateX(0px) translateY(-300px)";
             // "translate(-50%, -50%) rotate(180deg) translateX(-500px) translateY(-300px)";
           } else if (
             navigator.userAgent.includes("Firefox") &&

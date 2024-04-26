@@ -51,6 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// Function to deactivate navigation menu
+function deactivateNav() {
+  navList.classList.remove("active");
+  menuToggle.classList.remove("active");
+}
+
 // Function to scroll to the top of the page smoothly
 function scrollToTop() {
   window.scrollTo({

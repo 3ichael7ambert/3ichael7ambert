@@ -221,18 +221,32 @@
 
 /* CSS for the arrow icon */
 .gallery-header::after {
-  content: ">";
-  margin-left: 5px; /* Adjust the spacing */
-  transition: transform 0.3s; /* Add smooth transition for rotation */
+  /* content: ">"; */
+  margin-left: 5px;
+  transition: transform 0.3s;
   display: inline-block;
 }
 
 /* CSS to rotate the arrow icon when gallery is loaded */
 .gallery-loaded::after {
-  transform: rotate(90deg); /* Rotate the arrow 90 degrees */
+  transform: rotate(90deg);
 }
-
 /* CSS to change cursor to pointer */
 .gallery-header {
   cursor: pointer;
+  /* background-color: #333; */
+}
+.rotated {
+  transform: rotate(90deg);
+}
+
+/* LIGHTSLIDER */
+.lSSlideOuter {
+  max-width: 800px;
+}
+
+#lightSlider li img {
+  /* border: 1px solid black; */
+  max-height: 400px;
+  width: auto;
 }
