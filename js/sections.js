@@ -221,7 +221,7 @@ function clearAndHideSections() {
 // Function to clear the contents and hide sections
 function clearAndHide(...sectionIds) {
   sectionIds.forEach((sectionId) => {
-    const section = document.getElementById(sectionId);
+    const section = document.querySelectorAll(sectionId);
     if (section) {
       section.innerHTML = "";
       section.classList.add("hide");
