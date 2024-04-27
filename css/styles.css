@@ -377,7 +377,6 @@ input[type="submit"]:hover {
 
 
 
-
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .mobile-only {
     display: block;
@@ -393,27 +392,36 @@ input[type="submit"]:hover {
     margin-bottom: 10px;
     margin-left: -75px; /* Adjusted margin to center the image */
     transform-style: preserve-3d;
-    animation: spin 8s linear infinite;
-    transition: all 3s;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
   }
 
   #introduction .portrait-image {
-    animation-delay: 0s;
+    transform: rotateY(0deg);
+    z-index: 1; /* Ensure portrait image is initially on top */
+    opacity: 0;
   }
 
   #introduction .logo-image {
-    animation-delay: 4s; /* Delaying the start of the animation */
+    transform: rotateY(180deg); /* Rotate logo image initially */
+    z-index: 2; /* Ensure logo image is initially below portrait */
+    opacity: 1;
   }
 
-  @keyframes spin {
-    0%, 50% {
-      transform: rotateY(0deg);
-    }
-    50.01%, 100% {
-      transform: rotateY(180deg);
-    }
+  #introduction:hover .portrait-image {
+    transform: rotateY(180deg); /* Rotate to halfway */
+    z-index: 2; /* Swap z-index to show logo image on top */
+    opacity: 1;
+  }
+
+  #introduction:hover .logo-image {
+    transform: rotateY(360deg); /* Complete the rotation */
+    z-index: 1; /* Ensure portrait image is on top again */
+    opacity: 0;
   }
 }
+
+
+
 
 
 
