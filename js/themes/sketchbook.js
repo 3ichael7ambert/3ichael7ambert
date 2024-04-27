@@ -174,8 +174,8 @@ function themeSketchbook() {
               "translate(-50%, -50%) rotate(180deg)";
           }
 
-          secondImage.style.width = window.innerHeight + 20 + "px";
-        } else {
+          //   secondImage.style.width = window.innerHeight + 20 + "px";
+          // } else {
           secondImage.style.position = "absolute";
           // Apply default styles for other viewports
           if (
