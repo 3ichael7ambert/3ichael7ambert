@@ -105,14 +105,14 @@ function themeSketchbook() {
           if (navigator.userAgent.includes("Firefox")) {
             // Firefox specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-380px) translateY(-220px)";
+              "translate(-0, 0) rotate(270deg) translateX(-380px) translateY(-410px)";
           } else if (
             navigator.userAgent.includes("Chrome") &&
             !navigator.userAgent.includes("Android")
           ) {
             // Chrome specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-460px) translateY(-310px)";
+              "translate(-0, 0) rotate(270deg) translateX(-460px) translateY(-410px)";
           } else if (
             navigator.userAgent.includes("Chrome") &&
             navigator.userAgent.includes("Android")
@@ -130,7 +130,7 @@ function themeSketchbook() {
           ) {
             // Safari specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-490px) translateY(-330px)";
+              "translate(-0, 0) rotate(270deg) translateX(-490px) translateY(-410px)";
           } else if (
             navigator.userAgent.includes("Safari") &&
             (navigator.userAgent.includes("iPhone") ||
@@ -214,6 +214,12 @@ function themeSketchbook() {
               "translate(-50%, -50%) rotate(180deg) translateX(0px) translateY(-5px)";
           }
           */
+        } else if (window.innerWidth >= 768) {
+          secondImage.style.top = "-10px";
+          secondImage.style.left = "50%";
+          secondImage.style.width = "100%";
+          secondImage.style.height = "30px";
+          secondImage.style.transform = "translate(-50%, -50%) rotate(180deg)";
         }
       }
 
@@ -256,4 +262,6 @@ function themeSketchbook() {
       }
     });
   }
+
+  window.addEventListener("resize", adjustSecondImageStyle);
 }
