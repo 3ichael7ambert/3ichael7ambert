@@ -179,6 +179,43 @@ function clearAndHideSections() {
   if (queryValue.includes("management")) {
     managementResume();
   }
+
+  // HIDE
+  if (queryValue.includes("noArt")) {
+    clearAndHide("art", "design", "nav_des");
+  }
+
+  if (queryValue.includes("noMusic")) {
+    clearAndHide("music", "nav_mus");
+  }
+
+  if (queryValue.includes("noSE")) {
+    clearAndHide("software", "nav_sof");
+  }
+  if (queryValue.includes("noGame") || queryValue.includes("noGames")) {
+    clearAndHide("games", "nav_gam", "game", "nav_gam");
+  }
+  if (queryValue.includes("noCert")) {
+    clearAndHide("certificates", "nav_cer");
+  }
+  if (queryValue.includes("noEdu")) {
+    clearAndHide("education", "nav_edu");
+  }
+  if (queryValue.includes("noResumes") || queryValue.includes("noResume")) {
+    clearAndHide("resume", "nav_res");
+  }
+  if (queryValue.includes("noBook")) {
+    clearAndHide("book", "nav_boo");
+  }
+  if (queryValue.includes("noShop")) {
+    clearAndHide("clothing", "nav_sto");
+  }
+  if (queryValue.includes("noContact")) {
+    clearAndHide("contact", "nav_con");
+  }
+  if (queryValue.includes("noNav")) {
+    clearAndHide("nav", "fixed-nav");
+  }
 }
 
 // Function to clear the contents and hide sections
