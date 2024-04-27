@@ -329,7 +329,7 @@ function loadGallery(containerId) {
 
 // Define modal outside the openModal function
 const modal = document.getElementById("modal");
-
+/*
 // MODAL LIGHTBOX
 function openModal(imgSrc, index) {
   const modalImg = document.getElementById("modal-img");
