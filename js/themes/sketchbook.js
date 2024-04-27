@@ -97,8 +97,11 @@ function themeSketchbook() {
       function adjustSecondImageStyle() {
         if (window.innerWidth >= 320 && window.innerWidth <= 767) {
           // Apply styles for mobile view (viewport width between 320px and 767px)
+
           secondImage.style.position = "absolute";
+          secondImage.style.width = screen.height + "px";
           // Check for different browsers
+
           if (navigator.userAgent.includes("Firefox")) {
             // Firefox specific transformation
             secondImage.style.transform =
@@ -116,7 +119,7 @@ function themeSketchbook() {
           ) {
             // Chrome specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-440px) translateY(-285px)";
+              "translate(0,0) rotate(270deg) translateX(-425px) translateY(-210px)";
           } else if (navigator.userAgent.includes("Edge")) {
             // Edge specific transformation
             secondImage.style.transform =
@@ -135,7 +138,16 @@ function themeSketchbook() {
           ) {
             // Safari specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-360px) translateY(-195px)";
+              "translate(0,0) rotate(270deg) translateX(-425px) translateY(-275px)";
+            // -195px Y
+          } else if (
+            navigator.userAgent.includes("Chrome") &&
+            (navigator.userAgent.includes("iPhone") ||
+              navigator.userAgent.includes("iPad"))
+          ) {
+            // Safari specific transformation
+            secondImage.style.transform =
+              "translate(0,0) rotate(270deg) translateX(-425px) translateY(-375px)";
             // -195px Y
           } else if (navigator.userAgent.includes("Opera")) {
             // Opera specific transformation
@@ -155,35 +167,38 @@ function themeSketchbook() {
           ) {
             // Firefox on Android specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-440px) translateY(-270px)";
+              "translate(0,0) rotate(270deg) translateX(-425px) translateY(-210px)";
           } else if (navigator.userAgent.includes("Android")) {
             // Firefox on Android specific transformation
             secondImage.style.transform =
-              "translate(-50%, -50%) rotate(270deg) translateX(-440px) translateY(-370px)";
+              "translate(0, 0) rotate(270deg) translateX(-440px) translateY(-370px)";
           } else if (
             navigator.userAgent.includes("iPhone") ||
             navigator.userAgent.includes("iPad")
           ) {
             // iOS specific transformation
             secondImage.style.transform =
-              "translate(-0, 0) rotate(270deg) translateX(-500px) translateY(-30px)";
+              "translate(0,0) rotate(270deg) translateX(-425px) translateY(-275px)";
             // -30px y
           } else {
             // Default transformation for other browsers
             secondImage.style.transform =
-              "translate(-50%, -50%) rotate(180deg)";
+              "translate(0, 0) rotate(270deg)  rotate(180deg)";
           }
 
-          //   secondImage.style.width = window.innerHeight + 20 + "px";
+          // secondImage.style.width = window.innerHeight + 20 + "px";
           // } else {
-          secondImage.style.position = "absolute";
+
+          // secondImage.style.width = "10px";
+
           // Apply default styles for other viewports
+          /*
           if (
             navigator.userAgent.includes("Safari") &&
             !navigator.userAgent.includes("iPhone")
           ) {
             secondImage.style.transform =
-              "translate(-50%, -50%) rotate(180deg) translateX(0px) translateY(-300px)";
+              "translate(-50%, -50%) rotate(270deg) translateX(0px) translateY(-300px)";
             // "translate(-50%, -50%) rotate(180deg) translateX(-500px) translateY(-300px)";
           } else if (
             navigator.userAgent.includes("Firefox") &&
@@ -198,6 +213,7 @@ function themeSketchbook() {
             secondImage.style.transform =
               "translate(-50%, -50%) rotate(180deg) translateX(0px) translateY(-5px)";
           }
+          */
         }
       }
 
