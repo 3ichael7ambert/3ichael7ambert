@@ -1583,27 +1583,65 @@
           </div>
           <p>360 Photography</p> <i id="otherBandsArrow360photo" class="fas fa-chevron-right"></i>
 
-          <div id="gallery-360-photography" class="gallery">  </div>
+          <div id="gallery-360-photography" class="gallery">  
             <!-- Thumbnails will be added here dynamically --> 
+            <script type="importmap">
+              {
+                  "imports": {
+                      "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+                      "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js"
+                  }
+              }
+          </script>
+          
+          <script type="module">
+               import { Viewer } from '@photo-sphere-viewer/core';
+
+// Array to hold paths to your images
+const images = [];
+for (let i = 1; i <= 17; i++) {
+    images.push(`imgs/design/photography/360/320_${i}.jpg`);
+}
+
+// Initialize the viewer with the first image
+let currentImageIndex = 0;
+let viewer;
+
+// Function to create or recreate the viewer with the specified image
+function createViewer(imageIndex) {
+    if (viewer) {
+        viewer.destroy(); // Destroy the existing viewer if it exists
+    }
+    viewer = new Viewer({
+        container: document.querySelector('#viewer'),
+        panorama: images[imageIndex],
+    });
+    console.log('Current Image Panorama:', images[imageIndex]); // Log the current image panorama
+}
+
+// Initial creation of the viewer
+createViewer(currentImageIndex);
+
+// Button event listeners to cycle through images
+document.querySelector('#prev-btn').addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    createViewer(currentImageIndex);
+});
+
+document.querySelector('#next-btn').addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    createViewer(currentImageIndex);
+});
+          </script>
+          <div style="text-align: center;">
+            <button id="prev-btn">Previous</button>
+            <button id="next-btn">Next</button>
+        </div>
             <div id="viewer" style="width: 100vw; height: 100vh;"></div>
 
-<script type="importmap">
-    {
-        "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
-            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js"
-        }
-    }
-</script>
+            
+          </div>
 
-<script type="module">
-    import { Viewer } from '@photo-sphere-viewer/core';
-
-    const viewer = new Viewer({
-        container: document.querySelector('#viewer'),
-        panorama: 'path/to/panorama.jpg',
-    });
-</script>
 
 
 

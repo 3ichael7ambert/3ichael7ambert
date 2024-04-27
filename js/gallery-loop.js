@@ -72,7 +72,7 @@ async function loadLightSliderGalleries(galleries) {
         imgElement.style.height = "100%"; // Example styling, adjust as needed
 
         // Append elements to the li element
-        // liElement.appendChild(h3Element);
+        // liElement.appendChild(h3Element);s
         liElement.appendChild(pElement);
         liElement.appendChild(imgElement);
 
