@@ -214,7 +214,7 @@ function clearAndHideSections() {
     clearAndHide("contact", "nav_con");
   }
   if (queryValue.includes("noNav")) {
-    clearAndHide("nav", "fixed-nav");
+    clearAndHide("nav", "fixed-nav", "menu-toggle");
   }
 }
 
@@ -223,10 +223,15 @@ function clearAndHide(...sectionIds) {
   sectionIds.forEach((sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.innerHTML = ""; // Clear the contents
+      section.innerHTML = "";
       section.classList.add("hide");
       section.style.display = "none";
-      section.classList.remove("section"); // Hide the section
+      section.classList.remove("section");
+      //
+      section.style.backgroundColor = "rgba (0,0,0,0)";
+      section.style.display = "none";
+      section.style.paddingBottom = "0px";
+      section.style.marginBottom = "0px";
     }
   });
 }
