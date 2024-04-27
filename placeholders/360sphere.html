@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" /> -->
+    <!-- <link rel="stylesheet" href="css/photo360.css" /> -->
+  </head>
+  <body>
+    <div id="gallery-360-photography" class="gallery">
+      <!-- Thumbnails will be added here dynamically -->
+      <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js"
+          }
+        }
+      </script>
+
+      <script type="module">
+        import { Viewer } from "@photo-sphere-viewer/core";
+        // Function to check if the device is a desktop
+        function isDesktop() {
+          // Check if the screen width is greater than a certain threshold (e.g., 768 pixels)
+          return window.innerWidth >= 768;
+        }
+
+        if (isDesktop()) {
+          // Array to hold paths to your images
+          const images = [];
+          for (let i = 1; i <= 17; i++) {
+            images.push(`imgs/design/photography/360/360_${i}.jpg`);
+          }
+
+          // Initialize the viewer with the first image
+          let currentImageIndex = 0;
+          let viewer;
+
+          // Function to create or recreate the viewer with the specified image
+          function createViewer(imageIndex) {
+            if (viewer) {
+              viewer.destroy(); // Destroy the existing viewer if it exists
+            }
+            viewer = new Viewer({
+              container: document.querySelector("#viewer-360"),
+              panorama: images[imageIndex],
+            });
+            console.log("Current Image Panorama:", images[imageIndex]); // Log the current image panorama
+          }
+
+          // Initial creation of the viewer
+          createViewer(currentImageIndex);
+
+          // Button event listeners to cycle through images
+          document
+            .querySelector("#prev-btn-360")
+            .addEventListener("click", () => {
+              currentImageIndex =
+                (currentImageIndex - 1 + images.length) % images.length;
+              createViewer(currentImageIndex);
+            });
+
+          document
+            .querySelector("#next-btn-360")
+            .addEventListener("click", () => {
+              currentImageIndex = (currentImageIndex + 1) % images.length;
+              createViewer(currentImageIndex);
+            });
+        } else {
+          const gallery360 = document.getElementById("gallery-360-photography");
+          gallery360.innerHTML = "";
+        }
+      </script>
+
+      <!-- <div class="container-360">
+      <button id="prev-btn-360">Previous</button>
+      <div id="viewer-360"></div>
+      <button id="next-btn-360">Next</button>
+  </div>
+-->
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          width: 100vw;
+          height: 100vh;
+        ">
+        <button id="prev-btn-360">Previous</button>
+        <div id="viewer-360" style="width: 50vw; height: 100vh"></div>
+        <button id="next-btn-360">Next</button>
+      </div>
+    </div>
+  </body>
+</html>
