@@ -32,6 +32,9 @@
 <!-- Pencil -->
 <link rel="stylesheet" href="css/pencilCursor.css" />
 
+<!-- 360 Images - Photo Sphere-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+
 <!-- Themes -->
 <link rel="stylesheet" href="css/sketchbook.css" />
 
@@ -1580,10 +1583,37 @@
           </div>
           <p>360 Photography</p> <i id="otherBandsArrow360photo" class="fas fa-chevron-right"></i>
 
-          <div id="gallery-360-photography class="gallery">
+          <div id="gallery-360-photography" class="gallery">  </div>
             <!-- Thumbnails will be added here dynamically --> 
+            <div id="viewer" style="width: 100vw; height: 100vh;"></div>
 
-          </div>
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js"
+        }
+    }
+</script>
+
+<script type="module">
+    import { Viewer } from '@photo-sphere-viewer/core';
+
+    const viewer = new Viewer({
+        container: document.querySelector('#viewer'),
+        panorama: 'path/to/panorama.jpg',
+    });
+</script>
+
+
+
+
+
+
+
+
+
+        
 
           <p>3D Photography</p>
           <div id="carousel2" class="carousel-container">
@@ -2705,6 +2735,9 @@ Portraitography: Ink&#x27;d Artistry of the Female Figu ....        </div>
 <script src="js/resume/management.js"></script>
 <script src="js/resume/trucker.js"></script>
 
+
+<!-- 360 Photo - Photo Sphere -->
+<script src="js/galleries/360photoSphere.js"></script>
 <!-- fonts and forms -->
 
     <script src="https://kit.fontawesome.com/70fd1b28eb.js" crossorigin="anonymous"></script>
