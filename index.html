@@ -34,6 +34,7 @@
 
 <!-- 360 Images - Photo Sphere-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+    <!-- <link rel="stylesheet" href="css/photo360.css" /> -->
 
 <!-- Themes -->
 <link rel="stylesheet" href="css/sketchbook.css" />
@@ -1600,7 +1601,7 @@
 // Array to hold paths to your images
 const images = [];
 for (let i = 1; i <= 17; i++) {
-    images.push(`imgs/design/photography/360/320_${i}.jpg`);
+    images.push(`imgs/design/photography/360/360_${i}.jpg`);
 }
 
 // Initialize the viewer with the first image
@@ -1613,7 +1614,7 @@ function createViewer(imageIndex) {
         viewer.destroy(); // Destroy the existing viewer if it exists
     }
     viewer = new Viewer({
-        container: document.querySelector('#viewer'),
+        container: document.querySelector('#viewer-360'),
         panorama: images[imageIndex],
     });
     console.log('Current Image Panorama:', images[imageIndex]); // Log the current image panorama
@@ -1623,25 +1624,32 @@ function createViewer(imageIndex) {
 createViewer(currentImageIndex);
 
 // Button event listeners to cycle through images
-document.querySelector('#prev-btn').addEventListener('click', () => {
+document.querySelector('#prev-btn-360').addEventListener('click', () => {
     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
     createViewer(currentImageIndex);
 });
 
-document.querySelector('#next-btn').addEventListener('click', () => {
+document.querySelector('#next-btn-360').addEventListener('click', () => {
     currentImageIndex = (currentImageIndex + 1) % images.length;
     createViewer(currentImageIndex);
 });
           </script>
-          <div style="text-align: center;">
-            <button id="prev-btn">Previous</button>
-            <button id="next-btn">Next</button>
-        </div>
-            <div id="viewer" style="width: 100vw; height: 100vh;"></div>
-
-            
+         
+         <!-- <div class="container-360">
+          <button id="prev-btn-360">Previous</button>
+          <div id="viewer-360"></div>
+          <button id="next-btn-360">Next</button>
+      </div> -->
+      
+      <div style="display: flex; justify-content: center;width: 100vw; height: 100vh;">
+        <button id="prev-btn-360">Previous</button>
+        <div id="viewer-360" style="width: 50vw; height: 100vh;"></div>
+        <button id="next-btn-360">Next</button>
+    </div>
+                  
           </div>
 
+        
 
 
 
