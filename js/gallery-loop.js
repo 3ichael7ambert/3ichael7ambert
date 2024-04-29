@@ -1,67 +1,67 @@
 let currentImageIndex = 0; // Track the index of the currently displayed image
 
-async function loadLightSliderGalleries(galleries) {
-  galleries.forEach(async (gallery) => {
-    const { containerId, basePath, name, startNum } = gallery;
-    const container = document.getElementById(containerId);
-    const ulElement = document.createElement("ul");
-    ulElement.id = "lightSlider";
+// async function loadLightSliderGalleries(galleries) {
+//   galleries.forEach(async (gallery) => {
+//     const { containerId, basePath, name, startNum } = gallery;
+//     const container = document.getElementById(containerId);
+//     const ulElement = document.createElement("ul");
+//     ulElement.id = "lightSlider";
 
-    for (let num = startNum; ; num++) {
-      const liElement = document.createElement("li");
-      const imgSrc = `${basePath}/${name}${num}.jpg`;
+//     for (let num = startNum; ; num++) {
+//       const liElement = document.createElement("li");
+//       const imgSrc = `${basePath}/${name}${num}.jpg`;
 
-      try {
-        const response = await fetch(imgSrc);
-        if (!response.ok) {
-          console.log(`No images found for ${name}.`);
-          break; // Exit the loop if the image is not found
-        }
-        console.log(`Image found: ${imgSrc}`); // Log the image URL
+//       try {
+//         const response = await fetch(imgSrc);
+//         if (!response.ok) {
+//           console.log(`No images found for ${name}.`);
+//           break; // Exit the loop if the image is not found
+//         }
+//         console.log(`Image found: ${imgSrc}`); // Log the image URL
 
-        const pElement = document.createElement("p");
-        pElement.textContent = ""; // Add description for the slide as needed
+//         const pElement = document.createElement("p");
+//         pElement.textContent = ""; // Add description for the slide as needed
 
-        const imgElement = document.createElement("img");
-        imgElement.src = imgSrc;
+//         const imgElement = document.createElement("img");
+//         imgElement.src = imgSrc;
 
-        // Add some basic styling to the img element
-        imgElement.style.width = "auto"; // Example styling, adjust as needed
-        imgElement.style.height = "100%"; // Example styling, adjust as needed
+//         // Add some basic styling to the img element
+//         imgElement.style.width = "auto"; // Example styling, adjust as needed
+//         imgElement.style.height = "100%"; // Example styling, adjust as needed
 
-        // Append elements to the li element
-        // liElement.appendChild(h3Element);s
-        liElement.appendChild(pElement);
-        liElement.appendChild(imgElement);
+//         // Append elements to the li element
+//         // liElement.appendChild(h3Element);s
+//         liElement.appendChild(pElement);
+//         liElement.appendChild(imgElement);
 
-        // Append the li element to the ul element
-        ulElement.appendChild(liElement);
-      } catch (error) {
-        console.error(error);
-      }
+//         // Append the li element to the ul element
+//         ulElement.appendChild(liElement);
+//       } catch (error) {
+//         console.error(error);
+//       }
 
-      // Terminate the loop if the image element couldn't be loaded
-      if (num >= startNum + 10) {
-        console.log(`Stopped loading images for ${name}: limit reached.`);
-        break;
-      }
-    }
+//       // Terminate the loop if the image element couldn't be loaded
+//       if (num >= startNum + 10) {
+//         console.log(`Stopped loading images for ${name}: limit reached.`);
+//         break;
+//       }
+//     }
 
-    // Append the ul element to the container
-    container.appendChild(ulElement);
+//     // Append the ul element to the container
+//     container.appendChild(ulElement);
 
-    // Initialize LightSlider after all images are loaded
-    lightSliderInit(containerId);
+//     // Initialize LightSlider after all images are loaded
+//     lightSliderInit(containerId);
 
-    // Add event listener to each image inside the li elements
-    ulElement.querySelectorAll("#lightSlider li img").forEach((img, index) => {
-      img.addEventListener("dblclick", () => {
-        const imgSrc = img.getAttribute("src");
-        openModal(imgSrc, index); // Call the openModal function with the image source and its index
-      });
-    });
-  });
-}
+//     // Add event listener to each image inside the li elements
+//     ulElement.querySelectorAll("#lightSlider li img").forEach((img, index) => {
+//       img.addEventListener("dblclick", () => {
+//         const imgSrc = img.getAttribute("src");
+//         openModal(imgSrc, index); // Call the openModal function with the image source and its index
+//       });
+//     });
+//   });
+// }
 
 function lightSliderInit(containerId) {
   const lightSliderOptions = {
