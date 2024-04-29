@@ -96,10 +96,11 @@ let currentImageIndex = 0; // Track the index of the currently displayed image
     freeMove: true,
     swipeThreshold: 40,
   };
-*/
+
   const lightSlider = document.getElementById(containerId).querySelector("ul");
   $(lightSlider).lightSlider(lightSliderOptions);
 }
+*/
 
 /*document.addEventListener("DOMContentLoaded", function () {
   const galleries = [
@@ -270,20 +271,20 @@ let currentImageIndex = 0; // Track the index of the currently displayed image
   // loadLightSliderGalleries(galleries);
 });*/
 
-function loadGallery(containerId) {
-  // Find the gallery object from the galleries array based on the provided containerId
-  const gallery = galleries.find(
-    (gallery) => gallery.containerId === containerId
-  );
+// function loadGallery(containerId) {
+//   // Find the gallery object from the galleries array based on the provided containerId
+//   const gallery = galleries.find(
+//     (gallery) => gallery.containerId === containerId
+//   );
 
-  // Check if the gallery object is found
-  if (gallery) {
-    // Pass the gallery object to loadLightSliderGalleries function
-    loadLightSliderGalleries([gallery]);
-  } else {
-    console.error(`Gallery not found for containerId: ${containerId}`);
-  }
-}
+//   // Check if the gallery object is found
+//   if (gallery) {
+//     // Pass the gallery object to loadLightSliderGalleries function
+//     loadLightSliderGalleries([gallery]);
+//   } else {
+//     console.error(`Gallery not found for containerId: ${containerId}`);
+//   }
+// }
 
 // Define modal outside the openModal function
 // const modal = document.getElementById("modal");
