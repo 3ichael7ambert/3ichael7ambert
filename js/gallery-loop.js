@@ -63,7 +63,7 @@ let currentImageIndex = 0; // Track the index of the currently displayed image
 //   });
 // }
 
-function lightSliderInit(containerId) {
+/*function lightSliderInit(containerId) {
   const lightSliderOptions = {
     item: 3,
     autoWidth: true,
@@ -96,7 +96,7 @@ function lightSliderInit(containerId) {
     freeMove: true,
     swipeThreshold: 40,
   };
-
+*/
   const lightSlider = document.getElementById(containerId).querySelector("ul");
   $(lightSlider).lightSlider(lightSliderOptions);
 }
