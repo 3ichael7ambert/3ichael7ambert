@@ -101,7 +101,7 @@ let currentImageIndex = 0; // Track the index of the currently displayed image
   $(lightSlider).lightSlider(lightSliderOptions);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   const galleries = [
     // Portraits
     {
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   // loadLightSliderGalleries(galleries);
-});
+});*/
 
 function loadGallery(containerId) {
   // Find the gallery object from the galleries array based on the provided containerId
