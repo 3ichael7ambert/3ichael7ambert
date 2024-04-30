@@ -1,4 +1,4 @@
-let currentImageIndex = 0; // Track the index of the currently displayed image
+// let currentImageIndex = 0; // Track the index of the currently displayed image
 
 // async function loadLightSliderGalleries(galleries) {
 //   galleries.forEach(async (gallery) => {
