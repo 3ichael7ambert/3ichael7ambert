@@ -143,7 +143,7 @@ function lightSliderInit(containerId) {
   $(lightSlider).lightSlider(lightSliderOptions);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 const galleries = [
   // Portraits
   {
@@ -310,7 +310,7 @@ const galleries = [
 ];
 
 // loadLightSliderGalleries(galleries);
-});
+// });
 
 function loadGallery(containerId) {
   // Find the gallery object from the galleries array based on the provided containerId
@@ -419,3 +419,4 @@ modal.addEventListener("touchend", handleTouchEnd);
 // Close the modal when clicking outside of the image
 modal.addEventListener("click", closeModal);
 modalImg.addEventListener("click", stopPropagation);
+*/
