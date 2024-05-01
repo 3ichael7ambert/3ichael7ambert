@@ -107,6 +107,13 @@
 
 /* Adjust badge styling as needed */
 .badges div {
+  margin: 0;
+  width: calc(33.33% - 10px);
+}
+
+.badges iframe {
+  width: 100%;
+  height: auto;
   margin-bottom: 10px;
 }
 
