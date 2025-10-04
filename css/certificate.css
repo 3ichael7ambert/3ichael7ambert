@@ -94,6 +94,54 @@
   margin-bottom: 20px;
 }
 
+/* New styles for the fixed certificate markup */
+.certificate-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.certificate-item a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.certificate-item .cert-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.certificate-item img {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.certificate-item .separator {
+  color: #888;
+  margin: 0 8px;
+}
+
+@media (max-width: 600px) {
+  .certificate-list {
+    flex-direction: column;
+  }
+  .certificate-item {
+    flex-direction: row;
+    gap: 8px;
+  }
+  .certificate-item img {
+    width: 56px;
+    height: 56px;
+  }
+}
+
 .certificate-item h3 {
   font-size: 20px;
   margin-bottom: 5px;
