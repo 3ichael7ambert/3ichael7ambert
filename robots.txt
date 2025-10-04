@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://3ichael7ambert.github.io/sitemap.xml
