@@ -1,0 +1,92 @@
+{
+  "games": [
+    {
+      "title": "Moly, Bart & Skid",
+      "subtitle": "The Lost Spring",
+      "description": "Three friends explore a living river in a character-switching puzzle adventure.",
+      "url": "https://drunkyeti.itch.io/moly-bart-skid-the-lost-spring",
+      "category": "Adventure",
+      "image_local": "assets/sources/games-0.jpg"
+    },
+    {
+      "title": "AR3NA: Foosball Circuit",
+      "description": "Spring-flick foosball, unusual tables, and local versus play.",
+      "url": "https://drunkyeti.itch.io/ar3na-foosball-circuit",
+      "category": "Arcade sports",
+      "image_local": "assets/sources/games-1.jpg"
+    },
+    {
+      "title": "Xero",
+      "description": "Explore the original browser-playable GameMaker project.",
+      "url": "https://3ichael7ambert.itch.io/xero",
+      "category": "Platformer"
+    },
+    {
+      "title": "A Rocket’s Intensity",
+      "description": "A space arcade shooter from the original game catalog.",
+      "url": "https://3ichael7ambert.itch.io/a-rockets-intensity",
+      "category": "Arcade",
+      "image_local": "assets/sources/games-3.jpg"
+    },
+    {
+      "title": "The Paper Arcade",
+      "description": "A collection of retro arcade games, available through itch.io.",
+      "url": "https://3ichael7ambert.itch.io/the-paper-arcade",
+      "category": "Retro",
+      "image_local": "assets/sources/games-4.jpg"
+    }
+  ],
+  "music": [
+    {
+      "title": "A Rocket’s Intensity",
+      "description": "Electronic music, orchestral experiments, and songs across a growing catalog.",
+      "url": "https://music.apple.com/us/artist/a-rockets-intensity/576515896",
+      "category": "Artist",
+      "image_local": "assets/sources/music-0.jpg"
+    },
+    {
+      "title": "3ichael 7ambert",
+      "description": "Personal stories in music, including the Ancestors releases.",
+      "url": "https://music.apple.com/us/artist/3ichael-7ambert/653323466",
+      "category": "Artist",
+      "image_local": "assets/sources/music-1.jpg"
+    },
+    {
+      "title": "AR3NA Foosball Soundtrack",
+      "description": "Original music from the Drunk Yeti game.",
+      "url": "https://drunkyeti.itch.io/ar3na-foosball-soundtrack",
+      "category": "Soundtrack",
+      "image_local": "assets/sources/music-2.jpg"
+    },
+    {
+      "title": "Mike on de Mic",
+      "description": "Conversations about art, music, and the experiences behind the work.",
+      "url": "https://open.spotify.com/show/3M9l8czCWNuWQu5LeReuFS",
+      "category": "Podcast",
+      "image_local": "assets/sources/music-3.jpg"
+    }
+  ],
+  "stores": [
+    {
+      "title": "Art prints & everyday objects",
+      "description": "Original illustrations, photographs, and colorful designs on prints, apparel, stickers, and more.",
+      "url": "https://www.redbubble.com/people/odonisorphane/shop",
+      "category": "Redbubble",
+      "image_local": "imgs/shop/trifecta.png"
+    },
+    {
+      "title": "Games, tools & soundtracks",
+      "description": "Explore Drunk Yeti’s games, creative software, asset collections, and music.",
+      "url": "https://drunkyeti.itch.io/",
+      "category": "Drunk Yeti · itch.io",
+      "image_local": "imgs/thumbnails/static/divinity.png"
+    },
+    {
+      "title": "Brushes & digital resources",
+      "description": "Browse the original digital-resource storefront for drawing and music-making tools.",
+      "url": "https://3ichael7ambert.gumroad.com/",
+      "category": "Gumroad",
+      "image_local": "imgs/shop/muskrats-prints.jpg"
+    }
+  ]
+}

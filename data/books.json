@@ -1,0 +1,253 @@
+[
+  {
+    "id": "portraitography-2026",
+    "title": "Portraitography: Drawn in Many Ways",
+    "category": "Art",
+    "description": "Portraits and figure studies across graphite, ink, paint, and digital color.",
+    "links": [
+      {
+        "label": "Apple Books",
+        "url": "https://books.apple.com/us/book/portraitography/id6822920533"
+      }
+    ],
+    "image_local": "assets/sources/portraitography-2026.jpg"
+  },
+  {
+    "id": "artist-statement",
+    "title": "The Artwork of 3ichael 7ambert: Artist Statement",
+    "category": "Art",
+    "description": "A reflective look at nearly two decades of work across traditional, digital, and interactive media.",
+    "links": [
+      {
+        "label": "Apple Books",
+        "url": "https://books.apple.com/us/book/the-artwork-of-3ichael-7ambert/id6822090618"
+      }
+    ],
+    "image_local": "assets/sources/artist-statement.jpg"
+  },
+  {
+    "id": "deadsexymikey",
+    "title": "DeadSexyMikey: 1,001 Faces",
+    "category": "Memoir",
+    "description": "A personal story of changing identities, creative life, and reinvention.",
+    "links": [
+      {
+        "label": "Apple Books",
+        "url": "https://books.apple.com/us/book/deadsexymikey/id6822102297"
+      }
+    ],
+    "image_local": "assets/sources/deadsexymikey.jpg"
+  },
+  {
+    "id": "three-esses",
+    "title": "The Three Esses",
+    "category": "Memoir",
+    "description": "Childhood friendship in Aurora, and the distance and changes that follow.",
+    "links": [
+      {
+        "label": "Apple Books",
+        "url": "https://books.apple.com/us/book/the-three-esses/id6822088361"
+      }
+    ],
+    "image_local": "assets/sources/three-esses.jpg"
+  },
+  {
+    "id": "49-states",
+    "title": "49 States & 18 Wheels",
+    "category": "Memoir",
+    "description": "A book by Michael Andrew Lambert, available through Apple Books.",
+    "links": [
+      {
+        "label": "Apple Books",
+        "url": "https://books.apple.com/us/book/49-states-18-wheels/id6821455670"
+      }
+    ],
+    "image_local": "assets/sources/49-states.jpg"
+  },
+  {
+    "id": "book-0",
+    "title": "The Curly Caterpillar",
+    "category": "Children",
+    "description": "A little caterpillar faces first-day-of-school nerves, with a moonlit adventure and a new friend.",
+    "links": [
+      {
+        "label": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/w/the-curly-caterpillar-michael-andrew-lambert/1148223958"
+      },
+      {
+        "label": "Google Play",
+        "url": "https://books.google.com/books/about/The_Curly_Caterpillar.html?id=hcWZ0QEACAAJ"
+      },
+      {
+        "label": "Amazon",
+        "url": "https://a.co/d/jdm9idE"
+      }
+    ],
+    "image_local": "assets/sources/book-0.jpg"
+  },
+  {
+    "id": "book-1",
+    "title": "37: A Life In Pieces",
+    "category": "Memoir",
+    "description": "A personal account of family, resilience, creativity, and the search for belonging.",
+    "links": [
+      {
+        "label": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/w/37-michael-andrew-lambert-jr/1148136433?ean=9798218782535"
+      },
+      {
+        "label": "Amazon",
+        "url": "https://a.co/d/cc6Zt1q"
+      }
+    ],
+    "image_local": "assets/sources/book-1.jpg"
+  },
+  {
+    "id": "book-2",
+    "title": "Memorandum in a Cruet",
+    "category": "Poetry",
+    "description": "Poetry and reflection from the Memorandum in a Cruet collection.",
+    "links": [
+      {
+        "label": "Barnes & Noble",
+        "url": "https://www.barnesandnoble.com/w/memorandum-in-a-cruet-3ichael-7ambert/1115861110?ean=9780692758854"
+      },
+      {
+        "label": "Amazon",
+        "url": "https://a.co/d/01nsyIF"
+      },
+      {
+        "label": "Publisher shop",
+        "url": "https://shop.ingramspark.com/b/084?78DZFh3L5AHPJdMLcXMFcfLNK0xr3q0ZrZnBuW1GfRC"
+      }
+    ],
+    "image_source": "https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/0692758852.jpg?viewkey=ba7130c3ed877b401045c3df45fe3d5bb989fffd71df0a5c0b0efe96804a9ff5",
+    "image_local": "assets/sources/book-2.jpg"
+  },
+  {
+    "id": "book-3",
+    "title": "Plastic Photography: 2k23 Seattle's Safari",
+    "category": "Photography",
+    "description": "Seattle seen through the Plastic Photography series.",
+    "image_source": "https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/9798869237583.jpg?viewkey=03bbbcf162d479063edd3d2e4429a8185f5653d093b166a11dea5f03fd4b615d",
+    "links": [
+      {
+        "label": "Publisher shop",
+        "url": "https://shop.ingramspark.com/b/084?LfDOm4GwdO03HSYXn6zlbPMJAHcUDdfuFvFUUM4A4uO"
+      }
+    ],
+    "image_local": "assets/sources/book-3.jpg"
+  },
+  {
+    "id": "book-4",
+    "title": "Memorandum in a Cruet: Deluxe",
+    "category": "Poetry",
+    "description": "The deluxe edition of the Memorandum in a Cruet collection.",
+    "image_source": "https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/1088240801.jpg?viewkey=4d0c758d8e8abf96c1a88067872054f670814358114f23a37d5b18f7c311d4cd",
+    "links": [
+      {
+        "label": "Publisher shop",
+        "url": "https://shop.ingramspark.com/b/084?udarHARKFGHaemzRMl5A0OsvHTPjxVh7U8SWEwvXEDM"
+      }
+    ],
+    "image_local": "assets/sources/book-4.jpg"
+  },
+  {
+    "id": "book-5",
+    "title": "My Drawings from Inktober: 2023",
+    "category": "Art",
+    "description": "Drawing studies and illustrations from the 2023 Inktober project.",
+    "image_source": "https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/9798869251916.jpg?viewkey=cc7accaa1a12511674f64df3dd7784d1948138739d1b281a75d390e6868cc3cb",
+    "links": [
+      {
+        "label": "Publisher shop",
+        "url": "https://shop.ingramspark.com/b/084?gO1sJ41NvB0LCanI4Z2fvvQ2dwB6nAvA9zaQbDyVxY7"
+      }
+    ],
+    "image_local": "assets/sources/book-5.jpg"
+  },
+  {
+    "id": "book-6",
+    "title": "Inktober 2023",
+    "category": "Art",
+    "description": "A collection of work from the Inktober 2023 project.",
+    "image_source": "https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/9798869171412.jpg?viewkey=e62c1894d135003bf5c4da52fc1445b84a50299bf52f781dd02f614dfb176b97",
+    "links": [
+      {
+        "label": "Publisher shop",
+        "url": "https://shop.ingramspark.com/b/084?xsBXI0jkrEiLU7EWpzb06xK3YJr23bEswtvKpjnx9BZ"
+      }
+    ],
+    "image_local": "assets/sources/book-6.jpg"
+  },
+  {
+    "id": "book-7",
+    "title": "Portraitography: Ink’d Artistry",
+    "category": "Art",
+    "description": "An exploration of the female figure through ink and drawn line.",
+    "image_source": "https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/9798869315052.jpg?viewkey=7de858b88b93a9f77de5535141eb2fc40edf413243c96eb4c0b96799e8f11896",
+    "links": [
+      {
+        "label": "Publisher shop",
+        "url": "https://shop.ingramspark.com/b/084?sNlx3sLOQqfsYy833z0JsRT7ML9qC4bbR7aUigMKsGU"
+      }
+    ],
+    "image_local": "assets/sources/book-7.jpg"
+  },
+  {
+    "id": "book-8",
+    "title": "The Artwork of 3ichael 7ambert (Paperback 6\" x 9\")",
+    "category": "Art",
+    "description": "A visual collection by Michael Andrew Lambert Jr.",
+    "image_source": "https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/9798330359073.jpg?viewkey=7883502c49d52a5707c9a99d5c50a96bcbf61528e662983f809da0ce9704a18a",
+    "links": [
+      {
+        "label": "Publisher shop",
+        "url": "https://shop.ingramspark.com/b/084?bX07PooL8yrIxWps4yk3Z74DkeZ9wHKUCPuqGAbswK2"
+      }
+    ],
+    "image_local": "assets/sources/book-8.jpg"
+  },
+  {
+    "id": "book-9",
+    "title": "Plastic Portraitography: In My Own World",
+    "category": "Photography",
+    "description": "Photographic transformations from the In My Own World collection.",
+    "image_source": "https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/9798869361592.jpg?viewkey=cf19c5a0037dc4113dee043af6d25499dd381bfe6329e5ae8813312a8285c45d",
+    "links": [
+      {
+        "label": "Publisher shop",
+        "url": "https://shop.ingramspark.com/b/084?cADYvxm6YCdGYwRIrAOYZlfg5VC4yBuZIQQTD89Hs1e"
+      }
+    ],
+    "image_local": "assets/sources/book-9.jpg"
+  },
+  {
+    "id": "book-10",
+    "title": "Spread Love Like Wildfire: Sheet Music",
+    "category": "Music",
+    "description": "Sheet music from Spread Love Like Wildfire.",
+    "image_source": "https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/9798330231584.jpg?viewkey=7792da60b7a38bc6e99112479c6e2c3025f197939cfc21f04fc588bc2f870b46",
+    "links": [
+      {
+        "label": "Publisher shop",
+        "url": "https://shop.ingramspark.com/b/084?gOcrBjN5N90csonxN49Jm1IAqdnHStD8ilF64bqX5eN"
+      }
+    ],
+    "image_local": "assets/sources/book-10.jpg"
+  },
+  {
+    "id": "book-11",
+    "title": "The Artwork of 3ichael 7ambert (Hardcopy 8\" x 11.5\")",
+    "category": "Art",
+    "description": "A visual collection by Michael Andrew Lambert Jr.",
+    "image_source": "https://image-hub-cloud.lightningsource.com/2011-04-01/Images/front_cover/x200/sku/9798330358687.jpg?viewkey=2472fc8f2ca2cc81b45dcd2f806d52212d10be3fb553c06a8cd048419f4d09e3",
+    "links": [
+      {
+        "label": "Publisher shop",
+        "url": "https://shop.ingramspark.com/b/084?270yS9CeHGIVTgic5tXY9ehzEOiR4n9Drj2tawO2Hmm"
+      }
+    ],
+    "image_local": "assets/sources/book-11.jpg"
+  }
+]
