@@ -8,7 +8,6 @@
   const saveData = navigator.connection?.saveData === true;
   const q = new URLSearchParams(location.search);
   const has = key => q.has(key) || [...q.values()].some(v => v.split(/[ ,+]/).includes(key));
-  let pencilFrame = 0;
   const cursor = $('#pencil-cursor');
   function savePreferences() {
     try { localStorage.setItem('portfolio-appearance', JSON.stringify(preferences)); } catch {}
@@ -20,7 +19,7 @@
     $('#pencil-setting').checked = preferences.pencil;
     $('#motion-setting').checked = preferences.motion;
     const animated = preferences.motion && !reduced.matches && !saveData;
-    const pencil = preferences.pencil && fine.matches && animated;
+    const pencil = preferences.pencil && fine.matches;
     document.body.classList.toggle('has-pencil', pencil);
     cursor.hidden = true;
     const sky = $('#atmosphere'); sky.replaceChildren();
@@ -52,16 +51,6 @@
     });
   }
   reduced.addEventListener('change', applyAppearance); fine.addEventListener('change', applyAppearance);
-  document.addEventListener('pointermove', event => {
-    if (!document.body.classList.contains('has-pencil') || $('#lightbox').open || pencilFrame) return;
-    const { clientX: x, clientY: y } = event;
-    pencilFrame = requestAnimationFrame(() => {
-      cursor.hidden = false;
-      cursor.style.transform = `translate3d(${x + 2}px,${y - 58}px,0) rotate(22deg)`;
-      pencilFrame = 0;
-    });
-  }, { passive: true });
-  document.addEventListener('pointerout', event => { if (!event.relatedTarget) cursor.hidden = true; });
   document.addEventListener('visibilitychange', () => {
     document.body.classList.toggle('effects-paused', document.hidden);
     if (document.hidden) cursor.hidden = true;

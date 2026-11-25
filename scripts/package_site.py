@@ -9,7 +9,7 @@ if OUT.is_symlink(): raise SystemExit('Refusing a symlinked output directory')
 if OUT.exists(): shutil.rmtree(OUT)
 OUT.mkdir(exist_ok=True)
 for item in ('index.html', 'CNAME', 'assets/site.css', 'assets/site.js',
-             'assets/theme-init.js', 'files/vcard.vcf'):
+             'assets/theme-init.js', 'assets/desk.js', 'files/vcard.vcf'):
     destination = OUT / item
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(ROOT / item, destination)
