@@ -28,11 +28,24 @@ def install_worlds(root, output, page, versioned):
             image = (f'<figure data-comic-sheet="{escape(sheet)}"><a href="{reader_url}">'
                      f'<img alt="{escape(alt)}" decoding="async"></a>'
                      f'<figcaption>{escape(caption)}</figcaption></figure>')
-        cast = ''.join(f'<dt>{escape(name)}</dt><dd>{escape(profile)}</dd>' for name, profile in item['cast'])
+        cards = []
+        for profile in item['cast']:
+            facts = ''.join(
+                f'<div><dt>{label}</dt><dd>{escape(profile[key])}</dd></div>'
+                for key, label in (('role', 'Role'), ('appearance', 'Design reference'))
+                if key in profile
+            )
+            details = f'<dl>{facts}</dl>' if facts else ''
+            cards.append(f'<article class="character-card"><h4>{escape(profile["name"])}</h4>'
+                         f'<p>{escape(profile["description"])}</p>{details}</article>')
         links = ''.join(f'<a href="{escape(url)}">{escape(label)}</a>' for label, url in item.get('links', []))
+        actions = f'<p class="world-links">{links}</p>' if links else ''
+        sheets = f'{item["id"]}-sheets'
         entries.append(f'<section class="world-entry" id="{item["id"]}"><h2>{escape(item["title"])}</h2>'
-                       f'<p>{escape(item["setting"])}</p>{image}<dl>{cast}</dl>'
-                       f'<p class="world-links">{links}</p></section>')
+                       f'<p>{escape(item["setting"])}</p>'
+                       f'<section class="character-sheets" aria-labelledby="{sheets}">'
+                       f'<h3 id="{sheets}">Character sheets</h3>{image}'
+                       f'<div class="character-grid">{"".join(cards)}</div></section>{actions}</section>')
     page(output, '/worlds/', 'Characters & worlds',
          'Explore Michael Lambert’s original characters, comics, and game worlds through cast profiles and design notes.',
          '<div class="world-guide"><h1>Characters &amp; worlds</h1>'

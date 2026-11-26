@@ -17,3 +17,11 @@
 #games .section-heading + .button {margin-bottom:1rem}
 .world-guide .world-entry {scroll-margin-top:5.5rem}
 .world-entry [data-comic-sheet]:not([data-ready]) {height:1px;overflow:hidden;visibility:hidden}
+.character-sheets {margin-top:1.4rem}
+.character-sheets h3 {margin-bottom:.8rem}
+.character-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:.8rem}
+.character-card {background:var(--surface);border:1px solid var(--line);border-radius:.4rem;padding:1rem}
+.character-card h4 {font:600 1.05rem/1.2 system-ui;margin:0 0 .45rem}
+.character-card dl {margin:.75rem 0 0}
+.character-card dt {font-size:.875rem;color:var(--muted)}
+.world-entry .world-links {margin-top:1rem}

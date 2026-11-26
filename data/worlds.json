@@ -4,18 +4,24 @@
     "title": "Dillingham",
     "setting": "During the first big salmon run, a new worker learns the pace of a Bristol Bay cannery from the people beside him. The line, the separate dorms, and Sunday dinner in the mess hall give the crew three very different places to catch their breath.",
     "cast": [
-      [
-        "Beaver",
-        "Teal chest and broad tail. Eager to take on his first big run, even when he needs help finding his rhythm."
-      ],
-      [
-        "John",
-        "Pigtails and black gloves. He knows how the line moves and makes time to show Beaver the ropes."
-      ],
-      [
-        "Bear",
-        "Brown fur and a big thermos. He brings a calm presence to a shift that can turn busy in a moment."
-      ]
+      {
+        "name": "Beaver",
+        "description": "Teal chest and broad tail. Eager to take on his first big run, even when he needs help finding his rhythm.",
+        "role": "Cannery newcomer",
+        "appearance": "Teal chest, brown fur, broad tail, and the cannery’s hairnet and earplugs on the production floor."
+      },
+      {
+        "name": "John",
+        "description": "Pigtails and black gloves. He knows how the line moves and makes time to show Beaver the ropes.",
+        "role": "Cannery mentor",
+        "appearance": "Pigtails, black gloves, and production-floor safety gear."
+      },
+      {
+        "name": "Bear",
+        "description": "Brown fur and a big thermos. He brings a calm presence to a shift that can turn busy in a moment.",
+        "role": "Cannery crew",
+        "appearance": "Brown fur and a large thermos."
+      }
     ],
     "links": [
       [
@@ -38,14 +44,18 @@
     "title": "Riggins",
     "setting": "Riggins and the Meepmops share a clay-built world where the small details carry the story. A familiar morning routine makes room for company, and the closing pages linger on the pleasure of staying together one minute longer.",
     "cast": [
-      [
-        "Riggins",
-        "The story introduces Riggins through an ordinary morning. Coffee and unhurried gestures set the pace."
-      ],
-      [
-        "The Meepmops",
-        "Their small scale changes how a room feels. Their company gives Riggins a reason to pause."
-      ]
+      {
+        "name": "Riggins",
+        "description": "The story introduces Riggins through an ordinary morning. Coffee and unhurried gestures set the pace.",
+        "role": "Art teacher and climber",
+        "appearance": "Long brown hair, human eyes, and a clay-built likeness."
+      },
+      {
+        "name": "The Meepmops",
+        "description": "Their small scale changes how a room feels. Their company gives Riggins a reason to pause.",
+        "role": "Companions",
+        "appearance": "Black clay, tan circular eyes and ring mouths. Two arms total, including the arm on the head."
+      }
     ],
     "links": [
       [
@@ -68,114 +78,40 @@
     ]
   },
   {
-    "id": "moly-bart-skid",
-    "title": "Moly, Bart & Skid",
-    "setting": "When the village spring stops flowing, the trail leads to another valley and an ancient machine under the mountain. The river and its machinery give each member of the trio a different way to investigate the same problem. Created by Matt Mateo VII.",
-    "cast": [
-      [
-        "Moly",
-        "Flips across chasms. Her field journal shows how she turns the expedition’s mistakes into practical lessons."
-      ],
-      [
-        "Bart",
-        "Flies over obstacles. His recipe for soup for three leaves room for whoever else arrives."
-      ],
-      [
-        "Skid",
-        "Swims where the others cannot, giving the team a route beneath the water."
-      ]
-    ],
-    "links": [
-      [
-        "See the illustrated characters",
-        "https://drunkyetistudio.com/comics/reader/?book=moly-bart-skid&page=1"
-      ],
-      [
-        "Read the comic",
-        "https://drunkyetistudio.com/comics/reader/?book=moly-bart-skid"
-      ],
-      [
-        "Play the game",
-        "https://drunkyeti.itch.io/moly-bart-skid-the-lost-spring"
-      ]
-    ],
-    "reader_art": [
-      "moly-bart-skid/1.webp",
-      "Moly, Bart and Skid on the cover",
-      "Cover of The Heart Under the Mountain by Matt Mateo VII"
-    ]
-  },
-  {
-    "id": "drunk-yeti",
-    "title": "Drunk Yeti",
-    "setting": "An ordinary lunch grows into an adventure through a riverside neighborhood. A borrowed bridge, a storm, and a gull with an eye for unattended belongings keep the neighbors crossing paths.",
-    "cast": [
-      [
-        "Yeti",
-        "The studio mascot sets out for a quiet meal. The neighborhood has plans of its own."
-      ],
-      [
-        "Beaver",
-        "Brings a practical suggestion when the bridge needs attention."
-      ],
-      [
-        "Fox",
-        "An invitation draws Fox into a day that takes a turn with the weather."
-      ],
-      [
-        "Gull",
-        "Treats a quiet lunch as a chance to carry something off."
-      ]
-    ],
-    "links": [
-      [
-        "See the illustrated characters",
-        "https://drunkyetistudio.com/comics/reader/?book=drunk-yeti&page=1"
-      ],
-      [
-        "Read the comic",
-        "https://drunkyetistudio.com/comics/reader/?book=drunk-yeti"
-      ],
-      [
-        "Play the game",
-        "https://drunkyeti.itch.io/yeti-brawl"
-      ]
-    ],
-    "reader_art": [
-      "drunk-yeti/1.webp",
-      "Drunk Yeti on the cover of The Long Way to Lunch",
-      "Cover of Drunk Yeti: The Long Way to Lunch"
-    ]
-  },
-  {
     "id": "penpals",
     "title": "PenPals",
     "setting": "An unaddressed letter turns a desk into an adventure map. Drawers, scraps, and narrow spaces become places to explore, and the friends’ different ways of making marks shape how they solve problems.",
     "cast": [
-      [
-        "Yellow Pencil",
-        "Sketches possibilities before all the details are settled."
-      ],
-      [
-        "Red Test Pencil",
-        "Blunt and precise, with a tender side that comes out when someone needs room."
-      ],
-      [
-        "Blue Pencil",
-        "Spots small traces others pass by."
-      ],
-      [
-        "Pen",
-        "Gives wandering ideas a shape the group can work with."
-      ],
-      [
-        "Crayon",
-        "Brings big energy, jokes, and unexpected ways forward."
-      ],
-      [
-        "Stub",
-        "Can reach places the other friends cannot fit into."
-      ]
+      {
+        "name": "Yellow Pencil",
+        "description": "Sketches possibilities before all the details are settled.",
+        "appearance": "Yellow pencil body."
+      },
+      {
+        "name": "Red Test Pencil",
+        "description": "Blunt and precise, with a tender side that comes out when someone needs room.",
+        "appearance": "Red test-pencil body."
+      },
+      {
+        "name": "Blue Pencil",
+        "description": "Spots small traces others pass by.",
+        "appearance": "Blue colored-pencil body."
+      },
+      {
+        "name": "Pen",
+        "description": "Gives wandering ideas a shape the group can work with.",
+        "appearance": "Pen-shaped stationery body."
+      },
+      {
+        "name": "Crayon",
+        "description": "Brings big energy, jokes, and unexpected ways forward.",
+        "appearance": "Crayon-shaped stationery body."
+      },
+      {
+        "name": "Stub",
+        "description": "Can reach places the other friends cannot fit into.",
+        "appearance": "Short pencil silhouette."
+      }
     ],
     "links": [
       [
@@ -206,22 +142,26 @@
     "title": "Raiders",
     "setting": "The Long Way Home follows five friends in a hand-drawn Aurora, Colorado. Their senior year starts on a yellow school bus and grows into a story about who gets to make space for art, friendship, and a night of their own. Aurora bends into little-planet views that echo the images in Micah’s sketchbook.",
     "cast": [
-      [
-        "Micah",
-        "A blue-haired artist and mapmaker with a sketchbook full of impossible landscapes."
-      ],
-      [
-        "Dawna",
-        "Makes zines and takes the lead when the group needs to organize."
-      ],
-      [
-        "Venna",
-        "Looks after the evidence as the friends work out what happened."
-      ],
-      [
-        "Gio and Jace",
-        "Round out the five friends at the center of the Aurora story."
-      ]
+      {
+        "name": "Micah",
+        "description": "A blue-haired artist and mapmaker with a sketchbook full of impossible landscapes.",
+        "role": "Artist and mapmaker",
+        "appearance": "Blue hair and a sketchbook."
+      },
+      {
+        "name": "Dawna",
+        "description": "Makes zines and takes the lead when the group needs to organize.",
+        "role": "Zine maker and organizer"
+      },
+      {
+        "name": "Venna",
+        "description": "Looks after the evidence as the friends work out what happened.",
+        "role": "Evidence keeper"
+      },
+      {
+        "name": "Gio and Jace",
+        "description": "Round out the five friends at the center of the Aurora story."
+      }
     ],
     "links": []
   },
@@ -230,18 +170,22 @@
     "title": "Deathwish Garden",
     "setting": "In The Hour That Would Not End, dawn stalls over a crooked cemetery town beneath the Zodiac Clock. Hope and Despair work at an afterlife help desk. When the clock takes Hope, Despair has to ask the Kingdom to help bring him home.",
     "cast": [
-      [
-        "Despair",
-        "A haloed spirit with three head points, two arms, and a flowing tail. His visible heart carries the cost of taking on other people’s grief."
-      ],
-      [
-        "Hope",
-        "A spectral companion with two arms, a flowing tail, and a heart that shows what he feels."
-      ],
-      [
-        "Nell",
-        "A small skeleton clerk with a bob haircut who keeps the help desk running."
-      ]
+      {
+        "name": "Despair",
+        "description": "A haloed spirit with three head points, two arms, and a flowing tail. His visible heart carries the cost of taking on other people’s grief.",
+        "appearance": "In Deathwish, three head points, two arms, a halo, a spectral tail and a visible heart."
+      },
+      {
+        "name": "Hope",
+        "description": "A spectral companion with two arms, a flowing tail, and a heart that shows what he feels.",
+        "appearance": "In Deathwish, two arms, a spectral tail and a visible heart."
+      },
+      {
+        "name": "Nell",
+        "description": "A small skeleton clerk with a bob haircut who keeps the help desk running.",
+        "role": "Afterlife clerk",
+        "appearance": "Small skeleton with a bob haircut."
+      }
     ],
     "links": []
   },
@@ -250,22 +194,25 @@
     "title": "Kingdom Kitty",
     "setting": "A paper-built adventure world of folding scenery, small feline heroes, and shadowy creatures. The same character designs have been explored in role-playing and puzzle formats.",
     "cast": [
-      [
-        "Sora Kitty",
-        "One of the central trio. The hero’s design carries the story from the printed page to a 3D paper world."
-      ],
-      [
-        "Kairi Kitty",
-        "Part of the central trio, with a dedicated model in the character roster."
-      ],
-      [
-        "Riku Kitty",
-        "The third lead, also modeled as a distinct paper-world character."
-      ],
-      [
-        "Shadow kitties",
-        "The enemy designs play against the softness of the paper environments."
-      ]
+      {
+        "name": "Sora Kitty",
+        "description": "One of the central trio. The hero’s design carries the story from the printed page to a 3D paper world.",
+        "appearance": "Round white kitty with whiskers and a distinctive hairstyle."
+      },
+      {
+        "name": "Kairi Kitty",
+        "description": "Part of the central trio, with a dedicated model in the character roster.",
+        "appearance": "Round white kitty with whiskers and her own hairstyle."
+      },
+      {
+        "name": "Riku Kitty",
+        "description": "The third lead, also modeled as a distinct paper-world character.",
+        "appearance": "Round white kitty with whiskers and his own hairstyle."
+      },
+      {
+        "name": "Shadow kitties",
+        "description": "The enemy designs play against the softness of the paper environments."
+      }
     ],
     "links": [
       [
@@ -279,26 +226,41 @@
     "title": "Mister Mikey",
     "setting": "Mikeyland is an island drawn in ballpoint where paths and places can lose their connections. Mikey learns that a line holds when the inhabitants remember and maintain what it connects. Mister Mikey also has a separate crossover design in Collision Course.",
     "cast": [
-      [
-        "Mikey",
-        "The Wander drawing gives him a round head, large oval eyes, red cap and shirt, and blue trousers."
-      ],
-      [
-        "Angel",
-        "A smiling, winged spirit with a halo who remembers people and the details of their lives."
-      ],
-      [
-        "Demon",
-        "A dark spirit with a three-point head and a red broken heart. He spots weak edges on the island’s routes."
-      ],
-      [
-        "Golden and Massive",
-        "Golden is the retriever who gives the journey personal stakes. Massive is the unfinished armored figure holding the island together."
-      ],
-      [
-        "Mister Mikey in Collision Course",
-        "A blond, sword-carrying figure with torn clothes, a missing arm, and black high-tops."
-      ]
+      {
+        "name": "Mikey",
+        "description": "The Wander drawing gives him a round head, large oval eyes, red cap and shirt, and blue trousers.",
+        "role": "Explorer",
+        "appearance": "Round head, large oval eyes, red cap and shirt, and blue trousers."
+      },
+      {
+        "name": "Angel",
+        "description": "A smiling, winged spirit with a halo who remembers people and the details of their lives.",
+        "role": "Spirit companion",
+        "appearance": "Smiling, winged spirit with a halo."
+      },
+      {
+        "name": "Demon",
+        "description": "A dark spirit with a three-point head and a red broken heart. He spots weak edges on the island’s routes.",
+        "role": "Route reader",
+        "appearance": "Dark three-point silhouette and a red broken heart."
+      },
+      {
+        "name": "Golden",
+        "description": "The retriever gives the journey personal stakes.",
+        "role": "Companion",
+        "appearance": "Retriever with a damaged ear."
+      },
+      {
+        "name": "Massive",
+        "description": "The armored figure works to hold the island together.",
+        "role": "Island protector",
+        "appearance": "Unfinished armor with square fragments."
+      },
+      {
+        "name": "Mister Mikey in Collision Course",
+        "description": "A blond, sword-carrying figure with torn clothes, a missing arm, and black high-tops.",
+        "appearance": "Blond hair, missing arm, torn clothes, sword and black high-tops."
+      }
     ],
     "links": []
   },
@@ -307,10 +269,11 @@
     "title": "Punk Skeleton",
     "setting": "This character starts with the graphic contrast of a skull and a punk silhouette. The old sketchbook includes a punk skull study, and the 3D roster explores a skeleton with a mohawk.",
     "cast": [
-      [
-        "Punk Skeleton",
-        "A mohawk breaks up the recognizable skull shape and gives the character its profile."
-      ]
+      {
+        "name": "Punk Skeleton",
+        "description": "A mohawk breaks up the recognizable skull shape and gives the character its profile.",
+        "appearance": "Skull with a mohawk silhouette."
+      }
     ],
     "links": [],
     "image": [
@@ -324,10 +287,12 @@
     "title": "Xero / Zero",
     "setting": "Xero began as a browser-playable GameMaker project. The later design expands into a looping neon city, with rooftop traversal, grind rails and grappling, plus off-world areas that turn gravity around the player.",
     "cast": [
-      [
-        "Xero",
-        "A compact silver robot with a swept-back helmet, pale eye area and separate armor plates. The city comic follows a capable rescue worker with dry humor, jets, and a transforming hand cannon."
-      ]
+      {
+        "name": "Xero",
+        "description": "A compact silver robot with a swept-back helmet, pale eye area and separate armor plates. The city comic follows a capable rescue worker with dry humor, jets, and a transforming hand cannon.",
+        "role": "City rescue worker",
+        "appearance": "Compact silver body, swept-back helmet, pale eye area, and separate plates."
+      }
     ],
     "links": [
       [
@@ -345,22 +310,26 @@
     "title": "AR3NA All-Stars",
     "setting": "AR3NA is an arcade sports and competition world. Its courts support ideas ranging from volleyball and foosball to snowballs and dodgeball, with slopes, ledges and other movement features connecting sports to platforming.",
     "cast": [
-      [
-        "Red / Yellow",
-        "Alternating red and yellow spikes, with larger shapes at the crown and smaller shapes around the ears and neck, make this design recognizable from several angles."
-      ],
-      [
-        "Pink & Blue",
-        "Blue eyes and bangs lead into pink hair."
-      ],
-      [
-        "Stripes",
-        "Blonde hair, a backwards baseball cap, and a green-blue striped top."
-      ],
-      [
-        "Black Beanie",
-        "A separate teammate distinguished by the headwear silhouette."
-      ]
+      {
+        "name": "Red / Yellow",
+        "description": "Alternating red and yellow spikes, with larger shapes at the crown and smaller shapes around the ears and neck, make this design recognizable from several angles.",
+        "appearance": "Alternating spikes, largest at the crown."
+      },
+      {
+        "name": "Pink & Blue",
+        "description": "Blue eyes and bangs lead into pink hair.",
+        "appearance": "Blue eyes and bangs with pink hair."
+      },
+      {
+        "name": "Stripes",
+        "description": "Blonde hair, a backwards baseball cap, and a green-blue striped top.",
+        "appearance": "Blonde hair, backwards baseball cap, and a green-blue striped top."
+      },
+      {
+        "name": "Black Beanie",
+        "description": "A separate teammate distinguished by the headwear silhouette.",
+        "appearance": "Black beanie silhouette."
+      }
     ],
     "links": [
       [
@@ -379,10 +348,11 @@
     "title": "Klay Karts",
     "setting": "A clay-styled kart racer with nine circuits and a crossover grid. The world has its own handmade terrain and sense of scale. The kart seat, driving pose, and camera distance change how familiar characters read on the track.",
     "cast": [
-      [
-        "Crossover drivers",
-        "Familiar faces from different worlds share the track. The seated variants keep their silhouettes recognizable while fitting inside each kart."
-      ]
+      {
+        "name": "Crossover drivers",
+        "description": "Familiar faces from different worlds share the track. The seated variants keep their silhouettes recognizable while fitting inside each kart.",
+        "appearance": "Seated poses carry familiar silhouettes into the clay-styled karts."
+      }
     ],
     "links": []
   },
@@ -391,10 +361,10 @@
     "title": "Ex, Can & Spray",
     "setting": "The early portfolio includes a spray-can illustration. Ex, Can & Spray also appear as a group in Collision Course, where they help brace a route during the rescue. The artwork here is the original spray-can study.",
     "cast": [
-      [
-        "Ex, Can & Spray",
-        "The trio brings its own visual language to the crossover, where they work as a group."
-      ]
+      {
+        "name": "Ex, Can & Spray",
+        "description": "The trio brings its own visual language to the crossover, where they work as a group."
+      }
     ],
     "links": [],
     "image": [
@@ -408,18 +378,30 @@
     "title": "Odonis Orphane 2",
     "setting": "The second Odonis Orphane book follows the trail from the snowy settlement of Rime toward the Glass Coast. A broken-halo mark on a freight crate connects the destinations. The graphic novel uses rough ink, open white space, and selective color.",
     "cast": [
-      [
-        "Odonis Orphane",
-        "A lanky yellow alien with large turquoise eyes and asymmetrical white hair. He travels on a patched snowboard and uses movement to sustain the energy blade that forms from his hand."
-      ],
-      [
-        "Ilex",
-        "A courier with short dark hair, crescent ears, and a satchel. She recognizes the freight mark that leads toward the coast."
-      ],
-      [
-        "Marn and Vale",
-        "Marn is a cook, repairer and mentor. Vale helps repair the board and preserve Rime’s records."
-      ]
+      {
+        "name": "Odonis Orphane",
+        "description": "A lanky yellow alien with large turquoise eyes and asymmetrical white hair. He travels on a patched snowboard and uses movement to sustain the energy blade that forms from his hand.",
+        "role": "Traveler",
+        "appearance": "Lanky yellow alien with turquoise eyes, asymmetrical white hair, and a patched snowboard."
+      },
+      {
+        "name": "Ilex",
+        "description": "A courier with short dark hair, crescent ears, and a satchel. She recognizes the freight mark that leads toward the coast.",
+        "role": "Courier",
+        "appearance": "Short dark hair, crescent ears, and a courier satchel."
+      },
+      {
+        "name": "Marn",
+        "description": "Mentors Odonis during his time in Rime.",
+        "role": "Cook and repairer",
+        "appearance": "Rounded alien silhouette, apron, and head covering."
+      },
+      {
+        "name": "Vale",
+        "description": "Helps repair the board and preserve Rime’s records.",
+        "role": "Archive ally",
+        "appearance": "Long dark coat, cracked pale visor, and hooked staff."
+      }
     ],
     "links": [
       [
@@ -433,14 +415,14 @@
     "title": "Hope and Despair",
     "setting": "Collision Course depicts the white-haired Hope and dark-haired Despair alongside their spectral counterparts from Deathwish. They have their own appearances and memories and can be present in the same scene.",
     "cast": [
-      [
-        "Hope",
-        "One half of the original pair."
-      ],
-      [
-        "Despair",
-        "The second half of the pair, designed to be read in relation to Hope."
-      ]
+      {
+        "name": "Hope",
+        "description": "White-haired humanoid counterpart with an identity and memories of his own."
+      },
+      {
+        "name": "Despair",
+        "description": "Dark-haired humanoid counterpart who appears alongside the spirits in Collision Course."
+      }
     ],
     "links": []
   },
@@ -449,10 +431,11 @@
     "title": "Mannequin Fighter",
     "setting": "Originally called Inquiry, this illustrated project also became the basis for a 3D fighter. Its mannequin forms make body language, pose and shape part of the visual identity.",
     "cast": [
-      [
-        "Heart model",
-        "The central mannequin design in the project."
-      ]
+      {
+        "name": "Heart model",
+        "description": "The central mannequin design in the project.",
+        "role": "Lead fighter"
+      }
     ],
     "links": []
   },
@@ -461,14 +444,14 @@
     "title": "Splinter & Fuse",
     "setting": "Open Here introduces Splinter and Fuse in an original four-panel webcomic. The later arcade concept brings the two leads into playable action.",
     "cast": [
-      [
-        "Splinter",
-        "One of the two title characters."
-      ],
-      [
-        "Fuse",
-        "The other half of the title pair."
-      ]
+      {
+        "name": "Splinter",
+        "description": "One of the two title characters."
+      },
+      {
+        "name": "Fuse",
+        "description": "The other half of the title pair."
+      }
     ],
     "links": []
   },
@@ -477,10 +460,11 @@
     "title": "Mosswake",
     "setting": "A top-down survival and building world shaped by elevation, tides, and player construction. The map is designed to keep changing over time, so returning to a familiar spot can reveal a different shoreline or settlement.",
     "cast": [
-      [
-        "Survivor",
-        "The player builds, explores, and adapts to a persistent landscape."
-      ]
+      {
+        "name": "Survivor",
+        "description": "The player builds, explores, and adapts to a persistent landscape.",
+        "role": "Playable builder"
+      }
     ],
     "links": [
       [
@@ -494,10 +478,11 @@
     "title": "Avalanca",
     "setting": "A downhill world of snowy slopes, forest trails, and changing weather. Different courses and vehicles change where the player can carry speed, jump, or cut across terrain.",
     "cast": [
-      [
-        "Rider",
-        "The player can ride a snowboard or skis, with bicycles, scooters and watercraft extending the downhill design to other surfaces."
-      ]
+      {
+        "name": "Rider",
+        "description": "The player can ride a snowboard or skis, with bicycles, scooters and watercraft extending the downhill design to other surfaces.",
+        "role": "Playable downhill rider"
+      }
     ],
     "links": []
   },
@@ -506,10 +491,12 @@
     "title": "Ortega Sauce",
     "setting": "Fashion shows and DJ sets share the same journey across venues. Runway and deck sequences use rhythm, while outfits, travel and rapport give the player ways to build a career between performances.",
     "cast": [
-      [
-        "Performer",
-        "The playable role spans fashion and music. Clothes, hairstyles and accessories give the same performer different silhouettes for different venues."
-      ]
+      {
+        "name": "Performer",
+        "description": "The playable role spans fashion and music. Clothes, hairstyles and accessories give the same performer different silhouettes for different venues.",
+        "role": "Runway model and DJ",
+        "appearance": "Outfits, hairstyles, and accessories change with the venue."
+      }
     ],
     "links": []
   },
@@ -518,10 +505,11 @@
     "title": "A Rocket’s Intensity",
     "setting": "A space arcade world that moves between orbit, wormholes, open space, and city flight. Each setting changes the pilot’s horizon and the room available for a maneuver.",
     "cast": [
-      [
-        "Pilot",
-        "The ship is the playable focus, with barrel rolls and changes in viewpoint tying different flight settings together."
-      ]
+      {
+        "name": "Pilot",
+        "description": "The ship is the playable focus, with barrel rolls and changes in viewpoint tying different flight settings together.",
+        "role": "Arcade pilot"
+      }
     ],
     "links": [
       [
@@ -540,14 +528,14 @@
     "title": "Collision Course",
     "setting": "The Space Between brings cast members from across the catalog to Interchange, a station caught between worlds. A damaged relay strands its travelers. Recovering the routes means learning how each world’s materials and rules behave at the station.",
     "cast": [
-      [
-        "Lina",
-        "A character introduced in the crossover story."
-      ],
-      [
-        "The visitors",
-        "The story follows characters from Raiders, PenPals, Xero, AR3NA, Kingdom Kitty, Dillingham, Riggins, and other worlds as they work to return home."
-      ]
+      {
+        "name": "Lina",
+        "description": "A character introduced in the crossover story."
+      },
+      {
+        "name": "The visitors",
+        "description": "The story follows characters from Raiders, PenPals, Xero, AR3NA, Kingdom Kitty, Dillingham, Riggins, and other worlds as they work to return home."
+      }
     ],
     "links": []
   }
