@@ -138,3 +138,16 @@ body.has-pencil :is(a,button,summary,select) {cursor:pointer}
 }
 .journey-start {margin:1rem 0 .55rem}
 .journey-start .button {min-height:44px}
+.book-controls {align-items:center}
+.book-navigation {min-width:0}
+.book-help:not([open]) {margin:0;padding:0;border:0;background:transparent}
+.book-help[open] {margin:0}
+.book-help summary {font-size:.85rem}
+.book-controls #desk-tools {align-items:center}
+.book-controls #desk-tools button {height:44px}
+.sketchbook-page,#sketch-run {scroll-margin-top:calc(var(--book-controls-height, 7rem) + .65rem)}
+@media(max-width:550px) {
+  .book-navigation select {max-width:32vw}
+  .book-navigation {gap:.25rem}
+  .book-navigation button,.book-controls #desk-tools button {padding-inline:.45rem}
+}

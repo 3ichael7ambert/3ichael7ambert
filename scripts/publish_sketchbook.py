@@ -174,6 +174,12 @@ def decorate_home(output, css, script):
         paragraph.append(link_element(soup, url, label, 'button'))
         chapter = soup.find(id=chapter_id)
         (chapter.select_one('.section-heading') or chapter.find('h2')).insert_after(paragraph)
+    games = soup.select_one('#games .project-grid')
+    if games:
+        xero = next((card for card in games.find_all('article', recursive=False)
+                     if card.find('h3') and card.h3.get_text(strip=True) == 'Xero'), None)
+        if xero:
+            games.insert(0, xero.extract())
     desk_tools = soup.select_one('#desk-tools')
     soup.select_one('script[src="assets/desk.js"]')['src'] = versioned(output, 'desk.js')
     desk_tools.select_one('[data-tool=clip]').string = 'Move'

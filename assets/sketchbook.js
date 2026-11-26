@@ -45,9 +45,9 @@
     flip?.cancel();
     if (animate && !continuous && !reduced.matches && window.portfolioAppearance?.motion && !navigator.connection?.saveData) {
       flip = page.animate([
-        {transformOrigin:direction > 0 ? 'left top' : 'right top', transform:`perspective(1100px) rotateY(${direction * -37}deg)`, opacity:.3},
+        {transformOrigin:direction > 0 ? 'left top' : 'right top', transform:`perspective(1100px) rotateY(${direction * -62}deg)`, opacity:.5},
         {transformOrigin:direction > 0 ? 'left top' : 'right top', transform:'perspective(1100px) rotateY(0)', opacity:1}
-      ], {duration:460,easing:'cubic-bezier(.2,.75,.25,1)'});
+      ], {duration:520,easing:'cubic-bezier(.2,.75,.25,1)'});
     }
   }
   function turn(index, hash, focus = false) {
@@ -130,7 +130,12 @@
   }
   window.addEventListener('gamepadconnected',startController);
   document.addEventListener('visibilitychange',startController);
+  function sizeBookControls() {
+    main.style.setProperty('--book-controls-height', controls.offsetHeight + 'px');
+  }
   controls.hidden = false;
+  sizeBookControls();
+  if ('ResizeObserver' in window) new ResizeObserver(sizeBookControls).observe(controls);
   restore();
   startController();
 })();
