@@ -13,7 +13,7 @@
     try { localStorage.setItem('portfolio-appearance', JSON.stringify(preferences)); } catch {}
   }
   function applyAppearance() {
-    document.documentElement.dataset.theme = preferences.theme;
+    window.applyPortfolioTheme(preferences.theme);
     $('#theme').value = preferences.theme;
     $('#weather').value = preferences.weather;
     $('#pencil-setting').checked = preferences.pencil;

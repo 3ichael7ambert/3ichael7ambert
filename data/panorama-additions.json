@@ -1,0 +1,72 @@
+[
+  {
+    "id": "creek-stones",
+    "title": "Creek stones",
+    "image": "/assets/media/spheres/creek-stones.webp",
+    "thumb": "/assets/media/spheres/creek-stones-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "forest-clearing",
+    "title": "Forest clearing",
+    "image": "/assets/media/spheres/forest-clearing.webp",
+    "thumb": "/assets/media/spheres/forest-clearing-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "miniature-world",
+    "title": "Miniature world",
+    "image": "/assets/media/spheres/miniature-world.webp",
+    "thumb": "/assets/media/spheres/miniature-world-thumb.webp",
+    "group": "Imagined worlds"
+  },
+  {
+    "id": "blue-lake-world",
+    "title": "Blue lake world",
+    "image": "/assets/media/spheres/blue-lake-world.webp",
+    "thumb": "/assets/media/spheres/blue-lake-world-thumb.webp",
+    "group": "Imagined worlds"
+  },
+  {
+    "id": "snow-after-dark",
+    "title": "Snow after dark",
+    "image": "/assets/media/spheres/snow-after-dark.webp",
+    "thumb": "/assets/media/spheres/snow-after-dark-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "skatepark",
+    "title": "Skatepark in full sun",
+    "image": "/assets/media/spheres/skatepark.webp",
+    "thumb": "/assets/media/spheres/skatepark-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "curved-plaza",
+    "title": "Curved plaza",
+    "image": "/assets/media/spheres/curved-plaza.webp",
+    "thumb": "/assets/media/spheres/curved-plaza-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "lights-in-the-dark",
+    "title": "Lights in the dark",
+    "image": "/assets/media/spheres/lights-in-the-dark.webp",
+    "thumb": "/assets/media/spheres/lights-in-the-dark-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "covered-deck",
+    "title": "Covered deck",
+    "image": "/assets/media/spheres/covered-deck.webp",
+    "thumb": "/assets/media/spheres/covered-deck-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "moon",
+    "title": "Collision Course moon",
+    "image": "/assets/media/spheres/moon.webp",
+    "thumb": "/assets/media/spheres/moon-thumb.webp",
+    "group": "Imagined worlds"
+  }
+]

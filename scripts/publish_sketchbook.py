@@ -13,6 +13,7 @@ from publish_tours import install_tours
 from publish_worlds import install_worlds
 from publish_reading_guide import install_reading_guide
 from publish_portfolio import install_portfolio
+from publish_studio import install_studio, theme_control, featured_cards
 
 ORIGIN = 'https://3ichael7ambert.com'
 AUTHOR = 'Michael Andrew Lambert Jr.'
@@ -33,8 +34,9 @@ CHAPTERS = (
     ('background', 'About & skills'),
     ('contact', 'Contact'),
 )
-FOLIOS = (('/explore/', 'Take a guided tour'), ('/art/', 'Art & photography'), ('/books/', 'Books'), ('/worlds/', 'Characters & worlds'), ('/music/', 'Music & videos'),
-          ('/about/', 'About'), ('/skills/', 'Skills & projects'), ('/work/', 'Work with me'), ('/resume/', 'Résumé'))
+FOLIOS = (('/explore/', 'Explore'), ('/art/', 'Art'), ('/play/', 'Play'), ('/books/', 'Books'),
+          ('/worlds/', 'Worlds'), ('/music/', 'Music'), ('/store/', 'Shop'),
+          ('/about/', 'About'), ('/skills/', 'Skills'), ('/work/', 'Work with me'))
 BOOK_SLUGS = {'book-2': 'memorandum-in-a-cruet', 'book-6': 'inktober-2023', 'book-11': 'the-artwork-of-3ichael-7ambert'}
 BOOK_SUMMARIES = {
     'book-2': 'A collection of poems and reflections by 3ichael 7ambert.',
@@ -78,15 +80,22 @@ def page(output, path, title, description, body, css, *, image=PORTRAIT, kind='f
     full_title = f'{title} | {BYLINE}'
     structured = f'<script type="application/ld+json">{markup(schema)}</script>' if schema else ''
     shared_sheet = '' if css.startswith('/assets/sketchbook.css') else '<link rel="stylesheet" href="/assets/sketchbook.css">'
+    menu = ''.join(
+        f'<a href="{url}"{" aria-current=page" if path == url else ""}>{escape(label)}</a>'
+        for url, label in (('/', 'Cover'), *FOLIOS)
+    )
+    studio_css = versioned(output, 'studio.css')
+    studio_js = versioned(output, 'studio.js')
     document = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{escape(full_title)}</title>{canonical_meta(full_title, description, path, image)}
 <link rel="icon" href="{PORTRAIT}"><link rel="stylesheet" href="/assets/site.css">
-{shared_sheet}<link rel="stylesheet" href="{css}"><script src="/assets/theme-init.js"></script>{structured}
+{shared_sheet}<link rel="stylesheet" href="{css}"><link rel="stylesheet" href="{studio_css}">
+<script src="{versioned(output, 'theme-init.js')}"></script><script defer src="{studio_js}"></script>{structured}
 </head><body class="{kind}-page">
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="masthead"><a href="/" class="wordmark">3ichael <span>7ambert</span><small>THE LIVING SKETCHBOOK</small></a></header>
-<nav class="section-nav" aria-label="Sketchbook chapters">{nav((('/', 'Cover'), *FOLIOS))}</nav>
+<header class="masthead"><a href="/" class="wordmark">3ichael <span>7ambert</span><small>THE LIVING SKETCHBOOK</small></a>{theme_control()}</header>
+<nav class="section-nav" aria-label="Sketchbook chapters">{menu}</nav>
 <main id="main"><article class="chapter">{body}</article></main>
 <footer>{nav((('/', 'Back to the sketchbook'), ('/#contact', 'Contact')))}</footer></body></html>'''
     destination = output / path.strip('/') / 'index.html'
@@ -136,12 +145,22 @@ def decorate_home(output, css, script):
     soup.head.append(schema)
     soup.head.append(soup.new_tag('link', rel='stylesheet', href=css))
     soup.head.append(soup.new_tag('script', src=script, defer=True))
+    soup.head.append(soup.new_tag('link', rel='stylesheet', href=versioned(output, 'studio.css')))
+    soup.select_one('script[src="assets/theme-init.js"]')['src'] = versioned(output, 'theme-init.js')
+    soup.body['class'] = [*soup.body.get('class', []), 'home-page']
+    pick = BeautifulSoup(theme_control(), 'html.parser').select_one('select')
+    del pick['data-studio-theme']
+    pick['id'] = 'theme'
+    soup.select_one('#theme').replace_with(pick)
     soup.select_one('.wordmark small').string = 'THE LIVING SKETCHBOOK'
     soup.select_one('#settings-toggle').string = 'Weather & effects'
     soup.select_one('#weather option[value="none"]').string = 'Clear'
     soup.select_one('.hero h1').string = 'A living sketchbook.'
     intro = soup.select_one('.hero .lead')
-    intro.string = 'I’m Michael Lambert, also known as 3ichael 7ambert. I make art, photograph everyday worlds, write books, compose music, and build games and software.'
+    intro.string = 'I’m Michael Lambert. This is where my drawings, photographs, music, books, and games come together.'
+    extra_intro = intro.find_next_sibling('p')
+    if extra_intro:
+        extra_intro.decompose()
     cover_index = soup.new_tag('ul', attrs={'class': 'sketchbook-index', 'aria-label': 'Explore the sketchbook'})
     for url, label in FOLIOS:
         item = soup.new_tag('li')
@@ -253,7 +272,7 @@ def publish_video(output, css, video, parent, parent_label):
 
 
 def install_sketchbook(root, output):
-    for filename in ('sketchbook.css', 'sketchbook.js'):
+    for filename in ('sketchbook.css', 'sketchbook.js', 'studio.css', 'studio.js'):
         shutil.copy2(root / 'assets' / filename, output / 'assets' / filename)
     css = versioned(output, 'sketchbook.css')
     decorate_home(output, css, versioned(output, 'sketchbook.js'))
@@ -276,14 +295,18 @@ def install_sketchbook(root, output):
              schema={'@context': 'https://schema.org', '@type': 'Book', 'name': title, 'description': description,
                      'url': ORIGIN + address, 'image': ORIGIN + cover, 'numberOfPages': book['pages'],
                      'author': {'@type': 'Person', '@id': PROFILE, 'name': AUTHOR}})
-        book_links.append(f'<li><a href="{address}">{safe_title}</a> · {book["pages"]:,} pages</li>')
+        book_links.append(f'<a class="edition-card" data-release-card href="{address}">'
+                          f'<img src="{cover}" alt="" width="240" height="320" loading="lazy" decoding="async">'
+                          f'<span>{safe_title}</span><small>{book["pages"]:,} pages</small></a>')
         routes.append(address)
     page(output, '/books/', 'Books by Michael Lambert',
          'Browse readable editions of Memorandum in a Cruet, Inktober, artist collections and Plastic Photography.',
          '<h1>Books</h1><p class="page-intro">Poetry, drawing, photography, and collections of work '
          'originally made for the page. These editions are available to read online.</p>'
          '<p><a class="button" href="/books/reading-guide/">Explore the reading guide</a></p>'
-         f'<ul class="release-list">{"".join(book_links)}</ul>'
+         '<label class="release-search" hidden>Find an edition <input type="search" data-release-search></label>'
+         '<p role="status" data-release-status></p>'
+         f'<div class="edition-grid">{"".join(book_links)}</div>'
          '<p><a href="/#book">View the full catalog and retailer links</a></p>', css)
     routes.append('/books/')
     routes.append(install_reading_guide(output, css, page))
@@ -299,6 +322,7 @@ def install_sketchbook(root, output):
         root, output, page, versioned, video_cards, videos, publish_video
     )
     routes.extend(portfolio_routes)
+    feature_music = json.loads((root / 'data/featured.json').read_text(encoding='utf-8'))['music']
     page(output, '/music/', 'Music, soundtracks and visualizers',
          'Watch music videos and visualizers by 3ichael 7ambert and A Rocket’s Intensity. Explore original music and game soundtracks.',
          '<h1>Music &amp; visualizers</h1><p class="page-intro">Electronic and orchestral work, independent bands, '
@@ -306,7 +330,9 @@ def install_sketchbook(root, output):
          '<p class="page-turn"><a href="https://open.spotify.com/artist/0rWENRqbBZZK4RxUu8Q7CP">A Rocket’s Intensity on Spotify</a>'
          '<a href="https://music.apple.com/us/artist/3ichael-7ambert/653323466">3ichael 7ambert on Apple Music</a>'
          '<a href="https://drunkyeti.itch.io/ar3na-foosball-soundtrack">AR3NA Foosball soundtrack</a></p>'
-         f'<div class="release-grid">{video_cards(videos)}</div>', css)
+         '<h2>Releases and listening</h2><div class="release-grid studio-cards">'
+         + featured_cards(output, 'music', feature_music) +
+         f'</div><h2>Watch</h2><div class="release-grid">{video_cards(videos)}</div>', css)
     routes.append('/music/')
 
     skills = [
@@ -332,11 +358,16 @@ def install_sketchbook(root, output):
 
     reader = output / 'reader/index.html'
     html = reader.read_text(encoding='utf-8').replace('<title>Reader</title>', '<title>Reader</title><meta name="robots" content="noindex,follow">')
-    reader.write_text(html, encoding='utf-8')
+    document = BeautifulSoup(html, 'html.parser')
+    document.head.append(document.new_tag('script', src=versioned(output, 'theme-init.js')))
+    document.head.append(document.new_tag('script', src=versioned(output, 'studio.js'), defer=True))
+    document.select_one('header').append(BeautifulSoup(theme_control(), 'html.parser'))
+    reader.write_text(str(document), encoding='utf-8')
     install_client_pages(root, output, css, page)
     routes.extend(('/work/', '/resume/'))
     routes.extend(install_tours(output, css, page))
     routes.append(install_worlds(root, output, page, versioned))
+    routes.extend(install_studio(root, output, page, css, versioned))
     write_sitemaps(root, output, routes, [*videos, *motion_archive])
 
 

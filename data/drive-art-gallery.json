@@ -1,0 +1,145 @@
+[
+  {
+    "id": "depth-cherries",
+    "title": "Cherries",
+    "alt": "Bright red cherries on overlapping green branches",
+    "category": "3D & depth",
+    "collection": "Depth studies",
+    "large": "/assets/media/depth/cherries.webp",
+    "thumb": "/assets/media/depth/cherries-thumb.webp",
+    "width": 582,
+    "height": 900
+  },
+  {
+    "id": "depth-cosmic-orbit",
+    "title": "Cosmic orbit",
+    "alt": "Planets and rocks floating in deep space",
+    "category": "3D & depth",
+    "collection": "Depth studies",
+    "large": "/assets/media/depth/cosmic-orbit.webp",
+    "thumb": "/assets/media/depth/cosmic-orbit-thumb.webp",
+    "width": 582,
+    "height": 900
+  },
+  {
+    "id": "depth-dark-landscape",
+    "title": "Dark landscape",
+    "alt": "A solitary evergreen beside dark water beneath a luminous sky",
+    "category": "3D & depth",
+    "collection": "Depth studies",
+    "large": "/assets/media/depth/dark-landscape.webp",
+    "thumb": "/assets/media/depth/dark-landscape-thumb.webp",
+    "width": 900,
+    "height": 582
+  },
+  {
+    "id": "depth-jellyfish",
+    "title": "Jellyfish",
+    "alt": "A luminous pink and blue jellyfish against deep blue",
+    "category": "3D & depth",
+    "collection": "Depth studies",
+    "large": "/assets/media/depth/jellyfish.webp",
+    "thumb": "/assets/media/depth/jellyfish-thumb.webp",
+    "width": 582,
+    "height": 900
+  },
+  {
+    "id": "depth-handheld",
+    "title": "Handheld galaxy",
+    "alt": "A handheld console suspended in cosmic clouds",
+    "category": "3D & depth",
+    "collection": "Depth studies",
+    "large": "/assets/media/depth/handheld.webp",
+    "thumb": "/assets/media/depth/handheld-thumb.webp",
+    "width": 900,
+    "height": 582
+  },
+  {
+    "id": "depth-gold-leaf",
+    "title": "Leaf medallion",
+    "alt": "A blue medallion with a leaf motif against a textured surface",
+    "category": "3D & depth",
+    "collection": "Depth studies",
+    "large": "/assets/media/depth/gold-leaf.webp",
+    "thumb": "/assets/media/depth/gold-leaf-thumb.webp",
+    "width": 900,
+    "height": 675
+  },
+  {
+    "id": "depth-pear-branches",
+    "title": "Pear branches",
+    "alt": "Green pears hanging among interwoven branches",
+    "category": "3D & depth",
+    "collection": "Depth studies",
+    "large": "/assets/media/depth/pear-branches.webp",
+    "thumb": "/assets/media/depth/pear-branches-thumb.webp",
+    "width": 582,
+    "height": 900
+  },
+  {
+    "id": "depth-painted-mountains",
+    "title": "Painted mountains",
+    "alt": "Evergreens and mountain peaks reflected in still water",
+    "category": "3D & depth",
+    "collection": "Depth studies",
+    "large": "/assets/media/depth/painted-mountains.webp",
+    "thumb": "/assets/media/depth/painted-mountains-thumb.webp",
+    "width": 900,
+    "height": 582
+  },
+  {
+    "id": "drive-guitars",
+    "title": "Guitar collage",
+    "alt": "Electric guitars layered against a warm wood texture",
+    "category": "Digital & urban",
+    "collection": "3D and 360° archive",
+    "large": "/assets/media/portfolio/guitars.webp",
+    "thumb": "/assets/media/portfolio/guitars-thumb.webp",
+    "width": 647,
+    "height": 1000
+  },
+  {
+    "id": "drive-coloured-stripes",
+    "title": "Diagonal color study",
+    "alt": "Diagonal ribbons of color crossing a dark grid",
+    "category": "Digital & urban",
+    "collection": "3D and 360° archive",
+    "large": "/assets/media/portfolio/coloured-stripes.webp",
+    "thumb": "/assets/media/portfolio/coloured-stripes-thumb.webp",
+    "width": 562,
+    "height": 1000
+  },
+  {
+    "id": "drive-ringed-water",
+    "title": "Ringed world",
+    "alt": "A pale ringed planet reflected in an imaginary blue seascape",
+    "category": "Digital & urban",
+    "collection": "3D and 360° archive",
+    "large": "/assets/media/portfolio/ringed-water.webp",
+    "thumb": "/assets/media/portfolio/ringed-water-thumb.webp",
+    "width": 1000,
+    "height": 647
+  },
+  {
+    "id": "drive-blue-guitars",
+    "title": "Guitars in blue",
+    "alt": "Guitar forms arranged against an icy blue background",
+    "category": "Digital & urban",
+    "collection": "3D and 360° archive",
+    "large": "/assets/media/portfolio/blue-guitars.webp",
+    "thumb": "/assets/media/portfolio/blue-guitars-thumb.webp",
+    "width": 485,
+    "height": 750
+  },
+  {
+    "id": "drive-dillingham-layout",
+    "title": "Dillingham VR layout study",
+    "alt": "A pale blue architectural layout with a doorway and sketched interior walls",
+    "category": "Illustration",
+    "collection": "Dillingham VR studies",
+    "large": "/assets/media/portfolio/dillingham-layout.webp",
+    "thumb": "/assets/media/portfolio/dillingham-layout-thumb.webp",
+    "width": 1000,
+    "height": 500
+  }
+]

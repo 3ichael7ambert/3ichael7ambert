@@ -144,6 +144,7 @@ if (game) {
   game.querySelectorAll('[data-move]').forEach(button => {
     const action = button.dataset.move;
     button.addEventListener('pointerdown', event => {
+      event.preventDefault();
       button.setPointerCapture(event.pointerId);
       press(action);
     });
@@ -166,7 +167,7 @@ if (game) {
   reset();
   if (typeof ResizeObserver !== 'undefined') {
     new ResizeObserver(() => {
-      const visibleWidth = Math.max(390, Math.min(width, Math.round(canvas.clientWidth)));
+      const visibleWidth = Math.max(280, Math.min(width, Math.round(canvas.clientWidth)));
       if (canvas.width !== visibleWidth) {
         canvas.width = visibleWidth;
         draw();

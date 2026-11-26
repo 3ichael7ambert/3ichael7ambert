@@ -1,16 +1,22 @@
-:root {color-scheme:dark;font:16px/1.5 system-ui,sans-serif;background:#15181c;color:#f8f5ed}
+:root {color-scheme:dark;--reader-paper:#151b20;--reader-ink:#f5efe6;--reader-muted:#c3cbd0;--reader-link:#9be0c9;--reader-control:#26333b;--reader-border:#53636d;font:16px/1.5 system-ui,sans-serif;background:var(--reader-paper);color:var(--reader-ink)}
+:root:is([data-theme=sketchbook],[data-theme=light],[data-theme=art]) {color-scheme:light;--reader-paper:#f6f0e4;--reader-ink:#252922;--reader-muted:#595750;--reader-link:#385d4b;--reader-control:#fffaf1;--reader-border:#c4b8a2}
+:root:is([data-theme=light],[data-theme=art]) {--reader-paper:#edf2ee;--reader-control:#f9fbf7;--reader-border:#bfd1c5}
+:root[data-theme=music] {--reader-paper:#241b2d;--reader-ink:#fbf1f3;--reader-muted:#ddc8d9;--reader-link:#ffcb91;--reader-control:#312539;--reader-border:#664963}
 body {margin:0}
 [hidden] {display:none!important}
 main {max-width:1050px;margin:auto;padding:1rem}
 header,nav {display:flex;align-items:center;flex-wrap:wrap;gap:.6rem 1rem}
 header {justify-content:space-between;margin-block-end:.75rem}
 h1 {font-size:clamp(1.2rem,4vw,2rem);margin:0}
-a {color:#f9cf81}
-nav {justify-content:center;position:sticky;top:0;background:#15181c;z-index:1;padding:.5rem 0}
-button,select {font:inherit;color:inherit;background:#30363d;border:1px solid #78818b;border-radius:.45rem;min-height:44px;padding:.3rem .65rem}
+a {color:var(--reader-link)}
+nav {justify-content:center;position:sticky;top:0;background:var(--reader-paper);z-index:1;padding:.5rem 0}
+button,select {font:inherit;color:inherit;background:var(--reader-control);border:1px solid var(--reader-border);border-radius:.45rem;min-height:44px;padding:.3rem .65rem}
 button:disabled {opacity:.45}
 #surface {text-align:center;touch-action:pan-y pinch-zoom;min-height:15rem}
 #sheet {max-width:100%;max-height:calc(100svh - 9rem);object-fit:contain;cursor:zoom-in;vertical-align:middle}
 #surface.zoom #sheet {max-height:none;width:100%;cursor:zoom-out}
-#status,.hint {text-align:center;color:#c9c6c2}
+#status,.hint {text-align:center;color:var(--reader-muted)}
 #status:empty {display:none}
+
+.studio-theme{display:flex;align-items:center;gap:.35rem;font-size:.85rem}
+@media(max-width:510px){main{padding:.65rem}nav{gap:.35rem}nav button,nav select{padding-inline:.4rem}}

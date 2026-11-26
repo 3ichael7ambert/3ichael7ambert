@@ -126,3 +126,15 @@
   .exhibit-feature > div { grid-row:1 }
   .portfolio-hero { margin-inline:-.25rem }
 }
+.depth-gallery { scroll-margin-top:5rem;margin:1.5rem 0 }
+.depth-gallery header { display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.5rem;margin-bottom:.5rem }
+.depth-gallery header h2 { margin:0 }
+.depth-gallery [hidden] { display:none }
+.depth-stage { position:relative;width:100%;max-width:calc(68svh * var(--depth-ratio, 1.3333));margin-inline:auto;aspect-ratio:var(--depth-ratio, 1.3333);background:#182122;border-radius:.8rem;overflow:hidden;touch-action:pan-y }
+.depth-stage img,.depth-stage canvas { width:100%;height:100%;display:block;object-fit:contain }
+.depth-stage [hidden] { display:none }
+.depth-controls { display:flex;align-items:end;flex-wrap:wrap;gap:.8rem;margin-top:.75rem }
+.depth-controls button { min-height:44px }
+.depth-controls label { display:grid;gap:.2rem;flex:1 1 12rem;max-width:22rem }
+.depth-controls input { width:100%;accent-color:var(--accent) }
+.depth-gallery [data-depth-status]:empty { display:none }

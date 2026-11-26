@@ -38,19 +38,29 @@ def install_panoramas(root, output, page, css, versioned):
             image.thumbnail((480, 240), Image.Resampling.LANCZOS)
             image.save(media / f'{number}-thumb.webp', 'WEBP', quality=75, method=3)
         scenes.append(dict(id=str(number), title=title, image=f'/assets/media/panoramas/{number}.webp',
-                           thumb=f'/assets/media/panoramas/{number}-thumb.webp'))
-    cards = ''.join(
-        f'<li><a data-scene="{scene["id"]}" href="{scene["image"]}">'
-        f'<img src="{scene["thumb"]}" alt="" width="480" height="240" loading="lazy" decoding="async">'
-        f'<span>{escape(scene["title"])}</span></a></li>' for scene in scenes
-    )
+                           thumb=f'/assets/media/panoramas/{number}-thumb.webp', group='Photography'))
+    additions = json.loads((root / 'data/panorama-additions.json').read_text(encoding='utf-8'))
+    for scene in additions:
+        for field in ('image', 'thumb'):
+            if not (output / scene[field].lstrip('/')).is_file():
+                raise ValueError(f'Missing panorama asset {scene[field]}')
+    scenes.extend(additions)
+    cards = []
+    for group in dict.fromkeys(scene['group'] for scene in scenes):
+        entries = ''.join(
+            f'<li><a data-scene="{scene["id"]}" href="{scene["image"]}">'
+            f'<img src="{scene["thumb"]}" alt="" width="480" height="240" loading="lazy" decoding="async">'
+            f'<span>{escape(scene["title"])}</span></a></li>'
+            for scene in scenes if scene['group'] == group
+        )
+        cards.append(f'<section><h2>{escape(group)}</h2><ul class="pano-scenes">{entries}</ul></section>')
     first = scenes[0]
     payload = json.dumps(scenes, ensure_ascii=False).replace('<', '\\u003c')
     route = '/art/panoramas/'
     page(output, route, '360° photography',
-         'Look around 12 spherical photographs by 3ichael 7ambert, from snow-covered foothills to sandy shores.',
+         f'Look around {len(scenes)} spherical photographs and imagined worlds by 3ichael 7ambert.',
          '<p><a href="/art/">← Art &amp; photography</a></p><h1>360° photography</h1>'
-         '<p class="page-intro">Look around winter landscapes, lakeshores, and familiar places seen from every angle.</p>'
+         '<p class="page-intro">Look around winter landscapes and lakeshores, then step into illustrated worlds.</p>'
          '<section class="pano" aria-labelledby="scene-title"><header>'
          f'<h2 id="scene-title">{escape(first["title"])}</h2><a data-pano-flat href="{first["image"]}">Open flat image</a>'
          '<button type="button" data-pano-full aria-haspopup="dialog" hidden>Full screen</button>'
@@ -72,7 +82,7 @@ def install_panoramas(root, output, page, css, versioned):
          '<span data-pano-count aria-live="polite"></span>'
          '<button type="button" data-pano-step="1">Next →</button></nav></section>'
          '<dialog class="pano-dialog" aria-labelledby="scene-title"></dialog>'
-         f'<ul class="pano-scenes" aria-label="Choose a photograph">{cards}</ul>'
+         + ''.join(cards) +
          f'<script type="application/json" id="panorama-data">{payload}</script>'
          f'<script defer src="{versioned(output, script)}"></script>', css, image=first['thumb'])
     return route

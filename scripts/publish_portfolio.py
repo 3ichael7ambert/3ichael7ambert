@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 from publish_public_archive import restore_public_archive
 from publish_panoramas import install_panoramas
 from publish_exhibition import install_exhibition
+from publish_depth import install_depth
 
 AUTHOR = 'Michael Andrew Lambert Jr.'
 MEDIA = '/assets/media/about-lenticular/'
@@ -28,6 +29,7 @@ COLLECTIONS = (
     ('Illustration', 'micro-world-480.webp', 'Illustration', 'Characters, objects, and imagined places'),
     ('Digital art', 'neon-figure-480.webp', 'Digital & urban', 'Color, light, collage, and graphic experiments'),
     ('Little planets', 'little-world-480.webp', 'Little planets & panoramas', 'Photographs shaped into worlds'),
+    ('3D & depth', 'depth/cherries-thumb.webp', '3D & depth', 'Photography and artwork with depth maps'),
     ('Alieno Apparel', 'cherry-shirt-480.webp', 'Apparel', 'Repeat patterns and wearable illustration'),
 )
 
@@ -46,14 +48,16 @@ def artwork_card(work):
 def gallery_payload(root, output):
     homepage = BeautifulSoup((output / 'index.html').read_text(encoding='utf-8'), 'html.parser')
     works = json.loads(homepage.select_one('#gallery-data').string)
-    archive = json.loads((root / 'data/portfolio-collection.json').read_text(encoding='utf-8'))
+    archive = []
+    for name in ('portfolio-collection', 'drive-art-gallery'):
+        archive.extend(json.loads((root / f'data/{name}.json').read_text(encoding='utf-8')))
     runtime = output / 'assets' / 'media'
     for work in archive:
         for name in ('thumb', 'large'):
             if work[name].startswith(PUBLIC_ARCHIVE):
                 continue
             path = Path(work[name].removeprefix('/assets/media/'))
-            if not work[name].startswith('/assets/media/portfolio/') or '..' in path.parts:
+            if not work[name].startswith(('/assets/media/portfolio/', '/assets/media/depth/')) or '..' in path.parts:
                 raise ValueError(f'Invalid portfolio image address {work[name]}')
             if not (runtime / path).is_file():
                 raise ValueError(f'Missing portfolio image {work[name]}')
@@ -135,7 +139,7 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
          '<div class="portfolio-links"><a class="button" href="/explore/visual-journey/">Start the visual journey</a>'
          '<a href="#archive">Browse all works ↓</a></div></div></div>'
          '<nav class="portfolio-links portfolio-landmarks" aria-label="Explore the portfolio">'
-         '<a href="/art/motion/">Cinematography &amp; motion</a><a href="/art/panoramas/">360° photography</a>'
+         '<a href="/art/motion/">Cinematography &amp; motion</a><a href="/art/panoramas/">360° photography</a><a href="/art/depth/">3D &amp; depth</a>'
          '<a href="/worlds/">Characters &amp; worlds</a><a href="/books/">Art and photography books</a>'
          '<a href="/about/">About the artist</a></nav>'
          '<section aria-labelledby="collection-heading"><h2 id="collection-heading">Browse by medium</h2>'
@@ -186,6 +190,7 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
          '<p><a href="/art/panoramas/">Explore the 360° photographs</a></p>'
          + motion_html, art_css)
     panoramas = install_panoramas(root, output, page, art_css, versioned)
-    routes = ['/about/', '/art/', '/art/motion/', panoramas, *install_exhibition(output, page, art_css)]
+    depth = install_depth(root, output, page, art_css, versioned)
+    routes = ['/about/', '/art/', '/art/motion/', panoramas, depth, *install_exhibition(output, page, art_css)]
     routes.extend(video['address'] for video in motion_archive)
     return routes, motion_archive

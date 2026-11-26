@@ -11,7 +11,7 @@ const previous = byId('previous');
 const next = byId('next');
 const navigation = document.querySelector('nav');
 navigation.hidden = true;
-byId('library').href = location.pathname.includes('/comics/') ? '../' : '../#book';
+byId('library').href = location.pathname.includes('/comics/') ? '../' : '../books/';
 
 async function openBook() {
   const response = await fetch('editions.json');
@@ -31,6 +31,7 @@ async function openBook() {
     pageSelect.append(new Option(String(number), String(number)));
   }
   byId('total').textContent = 'of ' + pages;
+  const bookmark = 'portfolio-reader:' + id;
   let page = 1;
   function show(number) {
     page = Math.max(1, Math.min(pages, number));
@@ -45,7 +46,10 @@ async function openBook() {
     params.set('page', String(page));
     history.replaceState(null, '', '?' + params);
   }
-  sheet.addEventListener('load', () => { status.textContent = ''; });
+  sheet.addEventListener('load', () => {
+    status.textContent = '';
+    try { localStorage.setItem(bookmark, String(page)); } catch {}
+  });
   sheet.addEventListener('error', () => { status.textContent = 'This page could not load. Choose a page or reload to retry.'; });
   previous.addEventListener('click', () => show(page - 1));
   next.addEventListener('click', () => show(page + 1));
@@ -75,7 +79,9 @@ async function openBook() {
     if (performance.now() - lastSwipe > 400) surface.classList.toggle('zoom');
   });
   navigation.hidden = false;
-  show(Number.parseInt(params.get('page'), 10) || 1);
+  let saved;
+  try { saved = localStorage.getItem(bookmark); } catch {}
+  show(Number.parseInt(params.get('page') || saved, 10) || 1);
 }
 
 openBook().catch(error => { status.textContent = error.message; });
