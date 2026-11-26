@@ -12,6 +12,7 @@ from publish_client_pages import install_client_pages
 from publish_tours import install_tours
 from publish_worlds import install_worlds
 from publish_reading_guide import install_reading_guide
+from publish_releases import PHOTO_EDITIONS, install_book_releases, install_discography
 from publish_portfolio import install_portfolio
 from publish_studio import install_studio, theme_control, featured_cards
 
@@ -279,6 +280,8 @@ def install_sketchbook(root, output):
     decorate_home(output, css, versioned(output, 'sketchbook.js'))
     routes = ['/']
     editions = json.loads((output / 'reader/editions.json').read_text(encoding='utf-8'))
+    research_routes, research_cards = install_book_releases(root, output, page, css, ORIGIN, PROFILE)
+    routes.extend(research_routes)
     book_links = []
     for book in editions:
         slug = book['id']
@@ -287,12 +290,17 @@ def install_sketchbook(root, output):
         address = '/books/' + BOOK_SLUGS.get(slug, slug) + '/'
         cover = f'/reader/pages/{slug}/1.webp'
         read = f'/reader/?book={slug}'
+        print_link = ''
+        if slug in PHOTO_EDITIONS:
+            isbn, format_name, description = PHOTO_EDITIONS[slug]
+            listing = f'https://www.readings.com.au/product/{isbn}/plastic-photography--michael-andrew-lambert--2026--{isbn}'
+            print_link = f'<p><a href="{listing}">{format_name} listing at Readings</a> · ISBN {isbn}</p>'
         safe_title = escape(title)
         page(output, address, title, description,
              f'<p><a href="/books/">← Bookshelf</a></p><h1>{safe_title}</h1>'
              f'<div class="book-spread"><img src="{cover}" alt="Opening page of {safe_title}"><div>'
              f'<p>{escape(description)}</p><p>{book["pages"]:,} pages in this online edition.</p>'
-             f'<a class="button" href="{read}">Open the book reader</a></div></div>', css, image=cover,
+             f'<a class="button" href="{read}">Open the book reader</a>{print_link}</div></div>', css, image=cover,
              schema={'@context': 'https://schema.org', '@type': 'Book', 'name': title, 'description': description,
                      'url': ORIGIN + address, 'image': ORIGIN + cover, 'numberOfPages': book['pages'],
                      'author': {'@type': 'Person', '@id': PROFILE, 'name': AUTHOR}})
@@ -303,11 +311,11 @@ def install_sketchbook(root, output):
     page(output, '/books/', 'Books by Michael Lambert',
          'Browse readable editions of Memorandum in a Cruet, Inktober, artist collections and Plastic Photography.',
          '<h1>Books</h1><p class="page-intro">Poetry, drawing, photography, and collections of work '
-         'originally made for the page. These editions are available to read online.</p>'
+         'originally made for the page. Explore online editions and selected print and ebook releases.</p>'
          '<p><a class="button" href="/books/reading-guide/">Explore the reading guide</a> · <a href="https://www.amazon.com/author/3ichael7ambert">Browse my books on Amazon</a></p>'
          '<label class="release-search" hidden>Find an edition <input type="search" data-release-search></label>'
          '<p role="status" data-release-status></p>'
-         f'<div class="edition-grid">{"".join(book_links)}</div>'
+         f'<div class="edition-grid">{research_cards}{"".join(book_links)}</div>'
          '<p><a href="/#book">View the full catalog and retailer links</a></p>', css)
     routes.append('/books/')
     routes.append(install_reading_guide(output, css, page))
@@ -323,12 +331,13 @@ def install_sketchbook(root, output):
         root, output, page, versioned, video_cards, videos, publish_video
     )
     routes.extend(portfolio_routes)
+    routes.append(install_discography(output, page, css))
     feature_music = json.loads((root / 'data/featured.json').read_text(encoding='utf-8'))['music']
     page(output, '/music/', 'Music, soundtracks and visualizers',
          'Watch music videos and visualizers by 3ichael 7ambert and A Rocket’s Intensity. Explore original music and game soundtracks.',
          '<h1>Music &amp; visualizers</h1><p class="page-intro">Electronic and orchestral work, independent bands, '
          'game soundtracks, and the videos I make to go with the music.</p>'
-         '<p class="page-turn"><a href="https://open.spotify.com/artist/0rWENRqbBZZK4RxUu8Q7CP">A Rocket’s Intensity on Spotify</a>'
+         '<p class="page-turn"><a href="/music/discography/">Explore the selected discography</a><a href="https://open.spotify.com/artist/0rWENRqbBZZK4RxUu8Q7CP">A Rocket’s Intensity on Spotify</a>'
          '<a href="https://music.apple.com/us/artist/3ichael-7ambert/653323466">3ichael 7ambert on Apple Music</a>'
          '<a href="https://drunkyeti.itch.io/ar3na-foosball-soundtrack">AR3NA Foosball soundtrack</a></p>'
          '<h2>Releases and listening</h2><div class="release-grid studio-cards">'

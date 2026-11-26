@@ -110,6 +110,7 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
          '<p>I draw in ink and graphite, photograph the world at its smallest and widest, and build characters '
          'that find their way into books, games, and animation. I also make music and design all-over prints '
          'for Alieno Apparel.</p><p>Design with a Technical Mind.</p>'
+         '<p>In <a href="/books/artist-statement/">my artist statement</a>, I trace how those interests overlap across nearly two decades of work. Explore the <a href="/music/discography/">discography</a> or browse my <a href="https://3ichael7ambert.itch.io/">interactive archive on itch.io</a>.</p>'
          '<div class="portfolio-links"><a class="button" href="/art/">Explore my work</a>'
          '<a href="/work/">Work with me</a><a href="/resume/">Résumé</a><a href="https://www.amazon.com/author/3ichael7ambert">Amazon author page</a></div></div></div></div>'
          + portrait_script, art_css, image=image, kind='about',
@@ -117,7 +118,9 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
              '@type': 'Person', '@id': 'https://3ichael7ambert.com/#michael-lambert', 'name': AUTHOR,
              'alternateName': ['3ichael 7ambert', 'Odonis Orphane'],
              'sameAs': ['https://www.amazon.com/author/3ichael7ambert',
-                        'https://www.redbubble.com/people/OdonisOrphane/shop'],
+                        'https://www.redbubble.com/people/OdonisOrphane/shop',
+                        'https://www.behance.net/3ichael7ambert', 'https://3ichael7ambert.itch.io/',
+                        'https://music.apple.com/us/artist/3ichael-7ambert/653323466'],
              'image': 'https://3ichael7ambert.com' + image,
          }})
 
