@@ -100,3 +100,41 @@
   .folio-page .book-spread { grid-template-columns: 1fr; }
   .page-turn a { font-size: .88rem; }
 }
+
+/* The chapter controls stay available when the cover is closed. */
+.book-controls {position:sticky;top:0;z-index:19;margin-inline:auto;max-width:81rem;padding:.5rem clamp(.55rem,3vw,2rem);background:var(--paper);border-block:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.45rem}
+.book-navigation {display:flex;flex-wrap:wrap;align-items:center;gap:.35rem}
+.book-navigation :is(button,select),.book-help summary {min-height:44px}
+.book-navigation select {max-width:min(44vw,15rem);background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:.25rem;padding:.35rem}
+.book-navigation button,.book-controls #desk-tools button {font-size:.85rem;padding:.35rem .65rem;cursor:pointer}
+.book-navigation button:disabled {opacity:.45;cursor:default}
+.book-help {position:relative;font-size:.85rem}
+.book-help summary {display:flex;align-items:center;cursor:pointer;padding-inline:.4rem}
+.book-help[open] {position:absolute;top:100%;left:.5rem;z-index:2;width:min(24rem,calc(100vw - 1rem));background:var(--surface);padding:.75rem;border:1px solid var(--line);box-shadow:0 .5rem 1.5rem #0002}
+.book-help p {margin:.3rem 0}
+.sketchbook-page,#sketch-run {scroll-margin-top:8.2rem}
+body:has(.book-controls:not([hidden])) .section-nav {position:relative}
+.book-controls #desk-tools:has([aria-pressed=true]:not([data-tool=browse])) {position:relative;bottom:auto;left:auto;transform:none;margin:0;background:transparent;box-shadow:none;max-width:none;width:auto}
+.book-pocket {margin-top:1.2rem;padding:.8rem;border:1px dashed var(--line);border-radius:.3rem}
+.book-pocket summary {cursor:pointer;width:max-content}
+#pencil-cursor {width:clamp(160px,25vw,330px);height:auto;transform-origin:0 0;z-index:20;filter:drop-shadow(0 3px 3px #1d17103d)}
+body.has-pencil {cursor:auto}
+body.has-pencil :is(a,button,summary,select) {cursor:pointer}
+#drawing-desk {z-index:18}
+#drawing-desk[data-tool=pencil] {cursor:crosshair}
+#drawing-desk [data-object] {position:absolute;left:var(--x);top:var(--y);display:none;touch-action:none;pointer-events:none}
+#drawing-desk[data-tool=clip] [data-object] {display:block;pointer-events:auto;cursor:grab}
+#drawing-desk [data-object][data-placed] {display:block}
+.desk-object {min-height:44px;min-width:44px;font:700 1rem system-ui}
+.desk-star {border:0;background:transparent;color:#bc862b;font-size:2rem}
+.desk-ticket {padding:.4rem .65rem;border:1px dashed #896e55;color:#31224c;background:#f4dea6;rotate:-7deg}
+.desk-discovery {padding:.5rem;font-size:.85rem;align-self:center}
+#desk-key-point {position:absolute;left:-4px;top:-4px;width:8px;height:8px;border:1px solid var(--ink);border-radius:50%;pointer-events:none}
+@media (pointer:coarse) {
+  #pencil-cursor {width:124px}
+}
+@media (prefers-reduced-motion: no-preference) {
+  #pencil-cursor {transition:transform 48ms linear}
+}
+.journey-start {margin:1rem 0 .55rem}
+.journey-start .button {min-height:44px}

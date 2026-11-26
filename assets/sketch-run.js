@@ -10,6 +10,8 @@ if (game) {
   const platforms = [[267, 368], [603, 699]];
   const keys = new Set();
   let x, y, velocity, collected, active, frame, last, onGround, clock;
+  let controllerDirection = 0;
+  let controllerJump = false;
   function reset() {
     x = 30;
     y = ground;
@@ -53,7 +55,7 @@ if (game) {
     ink.lineTo(x, y - 11);
     ink.moveTo(x - 9, y - 18);
     ink.lineTo(x + 9, y - 19);
-    const stride = keys.size && onGround ? Math.sin(clock * 0.026) * 5 : 0;
+    const stride = (keys.size || controllerDirection) && onGround ? Math.sin(clock * 0.026) * 5 : 0;
     ink.moveTo(x - 6 - stride, y);
     ink.lineTo(x, y - 11);
     ink.lineTo(x + 6 - stride, y);
@@ -64,6 +66,8 @@ if (game) {
     active = false;
     cancelAnimationFrame(frame);
     keys.clear();
+    controllerDirection = 0;
+    controllerJump = false;
     toggle.textContent = collected.size === stamps.length && x >= width - 52 ? 'Play again' : 'Resume';
     status.textContent = label;
     draw();
@@ -72,7 +76,16 @@ if (game) {
     const dt = Math.min(time - last, 32) / 1000;
     last = time;
     clock += dt * 1000;
-    x = Math.max(14, Math.min(width - 14, x + ((keys.has('right') ? 1 : 0) - (keys.has('left') ? 1 : 0)) * 230 * dt));
+    const pad = typeof navigator === 'undefined' ? null :
+      Array.from(navigator.getGamepads?.() || []).find(item => item?.mapping === 'standard');
+    const axis = pad?.axes[0] || 0;
+    controllerDirection = pad?.buttons[14]?.pressed || axis < -.38 ? -1 :
+      pad?.buttons[15]?.pressed || axis > .38 ? 1 : 0;
+    const jump = !!pad?.buttons[0]?.pressed;
+    if (jump && !controllerJump) press('jump');
+    controllerJump = jump;
+    const keyboardDirection = Number(keys.has('right')) - Number(keys.has('left'));
+    x = Math.max(14, Math.min(width - 14, x + (keyboardDirection || controllerDirection) * 230 * dt));
     const previous = y;
     velocity += 620 * dt;
     y += velocity * dt;

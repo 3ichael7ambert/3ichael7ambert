@@ -145,7 +145,9 @@ def decorate_home(output, css, script):
         item = soup.new_tag('li')
         item.append(link_element(soup, url, label))
         cover_index.append(item)
-    soup.select_one('.hero-actions').replace_with(cover_index)
+    start = soup.new_tag('p', attrs={'class':'journey-start'})
+    start.append(link_element(soup, '#design', 'Open the sketchbook', 'button', page_turn=True))
+    soup.select_one('.hero-actions').replace_with(start, cover_index)
     soup.select_one('.chapter-rule').decompose()
     soup.select_one('.section-nav a[href="#music"]').string = 'Music & visualizers'
     for index, (chapter_id, label) in enumerate(CHAPTERS):
@@ -172,6 +174,42 @@ def decorate_home(output, css, script):
         paragraph.append(link_element(soup, url, label, 'button'))
         chapter = soup.find(id=chapter_id)
         (chapter.select_one('.section-heading') or chapter.find('h2')).insert_after(paragraph)
+    desk_tools = soup.select_one('#desk-tools')
+    soup.select_one('script[src="assets/desk.js"]')['src'] = versioned(output, 'desk.js')
+    desk_tools.select_one('[data-tool=clip]').string = 'Move'
+    controls = BeautifulSoup("""
+<div class="book-controls" hidden>
+  <nav class="book-navigation" aria-label="Book controls">
+    <button type="button" data-leaf-step="-1" aria-label="Previous page">‹</button>
+    <label><span class="sr-only">Chapter</span><select id="book-chapter"></select></label>
+    <button type="button" data-leaf-step="1" aria-label="Next page">›</button>
+    <button type="button" id="book-layout" aria-pressed="false">Scroll view</button>
+    <details class="book-help"><summary>Controls</summary>
+      <p>Turn pages with the buttons, a swipe across the page margin, Left or Right, or your gamepad’s bumpers.</p>
+      <p>Pencil draws on the page. With the desk focused, use arrow keys and hold Space to draw. Erase removes strokes. Move lets you drag the loose objects or nudge a focused object with the arrow keys. Escape returns to Browse.</p>
+      <p>In Sketchbook Run, use the stick or D-pad to move and the bottom face button to jump. Press Start to play or pause.</p>
+    </details>
+  </nav>
+</div>
+""", 'html.parser').div
+    controls.append(desk_tools.extract())
+    soup.main.insert_before(controls)
+    desk = soup.select_one('#drawing-desk')
+    desk['aria-label'] = 'Sketchbook drawing surface'
+    desk.append(BeautifulSoup("""
+<button type="button" class="desk-object desk-star" aria-label="Move the loose star" data-object data-x=".73" data-y=".34">✦</button>
+<button type="button" class="desk-object desk-ticket" aria-label="Move the Divinity ticket" data-object data-x=".61" data-y=".59">Divinity</button>
+<span id="desk-key-point" hidden aria-hidden="true"></span>
+""", 'html.parser'))
+    desk.select_one('#paperclip').attrs.update({'data-object':'', 'data-x':'.80','data-y':'.24'})
+    prompt = BeautifulSoup("""
+<details class="book-pocket"><summary>Open the back pocket</summary>
+  <p>Two earlier stops in the sketchbook.</p>
+  <ul><li><a href="https://github.com/3ichael7ambert/bookoflife">The Book of Life archive</a></li>
+      <li><a href="https://github.com/3ichael7ambert/divinity-js">Divinity archive</a></li></ul>
+</details>
+""", 'html.parser').details
+    soup.select_one('#contact').append(prompt)
     homepage.write_text(str(soup), encoding='utf-8')
 
 

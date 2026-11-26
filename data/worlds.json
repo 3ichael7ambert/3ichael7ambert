@@ -707,24 +707,6 @@
     ]
   },
   {
-    "id": "mosswake",
-    "title": "Mosswake",
-    "setting": "A top-down survival and building world shaped by elevation, tides, and player construction. The map is designed to keep changing over time, so returning to a familiar spot can reveal a different shoreline or settlement.",
-    "cast": [
-      {
-        "name": "Survivor",
-        "description": "The player builds, explores, and adapts to a persistent landscape.",
-        "role": "Playable builder"
-      }
-    ],
-    "links": [
-      [
-        "Explore Mosswake",
-        "https://mosswake.drunkyetistudio.com/"
-      ]
-    ]
-  },
-  {
     "id": "avalanca",
     "title": "Avalanca",
     "setting": "A downhill world of snowy slopes, forest trails, and changing weather. Different courses and vehicles change where the player can carry speed, jump, or cut across terrain.",
@@ -746,20 +728,6 @@
       "Avalanca Steam cover art",
       "Public game artwork · Avalanca"
     ]
-  },
-  {
-    "id": "ortega-sauce",
-    "title": "Ortega Sauce",
-    "setting": "Fashion shows and DJ sets share the same journey across venues. Runway and deck sequences use rhythm, while outfits, travel and rapport give the player ways to build a career between performances.",
-    "cast": [
-      {
-        "name": "Performer",
-        "description": "The playable role spans fashion and music. Clothes, hairstyles and accessories give the same performer different silhouettes for different venues.",
-        "role": "Runway model and DJ",
-        "appearance": "Outfits, hairstyles, and accessories change with the venue."
-      }
-    ],
-    "links": []
   },
   {
     "id": "rockets-intensity",

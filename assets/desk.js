@@ -1,104 +1,174 @@
-'use strict';
+(() => {
+  'use strict';
+  const desk = document.querySelector('#drawing-desk');
+  const ink = document.querySelector('#desk-ink');
+  const pencil = document.querySelector('#pencil-cursor');
+  const toolbar = document.querySelector('#desk-tools');
+  const pencilSetting = document.querySelector('#pencil-setting');
+  const keyPoint = document.querySelector('#desk-key-point');
+  const objects = [...desk.querySelectorAll('[data-object]')];
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const papers = new Map();
+  let paper = 'introduction';
+  let tool = 'browse';
+  let gesture;
+  let keyboardStroke;
+  let point;
+  let angle;
+  let position;
 
-const desk = document.getElementById('drawing-desk');
-const ink = document.getElementById('desk-ink');
-const cursor = document.getElementById('pencil-cursor');
-const toolbar = document.getElementById('desk-tools');
-const paperclip = document.getElementById('paperclip');
-const pencilSetting = document.getElementById('pencil-setting');
-const svgNS = 'http://www.w3.org/2000/svg';
-let tool = 'browse';
-let gesture;
-
-function setTool(value) {
-  if (gesture && desk.hasPointerCapture(gesture.id)) desk.releasePointerCapture(gesture.id);
-  gesture = null;
-  tool = value;
-  desk.dataset.tool = value;
-  for (const button of toolbar.querySelectorAll('[data-tool]')) {
-    button.setAttribute('aria-pressed', String(button.dataset.tool === value));
+  function showPencil(x, y, pointerType, drawing) {
+    const visible = (pointerType === 'mouse' && (drawing || pencilSetting.checked && tool === 'browse')) ||
+      (pointerType !== 'mouse' && drawing);
+    pencil.hidden = !visible || !!document.querySelector('dialog[open]');
+    if (pencil.hidden) {
+      angle = undefined;
+      return;
+    }
+    const target = Math.atan2(innerHeight / 2 - y, innerWidth / 2 - x) * 180 / Math.PI - 45;
+    angle = angle === undefined ? target : angle + ((target - angle + 540) % 360 - 180);
+    pencil.style.transform = `translate3d(${x}px,${y}px,0) rotate(${reduced.matches || !window.portfolioAppearance?.motion ? 0 : angle}deg)`;
   }
-  cursor.hidden = true;
-}
 
-toolbar.addEventListener('click', event => {
-  const value = event.target.closest('[data-tool]')?.dataset.tool;
-  if (value) setTool(value);
-});
-pencilSetting.addEventListener('change', () => setTool(pencilSetting.checked ? 'pencil' : 'browse'));
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && tool !== 'browse') {
+  function endGesture() {
+    const old = gesture;
+    gesture = null;
+    if (old && desk.hasPointerCapture(old.id)) desk.releasePointerCapture(old.id);
+    keyboardStroke = null;
+  }
+  function setTool(value, focus = true) {
+    endGesture();
+    tool = value;
+    desk.dataset.tool = value;
+    desk.tabIndex = ['pencil','eraser'].includes(value) ? 0 : -1;
+    for (const button of toolbar.querySelectorAll('[data-tool]')) {
+      button.setAttribute('aria-pressed', String(button.dataset.tool === value));
+    }
+    if (focus && desk.tabIndex === 0) desk.focus({preventScroll:true});
+    keyPoint.hidden = true;
+    pencil.hidden = true;
+  }
+
+  function move(object, x, y) {
+    const left = Math.min(Math.max(0, x), Math.max(0, innerWidth - object.offsetWidth));
+    const top = Math.min(Math.max(0, y), Math.max(0, innerHeight - object.offsetHeight));
+    object.style.left = left + 'px';
+    object.style.top = top + 'px';
+    object.dataset.placed = '';
+    if (object.classList.contains('desk-ticket') && left < innerWidth / 4 && !toolbar.querySelector('.desk-discovery')) {
+      const link = document.createElement('a');
+      link.className = 'desk-discovery';
+      link.href = 'https://github.com/3ichael7ambert/divinity-js';
+      link.textContent = 'Found · Divinity archive';
+      toolbar.append(link);
+    }
+  }
+  function startStroke(x, y) {
+    const stroke = document.createElementNS('http://www.w3.org/2000/svg','path');
+    stroke.setAttribute('d', `M ${x} ${y} l .1 0`);
+    ink.append(stroke);
+    return stroke;
+  }
+  function draw(stroke, x, y) {
+    stroke.setAttribute('d', stroke.getAttribute('d') + ` L ${Math.round(x)} ${Math.round(y)}`);
+  }
+  function erase(x, y) {
+    document.elementsFromPoint(x, y).filter(node => node.parentNode === ink).forEach(node => node.remove());
+  }
+
+  toolbar.addEventListener('click', event => {
+    const value = event.target.closest('[data-tool]')?.dataset.tool;
+    if (value) setTool(value);
+  });
+  document.addEventListener('sketchbook:page', event => {
+    if (event.detail === paper) return;
+    papers.set(paper, { strokes:[...ink.children], objects:objects.map(object => [object.style.left,object.style.top]) });
+    paper = event.detail;
+    const saved = papers.get(paper);
+    ink.replaceChildren(...(saved?.strokes || []));
+    objects.forEach((object, index) => {
+      const [left,top] = saved?.objects[index] || ['', ''];
+      object.style.left = left;
+      object.style.top = top;
+      object.toggleAttribute('data-placed', !!left);
+    });
+    setTool('browse',false);
+  });
+  pencilSetting.addEventListener('change', () => {
+    if (position) showPencil(position.x,position.y,position.type,false);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || tool === 'browse') return;
     setTool('browse');
     toolbar.querySelector('[data-tool=browse]').focus();
-  }
-});
-document.addEventListener('pointermove', event => {
-  const active = tool === 'pencil' && event.target === desk;
-  const hovering = tool === 'browse' && pencilSetting.checked && event.pointerType !== 'touch';
-  cursor.hidden = !(active || hovering) || document.querySelector('dialog[open]') !== null;
-  if (!cursor.hidden) {
-    cursor.style.transform = `translate3d(${event.clientX - 2}px,${event.clientY - cursor.offsetHeight + 4}px,0)`;
-  }
-}, { passive: true });
-document.addEventListener('pointerout', event => {
-  if (!event.relatedTarget) cursor.hidden = true;
-});
+  });
 
-function positionClip(x, y) {
-  paperclip.dataset.placed = '';
-  paperclip.style.left = Math.max(0, Math.min(desk.clientWidth - 48, x)) + 'px';
-  paperclip.style.top = Math.max(0, Math.min(desk.clientHeight - 48, y)) + 'px';
-}
-
-function useTool(event) {
-  const x = event.clientX;
-  const y = event.clientY;
-  if (tool === 'clip') {
-    positionClip(x - gesture.offsetX, y - gesture.offsetY);
-  } else if (tool === 'eraser') {
-    for (const element of document.elementsFromPoint(x, y)) {
-      if (element.parentNode === ink) element.remove();
+  desk.addEventListener('pointerdown', event => {
+    if (tool === 'browse' || gesture || event.button !== 0) return;
+    const object = event.target.closest('[data-object]');
+    if (tool === 'clip' && !object) return;
+    event.preventDefault();
+    desk.setPointerCapture(event.pointerId);
+    gesture = {id:event.pointerId,object};
+    const {clientX:x,clientY:y} = event;
+    if (tool === 'clip') {
+      const bounds = object.getBoundingClientRect();
+      gesture.dx = x - bounds.left;
+      gesture.dy = y - bounds.top;
     }
-  } else if (tool === 'pencil') {
-    const localX = Math.round(x);
-    const localY = Math.round(y);
-    gesture.path += ` L ${localX} ${localY}`;
-    gesture.stroke.setAttribute('d', gesture.path);
-  }
-}
+    if (tool === 'pencil') gesture.stroke = startStroke(x,y);
+    if (tool === 'eraser') erase(x,y);
+    showPencil(x,y,event.pointerType,tool === 'pencil');
+  });
+  document.addEventListener('pointermove', event => {
+    const {clientX:x,clientY:y,pointerType:type} = event;
+    position = {x,y,type};
+    const drawing = tool === 'pencil' && (type === 'mouse' || gesture?.id === event.pointerId);
+    showPencil(x,y,type,drawing);
+    if (gesture?.id !== event.pointerId) return;
+    if (tool === 'clip') move(gesture.object,x - gesture.dx,y - gesture.dy);
+    if (tool === 'eraser') erase(x,y);
+    if (tool === 'pencil') draw(gesture.stroke,x,y);
+  },{passive:true});
+  desk.addEventListener('pointerup', event => {
+    if (gesture?.id !== event.pointerId) return;
+    if (tool === 'clip') move(gesture.object,event.clientX - gesture.dx,event.clientY - gesture.dy);
+    endGesture();
+    if (event.pointerType !== 'mouse') pencil.hidden = true;
+  });
+  desk.addEventListener('lostpointercapture', () => { gesture = null; });
+  desk.addEventListener('pointercancel', () => { endGesture(); pencil.hidden = true; });
+  document.addEventListener('pointerout', event => {
+    if (!event.relatedTarget) pencil.hidden = true;
+  });
 
-desk.addEventListener('pointerdown', event => {
-  if (tool === 'browse' || gesture || event.button !== 0) return;
-  if (tool === 'clip' && !paperclip.contains(event.target)) return;
-  event.preventDefault();
-  desk.setPointerCapture(event.pointerId);
-  gesture = { id: event.pointerId };
-  if (tool === 'clip') {
-    const bounds = paperclip.getBoundingClientRect();
-    gesture.offsetX = event.clientX - bounds.left;
-    gesture.offsetY = event.clientY - bounds.top;
+  const steps = {ArrowUp:[0,-8],ArrowDown:[0,8],ArrowLeft:[-8,0],ArrowRight:[8,0]};
+  desk.addEventListener('keydown', event => {
+    const step = steps[event.key];
+    const object = event.target.closest('[data-object]');
+    if (object && tool === 'clip' && step) {
+      event.preventDefault();
+      move(object,object.offsetLeft + step[0],object.offsetTop + step[1]);
+      return;
+    }
+    if (event.target !== desk || !['pencil','eraser'].includes(tool) || (!step && event.code !== 'Space')) return;
+    event.preventDefault();
+    point ||= {x:innerWidth / 2,y:innerHeight / 2};
+    if (step) {
+      point.x = Math.max(0,Math.min(innerWidth - 1,point.x + step[0]));
+      point.y = Math.max(0,Math.min(innerHeight - 1,point.y + step[1]));
+    }
+    keyPoint.style.transform = `translate(${point.x}px,${point.y}px)`;
+    keyPoint.hidden = false;
+    if (tool === 'pencil' && event.code === 'Space' && !event.repeat) keyboardStroke = startStroke(point.x,point.y);
+    if (tool === 'pencil' && step && keyboardStroke) draw(keyboardStroke,point.x,point.y);
+    if (tool === 'eraser' && event.code === 'Space') erase(point.x,point.y);
+  });
+  desk.addEventListener('keyup', event => { if (event.code === 'Space') keyboardStroke = null; });
+  desk.addEventListener('focusout', () => { keyboardStroke = null; keyPoint.hidden = true; });
+  for (const object of objects) {
+    object.style.setProperty('--x', Number(object.dataset.x) * 100 + '%');
+    object.style.setProperty('--y', Number(object.dataset.y) * 100 + '%');
   }
-  if (tool === 'pencil') {
-    gesture.stroke = document.createElementNS(svgNS, 'path');
-    gesture.path = `M ${Math.round(event.clientX)} ${Math.round(event.clientY)}`;
-    ink.append(gesture.stroke);
-  }
-  useTool(event);
-});
-desk.addEventListener('pointermove', event => {
-  if (gesture?.id === event.pointerId) useTool(event);
-});
-desk.addEventListener('lostpointercapture', () => { gesture = null; });
-desk.addEventListener('pointerup', event => {
-  if (gesture?.id === event.pointerId) useTool(event);
-  if (event.pointerType === 'touch') cursor.hidden = true;
-});
-desk.addEventListener('pointercancel', () => { cursor.hidden = true; });
-paperclip.addEventListener('keydown', event => {
-  const offsets = { ArrowUp:[0,-12], ArrowDown:[0,12], ArrowLeft:[-12,0], ArrowRight:[12,0] };
-  if (tool !== 'clip' || !offsets[event.key]) return;
-  event.preventDefault();
-  const [dx, dy] = offsets[event.key];
-  positionClip(paperclip.offsetLeft + dx, paperclip.offsetTop + dy);
-});
-setTool('browse');
+  setTool('browse',false);
+})();
