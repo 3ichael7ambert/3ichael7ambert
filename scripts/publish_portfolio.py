@@ -50,7 +50,7 @@ def gallery_payload(root, output):
     homepage = BeautifulSoup((output / 'index.html').read_text(encoding='utf-8'), 'html.parser')
     works = json.loads(homepage.select_one('#gallery-data').string)
     archive = []
-    for name in ('portfolio-collection', 'drive-art-gallery'):
+    for name in ('portfolio-collection', 'drive-art-gallery', 'book-gallery', 'new-work'):
         archive.extend(json.loads((root / f'data/{name}.json').read_text(encoding='utf-8')))
     runtime = output / 'assets' / 'media'
     for work in archive:
@@ -130,6 +130,22 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
     categories = sorted({work['category'] for work in works}, key=str.casefold)
     options = ''.join(f'<option>{escape(category)}</option>' for category in categories)
     grid = ''.join(artwork_card(work) for work in works[:36])
+    book_works = json.loads((root / 'data/book-gallery.json').read_text(encoding='utf-8'))
+    book_route = '/art/from-the-book/'
+    book_hero = book_works[1]['large']
+    book_grid = ''.join(
+        f'<article>{artwork_card(work)}<a href="/reader/?book=book-11&amp;page={work["page"]}">'
+        f'See page {work["page"]} in the book →</a></article>'
+        for work in book_works
+    )
+    page(output, book_route, 'From The Artwork of 3ichael 7ambert',
+         'Selected drawings, illustrations and photographs from the pages of The Artwork of 3ichael 7ambert.',
+         '<p><a href="/art/">← Art &amp; photography</a></p>'
+         '<h1>From The Artwork of 3ichael 7ambert</h1>'
+         '<p class="page-intro">Drawings, illustrations, and photographs from the illustrated anthology, with a link back to each page.</p>'
+         '<div class="portfolio-links"><a class="button" href="/reader/?book=book-11">Open the illustrated anthology</a>'
+         '<a href="/books/artist-statement/">Read about the Artist Statement</a></div>'
+         f'<div class="portfolio-grid book-exhibition">{book_grid}</div>', art_css, image=book_hero)
     shelves = ''.join(
         f'<a class="portfolio-shelf" href="/art/?{urlencode({"medium": medium})}#archive">'
         f'<img src="/assets/media/{image}" alt="" loading="lazy" decoding="async">'
@@ -141,11 +157,18 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
          '<div class="portfolio-hero"><img src="/assets/media/water-world-1600.webp" '
          'alt="Illustration of an imagined aquatic world in blue and green" decoding="async">'
          '<div class="portfolio-hero-copy"><h1>Art &amp; photography</h1>'
-         '<p>Drawn faces, small worlds, moving images, and patterns you can wear.</p>'
-         '<div class="portfolio-links"><a class="button" href="/explore/visual-journey/">Start the visual journey</a>'
+         '<p>Drawings, photography, and worlds you can look around inside.</p>'
+         '<div class="portfolio-links"><a class="button" href="/art/panoramas/">Explore 360° photography &amp; VR art</a>'
          '<a href="#archive">Browse all works ↓</a></div></div></div>'
+         '<section class="portfolio-exhibits" aria-label="Featured collections">'
+         '<a href="/art/panoramas/?view=vr-denver-underwater-city-2"><img src="/assets/media/spheres/vr-denver-underwater-city-2-thumb.webp" alt="" loading="lazy">'
+         '<div><h2>Inside the image</h2><p>360° photographs, drawn cityscapes, and game environments.</p></div></a>'
+         f'<a href="{book_route}"><img src="{book_hero}" alt="" loading="lazy">'
+         '<div><h2>From the anthology</h2><p>Selected works from the pages of The Artwork of 3ichael 7ambert.</p></div></a>'
+         '<a href="/explore/visual-journey/"><img src="/assets/media/graphite-480.webp" alt="" loading="lazy">'
+         '<div><h2>Visual journey</h2><p>Six stops through drawing, photography, motion, and design.</p></div></a></section>'
          '<nav class="portfolio-links portfolio-landmarks" aria-label="Explore the portfolio">'
-         '<a href="/art/motion/">Cinematography &amp; motion</a><a href="/art/panoramas/">360° photography</a><a href="/art/depth/">3D &amp; depth</a>'
+         '<a href="/art/motion/">Cinematography &amp; motion</a><a href="/art/panoramas/">360° photography &amp; VR art</a><a href="/art/depth/">3D &amp; depth</a>'
          '<a href="/worlds/">Characters &amp; worlds</a><a href="/books/">Art and photography books</a>'
          '<a href="/about/">About the artist</a></nav>'
          '<section aria-labelledby="collection-heading"><h2 id="collection-heading">Browse by medium</h2>'
@@ -197,7 +220,7 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
          + motion_html, art_css)
     panoramas = install_panoramas(root, output, page, art_css, versioned)
     depth = install_depth(root, output, page, art_css, versioned)
-    routes = ['/about/', '/art/', '/art/motion/', panoramas, depth, *install_exhibition(output, page, art_css)]
+    routes = ['/about/', '/art/', book_route, '/art/motion/', panoramas, depth, *install_exhibition(output, page, art_css)]
     routes.extend(video['address'] for video in motion_archive)
     routes.extend(install_art_archive(output, page, art_css, works, artwork_card))
     return routes, motion_archive

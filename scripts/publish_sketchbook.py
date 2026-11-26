@@ -172,6 +172,8 @@ def decorate_home(output, css, script):
     start = soup.new_tag('p', attrs={'class':'journey-start'})
     start.append(link_element(soup, '/explore/visual-journey/', 'Start the visual journey', 'button'))
     start.append(' ')
+    start.append(link_element(soup, '/art/panoramas/', 'Explore 360° photography & VR art', 'text-link'))
+    start.append(' ')
     start.append(link_element(soup, '#design', 'Browse the sketchbook', 'text-link', page_turn=True))
     soup.select_one('.hero-actions').replace_with(start, cover_index)
     soup.select_one('.chapter-rule').decompose()

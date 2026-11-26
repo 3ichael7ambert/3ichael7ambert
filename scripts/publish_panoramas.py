@@ -45,24 +45,28 @@ def install_panoramas(root, output, page, css, versioned):
             if not (output / scene[field].lstrip('/')).is_file():
                 raise ValueError(f'Missing panorama asset {scene[field]}')
     scenes.extend(additions)
+    first = next((scene for scene in scenes if scene['id'] == 'vr-denver-underwater-city-2'), scenes[0])
+    groups = list(dict.fromkeys(scene['group'] for scene in scenes))
+    def group_anchor(group):
+        return f'panorama-collection-{groups.index(group) + 1}'
+    jumps = ''.join(f'<a href="#{group_anchor(group)}">{escape(group)}</a>' for group in groups)
     cards = []
-    for group in dict.fromkeys(scene['group'] for scene in scenes):
+    for group in groups:
         entries = ''.join(
             f'<li><a data-scene="{scene["id"]}" href="{scene["image"]}">'
             f'<img src="{scene["thumb"]}" alt="" width="480" height="240" loading="lazy" decoding="async">'
             f'<span>{escape(scene["title"])}</span></a></li>'
             for scene in scenes if scene['group'] == group
         )
-        cards.append(f'<section><h2>{escape(group)}</h2><ul class="pano-scenes">{entries}</ul></section>')
-    first = scenes[0]
+        cards.append(f'<section id="{group_anchor(group)}"><h2>{escape(group)}</h2><ul class="pano-scenes">{entries}</ul></section>')
     payload = json.dumps(scenes, ensure_ascii=False).replace('<', '\\u003c')
     route = '/art/panoramas/'
-    page(output, route, '360° photography',
+    page(output, route, '360° photography & illustrated worlds',
          f'Look around {len(scenes)} spherical photographs and imagined worlds by 3ichael 7ambert.',
-         '<p><a href="/art/">← Art &amp; photography</a></p><h1>360° photography</h1>'
-         '<p class="page-intro">Look around winter landscapes and lakeshores, then step into illustrated worlds.</p>'
+         '<p><a href="/art/">← Art &amp; photography</a></p><h1>360° photography &amp; VR art</h1>'
+         '<p class="page-intro">Look around photographed landscapes, hand-drawn cityscapes, and environments built for games.</p>'
          '<section class="pano" aria-labelledby="scene-title"><header>'
-         f'<h2 id="scene-title">{escape(first["title"])}</h2><a data-pano-flat href="{first["image"]}">Open flat image</a>'
+         f'<h2 id="scene-title" data-default-scene="{first["id"]}">{escape(first["title"])}</h2><a data-pano-flat href="{first["image"]}">Open flat image</a>'
          '<button type="button" data-pano-full aria-haspopup="dialog" hidden>Full screen</button>'
          '<button type="button" data-pano-close hidden>Exit full screen</button>'
          '</header><div class="pano-stage"><img data-pano-poster '
@@ -82,6 +86,7 @@ def install_panoramas(root, output, page, css, versioned):
          '<span data-pano-count aria-live="polite"></span>'
          '<button type="button" data-pano-step="1">Next →</button></nav></section>'
          '<dialog class="pano-dialog" aria-labelledby="scene-title"></dialog>'
+         f'<nav class="portfolio-links portfolio-landmarks" aria-label="360 degree collections">{jumps}</nav>'
          + ''.join(cards) +
          f'<script type="application/json" id="panorama-data">{payload}</script>'
          f'<script defer src="{versioned(output, script)}"></script>', css, image=first['thumb'])

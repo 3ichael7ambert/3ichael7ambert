@@ -68,5 +68,432 @@
     "image": "/assets/media/spheres/moon.webp",
     "thumb": "/assets/media/spheres/moon-thumb.webp",
     "group": "Imagined worlds"
+  },
+  {
+    "id": "vr-denver-underwater-city-2",
+    "title": "Denver Underwater City 2",
+    "image": "/assets/media/spheres/vr-denver-underwater-city-2.webp",
+    "thumb": "/assets/media/spheres/vr-denver-underwater-city-2-thumb.webp",
+    "group": "Illustrated 360° cityscapes"
+  },
+  {
+    "id": "vr-denver-underwater-moon",
+    "title": "Denver Underwater Moon",
+    "image": "/assets/media/spheres/vr-denver-underwater-moon.webp",
+    "thumb": "/assets/media/spheres/vr-denver-underwater-moon-thumb.webp",
+    "group": "Illustrated 360° cityscapes"
+  },
+  {
+    "id": "vr-disney-vr-1",
+    "title": "Disney 1",
+    "image": "/assets/media/spheres/vr-disney-vr-1.webp",
+    "thumb": "/assets/media/spheres/vr-disney-vr-1-thumb.webp",
+    "group": "360° fan art"
+  },
+  {
+    "id": "vr-seattle-vr-1",
+    "title": "Seattle 1",
+    "image": "/assets/media/spheres/vr-seattle-vr-1.webp",
+    "thumb": "/assets/media/spheres/vr-seattle-vr-1-thumb.webp",
+    "group": "Illustrated 360° cityscapes"
+  },
+  {
+    "id": "vr-seattle-vr-2",
+    "title": "Seattle 2",
+    "image": "/assets/media/spheres/vr-seattle-vr-2.webp",
+    "thumb": "/assets/media/spheres/vr-seattle-vr-2-thumb.webp",
+    "group": "Illustrated 360° cityscapes"
+  },
+  {
+    "id": "vr-sletchbook-vr-1",
+    "title": "Sketchbook 1",
+    "image": "/assets/media/spheres/vr-sletchbook-vr-1.webp",
+    "thumb": "/assets/media/spheres/vr-sletchbook-vr-1-thumb.webp",
+    "group": "Illustrated 360° cityscapes"
+  },
+  {
+    "id": "vr-snowlight-vr-1",
+    "title": "Snowlight 1",
+    "image": "/assets/media/spheres/vr-snowlight-vr-1.webp",
+    "thumb": "/assets/media/spheres/vr-snowlight-vr-1-thumb.webp",
+    "group": "Illustrated 360° cityscapes"
+  },
+  {
+    "id": "vr-snowlight-vr-2",
+    "title": "Snowlight 2",
+    "image": "/assets/media/spheres/vr-snowlight-vr-2.webp",
+    "thumb": "/assets/media/spheres/vr-snowlight-vr-2-thumb.webp",
+    "group": "Illustrated 360° cityscapes"
+  },
+  {
+    "id": "vr-dillingham-vr-a",
+    "title": "Dillingham a",
+    "image": "/assets/media/spheres/vr-dillingham-vr-a.webp",
+    "thumb": "/assets/media/spheres/vr-dillingham-vr-a-thumb.webp",
+    "group": "Dillingham · 360° architectural studies"
+  },
+  {
+    "id": "vr-dillingham-vr-b",
+    "title": "Dillingham b",
+    "image": "/assets/media/spheres/vr-dillingham-vr-b.webp",
+    "thumb": "/assets/media/spheres/vr-dillingham-vr-b-thumb.webp",
+    "group": "Dillingham · 360° architectural studies"
+  },
+  {
+    "id": "vr-dillingham-vr-c",
+    "title": "Dillingham c",
+    "image": "/assets/media/spheres/vr-dillingham-vr-c.webp",
+    "thumb": "/assets/media/spheres/vr-dillingham-vr-c-thumb.webp",
+    "group": "Dillingham · 360° architectural studies"
+  },
+  {
+    "id": "vr-dillingham-vr-d",
+    "title": "Dillingham d",
+    "image": "/assets/media/spheres/vr-dillingham-vr-d.webp",
+    "thumb": "/assets/media/spheres/vr-dillingham-vr-d-thumb.webp",
+    "group": "Dillingham · 360° architectural studies"
+  },
+  {
+    "id": "vr-dillingham-vr-e",
+    "title": "Dillingham e",
+    "image": "/assets/media/spheres/vr-dillingham-vr-e.webp",
+    "thumb": "/assets/media/spheres/vr-dillingham-vr-e-thumb.webp",
+    "group": "Dillingham · 360° architectural studies"
+  },
+  {
+    "id": "vr-dillingham-vr-f",
+    "title": "Dillingham f",
+    "image": "/assets/media/spheres/vr-dillingham-vr-f.webp",
+    "thumb": "/assets/media/spheres/vr-dillingham-vr-f-thumb.webp",
+    "group": "Dillingham · 360° architectural studies"
+  },
+  {
+    "id": "vr-dillingham-vr-g",
+    "title": "Dillingham g",
+    "image": "/assets/media/spheres/vr-dillingham-vr-g.webp",
+    "thumb": "/assets/media/spheres/vr-dillingham-vr-g-thumb.webp",
+    "group": "Dillingham · 360° architectural studies"
+  },
+  {
+    "id": "vr-dillingham-vr-g2",
+    "title": "Dillingham g2",
+    "image": "/assets/media/spheres/vr-dillingham-vr-g2.webp",
+    "thumb": "/assets/media/spheres/vr-dillingham-vr-g2-thumb.webp",
+    "group": "Dillingham · 360° architectural studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-1-1",
+    "title": "Raiders Set 1 1",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-1-1.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-1-1-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-1-2",
+    "title": "Raiders Set 1 2",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-1-2.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-1-2-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-1-3",
+    "title": "Raiders Set 1 3",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-1-3.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-1-3-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-1-4",
+    "title": "Raiders Set 1 4",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-1-4.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-1-4-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-222-a",
+    "title": "Raiders Set 222 a",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-222-a.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-222-a-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-222-b",
+    "title": "Raiders Set 222 b",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-222-b.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-222-b-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-222-c",
+    "title": "Raiders Set 222 c",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-222-c.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-222-c-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-222-d",
+    "title": "Raiders Set 222 d",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-222-d.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-222-d-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-222-e",
+    "title": "Raiders Set 222 e",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-222-e.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-222-e-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-222-f",
+    "title": "Raiders Set 222 f",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-222-f.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-222-f-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-222-g",
+    "title": "Raiders Set 222 g",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-222-g.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-222-g-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-222-h",
+    "title": "Raiders Set 222 h",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-222-h.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-222-h-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-3-a",
+    "title": "Raiders Set 3 a",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-3-a.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-3-a-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-3-b",
+    "title": "Raiders Set 3 b",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-3-b.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-3-b-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-3-c",
+    "title": "Raiders Set 3 c",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-3-c.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-3-c-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-3-d",
+    "title": "Raiders Set 3 d",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-3-d.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-3-d-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-raiders-vr-set-3-e",
+    "title": "Raiders Set 3 e",
+    "image": "/assets/media/spheres/vr-raiders-vr-set-3-e.webp",
+    "thumb": "/assets/media/spheres/vr-raiders-vr-set-3-e-thumb.webp",
+    "group": "Raiders · 360° world studies"
+  },
+  {
+    "id": "vr-arena-karts-vr-1",
+    "title": "Arena Karts 1",
+    "image": "/assets/media/spheres/vr-arena-karts-vr-1.webp",
+    "thumb": "/assets/media/spheres/vr-arena-karts-vr-1-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-arena-karts-vr-2",
+    "title": "Arena Karts 2",
+    "image": "/assets/media/spheres/vr-arena-karts-vr-2.webp",
+    "thumb": "/assets/media/spheres/vr-arena-karts-vr-2-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-arena-karts-vr-3",
+    "title": "Arena Karts 3",
+    "image": "/assets/media/spheres/vr-arena-karts-vr-3.webp",
+    "thumb": "/assets/media/spheres/vr-arena-karts-vr-3-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-arena-pixel-vr-2-a",
+    "title": "Arena Pixel 2 a",
+    "image": "/assets/media/spheres/vr-arena-pixel-vr-2-a.webp",
+    "thumb": "/assets/media/spheres/vr-arena-pixel-vr-2-a-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-arena-pixel-vr-2-b",
+    "title": "Arena Pixel 2 b",
+    "image": "/assets/media/spheres/vr-arena-pixel-vr-2-b.webp",
+    "thumb": "/assets/media/spheres/vr-arena-pixel-vr-2-b-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-arena-pixel-vr-2-c",
+    "title": "Arena Pixel 2 c",
+    "image": "/assets/media/spheres/vr-arena-pixel-vr-2-c.webp",
+    "thumb": "/assets/media/spheres/vr-arena-pixel-vr-2-c-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-arena-pixel-vr-2-d",
+    "title": "Arena Pixel 2 d",
+    "image": "/assets/media/spheres/vr-arena-pixel-vr-2-d.webp",
+    "thumb": "/assets/media/spheres/vr-arena-pixel-vr-2-d-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-arena-pixel-vr-2-mall",
+    "title": "Arena Pixel 2 mall",
+    "image": "/assets/media/spheres/vr-arena-pixel-vr-2-mall.webp",
+    "thumb": "/assets/media/spheres/vr-arena-pixel-vr-2-mall-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-candy-chess-vr",
+    "title": "Candy Chess",
+    "image": "/assets/media/spheres/vr-candy-chess-vr.webp",
+    "thumb": "/assets/media/spheres/vr-candy-chess-vr-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-casino-vr-a",
+    "title": "Casino a",
+    "image": "/assets/media/spheres/vr-casino-vr-a.webp",
+    "thumb": "/assets/media/spheres/vr-casino-vr-a-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-casino-vr-b",
+    "title": "Casino b",
+    "image": "/assets/media/spheres/vr-casino-vr-b.webp",
+    "thumb": "/assets/media/spheres/vr-casino-vr-b-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-nasal-vr-1",
+    "title": "Nasal 1",
+    "image": "/assets/media/spheres/vr-nasal-vr-1.webp",
+    "thumb": "/assets/media/spheres/vr-nasal-vr-1-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-nasal-vr-2",
+    "title": "Nasal 2",
+    "image": "/assets/media/spheres/vr-nasal-vr-2.webp",
+    "thumb": "/assets/media/spheres/vr-nasal-vr-2-thumb.webp",
+    "group": "360° game environments"
+  },
+  {
+    "id": "vr-dragonball-destinies-vr-1",
+    "title": "Dragon Ball Destinies 1",
+    "image": "/assets/media/spheres/vr-dragonball-destinies-vr-1.webp",
+    "thumb": "/assets/media/spheres/vr-dragonball-destinies-vr-1-thumb.webp",
+    "group": "360° fan art"
+  },
+  {
+    "id": "vr-dragonball-destinies-vr-2",
+    "title": "Dragon Ball Destinies 2",
+    "image": "/assets/media/spheres/vr-dragonball-destinies-vr-2.webp",
+    "thumb": "/assets/media/spheres/vr-dragonball-destinies-vr-2-thumb.webp",
+    "group": "360° fan art"
+  },
+  {
+    "id": "vr-dragonball-destinies-vr-3",
+    "title": "Dragon Ball Destinies 3",
+    "image": "/assets/media/spheres/vr-dragonball-destinies-vr-3.webp",
+    "thumb": "/assets/media/spheres/vr-dragonball-destinies-vr-3-thumb.webp",
+    "group": "360° fan art"
+  },
+  {
+    "id": "vr-mario-sonic-vr-1",
+    "title": "Mario Sonic 1",
+    "image": "/assets/media/spheres/vr-mario-sonic-vr-1.webp",
+    "thumb": "/assets/media/spheres/vr-mario-sonic-vr-1-thumb.webp",
+    "group": "360° fan art"
+  },
+  {
+    "id": "vr-pokemon-vr",
+    "title": "Pokémon",
+    "image": "/assets/media/spheres/vr-pokemon-vr.webp",
+    "thumb": "/assets/media/spheres/vr-pokemon-vr-thumb.webp",
+    "group": "360° fan art"
+  },
+  {
+    "id": "photo-on-the-creek-bank",
+    "title": "On the creek bank",
+    "image": "/assets/media/spheres/photo-on-the-creek-bank.webp",
+    "thumb": "/assets/media/spheres/photo-on-the-creek-bank-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "photo-across-the-stone-channel",
+    "title": "Across the stone channel",
+    "image": "/assets/media/spheres/photo-across-the-stone-channel.webp",
+    "thumb": "/assets/media/spheres/photo-across-the-stone-channel-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "photo-at-the-edge-of-the-cul-de-sac",
+    "title": "At the edge of the cul-de-sac",
+    "image": "/assets/media/spheres/photo-at-the-edge-of-the-cul-de-sac.webp",
+    "thumb": "/assets/media/spheres/photo-at-the-edge-of-the-cul-de-sac-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "photo-gravel-under-an-overcast-sky",
+    "title": "Gravel under an overcast sky",
+    "image": "/assets/media/spheres/photo-gravel-under-an-overcast-sky.webp",
+    "thumb": "/assets/media/spheres/photo-gravel-under-an-overcast-sky-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "photo-beneath-the-painted-overpass",
+    "title": "Beneath the painted overpass",
+    "image": "/assets/media/spheres/photo-beneath-the-painted-overpass.webp",
+    "thumb": "/assets/media/spheres/photo-beneath-the-painted-overpass-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "photo-drainage-channel-and-bare-trees",
+    "title": "Drainage channel and bare trees",
+    "image": "/assets/media/spheres/photo-drainage-channel-and-bare-trees.webp",
+    "thumb": "/assets/media/spheres/photo-drainage-channel-and-bare-trees-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "photo-historic-plaza-and-arcades",
+    "title": "Historic plaza and arcades",
+    "image": "/assets/media/spheres/photo-historic-plaza-and-arcades.webp",
+    "thumb": "/assets/media/spheres/photo-historic-plaza-and-arcades-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "photo-along-the-colonnade",
+    "title": "Along the colonnade",
+    "image": "/assets/media/spheres/photo-along-the-colonnade.webp",
+    "thumb": "/assets/media/spheres/photo-along-the-colonnade-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "photo-tree-lined-intersection",
+    "title": "Tree-lined intersection",
+    "image": "/assets/media/spheres/photo-tree-lined-intersection.webp",
+    "thumb": "/assets/media/spheres/photo-tree-lined-intersection-thumb.webp",
+    "group": "Photography"
+  },
+  {
+    "id": "photo-sunny-plaza",
+    "title": "Sunny plaza",
+    "image": "/assets/media/spheres/photo-sunny-plaza.webp",
+    "thumb": "/assets/media/spheres/photo-sunny-plaza-thumb.webp",
+    "group": "Photography"
   }
 ]

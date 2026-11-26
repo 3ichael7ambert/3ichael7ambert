@@ -6,7 +6,7 @@ BOOK_DETAILS = {
     'artist-statement': (
         'A retrospective on work made between 2005 and 2024. The book moves from graphite, ink and painting to photography, digital illustration, animation and game development, with a timeline and reflections on how those media overlap.',
         'Google Books', 'https://books.google.com/books/about/The_Artwork_of_3ichael_7ambert.html?id=rbqc0gEACAAJ',
-        '/art/', 'Browse the art archive'),
+        '/art/from-the-book/', 'View selected works from the illustrated anthology'),
     'portraitography-2026': (
         'Portrait and figure studies in graphite, ink, paint and digital color. The book puts detail plates and short notes alongside the artwork so readers can compare how each medium shapes a likeness.',
         'Readings', 'https://www.readings.com.au/product/9798182915281/portraitography--michael-andrew-lambert--2026--9798182915281',

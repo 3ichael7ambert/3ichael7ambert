@@ -20,7 +20,8 @@
   const flat = viewer.querySelector('[data-pano-flat]');
   const links = [...document.querySelectorAll('[data-scene]')];
   const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
-  let current = scenes[0];
+  const defaultScene = scenes.find(scene => scene.id === heading.dataset.defaultScene) || scenes[0];
+  let current = defaultScene;
   let renderer;
   let loading = 0;
   let yaw = 0;
@@ -195,7 +196,7 @@
   }
 
   const requested = scenes.find(scene => scene.id === new URLSearchParams(location.search).get('view'));
-  choose(requested || scenes[0]);
+  choose(requested || defaultScene);
   open.hidden = route.hidden = false;
   fullscreen.hidden = typeof dialog.showModal !== 'function';
   open.addEventListener('click', show);
