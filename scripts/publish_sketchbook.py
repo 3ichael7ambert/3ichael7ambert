@@ -8,6 +8,8 @@ import xml.etree.ElementTree as ET
 
 from bs4 import BeautifulSoup
 
+from publish_client_pages import install_client_pages
+
 ORIGIN = 'https://3ichael7ambert.com'
 AUTHOR = 'Michael Andrew Lambert Jr.'
 BYLINE = '3ichael 7ambert'
@@ -28,7 +30,7 @@ CHAPTERS = (
     ('contact', 'Contact'),
 )
 FOLIOS = (('/art/', 'Art & photography'), ('/books/', 'Books'), ('/music/', 'Music & videos'),
-          ('/skills/', 'Skills & projects'))
+          ('/skills/', 'Skills & projects'), ('/work/', 'Work with me'), ('/resume/', 'Résumé'))
 BOOK_SLUGS = {'book-2': 'memorandum-in-a-cruet', 'book-6': 'inktober-2023', 'book-11': 'the-artwork-of-3ichael-7ambert'}
 BOOK_SUMMARIES = {
     'book-2': 'A collection of poems and reflections by 3ichael 7ambert.',
@@ -289,6 +291,8 @@ def install_sketchbook(root, output):
     reader = output / 'reader/index.html'
     html = reader.read_text(encoding='utf-8').replace('<title>Reader</title>', '<title>Reader</title><meta name="robots" content="noindex,follow">')
     reader.write_text(html, encoding='utf-8')
+    install_client_pages(root, output, css, page)
+    routes.extend(('/work/', '/resume/'))
     write_sitemaps(root, output, routes, videos)
 
 
