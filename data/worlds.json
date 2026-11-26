@@ -31,6 +31,10 @@
       [
         "Read the comic",
         "https://drunkyetistudio.com/comics/reader/?book=dillingham"
+      ],
+      [
+        "Game · Dillingham on Steam",
+        "https://store.steampowered.com/app/4178640/Dillingham/"
       ]
     ],
     "reader_art": [
@@ -143,27 +147,68 @@
     "setting": "The Long Way Home follows five friends in a hand-drawn Aurora, Colorado. Their senior year starts on a yellow school bus and grows into a story about who gets to make space for art, friendship, and a night of their own. Aurora bends into little-planet views that echo the images in Micah’s sketchbook.",
     "cast": [
       {
-        "name": "Micah",
-        "description": "A blue-haired artist and mapmaker with a sketchbook full of impossible landscapes.",
-        "role": "Artist and mapmaker",
-        "appearance": "Blue hair and a sketchbook."
+        "name": "Micah Ryder",
+        "description": "The senior-year lead sketches curved versions of Aurora. In Margin Play, his hometown becomes an explorable action-RPG setting.",
+        "role": "Illustrator and mapmaker",
+        "appearance": "Pale skin, angular black hair with electric-blue spikes, huge dark eyes, black clothes, and oversize hands and shoes."
       },
       {
-        "name": "Dawna",
-        "description": "Makes zines and takes the lead when the group needs to organize.",
-        "role": "Zine maker and organizer"
+        "name": "Dawna Avery",
+        "description": "Makes her own zines and helps organize the group’s art-and-music show.",
+        "role": "Zine maker"
       },
       {
-        "name": "Venna",
-        "description": "Looks after the evidence as the friends work out what happened.",
-        "role": "Evidence keeper"
+        "name": "Venna Vale",
+        "description": "A photographer with an independent eye who wants her submissions to speak for themselves.",
+        "role": "Photographer",
+        "appearance": "Purple hair with straight bangs, rectangular glasses, medium-brown skin, black shirt and purple trousers."
       },
       {
-        "name": "Gio and Jace",
-        "description": "Round out the five friends at the center of the Aurora story."
+        "name": "Gio Calder",
+        "description": "A musician who wants someone to hear his song.",
+        "role": "Musician"
+      },
+      {
+        "name": "Jace Mercer",
+        "description": "Thinks big about what the friends can stage together.",
+        "role": "Show organizer"
       }
     ],
-    "links": []
+    "links": [
+      [
+        "Game · Raiders: Different Doors, Same Sky",
+        "https://drunkyeti.itch.io/raiders"
+      ]
+    ],
+    "plates": [
+      {
+        "book": "book-11",
+        "page": 395,
+        "caption": "Original Raiders cast and logo illustration"
+      },
+      {
+        "book": "book-11",
+        "page": 391,
+        "caption": "Raiders Swimmer character study"
+      },
+      {
+        "book": "book-11",
+        "page": 393,
+        "caption": "Raiders Home environment study"
+      }
+    ],
+    "projects": [
+      [
+        "Comic",
+        "Raiders: The Long Way Home",
+        "Volume One script and original character artwork."
+      ],
+      [
+        "Game in development",
+        "Raiders: Margin Play",
+        "Party action RPG built around the Aurora cast, hands-on tactics, and the art-and-music show."
+      ]
+    ]
   },
   {
     "id": "deathwish",
@@ -187,7 +232,41 @@
         "appearance": "Small skeleton with a bob haircut."
       }
     ],
-    "links": []
+    "links": [
+      [
+        "Read · Memorandum in a Cruet, the inspiration for The Cruet",
+        "/reader/?book=book-2"
+      ]
+    ],
+    "plates": [
+      {
+        "book": "book-11",
+        "page": 133,
+        "caption": "Early DeathWish illustration"
+      },
+      {
+        "book": "book-11",
+        "page": 397,
+        "caption": "DeathWish ink excerpts"
+      },
+      {
+        "book": "book-11",
+        "page": 595,
+        "caption": "DeathWish promotional art featuring the two spirits"
+      }
+    ],
+    "projects": [
+      [
+        "Comic",
+        "The Hour That Would Not End",
+        "A DeathWish story set around the Zodiac Clock."
+      ],
+      [
+        "Graphic novel",
+        "Hope & Despair: The Cruet",
+        "A DeathWish graphic novel inspired by Memorandum in a Cruet."
+      ]
+    ]
   },
   {
     "id": "kingdom-kitty",
@@ -219,6 +298,18 @@
         "Explore the puzzle project",
         "https://3ichael7ambert.itch.io/kingdom-kitty-rpg-match-3"
       ]
+    ],
+    "plates": [
+      {
+        "book": "book-11",
+        "page": 643,
+        "caption": "Original Kingdom Kitty illustrated lineup"
+      },
+      {
+        "book": "book-11",
+        "page": 331,
+        "caption": "Early Kingdom Kitty 360 panels"
+      }
     ]
   },
   {
@@ -230,31 +321,56 @@
         "name": "Mikey",
         "description": "The Wander drawing gives him a round head, large oval eyes, red cap and shirt, and blue trousers.",
         "role": "Explorer",
-        "appearance": "Round head, large oval eyes, red cap and shirt, and blue trousers."
+        "appearance": "Round head, large oval eyes, red cap and shirt, and blue trousers.",
+        "plate": {
+          "book": "book-6",
+          "page": 33,
+          "caption": "Mikey · original Inktober 2023 drawing"
+        }
       },
       {
         "name": "Angel",
         "description": "A smiling, winged spirit with a halo who remembers people and the details of their lives.",
         "role": "Spirit companion",
-        "appearance": "Smiling, winged spirit with a halo."
+        "appearance": "Smiling, winged spirit with a halo.",
+        "plate": {
+          "book": "book-6",
+          "page": 43,
+          "caption": "Angel · original Inktober 2023 drawing"
+        }
       },
       {
         "name": "Demon",
         "description": "A dark spirit with a three-point head and a red broken heart. He spots weak edges on the island’s routes.",
         "role": "Route reader",
-        "appearance": "Dark three-point silhouette and a red broken heart."
+        "appearance": "Dark three-point silhouette and a red broken heart.",
+        "plate": {
+          "book": "book-6",
+          "page": 45,
+          "caption": "Demon · original Inktober 2023 drawing"
+        }
       },
       {
         "name": "Golden",
         "description": "The retriever gives the journey personal stakes.",
         "role": "Companion",
-        "appearance": "Retriever with a damaged ear."
+        "appearance": "Retriever with a damaged ear.",
+        "plate": {
+          "book": "book-6",
+          "page": 23,
+          "caption": "Golden · original Inktober 2023 drawing"
+        }
       },
       {
         "name": "Massive",
         "description": "The armored figure works to hold the island together.",
         "role": "Island protector",
-        "appearance": "Unfinished armor with square fragments."
+        "appearance": "Unfinished armor with square fragments.",
+        "plate": {
+          "book": "book-6",
+          "page": 69,
+          "caption": "Massive · original Inktober 2023 drawing"
+        }
       },
       {
         "name": "Mister Mikey in Collision Course",
@@ -262,7 +378,16 @@
         "appearance": "Blond hair, missing arm, torn clothes, sword and black high-tops."
       }
     ],
-    "links": []
+    "links": [
+      [
+        "Book · Mikeyland: An Inked Odyssey",
+        "https://www.thriftbooks.com/w/mikeyland-an-inked-odyssey_michael-andrew-lambert/60815368/"
+      ],
+      [
+        "Read · Inktober 2023",
+        "/reader/?book=book-6"
+      ]
+    ]
   },
   {
     "id": "punk-skeleton",
@@ -280,6 +405,23 @@
       "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/sketchbook/punk%20skull.gif",
       "Punk skull study",
       "Early portfolio study"
+    ],
+    "plates": [
+      {
+        "book": "book-11",
+        "page": 143,
+        "caption": "Punk Skeleton full-body study"
+      },
+      {
+        "book": "book-11",
+        "page": 145,
+        "caption": "Punk Skeleton profile and back studies"
+      },
+      {
+        "book": "book-11",
+        "page": 147,
+        "caption": "Punk Skeleton color study"
+      }
     ]
   },
   {
@@ -303,6 +445,13 @@
         "Explore the browser city",
         "https://xero.drunkyetistudio.com/"
       ]
+    ],
+    "plates": [
+      {
+        "book": "book-11",
+        "page": 665,
+        "caption": "Original Xero pencil character study"
+      }
     ]
   },
   {
@@ -341,6 +490,18 @@
       "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/Finearts/Alien_Tag_Arena_by_DeadSexyMikey.jpg",
       "Alien Tag Arena",
       "Early portfolio study"
+    ],
+    "plates": [
+      {
+        "book": "book-11",
+        "page": 773,
+        "caption": "Original AR3NA character sprites"
+      },
+      {
+        "book": "book-11",
+        "page": 781,
+        "caption": "AR3NA lineup and early artwork"
+      }
     ]
   },
   {
@@ -371,6 +532,18 @@
       "/assets/media/archive-30a82ec602b244d0-1600.webp",
       "Original spray-can illustration",
       "Spray-can study from the portfolio archive"
+    ],
+    "plates": [
+      {
+        "book": "book-11",
+        "page": 25,
+        "caption": "Original Spraycan drawing"
+      },
+      {
+        "book": "book-11",
+        "page": 619,
+        "caption": "Early abstract spray-can composition"
+      }
     ]
   },
   {
@@ -407,7 +580,27 @@
       [
         "Visit the art portfolio",
         "https://odonisorphane.artstation.com/"
+      ],
+      [
+        "Book · Odonis Orphane: The Unwritten Line",
+        "https://www.abebooks.com/products/isbn/9798182947046"
+      ],
+      [
+        "Game · Mythos",
+        "https://3ichael7ambert.itch.io/mythos"
       ]
+    ],
+    "plates": [
+      {
+        "book": "book-11",
+        "page": 669,
+        "caption": "Original Odonis snowboarding illustration"
+      },
+      {
+        "book": "book-11",
+        "page": 205,
+        "caption": "Odonis Swinging, an early drawing"
+      }
     ]
   },
   {
@@ -424,7 +617,19 @@
         "description": "Dark-haired humanoid counterpart who appears alongside the spirits in Collision Course."
       }
     ],
-    "links": []
+    "links": [],
+    "plates": [
+      {
+        "book": "book-11",
+        "page": 431,
+        "caption": "Original Hope and Despair humanoid drawing"
+      },
+      {
+        "book": "book-11",
+        "page": 425,
+        "caption": "Early Hope and Despair illustrated pair"
+      }
+    ]
   },
   {
     "id": "mannequin-fighter",
@@ -437,7 +642,17 @@
         "role": "Lead fighter"
       }
     ],
-    "links": []
+    "links": [
+      [
+        "Game · Mannequin Fighter: After Hours",
+        "https://drunkyeti.itch.io/mannequin-fighter"
+      ]
+    ],
+    "image": [
+      "https://img.itch.zone/aW1nLzMyNzYyNzQ1LnBuZw==/original/J3n%2F03.png",
+      "Mannequin Fighter: After Hours cover art",
+      "Public game artwork · Mannequin Fighter: After Hours"
+    ]
   },
   {
     "id": "splinter-fuse",
@@ -484,7 +699,17 @@
         "role": "Playable downhill rider"
       }
     ],
-    "links": []
+    "links": [
+      [
+        "Game · Avalanca on Steam",
+        "https://store.steampowered.com/app/2435520/Avalanca/"
+      ]
+    ],
+    "image": [
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2435520/69322754b122cf2b5f9b10c76deadf7bb1c38e14/capsule_616x353.jpg?t=1794930564",
+      "Avalanca Steam cover art",
+      "Public game artwork · Avalanca"
+    ]
   },
   {
     "id": "ortega-sauce",
@@ -521,6 +746,18 @@
       "/assets/media/games-3-640.webp",
       "A Rocket’s Intensity game artwork",
       "A Rocket’s Intensity game artwork"
+    ],
+    "plates": [
+      {
+        "book": "book-11",
+        "page": 785,
+        "caption": "Original ship, craft, and celestial sprite studies"
+      },
+      {
+        "book": "book-11",
+        "page": 709,
+        "caption": "Early game artwork and UFO study"
+      }
     ]
   },
   {

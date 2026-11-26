@@ -25,3 +25,11 @@
 .character-card dl {margin:.75rem 0 0}
 .character-card dt {font-size:.875rem;color:var(--muted)}
 .world-entry .world-links {margin-top:1rem}
+.original-plates {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,13rem),1fr));gap:.85rem;margin:.8rem 0 1rem}
+.world-entry .original-plate {background:var(--surface);border:1px solid var(--line);border-radius:.4rem;overflow:hidden}
+.original-plate a {display:grid;place-items:center;background:white}
+.original-plate a img {width:100%;max-height:19rem;aspect-ratio:1;object-fit:contain}
+.world-entry .original-plate figcaption {padding:.65rem .8rem;margin:0}
+.original-plate small {display:block}
+.character-card .original-plate {margin:.65rem 0}
+.world-projects {margin-top:1.1rem}

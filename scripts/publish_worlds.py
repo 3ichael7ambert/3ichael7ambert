@@ -12,6 +12,19 @@ def install_worlds(root, output, page, versioned):
     css = versioned(output, 'worlds.css')
     worlds = json.loads((root / 'data/worlds.json').read_text(encoding='utf-8'))
     index = ''.join(f'<a href="#{item["id"]}">{escape(item["title"])}</a>' for item in worlds)
+    editions = {entry['id']: entry for entry in json.loads((output / 'reader/editions.json').read_text())}
+
+    def artwork(plate):
+        book, number = plate['book'], plate['page']
+        path = f'reader/pages/{book}/{number}.webp'
+        if not (output / path).is_file():
+            raise ValueError(f'Missing original artwork page: {path}')
+        caption = escape(plate['caption'])
+        source = escape(editions[book]['title'])
+        return (f'<figure class="original-plate"><a href="/reader/?book={book}&amp;page={number}">'
+                f'<img src="/{path}" alt="{caption}" loading="lazy" decoding="async"></a>'
+                f'<figcaption>{caption}<small>{source} · page {number}</small></figcaption></figure>')
+
     entries = []
     for item in worlds:
         image = ''
@@ -28,6 +41,8 @@ def install_worlds(root, output, page, versioned):
             image = (f'<figure data-comic-sheet="{escape(sheet)}"><a href="{reader_url}">'
                      f'<img alt="{escape(alt)}" decoding="async"></a>'
                      f'<figcaption>{escape(caption)}</figcaption></figure>')
+        plates = ''.join(artwork(plate) for plate in item.get('plates', []))
+        gallery = f'<div class="original-plates">{plates}</div>' if plates else ''
         cards = []
         for profile in item['cast']:
             facts = ''.join(
@@ -36,16 +51,20 @@ def install_worlds(root, output, page, versioned):
                 if key in profile
             )
             details = f'<dl>{facts}</dl>' if facts else ''
+            portrait = artwork(profile["plate"]) if "plate" in profile else ""
             cards.append(f'<article class="character-card"><h4>{escape(profile["name"])}</h4>'
-                         f'<p>{escape(profile["description"])}</p>{details}</article>')
+                         f'{portrait}<p>{escape(profile["description"])}</p>{details}</article>')
         links = ''.join(f'<a href="{escape(url)}">{escape(label)}</a>' for label, url in item.get('links', []))
         actions = f'<p class="world-links">{links}</p>' if links else ''
+        projects = ''.join(f'<div><dt>{escape(kind)} · {escape(title)}</dt><dd>{escape(detail)}</dd></div>'
+                           for kind, title, detail in item.get('projects', []))
+        project_notes = f'<dl class="world-projects">{projects}</dl>' if projects else ''
         sheets = f'{item["id"]}-sheets'
         entries.append(f'<section class="world-entry" id="{item["id"]}"><h2>{escape(item["title"])}</h2>'
                        f'<p>{escape(item["setting"])}</p>'
                        f'<section class="character-sheets" aria-labelledby="{sheets}">'
-                       f'<h3 id="{sheets}">Character sheets</h3>{image}'
-                       f'<div class="character-grid">{"".join(cards)}</div></section>{actions}</section>')
+                       f'<h3 id="{sheets}">Character sheets</h3>{image}{gallery}'
+                       f'<div class="character-grid">{"".join(cards)}</div></section>{project_notes}{actions}</section>')
     page(output, '/worlds/', 'Characters & worlds',
          'Explore Michael Lambert’s original characters, comics, and game worlds through cast profiles and design notes.',
          '<div class="world-guide"><h1>Characters &amp; worlds</h1>'
