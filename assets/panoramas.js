@@ -6,6 +6,13 @@
   const canvas = viewer.querySelector('canvas');
   const poster = viewer.querySelector('[data-pano-poster]');
   const open = viewer.querySelector('[data-pano-open]');
+  const fullscreen = viewer.querySelector('[data-pano-full]');
+  const exit = viewer.querySelector('[data-pano-close]');
+  const dialog = document.querySelector('.pano-dialog');
+  const route = viewer.querySelector('.pano-route');
+  const sceneCount = viewer.querySelector('[data-pano-count]');
+  const origin = document.createComment('panorama viewer');
+  viewer.before(origin);
   const status = viewer.querySelector('[data-pano-status]');
   const controls = viewer.querySelector('.pano-controls');
   const help = viewer.querySelector('[data-pano-help]');
@@ -19,7 +26,9 @@
   let yaw = 0;
   let pitch = 0;
   let zoom = 1;
-  let drag;
+  let nativeFullscreen = false;
+  let fullscreenRequest = 0;
+  const pointers = new Map();
   let frame;
 
   function makeRenderer() {
@@ -96,7 +105,7 @@
           canvas.height = height;
         }
         gl.viewport(0, 0, width, height);
-        gl.uniform3f(view, yaw, pitch, zoom);
+        gl.uniform3f(view, yaw, pitch, zoom * (width < height ? .88 : 1));
         gl.uniform1f(aspect, width / height);
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       }
@@ -114,6 +123,7 @@
   function choose(scene) {
     current = scene;
     heading.textContent = scene.title;
+    sceneCount.textContent = `${scenes.indexOf(scene) + 1} / ${scenes.length}`;
     flat.href = scene.image;
     poster.src = scene.thumb;
     poster.alt = scene.title;
@@ -134,12 +144,13 @@
     status.textContent = message;
   }
 
-  async function show() {
+  async function show({ focus = true } = {}) {
     const sequence = ++loading;
     const image = new Image();
     status.textContent = 'Loading panorama…';
     canvas.hidden = true;
     poster.hidden = false;
+    open.hidden = true;
     try {
       renderer ||= makeRenderer();
       image.src = current.image;
@@ -151,7 +162,7 @@
       poster.hidden = open.hidden = true;
       canvas.hidden = controls.hidden = help.hidden = false;
       status.textContent = '';
-      canvas.focus({ preventScroll: true });
+      if (focus && !dialog.open) canvas.focus({ preventScroll: true });
       draw();
     } catch {
       if (loading === sequence) fallback('Interactive view is unavailable. Open the flat image to see the photograph.');
@@ -170,19 +181,71 @@
     draw();
   }
 
-  const requested = scenes.find(scene => scene.id === new URLSearchParams(location.search).get('view'));
-  choose(requested || scenes[0]);
-  open.hidden = false;
-  open.addEventListener('click', show);
-  links.forEach(link => link.addEventListener('click', event => {
-    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    const scene = scenes.find(item => item.id === link.dataset.scene);
+  function goTo(scene) {
     choose(scene);
     const address = new URL(location.href);
     address.searchParams.set('view', scene.id);
     history.replaceState(null, '', address);
-    if (renderer) show();
+    if (renderer || dialog.open) show({ focus: false });
+  }
+
+  async function closeFullscreen() {
+    if (document.fullscreenElement === viewer) await document.exitFullscreen().catch(() => {});
+    if (dialog.open) dialog.close();
+  }
+
+  const requested = scenes.find(scene => scene.id === new URLSearchParams(location.search).get('view'));
+  choose(requested || scenes[0]);
+  open.hidden = route.hidden = false;
+  fullscreen.hidden = typeof dialog.showModal !== 'function';
+  open.addEventListener('click', show);
+  fullscreen.addEventListener('click', () => {
+    const request = ++fullscreenRequest;
+    dialog.append(viewer);
+    dialog.showModal();
+    document.documentElement.classList.add('pano-open');
+    fullscreen.hidden = true;
+    exit.hidden = false;
+    exit.focus();
+    if (document.fullscreenEnabled && viewer.requestFullscreen) {
+      viewer.requestFullscreen().then(() => {
+        if (request !== fullscreenRequest || !dialog.open) {
+          if (document.fullscreenElement === viewer) document.exitFullscreen().catch(() => {});
+          return;
+        }
+        nativeFullscreen = document.fullscreenElement === viewer;
+      }).catch(() => {});
+    }
+    if (canvas.hidden && !renderer) show({ focus: false });
+    draw();
+  });
+  exit.addEventListener('click', closeFullscreen);
+  dialog.addEventListener('cancel', event => {
+    event.preventDefault();
+    closeFullscreen();
+  });
+  dialog.addEventListener('close', () => {
+    fullscreenRequest++;
+    nativeFullscreen = false;
+    origin.after(viewer);
+    document.documentElement.classList.remove('pano-open');
+    exit.hidden = true;
+    fullscreen.hidden = false;
+    fullscreen.focus({ preventScroll: true });
+    draw();
+  });
+  document.addEventListener('fullscreenchange', () => {
+    if (nativeFullscreen && document.fullscreenElement !== viewer) closeFullscreen();
+  });
+  route.addEventListener('click', event => {
+    const direction = Number(event.target.closest('[data-pano-step]')?.dataset.panoStep);
+    if (!direction) return;
+    goTo(scenes[(scenes.indexOf(current) + direction + scenes.length) % scenes.length]);
+  });
+  links.forEach(link => link.addEventListener('click', event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    goTo(scenes.find(item => item.id === link.dataset.scene));
     viewer.scrollIntoView({ block: 'nearest' });
   }));
   controls.addEventListener('click', event => adjust(event.target.dataset.view));
@@ -194,19 +257,27 @@
     adjust(action);
   });
   canvas.addEventListener('pointerdown', event => {
-    if (drag || event.button !== 0) return;
+    if (pointers.size === 2 || event.button !== 0) return;
     canvas.setPointerCapture(event.pointerId);
-    drag = { id: event.pointerId, x: event.clientX, y: event.clientY };
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
   });
   canvas.addEventListener('pointermove', event => {
-    if (drag?.id !== event.pointerId) return;
-    yaw -= (event.clientX - drag.x) * .007 / zoom;
-    pitch = clamp(pitch + (event.clientY - drag.y) * .007 / zoom, -1.45, 1.45);
-    drag.x = event.clientX;
-    drag.y = event.clientY;
+    const previous = pointers.get(event.pointerId);
+    if (!previous) return;
+    const next = { x: event.clientX, y: event.clientY };
+    if (pointers.size === 2) {
+      const other = [...pointers.entries()].find(([id]) => id !== event.pointerId)[1];
+      const before = Math.hypot(previous.x - other.x, previous.y - other.y);
+      const after = Math.hypot(next.x - other.x, next.y - other.y);
+      if (before > 2) zoom = clamp(zoom * after / before, .8, 3);
+    } else {
+      yaw -= (next.x - previous.x) * .007 / zoom;
+      pitch = clamp(pitch + (next.y - previous.y) * .007 / zoom, -1.45, 1.45);
+    }
+    pointers.set(event.pointerId, next);
     draw();
   });
-  canvas.addEventListener('lostpointercapture', () => { drag = undefined; });
+  canvas.addEventListener('lostpointercapture', event => pointers.delete(event.pointerId));
   canvas.addEventListener('webglcontextlost', () => fallback('The interactive view closed. You can still open the flat image.'));
   new ResizeObserver(draw).observe(canvas);
 })();

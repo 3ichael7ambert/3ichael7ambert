@@ -5,6 +5,8 @@
   const controls = gallery.querySelector('.portfolio-tools');
   const query = controls.querySelector('input');
   const category = controls.querySelector('select');
+  const surprise = controls.querySelector('[data-surprise]');
+  const share = document.querySelector('[data-work-link]');
   const pages = gallery.querySelector('.portfolio-pages');
   const previousPage = pages.querySelector('[data-prev-page]');
   const nextPage = pages.querySelector('[data-next-page]');
@@ -21,6 +23,7 @@
   let index = 0;
   let page = 0;
   let trigger;
+  let swipe;
 
   function render() {
     const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
@@ -50,14 +53,23 @@
     previousPage.disabled = page === 0;
     nextPage.disabled = page + 1 >= pageCount;
     pages.hidden = pageCount === 1;
+    surprise.disabled = !filtered.length;
   }
 
-  function filter() {
+  function filter(updateAddress = true) {
     const terms = query.value.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
     filtered = media.filter(work =>
       (!category.value || work.category === category.value) && terms.every(term => work.search.includes(term)));
     page = 0;
     render();
+    if (updateAddress) {
+      const address = new URL(location.href);
+      for (const [key, value] of [['q', query.value.trim()], ['medium', category.value]]) {
+        if (value) address.searchParams.set(key, value);
+        else address.searchParams.delete(key);
+      }
+      history.replaceState(null, '', address);
+    }
   }
 
   function stepPage(change) {
@@ -73,20 +85,37 @@
     viewerImage.src = work.large;
     viewerImage.alt = work.alt;
     viewerTitle.textContent = work.title || work.alt;
+    const address = new URL(location.href);
+    address.searchParams.set('work', work.id);
+    address.searchParams.delete('q');
+    address.searchParams.delete('medium');
+    address.hash = 'archive';
+    share.href = address.href;
     viewerCount.textContent = `${format.format(index + 1)} / ${format.format(filtered.length)}`;
     viewer.querySelector('[data-prev-work]').disabled = index === 0;
     viewer.querySelector('[data-next-work]').disabled = index + 1 === filtered.length;
+  }
+
+  function openWork(newIndex, opener) {
+    trigger = opener;
+    showWork(newIndex);
+    if (!viewer.open) viewer.showModal();
   }
 
   grid.addEventListener('click', event => {
     const link = event.target.closest('a[data-index]');
     if (!link || !viewer.showModal || event.button || event.ctrlKey || event.shiftKey || event.metaKey || event.altKey) return;
     event.preventDefault();
-    trigger = link;
-    showWork(Number(link.dataset.index));
-    viewer.showModal();
+    openWork(Number(link.dataset.index), link);
   });
-  viewer.addEventListener('close', () => trigger?.focus());
+  viewer.addEventListener('close', () => {
+    const address = new URL(location.href);
+    if (address.searchParams.has('work')) {
+      address.searchParams.delete('work');
+      history.replaceState(null, '', address);
+    }
+    trigger?.focus();
+  });
   viewer.addEventListener('click', event => {
     if (event.target === viewer.querySelector('[data-close-work]')) viewer.close();
     if (event.target === viewer.querySelector('[data-prev-work]') && index > 0) showWork(index - 1);
@@ -95,6 +124,25 @@
   viewer.addEventListener('keydown', event => {
     if (event.key === 'ArrowLeft' && index > 0) showWork(index - 1);
     if (event.key === 'ArrowRight' && index + 1 < filtered.length) showWork(index + 1);
+  });
+  viewerImage.addEventListener('pointerdown', event => {
+    if (event.pointerType === 'touch' && event.isPrimary) swipe = { x: event.clientX, y: event.clientY };
+  });
+  viewerImage.addEventListener('pointerup', event => {
+    if (!swipe || event.pointerType !== 'touch' || !event.isPrimary) return;
+    const distance = event.clientX - swipe.x;
+    const vertical = event.clientY - swipe.y;
+    swipe = undefined;
+    if (Math.abs(distance) < 50 || Math.abs(distance) < Math.abs(vertical)) return;
+    const next = index + (distance < 0 ? 1 : -1);
+    if (next >= 0 && next < filtered.length) showWork(next);
+  });
+  viewerImage.addEventListener('pointercancel', () => { swipe = undefined; });
+  surprise.addEventListener('click', () => openWork(Math.floor(Math.random() * filtered.length), surprise));
+  controls.addEventListener('reset', event => {
+    event.preventDefault();
+    query.value = category.value = '';
+    filter();
   });
   controls.addEventListener('submit', event => event.preventDefault());
   query.addEventListener('input', filter);
@@ -112,9 +160,17 @@
         ...work, search: [work.title, work.alt, work.category, work.collection].filter(Boolean).join(' ').toLocaleLowerCase(),
       }));
       controls.hidden = false;
-      const requestedCategory = new URLSearchParams(location.search).get('medium');
+      const params = new URLSearchParams(location.search);
+      const requestedCategory = params.get('medium');
+      query.value = params.get('q') || '';
       if ([...category.options].some(option => option.value === requestedCategory)) category.value = requestedCategory;
-      filter();
+      filter(false);
+      const requestedWork = filtered.findIndex(work => work.id === params.get('work'));
+      if (requestedWork >= 0 && viewer.showModal) {
+        page = Math.floor(requestedWork / pageSize);
+        render();
+        openWork(requestedWork, grid.querySelector(`[data-index="${requestedWork}"]`));
+      }
     })
     .catch(() => {
       status.textContent = 'The full archive could not load. The featured works below are available.';

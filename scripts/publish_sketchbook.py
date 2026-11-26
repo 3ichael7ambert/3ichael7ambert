@@ -79,7 +79,7 @@ def page(output, path, title, description, body, css, *, image=PORTRAIT, kind='f
     structured = f'<script type="application/ld+json">{markup(schema)}</script>' if schema else ''
     shared_sheet = '' if css.startswith('/assets/sketchbook.css') else '<link rel="stylesheet" href="/assets/sketchbook.css">'
     document = f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{escape(full_title)}</title>{canonical_meta(full_title, description, path, image)}
 <link rel="icon" href="{PORTRAIT}"><link rel="stylesheet" href="/assets/site.css">
 {shared_sheet}<link rel="stylesheet" href="{css}"><script src="/assets/theme-init.js"></script>{structured}
@@ -148,7 +148,9 @@ def decorate_home(output, css, script):
         item.append(link_element(soup, url, label))
         cover_index.append(item)
     start = soup.new_tag('p', attrs={'class':'journey-start'})
-    start.append(link_element(soup, '#design', 'Open the sketchbook', 'button', page_turn=True))
+    start.append(link_element(soup, '/explore/visual-journey/', 'Start the visual journey', 'button'))
+    start.append(' ')
+    start.append(link_element(soup, '#design', 'Browse the sketchbook', 'text-link', page_turn=True))
     soup.select_one('.hero-actions').replace_with(start, cover_index)
     soup.select_one('.chapter-rule').decompose()
     soup.select_one('.section-nav a[href="#background"]')['href'] = '/about/'

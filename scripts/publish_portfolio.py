@@ -1,6 +1,8 @@
 """Publish the interactive About page and the public collections."""
+from hashlib import sha256
 from html import escape
 from pathlib import Path
+from urllib.parse import urlencode
 import re
 import json
 import shutil
@@ -9,6 +11,7 @@ from bs4 import BeautifulSoup
 
 from publish_public_archive import restore_public_archive
 from publish_panoramas import install_panoramas
+from publish_exhibition import install_exhibition
 
 AUTHOR = 'Michael Andrew Lambert Jr.'
 MEDIA = '/assets/media/lenticular/'
@@ -16,6 +19,16 @@ PUBLIC_ARCHIVE = ('https://raw.githubusercontent.com/3ichael7ambert/blueandyello
                   '604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/')
 MOTION_INTRO = (
     'Stop motion, animation, 360° environments, and music visualizers from my moving-image work.'
+)
+
+
+COLLECTIONS = (
+    ('Photography', 'sunlight-480.webp', 'Photography', 'Botanical details, wildlife, and landscapes'),
+    ('Ink & graphite', 'graphite-480.webp', 'Ink & graphite', 'Portraits, sketchbooks, and studies in line'),
+    ('Illustration', 'micro-world-480.webp', 'Illustration', 'Characters, objects, and imagined places'),
+    ('Digital art', 'neon-figure-480.webp', 'Digital & urban', 'Color, light, collage, and graphic experiments'),
+    ('Little planets', 'little-world-480.webp', 'Little planets & panoramas', 'Photographs shaped into worlds'),
+    ('Alieno Apparel', 'cherry-shirt-480.webp', 'Apparel', 'Repeat patterns and wearable illustration'),
 )
 
 
@@ -53,6 +66,7 @@ def gallery_payload(root, output):
         for key in ('thumb', 'large'):
             if not item[key].startswith(('https://', '/')):
                 item[key] = '/' + item[key]
+        item['id'] = work.get('id') or sha256(item['large'].encode()).hexdigest()[:20]
         items.append(item)
     return items
 
@@ -114,19 +128,32 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
     categories = sorted({work['category'] for work in works}, key=str.casefold)
     options = ''.join(f'<option>{escape(category)}</option>' for category in categories)
     grid = ''.join(artwork_card(work) for work in works[:36])
+    shelves = ''.join(
+        f'<a class="portfolio-shelf" href="/art/?{urlencode({"medium": medium})}#archive">'
+        f'<img src="/assets/media/{image}" alt="" loading="lazy" decoding="async">'
+        f'<span><strong>{escape(label)}</strong><small>{escape(summary)}</small></span></a>'
+        for label, image, medium, summary in COLLECTIONS
+    )
     page(output, '/art/', 'Art and photography portfolio',
          'Explore the artwork, photographs, graphic design, panoramas and moving-image work of 3ichael 7ambert.',
-         '<h1>Art &amp; photography</h1><p class="page-intro">Illustration, graphite, ink, painting, photography, '
-         'digital art, and patterns for Alieno Apparel.</p>'
-         '<nav class="portfolio-links" aria-label="Explore the portfolio">'
-         '<a class="button" href="/art/motion/">Cinematography &amp; motion</a>'
-         '<a href="/art/panoramas/">360° photography</a>'
+         '<div class="portfolio-hero"><img src="/assets/media/water-world-1600.webp" '
+         'alt="Illustration of an imagined aquatic world in blue and green" decoding="async">'
+         '<div class="portfolio-hero-copy"><h1>Art &amp; photography</h1>'
+         '<p>Drawn faces, small worlds, moving images, and patterns you can wear.</p>'
+         '<div class="portfolio-links"><a class="button" href="/explore/visual-journey/">Start the visual journey</a>'
+         '<a href="#archive">Browse all works ↓</a></div></div></div>'
+         '<nav class="portfolio-links portfolio-landmarks" aria-label="Explore the portfolio">'
+         '<a href="/art/motion/">Cinematography &amp; motion</a><a href="/art/panoramas/">360° photography</a>'
          '<a href="/worlds/">Characters &amp; worlds</a><a href="/books/">Art and photography books</a>'
          '<a href="/about/">About the artist</a></nav>'
-         f'<section aria-label="Portfolio archive" data-portfolio="{versioned(output, archive.name)}">'
+         '<section aria-labelledby="collection-heading"><h2 id="collection-heading">Browse by medium</h2>'
+         f'<div class="portfolio-shelves">{shelves}</div></section>'
+         f'<section id="archive" aria-labelledby="archive-heading" data-portfolio="{versioned(output, archive.name)}">'
+         '<h2 id="archive-heading">The full archive</h2>'
          '<form class="portfolio-tools" role="search" hidden><label>Search the portfolio'
          '<input type="search" placeholder="Title, subject, or collection"></label>'
-         f'<label>Medium<select><option value="">All media</option>{options}</select></label></form>'
+         f'<label>Medium<select><option value="">All media</option>{options}</select></label>'
+         '<button type="reset">Clear filters</button><button type="button" data-surprise>Surprise me</button></form>'
          f'<p role="status" aria-live="polite">{len(works):,} works</p>'
          f'<div class="portfolio-grid" tabindex="-1">{grid}</div>'
          '<nav class="portfolio-pages" aria-label="Gallery pages" hidden>'
@@ -137,7 +164,8 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
          '<dialog class="portfolio-viewer" aria-labelledby="portfolio-viewer-title"><header>'
          '<h2 id="portfolio-viewer-title"></h2><button type="button" data-close-work>Close ×</button></header>'
          '<img alt=""><nav aria-label="View artwork"><button type="button" data-prev-work>← Previous</button>'
-         '<small data-viewer-count></small><button type="button" data-next-work>Next →</button></nav></dialog>'
+         '<small data-viewer-count></small><a data-work-link href="#archive">Link to artwork</a>'
+         '<button type="button" data-next-work>Next →</button></nav></dialog>'
          f'<script defer src="{gallery_js}"></script>', art_css)
     motion = [video for video in videos if video['format'] != 'Podcast video']
     motion_archive = json.loads((root / 'data/motion-portfolio.json').read_text(encoding='utf-8'))
@@ -156,9 +184,9 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
          {'Art film', 'Cinematography', 'Animation', 'Stop motion', '360° animation', '360° visualizer'}),
     )
     motion_html = ''.join(
-        f'<section class="motion-collection"><h2>{escape(label)}</h2><div class="release-grid">'
+        f'<section class="motion-collection" id="{section}"><h2>{escape(label)}</h2><div class="release-grid">'
         f'{video_cards([video for video in motion if video["format"] in types])}</div></section>'
-        for label, types in collections
+        for section, (label, types) in zip(('animation', 'vr', 'visualizers'), collections, strict=True)
     )
     page(output, '/art/motion/', 'Cinematography & motion', MOTION_INTRO,
          '<p><a href="/art/">← Artwork and photography</a></p><h1>Cinematography &amp; motion</h1>'
@@ -166,6 +194,6 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
          '<p><a href="/art/panoramas/">Explore the 360° photographs</a></p>'
          + motion_html, art_css)
     panoramas = install_panoramas(root, output, page, art_css, versioned)
-    routes = ['/about/', '/art/', '/art/motion/', panoramas]
+    routes = ['/about/', '/art/', '/art/motion/', panoramas, *install_exhibition(output, page, art_css)]
     routes.extend(video['address'] for video in motion_archive)
     return routes, motion_archive

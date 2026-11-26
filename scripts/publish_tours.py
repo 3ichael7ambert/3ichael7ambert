@@ -62,6 +62,7 @@ def install_tours(output, css, page):
     page(output, '/explore/', 'Explore the living sketchbook',
          'Take a guided tour through 3ichael 7ambert’s art, photography, books, music visualizers, games, and interactive drawing desk.',
          '<h1>Explore the sketchbook</h1><p class="page-intro">Pick a path through the portfolio. '
-         'Each tour has three stops, with something to look at, listen to, read, or try along the way.</p>'
+         'Look at art, listen to music, or try an interactive piece along the way.</p>'
+         '<p><a class="button" href="/explore/visual-journey/">Start the six-chapter visual journey →</a></p>'
          f'<div class="release-grid">{"".join(cards)}</div>', css)
     return routes
