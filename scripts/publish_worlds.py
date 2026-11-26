@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 
 def install_worlds(root, output, page, versioned):
-    for filename in ('worlds.css', 'sketch-run.js'):
+    for filename in ('worlds.css', 'sketch-run.js', 'world-art.js'):
         shutil.copy2(root / 'assets' / filename, output / 'assets' / filename)
     css = versioned(output, 'worlds.css')
     worlds = json.loads((root / 'data/worlds.json').read_text(encoding='utf-8'))
@@ -22,6 +22,12 @@ def install_worlds(root, output, page, versioned):
             src = escape(src)
             image = (f'<figure><a href="{src}"><img src="{src}" loading="lazy" decoding="async" '
                      f'alt="{escape(alt)}"></a><figcaption>{escape(caption)}</figcaption></figure>')
+        if 'reader_art' in item:
+            sheet, alt, caption = item['reader_art']
+            reader_url = escape(item['links'][0][1])
+            image = (f'<figure data-comic-sheet="{escape(sheet)}"><a href="{reader_url}">'
+                     f'<img alt="{escape(alt)}" decoding="async"></a>'
+                     f'<figcaption>{escape(caption)}</figcaption></figure>')
         cast = ''.join(f'<dt>{escape(name)}</dt><dd>{escape(profile)}</dd>' for name, profile in item['cast'])
         links = ''.join(f'<a href="{escape(url)}">{escape(label)}</a>' for label, url in item.get('links', []))
         entries.append(f'<section class="world-entry" id="{item["id"]}"><h2>{escape(item["title"])}</h2>'
@@ -32,7 +38,8 @@ def install_worlds(root, output, page, versioned):
          '<div class="world-guide"><h1>Characters &amp; worlds</h1>'
          '<p>Meet the characters behind my comics and games. Follow them from early drawings and'
          ' character sheets into the places they live, race, and explore.</p>'
-         f'<nav aria-label="Jump to a world">{index}</nav>{"".join(entries)}</div>', css)
+         f'<nav aria-label="Jump to a world">{index}</nav>{"".join(entries)}</div>'
+         f'<script src="{versioned(output, "world-art.js")}" defer></script>', css)
 
     homepage = output / 'index.html'
     document = BeautifulSoup(homepage.read_text(encoding='utf-8'), 'html.parser')

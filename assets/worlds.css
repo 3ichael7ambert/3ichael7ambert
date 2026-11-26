@@ -16,3 +16,4 @@
 #sketch-run [role=status] {margin-top:.55rem;font-variant-numeric:tabular-nums}
 #games .section-heading + .button {margin-bottom:1rem}
 .world-guide .world-entry {scroll-margin-top:5.5rem}
+.world-entry [data-comic-sheet]:not([data-ready]) {height:1px;overflow:hidden;visibility:hidden}

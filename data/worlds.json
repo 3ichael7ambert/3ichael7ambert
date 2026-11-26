@@ -26,6 +26,11 @@
         "Read the comic",
         "https://drunkyetistudio.com/comics/reader/?book=dillingham"
       ]
+    ],
+    "reader_art": [
+      "dillingham/27.webp",
+      "Beaver, John, and Bear on The First Big Run cast sheet",
+      "Cast sheet from Dillingham: The First Big Run"
     ]
   },
   {
@@ -55,6 +60,11 @@
         "Play the game",
         "https://drunkyeti.itch.io/riggins"
       ]
+    ],
+    "reader_art": [
+      "riggins/25.webp",
+      "Riggins with the Meepmops",
+      "Art from Riggins: A Place for the Small Things"
     ]
   },
   {
@@ -89,10 +99,10 @@
         "https://drunkyeti.itch.io/moly-bart-skid-the-lost-spring"
       ]
     ],
-    "image": [
-      "/assets/media/games-0-640.webp",
-      "Moly, Bart & Skid game artwork",
-      "Moly, Bart & Skid game artwork"
+    "reader_art": [
+      "moly-bart-skid/1.webp",
+      "Moly, Bart and Skid on the cover",
+      "Cover of The Heart Under the Mountain by Matt Mateo VII"
     ]
   },
   {
@@ -130,6 +140,11 @@
         "Play the game",
         "https://drunkyeti.itch.io/yeti-brawl"
       ]
+    ],
+    "reader_art": [
+      "drunk-yeti/1.webp",
+      "Drunk Yeti on the cover of The Long Way to Lunch",
+      "Cover of Drunk Yeti: The Long Way to Lunch"
     ]
   },
   {
@@ -179,6 +194,11 @@
         "Read The Midnight Makeover",
         "https://drunkyetistudio.com/comics/reader/?book=penpals-midnight"
       ]
+    ],
+    "reader_art": [
+      "penpals/27.webp",
+      "Pencils, pen and crayon from the PenPals cast",
+      "Cast sheet from PenPals: The Letter That Wouldn’t Leave"
     ]
   },
   {
