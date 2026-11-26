@@ -14,7 +14,7 @@ from publish_panoramas import install_panoramas
 from publish_exhibition import install_exhibition
 
 AUTHOR = 'Michael Andrew Lambert Jr.'
-MEDIA = '/assets/media/about-portraits/'
+MEDIA = '/assets/media/about-lenticular/'
 PUBLIC_ARCHIVE = ('https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/'
                   '604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/')
 MOTION_INTRO = (
@@ -78,7 +78,7 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
     about_js = versioned(output, 'lenticular.js')
     gallery_js = versioned(output, 'portfolio.js')
 
-    frame_paths = [f'{MEDIA}portrait-{view}.webp' for view in (1, 2)]
+    frame_paths = [f'{MEDIA}frame-{view}.webp' for view in range(1, 5)]
     frames = []
     for path in frame_paths:
         if not (output / path.lstrip('/')).is_file():
@@ -90,12 +90,12 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
         + ''.join(frames) +
         '</div></div><figcaption>Move your pointer or swipe across the portrait.</figcaption>'
         '<div class="lenticular-controls" hidden><label>Portrait angle'
-        '<input type="range" min="0" max="100" value="0"></label>'
+        '<input type="range" min="0" max="100" value="34"></label>'
         '<button type="button" data-tilt aria-pressed="false" hidden>Enable tilt</button></div>'
         '<p role="status" aria-live="polite" data-motion-status></p></figure>'
     )
     description = 'Meet 3ichael 7ambert and explore an interactive lenticular portrait of the Colorado artist and developer.'
-    image = frame_paths[0]
+    image = frame_paths[1]
     portrait_script = f'<script defer src="{about_js}"></script>'
     page(output, '/about/', 'About Michael Lambert',
          description,
