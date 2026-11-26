@@ -6,6 +6,7 @@ import json
 import re
 import shutil
 from publish_sketchbook import install_sketchbook
+from publish_gallery_archive import append_gallery_archive
 
 
 def install_reader_media(root, output):
@@ -49,5 +50,5 @@ def install_reader_media(root, output):
             raise ValueError(f'Missing gallery image {asset}')
     script_version = sha256((output / 'assets/site.js').read_bytes()).hexdigest()[:12]
     html = html.replace('src="assets/site.js"', f'src="assets/site.js?v={script_version}"', 1)
-    homepage.write_text(html)
+    homepage.write_text(append_gallery_archive(root, html), encoding="utf-8")
     install_sketchbook(root, output)

@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 
 from publish_client_pages import install_client_pages
 from publish_tours import install_tours
+from publish_worlds import install_worlds
 from publish_reading_guide import install_reading_guide
 
 ORIGIN = 'https://3ichael7ambert.com'
@@ -31,7 +32,7 @@ CHAPTERS = (
     ('background', 'About & skills'),
     ('contact', 'Contact'),
 )
-FOLIOS = (('/explore/', 'Take a guided tour'), ('/art/', 'Art & photography'), ('/books/', 'Books'), ('/music/', 'Music & videos'),
+FOLIOS = (('/explore/', 'Take a guided tour'), ('/art/', 'Art & photography'), ('/books/', 'Books'), ('/worlds/', 'Characters & worlds'), ('/music/', 'Music & videos'),
           ('/skills/', 'Skills & projects'), ('/work/', 'Work with me'), ('/resume/', 'Résumé'))
 BOOK_SLUGS = {'book-2': 'memorandum-in-a-cruet', 'book-6': 'inktober-2023', 'book-11': 'the-artwork-of-3ichael-7ambert'}
 BOOK_SUMMARIES = {
@@ -298,6 +299,7 @@ def install_sketchbook(root, output):
     install_client_pages(root, output, css, page)
     routes.extend(('/work/', '/resume/'))
     routes.extend(install_tours(output, css, page))
+    routes.append(install_worlds(root, output, page, versioned))
     write_sitemaps(root, output, routes, videos)
 
 
