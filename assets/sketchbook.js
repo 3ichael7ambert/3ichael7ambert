@@ -14,6 +14,9 @@
       const heading = chapter?.querySelector('h1, h2');
       if (!heading) return;
 
+      event.preventDefault();
+      if (location.hash !== link.hash) history.pushState(null, '', link.hash);
+      chapter.scrollIntoView({ block: 'start' });
       heading.tabIndex = -1;
       heading.focus({ preventScroll: true });
       if (reduceMotion.matches || !window.portfolioAppearance?.motion ||
