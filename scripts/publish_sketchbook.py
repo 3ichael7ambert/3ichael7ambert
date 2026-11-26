@@ -233,6 +233,23 @@ def video_cards(videos):
     )
 
 
+def publish_video(output, css, video, parent, parent_label):
+    if not re.fullmatch(r'[A-Za-z0-9_-]{11}', video['id']):
+        raise ValueError(f'Invalid video ID in {video["title"]}')
+    video['thumbnail'] = f'https://i.ytimg.com/vi/{video["id"]}/hqdefault.jpg'
+    video['embed'] = f'https://www.youtube-nocookie.com/embed/{video["id"]}'
+    title = escape(video['title'], quote=True)
+    page(output, video['address'], video['title'], video['description'],
+         f'<p><a href="{parent}">← {escape(parent_label)}</a></p><h1>{title}</h1>'
+         f'<p>{escape(video["credit"])} · {escape(video["format"])}</p>'
+         f'<iframe class="watch-player" src="{video["embed"]}" title="{title}" '
+         'width="1280" height="720" allow="encrypted-media; picture-in-picture; fullscreen" '
+         'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+         f'<p class="page-intro">{escape(video["description"])}</p>'
+         f'<a href="https://www.youtube.com/watch?v={video["id"]}">Watch on YouTube ↗</a>', css,
+         image=video['thumbnail'], kind='watch')
+
+
 def install_sketchbook(root, output):
     for filename in ('sketchbook.css', 'sketchbook.js'):
         shutil.copy2(root / 'assets' / filename, output / 'assets' / filename)
@@ -271,23 +288,15 @@ def install_sketchbook(root, output):
 
     videos = json.loads((root / 'data/music-videos.json').read_text(encoding='utf-8'))
     for video in videos:
-        if not re.fullmatch(r'[A-Za-z0-9_-]{11}', video['id']) or not re.fullmatch(r'[a-z0-9-]+', video['slug']):
-            raise ValueError(f'Invalid video ID or slug in {video["title"]}')
-        video['thumbnail'] = f'https://i.ytimg.com/vi/{video["id"]}/hqdefault.jpg'
-        video['embed'] = f'https://www.youtube-nocookie.com/embed/{video["id"]}'
+        if not re.fullmatch(r'[a-z0-9-]+', video['slug']):
+            raise ValueError(f'Invalid video slug in {video["title"]}')
         video['address'] = f'/music/watch/{video["slug"]}/'
-        title = escape(video['title'])
-        page(output, video['address'], video['title'], video['description'],
-             f'<p><a href="/music/">← Music &amp; visualizers</a></p><h1>{title}</h1>'
-             f'<p>{escape(video["credit"])} · {escape(video["format"])}</p>'
-             f'<iframe class="watch-player" src="{video["embed"]}" title="{title}" '
-             'width="1280" height="720" allow="encrypted-media; picture-in-picture; fullscreen" '
-             'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
-             f'<p class="page-intro">{escape(video["description"])}</p>'
-             f'<a href="https://www.youtube.com/watch?v={video["id"]}">Watch on YouTube ↗</a>', css,
-             image=video['thumbnail'], kind='watch')
+        publish_video(output, css, video, '/music/', 'Music & visualizers')
         routes.append(video['address'])
-    routes.extend(install_portfolio(root, output, page, versioned, video_cards, videos))
+    portfolio_routes, motion_archive = install_portfolio(
+        root, output, page, versioned, video_cards, videos, publish_video
+    )
+    routes.extend(portfolio_routes)
     page(output, '/music/', 'Music, soundtracks and visualizers',
          'Watch music videos and visualizers by 3ichael 7ambert and A Rocket’s Intensity. Explore original music and game soundtracks.',
          '<h1>Music &amp; visualizers</h1><p class="page-intro">Electronic and orchestral work, independent bands, '
@@ -326,7 +335,7 @@ def install_sketchbook(root, output):
     routes.extend(('/work/', '/resume/'))
     routes.extend(install_tours(output, css, page))
     routes.append(install_worlds(root, output, page, versioned))
-    write_sitemaps(root, output, routes, videos)
+    write_sitemaps(root, output, routes, [*videos, *motion_archive])
 
 
 def write_sitemaps(root, output, routes, videos):

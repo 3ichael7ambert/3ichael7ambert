@@ -1,12 +1,14 @@
 """Publish the interactive About page and the public collections."""
 from html import escape
 from pathlib import Path
+import re
 import json
 import shutil
 
 from bs4 import BeautifulSoup
 
 from publish_public_archive import restore_public_archive
+from publish_panoramas import install_panoramas
 
 AUTHOR = 'Michael Andrew Lambert Jr.'
 MEDIA = '/assets/media/lenticular/'
@@ -55,7 +57,7 @@ def gallery_payload(root, output):
     return items
 
 
-def install_portfolio(root, output, page, versioned, video_cards, videos):
+def install_portfolio(root, output, page, versioned, video_cards, videos, publish_video):
     for filename in ('portfolio.css', 'portfolio.js', 'lenticular.js'):
         shutil.copy2(root / 'assets' / filename, output / 'assets' / filename)
     art_css = versioned(output, 'portfolio.css')
@@ -80,15 +82,17 @@ def install_portfolio(root, output, page, versioned, video_cards, videos):
         '<p role="status" aria-live="polite" data-motion-status></p></figure>'
     )
     if frames:
+        description = 'Meet 3ichael 7ambert and explore an interactive lenticular portrait of the Colorado artist and developer.'
         image = f'{MEDIA}portrait-2.webp'
         portrait_script = f'<script defer src="{about_js}"></script>'
     else:
+        description = 'About 3ichael 7ambert, the Colorado artist, photographer and developer Michael Andrew Lambert Jr.'
         image = '/assets/media/portrait-480.webp'
         portrait_script = ''
         portrait = (f'<figure class="lenticular"><img class="about-still" src="{image}" '
                     f'alt="Portrait of {AUTHOR}" decoding="async"></figure>')
     page(output, '/about/', 'About Michael Lambert',
-         'Meet 3ichael 7ambert and explore an interactive lenticular portrait of the Colorado artist, photographer and developer.',
+         description,
          f'<div class="about-layout">{portrait}<div class="about-copy"><div class="about-title"><p class="eyebrow">About the artist</p>'
          '<h1>Michael Lambert</h1><p class="page-intro">I’m Michael Andrew Lambert Jr., a Colorado artist and '
          'developer working as 3ichael 7ambert.</p></div><div class="about-details">'
@@ -116,6 +120,7 @@ def install_portfolio(root, output, page, versioned, video_cards, videos):
          'digital art, and patterns for Alieno Apparel.</p>'
          '<nav class="portfolio-links" aria-label="Explore the portfolio">'
          '<a class="button" href="/art/motion/">Cinematography &amp; motion</a>'
+         '<a href="/art/panoramas/">360° photography</a>'
          '<a href="/worlds/">Characters &amp; worlds</a><a href="/books/">Art and photography books</a>'
          '<a href="/about/">About the artist</a></nav>'
          f'<section aria-label="Portfolio archive" data-portfolio="{versioned(output, archive.name)}">'
@@ -135,12 +140,15 @@ def install_portfolio(root, output, page, versioned, video_cards, videos):
          '<small data-viewer-count></small><button type="button" data-next-work>Next →</button></nav></dialog>'
          f'<script defer src="{gallery_js}"></script>', art_css)
     motion = [video for video in videos if video['format'] != 'Podcast video']
-    extra_motion = root / 'data' / 'motion-portfolio.json'
-    if extra_motion.is_file():
-        for video in json.loads(extra_motion.read_text(encoding='utf-8')):
-            video['address'] = f'https://www.youtube.com/watch?v={video["id"]}'
-            video['thumbnail'] = f'https://i.ytimg.com/vi/{video["id"]}/hqdefault.jpg'
-            motion.append(video)
+    motion_archive = json.loads((root / 'data/motion-portfolio.json').read_text(encoding='utf-8'))
+    if len({video['id'] for video in [*videos, *motion_archive]}) != len(videos) + len(motion_archive):
+        raise ValueError('Duplicate video ID in the portfolio')
+    for video in motion_archive:
+        slug = re.sub(r'[^a-z0-9]+', '-', video['title'].lower()).strip('-')[:75].rstrip('-')
+        video['address'] = f'/art/motion/watch/{slug}-{video["id"]}/'
+        video['description'] = f'{video["title"]}, from the {video["format"].lower()} portfolio of {video["credit"]}.'
+        publish_video(output, art_css, video, '/art/motion/', 'Cinematography & motion')
+    motion.extend(motion_archive)
     collections = (
         ('Cinematography, animation & stop motion', {'Art film', 'Cinematography', 'Animation', 'Stop motion'}),
         ('360° & VR', {'360° animation', '360° visualizer'}),
@@ -155,5 +163,9 @@ def install_portfolio(root, output, page, versioned, video_cards, videos):
     page(output, '/art/motion/', 'Cinematography & motion', MOTION_INTRO,
          '<p><a href="/art/">← Artwork and photography</a></p><h1>Cinematography &amp; motion</h1>'
          f'<p class="page-intro">{MOTION_INTRO}</p>'
+         '<p><a href="/art/panoramas/">Explore the 360° photographs</a></p>'
          + motion_html, art_css)
-    return ('/about/', '/art/', '/art/motion/')
+    panoramas = install_panoramas(root, output, page, art_css, versioned)
+    routes = ['/about/', '/art/', '/art/motion/', panoramas]
+    routes.extend(video['address'] for video in motion_archive)
+    return routes, motion_archive
