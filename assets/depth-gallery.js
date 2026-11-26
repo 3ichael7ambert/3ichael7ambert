@@ -10,17 +10,94 @@
   const status = gallery.querySelector('[data-depth-status]');
   const button = gallery.querySelector('[data-depth-toggle]');
   const slider = gallery.querySelector('input');
+  const tilt = gallery.querySelector('[data-depth-tilt]');
+  const fullscreen = gallery.querySelector('[data-depth-full]');
+  const exit = gallery.querySelector('[data-depth-close]');
+  const dialog = document.querySelector('.depth-dialog');
+  const route = gallery.querySelector('.depth-route');
+  const origin = document.createComment('depth gallery');
+  gallery.before(origin);
   const controls = gallery.querySelector('.depth-controls');
   const links = [...document.querySelectorAll('[data-depth-id]')];
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
   let scene;
   let active = false;
+  let autoStart = true;
   let revision = 0;
   let renderer;
   let frame = 0;
   let x = 0;
   let y = 0;
+  let tiltActive = false;
+  let tiltTimer;
+  let neutral;
+  let fullscreenRequest = 0;
+  let nativeFullscreen = false;
+  const motion = window.DeviceOrientationEvent;
+  const wrapAngle = degrees => ((degrees + 540) % 360) - 180;
+
+  function canTilt() {
+    return motion && window.isSecureContext && navigator.maxTouchPoints > 0 && !reduced.matches;
+  }
+
+  function stopTilt() {
+    clearTimeout(tiltTimer);
+    window.removeEventListener('deviceorientation', onTilt);
+    neutral = undefined;
+    tiltActive = false;
+    tilt.textContent = 'Enable tilt';
+    tilt.setAttribute('aria-pressed', 'false');
+  }
+
+  function onTilt(event) {
+    if (!active || !Number.isFinite(event.beta) || !Number.isFinite(event.gamma)) return;
+    clearTimeout(tiltTimer);
+    const orientation = screen.orientation?.angle ?? window.orientation ?? 0;
+    if (!neutral || neutral.orientation !== orientation) {
+      neutral = { beta: event.beta, gamma: event.gamma, orientation };
+      x = y = 0;
+      status.textContent = 'Tilt your phone to move the image.';
+    }
+    const angle = orientation * Math.PI / 180;
+    const side = wrapAngle(event.gamma - neutral.gamma);
+    const pitch = wrapAngle(event.beta - neutral.beta);
+    const nextX = clamp((side * Math.cos(angle) + pitch * Math.sin(angle)) / 24, -1, 1);
+    const nextY = clamp((pitch * Math.cos(angle) - side * Math.sin(angle)) / 24, -1, 1);
+    x += (nextX - x) * .38;
+    y += (nextY - y) * .38;
+    draw();
+  }
+
+  async function enableTilt() {
+    tilt.disabled = true;
+    try {
+      if (typeof motion.requestPermission === 'function' && await motion.requestPermission() !== 'granted') {
+        status.textContent = 'Motion access was declined. Drag the image or use the slider.';
+        return;
+      }
+      if (!canTilt()) return;
+      if (!active) {
+        setActive(true);
+        await activate();
+        if (!active || !canTilt()) return;
+      }
+      tiltActive = true;
+      tilt.textContent = 'Disable tilt';
+      tilt.setAttribute('aria-pressed', 'true');
+      status.textContent = 'Hold your phone comfortably to center the view.';
+      window.addEventListener('deviceorientation', onTilt, { passive: true });
+      tiltTimer = setTimeout(() => {
+        stopTilt();
+        status.textContent = 'Motion is unavailable. Drag the image or use the slider.';
+      }, 2500);
+    } catch {
+      stopTilt();
+      status.textContent = 'Motion is unavailable. Drag the image or use the slider.';
+    } finally {
+      tilt.disabled = false;
+    }
+  }
 
   function makeRenderer() {
     const gl = canvas.getContext('webgl', { alpha: false, antialias: false, depth: false });
@@ -116,6 +193,7 @@
     button.setAttribute('aria-pressed', String(value));
     slider.disabled = !value;
     if (!value) {
+      stopTilt();
       revision++;
       canvas.hidden = true;
       poster.hidden = false;
@@ -142,7 +220,8 @@
       renderer.load(images);
       canvas.hidden = false;
       poster.hidden = true;
-      status.textContent = reduced.matches ? 'Use the view angle slider to explore the depth.' : 'Move or drag across the image.';
+      status.textContent = tiltActive ? 'Tilt your phone to move the image.' :
+        reduced.matches ? 'Use the view angle slider to explore the depth.' : 'Move or drag across the image.';
       draw();
     } catch {
       if (current !== revision) return;
@@ -154,6 +233,8 @@
   function choose(next) {
     scene = next;
     gallery.querySelector('h2').textContent = scene.title;
+    gallery.querySelector('[data-depth-count]').textContent = `${scenes.indexOf(scene) + 1} / ${scenes.length}`;
+    neutral = undefined;
     stage.style.setProperty('--depth-ratio', String(scene.width / scene.height));
     poster.alt = scene.alt;
     poster.src = flat.href = scene.image;
@@ -166,36 +247,126 @@
     if (active) activate();
   }
 
-  controls.hidden = false;
+  function goTo(next) {
+    choose(next);
+    const url = new URL(location.href);
+    url.searchParams.set('view', scene.id);
+    history.replaceState(null, '', url);
+  }
+
+  async function closeFullscreen() {
+    if (document.fullscreenElement === gallery) await document.exitFullscreen().catch(() => {});
+    if (dialog.open) dialog.close();
+  }
+
+  controls.hidden = route.hidden = false;
+  tilt.hidden = !canTilt();
+  fullscreen.hidden = typeof dialog.showModal !== 'function';
+  fullscreen.addEventListener('click', () => {
+    const request = ++fullscreenRequest;
+    dialog.append(gallery);
+    dialog.showModal();
+    document.documentElement.classList.add('pano-open');
+    fullscreen.hidden = true;
+    exit.hidden = false;
+    exit.focus();
+    if (document.fullscreenEnabled && gallery.requestFullscreen) {
+      gallery.requestFullscreen().then(() => {
+        if (request !== fullscreenRequest || !dialog.open) {
+          if (document.fullscreenElement === gallery) document.exitFullscreen().catch(() => {});
+          return;
+        }
+        nativeFullscreen = document.fullscreenElement === gallery;
+      }).catch(() => {});
+    }
+    if (!active) {
+      setActive(true);
+      activate();
+    }
+    draw();
+  });
+  exit.addEventListener('click', closeFullscreen);
+  dialog.addEventListener('cancel', event => {
+    event.preventDefault();
+    closeFullscreen();
+  });
+  dialog.addEventListener('close', () => {
+    fullscreenRequest++;
+    nativeFullscreen = false;
+    origin.after(gallery);
+    document.documentElement.classList.remove('pano-open');
+    exit.hidden = true;
+    fullscreen.hidden = false;
+    fullscreen.focus({ preventScroll: true });
+    draw();
+  });
+  document.addEventListener('fullscreenchange', () => {
+    if (nativeFullscreen && document.fullscreenElement !== gallery) closeFullscreen();
+  });
+  route.addEventListener('click', event => {
+    const direction = Number(event.target.closest('[data-depth-step]')?.dataset.depthStep);
+    if (direction) goTo(scenes[(scenes.indexOf(scene) + direction + scenes.length) % scenes.length]);
+  });
+  tilt.addEventListener('click', () => {
+    if (!tiltActive) {
+      enableTilt();
+      return;
+    }
+    stopTilt();
+    status.textContent = 'Move or drag across the image.';
+  });
+  reduced.addEventListener('change', () => {
+    if (reduced.matches) {
+      stopTilt();
+      x = Number(slider.value) / 100;
+      y = 0;
+      draw();
+    }
+    tilt.hidden = !canTilt();
+    if (active) status.textContent = reduced.matches ? 'Use the view angle slider to explore the depth.' : 'Move or drag across the image.';
+  });
   const id = new URLSearchParams(location.search).get('view');
   choose(scenes.find(item => item.id === id) ?? scenes[0]);
   button.addEventListener('click', () => {
+    autoStart = false;
     setActive(!active);
     if (active) activate();
   });
   links.forEach(link => link.addEventListener('click', event => {
     if (event.button || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
-    choose(scenes.find(item => item.id === link.dataset.depthId));
-    const url = new URL(location.href);
-    url.searchParams.set('view', scene.id);
-    history.replaceState(null, '', url);
+    goTo(scenes.find(item => item.id === link.dataset.depthId));
     gallery.scrollIntoView({ block: 'start' });
   }));
   slider.addEventListener('input', () => {
+    if (tiltActive) {
+      stopTilt();
+      status.textContent = 'Use the slider or move across the image.';
+    }
     x = Number(slider.value) / 100;
     y = 0;
     draw();
   });
   stage.addEventListener('pointermove', event => {
-    if (!active || reduced.matches || (event.pointerType === 'touch' && !stage.hasPointerCapture(event.pointerId))) return;
+    if (autoStart && !active && !reduced.matches && event.pointerType === 'mouse') {
+      autoStart = false;
+      setActive(true);
+      activate();
+    }
+    if (!active || tiltActive || reduced.matches || (event.pointerType === 'touch' && !stage.hasPointerCapture(event.pointerId))) return;
     const rect = stage.getBoundingClientRect();
     x = clamp((event.clientX - rect.left) * 2 / rect.width - 1, -1, 1);
     y = clamp((event.clientY - rect.top) * 2 / rect.height - 1, -1, 1);
     draw();
   });
   stage.addEventListener('pointerdown', event => {
-    if (active && !reduced.matches && event.pointerType === 'touch') stage.setPointerCapture(event.pointerId);
+    if (active && !reduced.matches && event.pointerType === 'touch') {
+      if (tiltActive) {
+        stopTilt();
+        status.textContent = 'Move or drag across the image.';
+      }
+      stage.setPointerCapture(event.pointerId);
+    }
   });
   canvas.addEventListener('webglcontextlost', () => {
     setActive(false);
