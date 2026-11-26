@@ -14,6 +14,7 @@ from publish_worlds import install_worlds
 from publish_reading_guide import install_reading_guide
 from publish_releases import PHOTO_EDITIONS, install_book_releases, install_discography
 from publish_portfolio import install_portfolio
+from publish_press import install_press
 from publish_studio import install_studio, theme_control, featured_cards
 
 ORIGIN = 'https://3ichael7ambert.com'
@@ -37,7 +38,7 @@ CHAPTERS = (
 )
 FOLIOS = (('/explore/', 'Explore'), ('/art/', 'Art'), ('/play/', 'Play'), ('/books/', 'Books'),
           ('/worlds/', 'Worlds'), ('/music/', 'Music'), ('/store/', 'Shop'),
-          ('/about/', 'About'), ('/skills/', 'Skills'), ('/work/', 'Work with me'))
+          ('/about/', 'About'), ('/press/', 'Press'), ('/skills/', 'Skills'), ('/work/', 'Work with me'))
 BOOK_SLUGS = {'book-2': 'memorandum-in-a-cruet', 'book-6': 'inktober-2023', 'book-11': 'the-artwork-of-3ichael-7ambert'}
 BOOK_SUMMARIES = {
     'book-2': 'A collection of poems and reflections by 3ichael 7ambert.',
@@ -378,6 +379,7 @@ def install_sketchbook(root, output):
     routes.extend(install_tours(output, css, page))
     routes.append(install_worlds(root, output, page, versioned))
     routes.extend(install_studio(root, output, page, css, versioned))
+    routes.append(install_press(root, output, page, css))
     write_sitemaps(root, output, routes, [*videos, *motion_archive])
 
 

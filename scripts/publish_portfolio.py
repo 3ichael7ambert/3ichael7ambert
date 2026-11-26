@@ -112,7 +112,7 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
          'for Alieno Apparel.</p><p>Design with a Technical Mind.</p>'
          '<p>In <a href="/books/artist-statement/">my artist statement</a>, I trace how those interests overlap across nearly two decades of work. Explore the <a href="/music/discography/">discography</a> or browse my <a href="https://3ichael7ambert.itch.io/">interactive archive on itch.io</a>.</p>'
          '<div class="portfolio-links"><a class="button" href="/art/">Explore my work</a>'
-         '<a href="/work/">Work with me</a><a href="/resume/">Résumé</a><a href="https://www.amazon.com/author/3ichael7ambert">Amazon author page</a></div></div></div></div>'
+         '<a href="/work/">Work with me</a><a href="/press/">Press kit</a><a href="/resume/">Résumé</a><a href="https://www.amazon.com/author/3ichael7ambert">Amazon author page</a></div></div></div></div>'
          + portrait_script, art_css, image=image, kind='about',
          schema={'@context': 'https://schema.org', '@type': 'ProfilePage', 'mainEntity': {
              '@type': 'Person', '@id': 'https://3ichael7ambert.com/#michael-lambert', 'name': AUTHOR,
