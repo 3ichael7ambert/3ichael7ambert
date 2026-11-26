@@ -16,5 +16,23 @@ for item in ('index.html', 'CNAME', 'assets/site.css', 'assets/site.js',
     shutil.copy2(ROOT / item, destination)
 shutil.copytree(ROOT / 'assets/media', OUT / 'assets/media', dirs_exist_ok=True)
 install_reader_media(ROOT, OUT)
+
+TRACKER = '''<script>
+(() => {
+  const tracker = document.createElement('script');
+  tracker.src = 'https://tracker.metricool.com/resources/be.js';
+  tracker.async = true;
+  tracker.addEventListener('load', () => {
+    window.beTracker.t({ hash: '96608b6f6112badf8313c252be90bc31' });
+  }, { once: true });
+  document.head.appendChild(tracker);
+})();
+</script>'''
+for page in sorted(OUT.rglob('*.html')):
+    markup = page.read_text(encoding='utf-8')
+    if '</head>' not in markup:
+        raise ValueError(f'Missing head element in {page.relative_to(OUT)}')
+    page.write_text(markup.replace('</head>', TRACKER + '\n</head>', 1), encoding='utf-8')
+
 (OUT / '.nojekyll').touch()
 print(f'Packaged {sum(p.stat().st_size for p in OUT.rglob("*") if p.is_file()):,} bytes into dist/')
