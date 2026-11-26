@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 
 from publish_client_pages import install_client_pages
 from publish_tours import install_tours
+from publish_reading_guide import install_reading_guide
 
 ORIGIN = 'https://3ichael7ambert.com'
 AUTHOR = 'Michael Andrew Lambert Jr.'
@@ -236,9 +237,11 @@ def install_sketchbook(root, output):
          'Browse readable editions of Memorandum in a Cruet, Inktober, artist collections and Plastic Photography.',
          '<h1>Books</h1><p class="page-intro">Poetry, drawing, photography, and collections of work '
          'originally made for the page. These editions are available to read online.</p>'
+         '<p><a class="button" href="/books/reading-guide/">Explore the reading guide</a></p>'
          f'<ul class="release-list">{"".join(book_links)}</ul>'
          '<p><a href="/#book">View the full catalog and retailer links</a></p>', css)
     routes.append('/books/')
+    routes.append(install_reading_guide(output, css, page))
 
     videos = json.loads((root / 'data/music-videos.json').read_text(encoding='utf-8'))
     for video in videos:
