@@ -14,7 +14,7 @@ from publish_panoramas import install_panoramas
 from publish_exhibition import install_exhibition
 
 AUTHOR = 'Michael Andrew Lambert Jr.'
-MEDIA = '/assets/media/lenticular/'
+MEDIA = '/assets/media/about-portraits/'
 PUBLIC_ARCHIVE = ('https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/'
                   '604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/')
 MOTION_INTRO = (
@@ -78,33 +78,25 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
     about_js = versioned(output, 'lenticular.js')
     gallery_js = versioned(output, 'portfolio.js')
 
+    frame_paths = [f'{MEDIA}portrait-{view}.webp' for view in (1, 2)]
     frames = []
-    for view in range(1, 5):
-        path = f'{MEDIA}portrait-{view}.webp'
-        if (output / path.lstrip('/')).is_file():
-            frames.append(f'<img src="{path}" width="480" height="600" alt="" decoding="async">')
-    if frames and len(frames) != 4:
-        raise ValueError('The lenticular portrait requires four aligned frames')
+    for path in frame_paths:
+        if not (output / path.lstrip('/')).is_file():
+            raise ValueError(f'Missing About portrait frame {path}')
+        frames.append(f'<img src="{path}" width="480" height="600" alt="" decoding="async">')
     portrait = (
         '<figure class="lenticular" data-lenticular><div class="lenticular-stage">'
         f'<div class="lenticular-face" role="img" aria-label="Lenticular portrait of {AUTHOR}">'
         + ''.join(frames) +
         '</div></div><figcaption>Move your pointer or swipe across the portrait.</figcaption>'
-        '<div class="lenticular-controls"><label>Portrait angle'
-        '<input type="range" min="0" max="100" value="34"></label>'
+        '<div class="lenticular-controls" hidden><label>Portrait angle'
+        '<input type="range" min="0" max="100" value="0"></label>'
         '<button type="button" data-tilt aria-pressed="false" hidden>Enable tilt</button></div>'
         '<p role="status" aria-live="polite" data-motion-status></p></figure>'
     )
-    if frames:
-        description = 'Meet 3ichael 7ambert and explore an interactive lenticular portrait of the Colorado artist and developer.'
-        image = f'{MEDIA}portrait-2.webp'
-        portrait_script = f'<script defer src="{about_js}"></script>'
-    else:
-        description = 'About 3ichael 7ambert, the Colorado artist, photographer and developer Michael Andrew Lambert Jr.'
-        image = '/assets/media/portrait-480.webp'
-        portrait_script = ''
-        portrait = (f'<figure class="lenticular"><img class="about-still" src="{image}" '
-                    f'alt="Portrait of {AUTHOR}" decoding="async"></figure>')
+    description = 'Meet 3ichael 7ambert and explore an interactive lenticular portrait of the Colorado artist and developer.'
+    image = frame_paths[0]
+    portrait_script = f'<script defer src="{about_js}"></script>'
     page(output, '/about/', 'About Michael Lambert',
          description,
          f'<div class="about-layout">{portrait}<div class="about-copy"><div class="about-title"><p class="eyebrow">About the artist</p>'

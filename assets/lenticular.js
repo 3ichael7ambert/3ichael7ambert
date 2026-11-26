@@ -1,6 +1,7 @@
 (() => {
   const cards = document.querySelectorAll('[data-lenticular]');
   cards.forEach(card => {
+    card.querySelector('.lenticular-controls').hidden = false;
     const face = card.querySelector('.lenticular-face');
     const images = [...face.querySelectorAll('img')];
     const slider = card.querySelector('input[type="range"]');
