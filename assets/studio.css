@@ -70,3 +70,7 @@ html[data-theme="music"] .hero-main,html[data-theme="dark"] .hero-main { color:v
   .home-page .hero .eyebrow { margin:.14rem 0 .65rem }
   .home-page .hero .lead { margin:.8rem 0;line-height:1.5 }
 }
+.game-studio { display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-top:2rem }
+.game-studio img { width:7.5rem;height:auto;object-fit:contain }
+.game-studio div { flex:1 1 18rem }
+.game-studio h2 { margin-top:0 }

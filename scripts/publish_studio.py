@@ -44,6 +44,13 @@ def install_studio(root, output, page, css, versioned):
          'Run across a sketchbook page, then explore games made from the same mix of drawing and code.</p>'
          '<a href="/worlds/">Meet the characters →</a></div>'
          '<h2>Sketchbook Run</h2>' + str(game_page) +
+         '<section class="studio-band game-studio" aria-labelledby="game-studio-title">'
+         '<img src="/assets/media/drunk-yeti-logo.webp" alt="Drunk Yeti logo" width="120" height="102" loading="lazy" decoding="async">'
+         '<div><h2 id="game-studio-title">Drunk Yeti Game Studio</h2>'
+         '<p>Drunk Yeti is my independent game studio. I build games that bring illustration, music, and code together, '
+         'from the character-switching puzzles of <cite>Moly, Bart &amp; Skid</cite> to the arcade sports action of '
+         '<cite>AR3NA: Foosball Circuit</cite>.</p>'
+         '<a href="https://drunkyetistudio.com/">Visit Drunk Yeti Game Studio ↗</a></div></section>'
          '<h2>Independent games</h2><div class="release-grid studio-cards">' +
          featured_cards(output, 'games', featured['games']) +
          '</div><p><a href="/#games">Browse the complete games and tools catalog →</a></p>'
