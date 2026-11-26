@@ -12,6 +12,7 @@ from publish_client_pages import install_client_pages
 from publish_tours import install_tours
 from publish_worlds import install_worlds
 from publish_reading_guide import install_reading_guide
+from publish_portfolio import install_portfolio
 
 ORIGIN = 'https://3ichael7ambert.com'
 AUTHOR = 'Michael Andrew Lambert Jr.'
@@ -33,7 +34,7 @@ CHAPTERS = (
     ('contact', 'Contact'),
 )
 FOLIOS = (('/explore/', 'Take a guided tour'), ('/art/', 'Art & photography'), ('/books/', 'Books'), ('/worlds/', 'Characters & worlds'), ('/music/', 'Music & videos'),
-          ('/skills/', 'Skills & projects'), ('/work/', 'Work with me'), ('/resume/', 'Résumé'))
+          ('/about/', 'About'), ('/skills/', 'Skills & projects'), ('/work/', 'Work with me'), ('/resume/', 'Résumé'))
 BOOK_SLUGS = {'book-2': 'memorandum-in-a-cruet', 'book-6': 'inktober-2023', 'book-11': 'the-artwork-of-3ichael-7ambert'}
 BOOK_SUMMARIES = {
     'book-2': 'A collection of poems and reflections by 3ichael 7ambert.',
@@ -76,11 +77,12 @@ def canonical_meta(title, description, path, image=PORTRAIT):
 def page(output, path, title, description, body, css, *, image=PORTRAIT, kind='folio', schema=None):
     full_title = f'{title} | {BYLINE}'
     structured = f'<script type="application/ld+json">{markup(schema)}</script>' if schema else ''
+    shared_sheet = '' if css.startswith('/assets/sketchbook.css') else '<link rel="stylesheet" href="/assets/sketchbook.css">'
     document = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(full_title)}</title>{canonical_meta(full_title, description, path, image)}
 <link rel="icon" href="{PORTRAIT}"><link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="{css}"><script src="/assets/theme-init.js"></script>{structured}
+{shared_sheet}<link rel="stylesheet" href="{css}"><script src="/assets/theme-init.js"></script>{structured}
 </head><body class="{kind}-page">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="masthead"><a href="/" class="wordmark">3ichael <span>7ambert</span><small>THE LIVING SKETCHBOOK</small></a></header>
@@ -149,6 +151,9 @@ def decorate_home(output, css, script):
     start.append(link_element(soup, '#design', 'Open the sketchbook', 'button', page_turn=True))
     soup.select_one('.hero-actions').replace_with(start, cover_index)
     soup.select_one('.chapter-rule').decompose()
+    soup.select_one('.section-nav a[href="#background"]')['href'] = '/about/'
+    soup.select_one('.section-nav a[href="/about/"]').string = 'About'
+    soup.select_one('.section-nav a[href="#design"]')['href'] = '/art/'
     soup.select_one('.section-nav a[href="#music"]').string = 'Music & visualizers'
     for index, (chapter_id, label) in enumerate(CHAPTERS):
         chapter = soup.find(id=chapter_id)
@@ -168,7 +173,7 @@ def decorate_home(output, css, script):
         ('design', '/art/', 'Explore the art and photography collections →'),
         ('book', '/books/', 'Browse the readable editions →'),
         ('music', '/music/', 'Watch visualizers and explore the music archive →'),
-        ('background', '/skills/', 'See skills and project examples →'),
+        ('background', '/about/', 'Meet the artist →'),
     ):
         paragraph = soup.new_tag('p', attrs={'class': 'sketchbook-media-link'})
         paragraph.append(link_element(soup, url, label, 'button'))
@@ -222,7 +227,7 @@ def decorate_home(output, css, script):
 def video_cards(videos):
     return ''.join(
         f'''<article class="release-card">
-<a href="/music/watch/{video['slug']}/"><img src="{video['thumbnail']}" width="480" height="360" loading="lazy" alt="">
+<a href="{escape(video['address'], quote=True)}"><img src="{video['thumbnail']}" width="480" height="360" loading="lazy" alt="">
 <h2>{escape(video['title'])}</h2></a><p>{escape(video['credit'])} · {escape(video['format'])}</p></article>'''
         for video in videos
     )
@@ -234,30 +239,6 @@ def install_sketchbook(root, output):
     css = versioned(output, 'sketchbook.css')
     decorate_home(output, css, versioned(output, 'sketchbook.js'))
     routes = ['/']
-    art = [
-        ('sunlight-480.webp', 'Light through leaves', 'Photography · light and color'),
-        ('urban-colour-480.webp', 'Electric color', 'Digital and urban illustration'),
-        ('graphite-480.webp', 'Graphite portrait study', 'Portraiture · graphite'),
-        ('little-world-480.webp', 'A world within', 'Little planets and panoramas'),
-        ('paint-portrait-480.webp', 'Painted portrait', 'Painting and mixed media'),
-        ('cherry-shirt-480.webp', 'Cherry blossom apparel', 'Alieno Apparel · pattern design'),
-    ]
-    arts = ''.join(
-        f'<article class="release-card"><img src="/assets/media/{filename}" alt="{escape(title)}" '
-        f'width="480" height="360" loading="lazy"><h2>{escape(title)}</h2><p>{escape(category)}</p></article>'
-        for filename, title, category in art
-    )
-    for filename, _, _ in art:
-        if not (output / 'assets' / 'media' / filename).is_file():
-            raise ValueError(f'Missing selected art {filename}')
-    page(output, '/art/', 'Art and photography',
-         'See selected photography, portraits, illustration, little planets and clothing design by 3ichael 7ambert.',
-         '<h1>Art and photography</h1><p class="page-intro">I draw portraits, photograph the details people pass, '
-         'and use those images in everything from little planet panoramas to Alieno Apparel designs.</p>'
-         '<p><a class="button" href="/#design">Open the full searchable gallery</a></p>'
-         f'<div class="release-grid">{arts}</div>', css)
-    routes.append('/art/')
-
     editions = json.loads((output / 'reader/editions.json').read_text(encoding='utf-8'))
     book_links = []
     for book in editions:
@@ -306,6 +287,7 @@ def install_sketchbook(root, output):
              f'<a href="https://www.youtube.com/watch?v={video["id"]}">Watch on YouTube ↗</a>', css,
              image=video['thumbnail'], kind='watch')
         routes.append(video['address'])
+    routes.extend(install_portfolio(root, output, page, versioned, video_cards, videos))
     page(output, '/music/', 'Music, soundtracks and visualizers',
          'Watch music videos and visualizers by 3ichael 7ambert and A Rocket’s Intensity. Explore original music and game soundtracks.',
          '<h1>Music &amp; visualizers</h1><p class="page-intro">Electronic and orchestral work, independent bands, '
