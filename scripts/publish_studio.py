@@ -12,9 +12,9 @@ def theme_control():
     return f'<label class="studio-theme" hidden><span>Theme</span><select data-studio-theme aria-label="Theme">{options}</select></label>'
 
 
-def featured_cards(root, group, items):
+def featured_cards(root, group, items, *, start=0):
     cards = []
-    for number, item in enumerate(items):
+    for number, item in enumerate(items, start):
         asset = f'/assets/media/{group}-{number}-640.webp' if group != 'stores' else f'/assets/media/stores-{number}-480.webp'
         image = f'<img src="{asset}" alt="" width="640" height="480" loading="lazy" decoding="async">' if (root / asset.lstrip('/')).is_file() else ''
         cards.append(
@@ -60,8 +60,17 @@ def install_studio(root, output, page, css, versioned):
          '<div class="studio-band"><h1>Shop the work</h1><p class="page-intro">Find the drawings, photographs, '
          'and patterns as prints, apparel, illustrated books, and digital releases.</p>'
          '<a href="/art/?medium=Apparel#archive">See Alieno Apparel designs →</a></div>'
-         '<div class="release-grid studio-cards">' + featured_cards(output, 'stores', featured['stores']) +
-         '</div><p><a href="/books/">Explore the books</a> · <a href="/#clothing">More storefronts</a></p>', css)
+         '<section class="studio-band" aria-labelledby="redbubble-heading">'
+         '<h2 id="redbubble-heading">Odonis Orphane on Redbubble</h2>'
+         '<p>Shop my original designs on prints, clothing, stickers, and accessories. '
+         'Explore <cite>Cherry Bush</cite>, <cite>Colorado Graffiti</cite>, and my abstract spray-paint and guitar designs.</p>'
+         '<a class="button" href="https://www.redbubble.com/people/OdonisOrphane/shop">Shop my Redbubble designs ↗</a>'
+         '<ul><li><a href="https://www.redbubble.com/i/poster/Cherry-Bush-Hand-Drawn-by-OdonisOrphane/114062755/flk2">'
+         'Cherry Bush Hand Drawn poster</a></li>'
+         '<li><a href="https://www.redbubble.com/i/sticker/Cherry-Bush-Hand-Drawn-by-OdonisOrphane/114062755/7sgk">'
+         'Cherry Bush Hand Drawn sticker</a></li></ul></section>'
+         '<div class="release-grid studio-cards">' + featured_cards(output, 'stores', featured['stores'][1:], start=1) +
+         '</div><p><a href="/books/">Explore the books</a> · <a href="/#clothing">More storefronts</a> · <a href="https://www.amazon.com/author/3ichael7ambert">Amazon author page</a></p>', css)
 
     destinations = (
         ('/art/', 'Art & photography', 'urban-colour-480.webp'),

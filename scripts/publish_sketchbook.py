@@ -139,7 +139,8 @@ def decorate_home(output, css, script):
             'url': ORIGIN + '/', 'image': ORIGIN + PORTRAIT,
             'jobTitle': ['Multimedia artist', 'Author', 'Music producer', 'Software developer'],
             'sameAs': ['https://github.com/3ichael7ambert', 'https://www.behance.net/3ichael7ambert',
-                       'https://www.youtube.com/arocketsintensity'],
+                       'https://www.youtube.com/arocketsintensity', 'https://www.amazon.com/author/3ichael7ambert',
+                       'https://www.redbubble.com/people/OdonisOrphane/shop'],
         },
     })
     soup.head.append(schema)
@@ -303,7 +304,7 @@ def install_sketchbook(root, output):
          'Browse readable editions of Memorandum in a Cruet, Inktober, artist collections and Plastic Photography.',
          '<h1>Books</h1><p class="page-intro">Poetry, drawing, photography, and collections of work '
          'originally made for the page. These editions are available to read online.</p>'
-         '<p><a class="button" href="/books/reading-guide/">Explore the reading guide</a></p>'
+         '<p><a class="button" href="/books/reading-guide/">Explore the reading guide</a> · <a href="https://www.amazon.com/author/3ichael7ambert">Browse my books on Amazon</a></p>'
          '<label class="release-search" hidden>Find an edition <input type="search" data-release-search></label>'
          '<p role="status" data-release-status></p>'
          f'<div class="edition-grid">{"".join(book_links)}</div>'
@@ -390,7 +391,7 @@ def write_sitemaps(root, output, routes, videos):
                                ('description', 'description'), ('player_loc', 'embed')):
             ET.SubElement(info, f'{{{VIDEO_NS}}}{element}').text = item[field]
     ET.ElementTree(video_sitemap).write(output / 'video-sitemap.xml', encoding='utf-8', xml_declaration=True)
-    (output / 'robots.txt').write_text(f'User-agent: *\nAllow: /\n\nSitemap: {ORIGIN}/sitemap.xml\nSitemap: {ORIGIN}/video-sitemap.xml\n')
+    (output / 'robots.txt').write_text(f'User-agent: *\nAllow: /\n\nSitemap: {ORIGIN}/sitemap.xml\nSitemap: {ORIGIN}/video-sitemap.xml\nSitemap: {ORIGIN}/image-sitemap.xml\n')
     key = (root / 'data/indexnow-key.txt').read_text().strip()
     if not re.fullmatch(r'[0-9a-f]{32}', key):
         raise ValueError('Unexpected IndexNow key format')

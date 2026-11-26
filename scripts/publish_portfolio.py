@@ -13,6 +13,7 @@ from publish_public_archive import restore_public_archive
 from publish_panoramas import install_panoramas
 from publish_exhibition import install_exhibition
 from publish_depth import install_depth
+from publish_art_archive import install_art_archive
 
 AUTHOR = 'Michael Andrew Lambert Jr.'
 MEDIA = '/assets/media/about-lenticular/'
@@ -110,11 +111,13 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
          'that find their way into books, games, and animation. I also make music and design all-over prints '
          'for Alieno Apparel.</p><p>Design with a Technical Mind.</p>'
          '<div class="portfolio-links"><a class="button" href="/art/">Explore my work</a>'
-         '<a href="/work/">Work with me</a><a href="/resume/">Résumé</a></div></div></div></div>'
+         '<a href="/work/">Work with me</a><a href="/resume/">Résumé</a><a href="https://www.amazon.com/author/3ichael7ambert">Amazon author page</a></div></div></div></div>'
          + portrait_script, art_css, image=image, kind='about',
          schema={'@context': 'https://schema.org', '@type': 'ProfilePage', 'mainEntity': {
              '@type': 'Person', '@id': 'https://3ichael7ambert.com/#michael-lambert', 'name': AUTHOR,
-             'alternateName': '3ichael 7ambert',
+             'alternateName': ['3ichael 7ambert', 'Odonis Orphane'],
+             'sameAs': ['https://www.amazon.com/author/3ichael7ambert',
+                        'https://www.redbubble.com/people/OdonisOrphane/shop'],
              'image': 'https://3ichael7ambert.com' + image,
          }})
 
@@ -145,7 +148,7 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
          '<section aria-labelledby="collection-heading"><h2 id="collection-heading">Browse by medium</h2>'
          f'<div class="portfolio-shelves">{shelves}</div></section>'
          f'<section id="archive" aria-labelledby="archive-heading" data-portfolio="{versioned(output, archive.name)}">'
-         '<h2 id="archive-heading">The full archive</h2>'
+         '<h2 id="archive-heading">The full archive</h2><p><a href="/art/archive/">Browse the archive by page →</a></p>'
          '<form class="portfolio-tools" role="search" hidden><label>Search the portfolio'
          '<input type="search" placeholder="Title, subject, or collection"></label>'
          f'<label>Medium<select><option value="">All media</option>{options}</select></label>'
@@ -193,4 +196,5 @@ def install_portfolio(root, output, page, versioned, video_cards, videos, publis
     depth = install_depth(root, output, page, art_css, versioned)
     routes = ['/about/', '/art/', '/art/motion/', panoramas, depth, *install_exhibition(output, page, art_css)]
     routes.extend(video['address'] for video in motion_archive)
+    routes.extend(install_art_archive(output, page, art_css, works, artwork_card))
     return routes, motion_archive
