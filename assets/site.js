@@ -60,12 +60,18 @@
   // Static content and direct image links remain useful if JavaScript is unavailable.
   function filter(scope, value) {
     const selector = scope === 'art' ? '.art-card' : '.book-card';
+    const term = scope === 'art' ? ($('#art-search')?.value ?? '').trim().toLocaleLowerCase() : '';
     let shown = 0;
-    $$(selector).forEach(card => { card.hidden = value !== 'All' && card.dataset.category !== value; if (!card.hidden) shown++; });
+    $$(selector).forEach(card => {
+      const searchable = card.textContent.toLocaleLowerCase();
+      card.hidden = (value !== 'All' && card.dataset.category !== value) || !searchable.includes(term);
+      if (!card.hidden) shown++;
+    });
     $$(`[data-scope="${scope}"]`).forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === value)));
     $('#' + (scope === 'art' ? 'art' : 'books') + '-status').textContent = `${shown} ${scope === 'art' ? 'artworks' : 'books'} shown`;
   }
   $$('[data-filter]').forEach(button => button.addEventListener('click', () => filter(button.dataset.scope, button.dataset.filter)));
+  $('#art-search')?.addEventListener('input', () => filter('art', $('[data-scope=art][aria-pressed=true]').dataset.filter));
   $('[data-apparel-filter]').addEventListener('click', () => filter('art', 'Apparel'));
   $('#catalog-search').addEventListener('input', event => {
     const term = event.target.value.toLocaleLowerCase(); let shown = 0;

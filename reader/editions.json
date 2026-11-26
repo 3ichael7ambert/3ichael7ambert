@@ -1,0 +1,80 @@
+[
+  {
+    "id": "book-2",
+    "title": "Memorandum in a Cruet",
+    "pages": 175,
+    "game": null
+  },
+  {
+    "id": "book-6",
+    "title": "Inktober 2023",
+    "pages": 87,
+    "game": null
+  },
+  {
+    "id": "book-11",
+    "title": "The Artwork of 3ichael 7ambert",
+    "pages": 792,
+    "game": null
+  },
+  {
+    "id": "a-world-within",
+    "title": "Plastic Photography: A World Within",
+    "pages": 51,
+    "game": null
+  },
+  {
+    "id": "after-dark",
+    "title": "Plastic Photography: After Dark",
+    "pages": 51,
+    "game": null
+  },
+  {
+    "id": "color-studies",
+    "title": "Plastic Photography: Color Studies",
+    "pages": 59,
+    "game": null
+  },
+  {
+    "id": "lines-in-shape",
+    "title": "Plastic Photography: Lines in Shape",
+    "pages": 44,
+    "game": null
+  },
+  {
+    "id": "nature-recreated",
+    "title": "Plastic Photography: Nature Recreated",
+    "pages": 51,
+    "game": null
+  },
+  {
+    "id": "quiet-moments",
+    "title": "Plastic Photography: Quiet Moments",
+    "pages": 39,
+    "game": null
+  },
+  {
+    "id": "seasons-of-change",
+    "title": "Plastic Photography: Seasons of Change",
+    "pages": 51,
+    "game": null
+  },
+  {
+    "id": "selected-works",
+    "title": "Plastic Photography: Selected Works",
+    "pages": 55,
+    "game": null
+  },
+  {
+    "id": "the-early-years",
+    "title": "Plastic Photography: The Early Years",
+    "pages": 51,
+    "game": null
+  },
+  {
+    "id": "water-and-light",
+    "title": "Plastic Photography: Water and Light",
+    "pages": 51,
+    "game": null
+  }
+]
