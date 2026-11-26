@@ -657,18 +657,54 @@
   {
     "id": "splinter-fuse",
     "title": "Splinter & Fuse",
-    "setting": "Open Here introduces Splinter and Fuse in an original four-panel webcomic. The later arcade concept brings the two leads into playable action.",
+    "setting": "Crumble’s demolition duo grew out of two axemen on a 2008 sketchbook page. The comic puts the pair in an argument over what gets torn down and what their neighbors get to keep.",
     "cast": [
       {
         "name": "Splinter",
-        "description": "One of the two title characters."
+        "role": "Showman and demolition partner",
+        "description": "Sells the plan before thinking it through, then throws himself into making it happen.",
+        "appearance": "Yellow star-shaped bangs, blue hair at the back, pointed nose, white tee, blue shorts, and heavy sneakers."
       },
       {
         "name": "Fuse",
-        "description": "The other half of the title pair."
+        "role": "Observant schemer and demolition partner",
+        "description": "Spots the details everyone else missed and quietly proposes the more outrageous plan.",
+        "appearance": "Red jagged bangs and spikes, worried eyes, pointed nose, black tee with a white symbol, and gray shorts."
+      },
+      {
+        "name": "Dot",
+        "role": "Pixel Pit proprietor",
+        "description": "Practical, competitive, and quick with a reply.",
+        "appearance": "Purple twin buns, yellow jacket, black shorts, and purple sneakers."
+      },
+      {
+        "name": "Rivet",
+        "role": "Scrapyard mechanic",
+        "description": "Built Bob and keeps track of what the duo breaks.",
+        "appearance": "Teal undercut, orange overalls, goggles and gloves."
+      },
+      {
+        "name": "Bob",
+        "role": "Demolition robot",
+        "description": "A lent-out machine with a personality of its own.",
+        "appearance": "Yellow spherical body, a single round eye, and treads."
       }
     ],
-    "links": []
+    "links": [],
+    "plates": [
+      {
+        "book": "book-11",
+        "page": 415,
+        "caption": "Original 2008 sketchbook reference · Splinter at upper left and Fuse at lower right"
+      }
+    ],
+    "projects": [
+      [
+        "Comic",
+        "Demolition Permission",
+        "The first issue follows the duo and a borrowed demolition robot through Crumble."
+      ]
+    ]
   },
   {
     "id": "mosswake",
