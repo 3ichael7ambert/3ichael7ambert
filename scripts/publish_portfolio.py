@@ -10,6 +10,8 @@ from publish_public_archive import restore_public_archive
 
 AUTHOR = 'Michael Andrew Lambert Jr.'
 MEDIA = '/assets/media/lenticular/'
+PUBLIC_ARCHIVE = ('https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/'
+                  '604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/')
 MOTION_INTRO = (
     'Stop motion, animation, 360° environments, and music visualizers from my moving-image work.'
 )
@@ -33,6 +35,8 @@ def gallery_payload(root, output):
     runtime = output / 'assets' / 'media'
     for work in archive:
         for name in ('thumb', 'large'):
+            if work[name].startswith(PUBLIC_ARCHIVE):
+                continue
             path = Path(work[name].removeprefix('/assets/media/'))
             if not work[name].startswith('/assets/media/portfolio/') or '..' in path.parts:
                 raise ValueError(f'Invalid portfolio image address {work[name]}')
@@ -85,14 +89,14 @@ def install_portfolio(root, output, page, versioned, video_cards, videos):
                     f'alt="Portrait of {AUTHOR}" decoding="async"></figure>')
     page(output, '/about/', 'About Michael Lambert',
          'Meet 3ichael 7ambert and explore an interactive lenticular portrait of the Colorado artist, photographer and developer.',
-         f'<div class="about-layout">{portrait}<div class="about-copy"><p class="eyebrow">About the artist</p>'
+         f'<div class="about-layout">{portrait}<div class="about-copy"><div class="about-title"><p class="eyebrow">About the artist</p>'
          '<h1>Michael Lambert</h1><p class="page-intro">I’m Michael Andrew Lambert Jr., a Colorado artist and '
-         'developer working as 3ichael 7ambert.</p>'
+         'developer working as 3ichael 7ambert.</p></div><div class="about-details">'
          '<p>I draw in ink and graphite, photograph the world at its smallest and widest, and build characters '
          'that find their way into books, games, and animation. I also make music and design all-over prints '
          'for Alieno Apparel.</p><p>Design with a Technical Mind.</p>'
          '<div class="portfolio-links"><a class="button" href="/art/">Explore my work</a>'
-         '<a href="/work/">Work with me</a><a href="/resume/">Résumé</a></div></div></div>'
+         '<a href="/work/">Work with me</a><a href="/resume/">Résumé</a></div></div></div></div>'
          + portrait_script, art_css, image=image, kind='about',
          schema={'@context': 'https://schema.org', '@type': 'ProfilePage', 'mainEntity': {
              '@type': 'Person', '@id': 'https://3ichael7ambert.com/#michael-lambert', 'name': AUTHOR,

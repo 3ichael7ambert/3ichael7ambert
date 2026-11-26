@@ -17,7 +17,14 @@
 .lenticular-controls button { white-space:nowrap }
 .lenticular [data-motion-status]:empty { display:none }
 .lenticular [data-motion-status] { margin:.5rem .8rem;font-size:.9rem }
-@media (max-width:700px) { .about-layout { grid-template-columns:1fr;gap:1.4rem }.lenticular { width:min(100%,23rem);justify-self:center }.about-copy { order:-1 } }
+@media (max-width:700px) {
+  .about-layout { grid-template-columns:1fr;gap:1.3rem;margin-block:0 1rem }
+  .lenticular { width:min(100%,23rem);justify-self:center }
+  .about-copy { display:contents }
+  .about-title { order:-1 }
+  .about-title .page-intro { margin-bottom:0 }
+  .about-details > p:first-child { margin-top:0 }
+}
 @media (prefers-reduced-motion: reduce) { .lenticular-face { transform:none }.lenticular-face::after { transform:none } }
 .portfolio-links { display:flex;flex-wrap:wrap;gap:1rem;margin:1.3rem 0 }
 .portfolio-tools { margin:1.5rem 0;display:flex;flex-wrap:wrap;gap:1rem;align-items:end }
@@ -41,3 +48,5 @@
 .portfolio-grid { scroll-margin-top:6rem }
 .about-still { display:block;width:100%;height:auto;border-radius:1rem }
 .motion-collection { margin-top:2.5rem }
+
+@media (max-width:600px) { .portfolio-grid { grid-template-columns:repeat(2,minmax(0,1fr)) } }

@@ -1,1 +1,582 @@
-[]
+[
+  {
+    "title": "Labeled disc design",
+    "alt": "Labeled disc design",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/136812586v8_150x150_Disc.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/136812586v8_150x150_Disc.jpg",
+    "width": 150,
+    "height": 150
+  },
+  {
+    "title": "A2M cover graphic",
+    "alt": "A2M cover graphic",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/A2M4.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/A2M4.jpg",
+    "width": 3300,
+    "height": 5100
+  },
+  {
+    "title": "A2M header graphic",
+    "alt": "A2M header graphic",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/A2M_header.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/A2M_header.jpg",
+    "width": 840,
+    "height": 640
+  },
+  {
+    "title": "Dead Sexy Mikey disc cover",
+    "alt": "Dead Sexy Mikey disc cover",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/CD%20Cover%20total.JPG",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/CD%20Cover%20total.JPG",
+    "width": 497,
+    "height": 497
+  },
+  {
+    "title": "Circles in black",
+    "alt": "Circles in black",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/Circles%20black.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/Circles%20black.png",
+    "width": 1008,
+    "height": 1728
+  },
+  {
+    "title": "Circles in blue and red",
+    "alt": "Circles in blue and red",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/Circles%20blue%20and%20red.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/Circles%20blue%20and%20red.png",
+    "width": 936,
+    "height": 1008
+  },
+  {
+    "title": "Circles in pink and green",
+    "alt": "Circles in pink and green",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/Circles%20pink%20and%20green.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/Circles%20pink%20and%20green.png",
+    "width": 1008,
+    "height": 1728
+  },
+  {
+    "title": "Circles in red and white",
+    "alt": "Circles in red and white",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/Circles%20red%20wht.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/Circles%20red%20wht.png",
+    "width": 1008,
+    "height": 1728
+  },
+  {
+    "title": "Cloud Sales",
+    "alt": "Cloud Sales",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/CloudSales.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/CloudSales.png",
+    "width": 800,
+    "height": 451
+  },
+  {
+    "title": "Dead Sexy Mikey wordmark",
+    "alt": "Dead Sexy Mikey wordmark",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/DSM.gif",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/DSM.gif",
+    "width": 450,
+    "height": 75
+  },
+  {
+    "title": "Think About It Later collage",
+    "alt": "Think About It Later collage",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/HEADER.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/HEADER.png",
+    "width": 874,
+    "height": 620
+  },
+  {
+    "title": "Blue and gold logo study",
+    "alt": "Blue and gold logo study",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/LOGO2%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/LOGO2%20copy.png",
+    "width": 320,
+    "height": 320
+  },
+  {
+    "title": "Purple and green logo study",
+    "alt": "Purple and green logo study",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/LOGO2%20copy2.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/LOGO2%20copy2.png",
+    "width": 340,
+    "height": 340
+  },
+  {
+    "title": "MICA cover",
+    "alt": "MICA cover",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/MICA%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/MICA%20copy.png",
+    "width": 535,
+    "height": 894
+  },
+  {
+    "title": "UFO Mashup",
+    "alt": "UFO Mashup",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/UFO%20MASHUP.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/UFO%20MASHUP.jpg",
+    "width": 1632,
+    "height": 1224
+  },
+  {
+    "title": "Whee!",
+    "alt": "Whee!",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/Whee%21%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/Whee%21%20copy.png",
+    "width": 3300,
+    "height": 5100
+  },
+  {
+    "title": "A2M skyline banner",
+    "alt": "A2M skyline banner",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/a2mBanner.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/a2mBanner.png",
+    "width": 800,
+    "height": 225
+  },
+  {
+    "title": "Graffiti wordmark",
+    "alt": "Graffiti wordmark",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/banner.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/banner.png",
+    "width": 233,
+    "height": 117
+  },
+  {
+    "title": "Bubble pattern",
+    "alt": "Bubble pattern",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/bubbles_dark%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/bubbles_dark%20copy.png",
+    "width": 1400,
+    "height": 1782
+  },
+  {
+    "title": "Colorful umbrella",
+    "alt": "Colorful umbrella",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/colorful_umbrella%20copy.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/colorful_umbrella%20copy.jpg",
+    "width": 700,
+    "height": 465
+  },
+  {
+    "title": "Sauce 37 wordmark",
+    "alt": "Sauce 37 wordmark",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/logo%20click.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/logo%20click.png",
+    "width": 800,
+    "height": 250
+  },
+  {
+    "title": "Lettering study",
+    "alt": "Lettering study",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/logo.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/logo.png",
+    "width": 700,
+    "height": 530
+  },
+  {
+    "title": "We Like to Party",
+    "alt": "We Like to Party",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/omgz_we_like_to_party%20copy.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/omgz_we_like_to_party%20copy.jpg",
+    "width": 1224,
+    "height": 1224
+  },
+  {
+    "title": "Skyline design",
+    "alt": "Skyline design",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/skyline.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/skyline.png",
+    "width": 400,
+    "height": 451
+  },
+  {
+    "title": "Spread Love",
+    "alt": "Spread Love",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/spread%20love.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/spread%20love.png",
+    "width": 600,
+    "height": 600
+  },
+  {
+    "title": "Think About It Later banner",
+    "alt": "Think About It Later banner",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/tail_banner.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/tail_banner.png",
+    "width": 475,
+    "height": 70
+  },
+  {
+    "title": "Windmill mark",
+    "alt": "Windmill mark",
+    "category": "Graphic design",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/windmill_closer.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/windmill_closer.jpg",
+    "width": 496,
+    "height": 800
+  },
+  {
+    "title": "Digital portrait study",
+    "alt": "Digital portrait study",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/091509_0224%5B00%5D%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/091509_0224%5B00%5D%20copy.png",
+    "width": 150,
+    "height": 200
+  },
+  {
+    "title": "Three figures in motion",
+    "alt": "Three figures in motion",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/3girl_dark.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/3girl_dark.png",
+    "width": 402,
+    "height": 266
+  },
+  {
+    "title": "Contour study in primary color",
+    "alt": "Contour study in primary color",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/BYR%20Contour%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/BYR%20Contour%20copy.png",
+    "width": 3300,
+    "height": 5100
+  },
+  {
+    "title": "Heart in neon",
+    "alt": "Heart in neon",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/HEART2.JPG",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/HEART2.JPG",
+    "width": 238,
+    "height": 339
+  },
+  {
+    "title": "Bittersweet Rose",
+    "alt": "Bittersweet Rose",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/bitter_sweet%20rose.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/bitter_sweet%20rose.png",
+    "width": 320,
+    "height": 316
+  },
+  {
+    "title": "Circus Rave",
+    "alt": "Circus Rave",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/circusrave%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/circusrave%20copy.png",
+    "width": 3300,
+    "height": 5100
+  },
+  {
+    "title": "Dissolve Mannequin",
+    "alt": "Dissolve Mannequin",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/dissolve%20mannequin%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/dissolve%20mannequin%20copy.png",
+    "width": 2560,
+    "height": 1920
+  },
+  {
+    "title": "Texture and line study",
+    "alt": "Texture and line study",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/handicap2.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/handicap2.png",
+    "width": 600,
+    "height": 600
+  },
+  {
+    "title": "Figure in red and blue",
+    "alt": "Figure in red and blue",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img002%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img002%20copy.png",
+    "width": 729,
+    "height": 1487
+  },
+  {
+    "title": "Sonic fan art",
+    "alt": "Sonic fan art",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img004%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img004%20copy.png",
+    "width": 1080,
+    "height": 2346
+  },
+  {
+    "title": "Figure against black",
+    "alt": "Figure against black",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img0042.JPG",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img0042.JPG",
+    "width": 2142,
+    "height": 2346
+  },
+  {
+    "title": "iPod line study",
+    "alt": "iPod line study",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/ipod_oj_blu_glow.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/ipod_oj_blu_glow.png",
+    "width": 500,
+    "height": 349
+  },
+  {
+    "title": "Kiss Rave",
+    "alt": "Kiss Rave",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/kiss_1rave.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/kiss_1rave.png",
+    "width": 442,
+    "height": 700
+  },
+  {
+    "title": "Kiss Rave in color",
+    "alt": "Kiss Rave in color",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/kiss_2rave.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/kiss_2rave.png",
+    "width": 442,
+    "height": 700
+  },
+  {
+    "title": "Kiss Rave in ink",
+    "alt": "Kiss Rave in ink",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/kiss_6rave.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/kiss_6rave.png",
+    "width": 442,
+    "height": 700
+  },
+  {
+    "title": "Kiss Rave in green",
+    "alt": "Kiss Rave in green",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/kiss_7rave.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/kiss_7rave.png",
+    "width": 442,
+    "height": 700
+  },
+  {
+    "title": "Portrait in cyan and pink",
+    "alt": "Portrait in cyan and pink",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/l_cf22ddff5fe6451c95965cc8f3b8693f%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/l_cf22ddff5fe6451c95965cc8f3b8693f%20copy.png",
+    "width": 450,
+    "height": 600
+  },
+  {
+    "title": "Open 24 Hours",
+    "alt": "Open 24 Hours",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/open_24_hours%20copy.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/open_24_hours%20copy.jpg",
+    "width": 576,
+    "height": 792
+  },
+  {
+    "title": "Open 24 Hours background",
+    "alt": "Open 24 Hours background",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/open_24_hoursBG%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/open_24_hoursBG%20copy.png",
+    "width": 576,
+    "height": 792
+  },
+  {
+    "title": "Rocket parchment study",
+    "alt": "Rocket parchment study",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/rocket%20partchment.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/rocket%20partchment.png",
+    "width": 3029,
+    "height": 4295
+  },
+  {
+    "title": "Rocket character",
+    "alt": "Rocket character",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/rocket.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/rocket.png",
+    "width": 700,
+    "height": 530
+  },
+  {
+    "title": "Rocket luminosity study",
+    "alt": "Rocket luminosity study",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/rockets_lumosity.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/rockets_lumosity.png",
+    "width": 3029,
+    "height": 4295
+  },
+  {
+    "title": "Spray can character",
+    "alt": "Spray can character",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/spraycan%20copy.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/spraycan%20copy.png",
+    "width": 1200,
+    "height": 1200
+  },
+  {
+    "title": "Touch silhouette",
+    "alt": "Touch silhouette",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/touch_blk.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/touch_blk.png",
+    "width": 504,
+    "height": 360
+  },
+  {
+    "title": "Touch in cyan",
+    "alt": "Touch in cyan",
+    "category": "Digital & urban",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/touch_blue.png",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/touch_blue.png",
+    "width": 504,
+    "height": 360
+  },
+  {
+    "title": "Blue and Yellow title screen",
+    "alt": "Blue and Yellow title screen",
+    "category": "Game art",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img10.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img10.jpg",
+    "width": 320,
+    "height": 200
+  },
+  {
+    "title": "Orbit study",
+    "alt": "Orbit study",
+    "category": "Game art",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img12.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img12.jpg",
+    "width": 320,
+    "height": 200
+  },
+  {
+    "title": "Orbit in grayscale",
+    "alt": "Orbit in grayscale",
+    "category": "Game art",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img13.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img13.jpg",
+    "width": 320,
+    "height": 240
+  },
+  {
+    "title": "Blue and Yellow in orbit",
+    "alt": "Blue and Yellow in orbit",
+    "category": "Game art",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img4.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img4.jpg",
+    "width": 417,
+    "height": 248
+  },
+  {
+    "title": "PMC title design",
+    "alt": "PMC title design",
+    "category": "Game art",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img7.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img7.jpg",
+    "width": 352,
+    "height": 288
+  },
+  {
+    "title": "Blue and Yellow character scene",
+    "alt": "Blue and Yellow character scene",
+    "category": "Game art",
+    "collection": "Blue and Yellow · early digital portfolio",
+    "thumb": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img8.jpg",
+    "large": "https://raw.githubusercontent.com/3ichael7ambert/blueandyellow-portfolio/604fdae73d3b3ccd037236d8d7331261bef9dd0d/gallery/images/digital/img8.jpg",
+    "width": 679,
+    "height": 432
+  }
+]
