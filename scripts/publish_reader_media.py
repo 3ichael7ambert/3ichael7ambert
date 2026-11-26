@@ -5,6 +5,7 @@ from hashlib import sha256
 import json
 import re
 import shutil
+from publish_sketchbook import install_sketchbook
 
 
 def install_reader_media(root, output):
@@ -49,3 +50,4 @@ def install_reader_media(root, output):
     script_version = sha256((output / 'assets/site.js').read_bytes()).hexdigest()[:12]
     html = html.replace('src="assets/site.js"', f'src="assets/site.js?v={script_version}"', 1)
     homepage.write_text(html)
+    install_sketchbook(root, output)

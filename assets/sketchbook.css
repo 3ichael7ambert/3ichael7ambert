@@ -1,0 +1,102 @@
+/* Chapter navigation and the public portfolio's standalone pages. */
+.sketchbook-index {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 34rem;
+  gap: .45rem;
+  margin: 1.25rem 0;
+  padding: 0;
+  list-style: none;
+}
+.sketchbook-index a {
+  display: block;
+  min-height: 44px;
+  padding: .55rem .75rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: .18rem;
+  background: var(--surface);
+  text-decoration: none;
+  font-weight: 650;
+  font-size: .89rem;
+}
+.sketchbook-index a:hover, .page-turn a:hover { background: var(--wash); }
+.page-turn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: .45rem .75rem;
+  margin-block-start: clamp(1.5rem, 4vw, 3rem);
+  border-top: 1px solid var(--line);
+  padding-top: .85rem;
+}
+.page-turn a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .3rem .6rem;
+  border-radius: .25rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 650;
+}
+.page-turn a:last-child { margin-inline-start: auto; }
+.sketchbook-page:target { scroll-margin-top: 5rem; }
+.sketchbook-page :is(h1, h2):focus-visible { outline-offset: .25rem; }
+.sketchbook-media-link { margin-block: 1.25rem; }
+.release-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  align-items: start;
+  gap: 1rem;
+}
+.release-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1rem;
+  border-radius: .3rem;
+  overflow-wrap: anywhere;
+}
+.release-card h2, .release-card h3 { margin: .35rem 0 .4rem; font-family: Georgia, serif; font-weight: normal; line-height: 1.12; }
+.release-card p { margin-block: .45rem; }
+.release-card a { display: inline-block; padding-block: .3rem; font-weight: 650; color: var(--accent); }
+.release-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  display: block;
+  background: var(--wash);
+  border-radius: .2rem;
+}
+.watch-page .chapter, .folio-page .chapter { max-width: 70rem; margin-inline: auto; }
+.folio-page main h1, .watch-page main h1 {
+  max-width: 18ch;
+  margin: .15em 0 .36em;
+  font: normal clamp(2.35rem, 7vw, 5rem)/1.02 Georgia, serif;
+  letter-spacing: -.05em;
+}
+.folio-page .page-intro, .watch-page .page-intro { max-width: 66ch; }
+.folio-page .chapter > h2 { margin-top: 2.1rem; }
+.folio-page .release-list { padding-inline-start: 1.15rem; }
+.folio-page .release-list li { padding-block: .4rem; }
+.folio-page .book-spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(1rem, 5vw, 4rem);
+  align-items: start;
+  margin-block: 1.5rem;
+}
+.book-spread img { max-width: 100%; object-fit: contain; border: 1px solid var(--line); max-height: 34rem; }
+.watch-player {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: var(--ink);
+  margin-block: 1.15rem;
+}
+@media (max-width: 600px) {
+  .folio-page .book-spread { grid-template-columns: 1fr; }
+  .page-turn a { font-size: .88rem; }
+}
